@@ -537,5 +537,13 @@
                     }
                 });
             })();
+            
+            document.querySelectorAll('a[data-oe-model="product.public.category"]').forEach(el =&gt; {
+                const txt = el.textContent.trim();
+            
+                if (txt.includes('/')) {
+                    el.textContent = txt.split('/').pop().trim();
+                }
+            });
         </script>
     </t>
