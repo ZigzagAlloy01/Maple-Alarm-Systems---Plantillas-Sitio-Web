@@ -1,0 +1,1603 @@
+<style>
+            .o_mega_menu.fetchEcomCategories {
+                padding: 0 !important;
+                border: 0 !important;
+                background: transparent !important;
+                box-shadow: 0 20px 60px rgba(16, 16, 18, 0.24) !important;
+                width: min(1240px, calc(100vw - 36px)) !important;
+                max-width: 1240px !important;
+                overflow: hidden;
+                border-radius: 0 0 18px 18px !important;
+            }
+            
+            .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-app {
+                --sys-bg: #14171c;
+                --sys-panel: #1c2027;
+                --sys-panel-2: #252a33;
+                --sys-panel-3: #161a20;
+                --sys-line: rgba(255, 255, 255, 0.08);
+                --sys-text: #f7f2ef;
+                --sys-muted: #bcaea9;
+                --sys-accent: #ba1f2a;
+                --sys-accent-2: #d93a42;
+                --sys-hover: rgba(186, 31, 42, 0.16);
+                --sys-active: linear-gradient(90deg, rgba(186, 31, 42, 0.24), rgba(186, 31, 42, 0.08));
+                background:
+                radial-gradient(circle at top left, rgba(186, 31, 42, 0.16), transparent 30%),
+                linear-gradient(180deg, #20242b, #12151a);
+                color: var(--sys-text);
+                padding: 14px 14px 18px !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-app .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: 60rem;
+            }
+
+            .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-app .syscomify-source {
+                display: none !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-classic {
+                background: #fffdfb;
+                padding: 16px !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-classic .syscomify-shell {
+                display: none !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-classic .syscomify-source {
+                display: flex !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-classic .syscomify-topbar {
+                margin-bottom: 14px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-topbar {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 14px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-search {
+                position: relative;
+                flex: 1 1 auto;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-search::before {
+                content: "⌕";
+                position: absolute;
+                left: 14px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #b7a6a1;
+                font-size: 16px;
+                line-height: 1;
+                pointer-events: none;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-search input {
+                width: 100%;
+                height: 42px;
+                border-radius: 12px;
+                border: 1px solid rgba(186, 31, 42, 0.34);
+                background: rgba(25, 29, 36, 0.94);
+                color: #f8f2ef;
+                padding: 0 16px 0 38px;
+                outline: 0;
+                box-shadow: inset 0 0 0 1px rgba(186, 31, 42, 0.08);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-search input::placeholder {
+                color: #b7a6a1;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-search input:focus {
+                border-color: rgba(217, 58, 66, 0.72);
+                box-shadow: 0 0 0 3px rgba(186, 31, 42, 0.18);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-toggle {
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.06);
+                color: #f7f2ef;
+                height: 42px;
+                padding: 0 14px;
+                border-radius: 12px;
+                font-weight: 600;
+                transition: 0.2s ease;
+                white-space: nowrap;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-toggle:hover {
+                background: rgba(186, 31, 42, 0.12);
+                border-color: rgba(217, 58, 66, 0.22);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-shell {
+                display: grid;
+                grid-template-columns: 250px minmax(320px, 1fr) minmax(260px, 0.9fr);
+                min-height: 490px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 18px;
+                overflow: hidden;
+                background: rgba(15, 18, 24, 0.7);
+                backdrop-filter: blur(10px);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane {
+                min-width: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane--left {
+                background: rgba(255, 255, 255, 0.03);
+                border-right: 1px solid rgba(255, 255, 255, 0.08);
+                padding: 14px 10px;
+                overflow: auto;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane--center,
+            .o_mega_menu.fetchEcomCategories .syscomify-pane--right {
+                padding: 18px 16px;
+                overflow: auto;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane--center {
+                background: rgba(22, 26, 32, 0.84);
+                border-right: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane--right {
+                background: rgba(19, 23, 29, 0.96);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-list,
+            .o_mega_menu.fetchEcomCategories .syscomify-links,
+            .o_mega_menu.fetchEcomCategories .syscomify-chip-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-section-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                width: 100%;
+                border: 0;
+                background: transparent;
+                color: #f0e8e4;
+                border-radius: 12px;
+                padding: 12px 12px;
+                text-align: left;
+                font-weight: 500;
+                line-height: 1.3;
+                transition: 0.2s ease;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-section-btn:hover,
+            .o_mega_menu.fetchEcomCategories .syscomify-section-btn:focus {
+                background: rgba(255, 255, 255, 0.05);
+                color: #fff;
+                outline: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-section-btn.is-active {
+                background: linear-gradient(90deg, rgba(186, 31, 42, 0.22), rgba(186, 31, 42, 0.08));
+                color: #fff;
+                box-shadow: inset 2px 0 0 #d93a42;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-section-meta {
+                display: block;
+                margin-top: 3px;
+                color: #bcaea9;
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-arrow {
+                color: #c4a09c;
+                font-size: 14px;
+                flex: 0 0 auto;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-heading {
+                margin: 0 0 8px;
+                color: #fff8f4;
+                font-size: 25px;
+                line-height: 1.15;
+                font-weight: 700;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-subtitle {
+                color: #bcaea9;
+                font-size: 13px;
+                margin-bottom: 18px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-links li + li,
+            .o_mega_menu.fetchEcomCategories .syscomify-list li + li {
+                margin-top: 4px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-link {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 12px 14px;
+                border-radius: 12px;
+                color: #f3ebe7 !important;
+                text-decoration: none !important;
+                line-height: 1.35;
+                transition: 0.18s ease;
+                border: 1px solid transparent;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-link:hover,
+            .o_mega_menu.fetchEcomCategories .syscomify-link:focus {
+                background: rgba(255, 255, 255, 0.04);
+                border-color: rgba(255, 255, 255, 0.06);
+                color: #fff !important;
+                outline: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-link.is-active {
+                background: linear-gradient(90deg, rgba(186, 31, 42, 0.2), rgba(186, 31, 42, 0.06));
+                border-color: rgba(217, 58, 66, 0.24);
+                color: #fff !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-link small {
+                color: #c9a9a3;
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-sub-links,
+            .o_mega_menu.fetchEcomCategories .syscomify-right-links {
+                list-style: none;
+                margin: 8px 0 0;
+                padding: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-sub-links {
+                margin-left: 14px;
+                padding-left: 14px;
+                border-left: 1px solid rgba(217, 58, 66, 0.24);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-sub-links li + li,
+            .o_mega_menu.fetchEcomCategories .syscomify-right-links li + li {
+                margin-top: 8px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-sub-link,
+            .o_mega_menu.fetchEcomCategories .syscomify-right-link {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                width: 100%;
+                min-height: 38px;
+                padding: 10px 12px;
+                border-radius: 10px;
+                color: #eadfda !important;
+                text-decoration: none !important;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                transition: 0.18s ease;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-sub-link:hover,
+            .o_mega_menu.fetchEcomCategories .syscomify-sub-link:focus,
+            .o_mega_menu.fetchEcomCategories .syscomify-right-link:hover,
+            .o_mega_menu.fetchEcomCategories .syscomify-right-link:focus {
+                background: rgba(186, 31, 42, 0.14);
+                border-color: rgba(217, 58, 66, 0.22);
+                color: #fff !important;
+                outline: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-card {
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(186, 31, 42, 0.04));
+                border-radius: 16px;
+                padding: 18px;
+                margin-bottom: 16px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-card-label {
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: #c9a39d;
+                margin-bottom: 8px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-card-title {
+                color: #fff8f4;
+                font-size: 22px;
+                line-height: 1.2;
+                margin: 0 0 8px;
+                font-weight: 700;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-card-text {
+                color: #d0c0ba;
+                font-size: 14px;
+                line-height: 1.55;
+                margin-bottom: 14px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                min-height: 40px;
+                padding: 0 14px;
+                border-radius: 10px;
+                background: linear-gradient(90deg, #ba1f2a, #d93a42);
+                color: #fff !important;
+                text-decoration: none !important;
+                font-weight: 700;
+                box-shadow: 0 12px 24px rgba(186, 31, 42, 0.24);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-cta:hover {
+                filter: brightness(1.05);
+                color: #fff !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mini-title {
+                margin: 0 0 10px;
+                color: #f0e8e4;
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-chip-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-chip {
+                display: inline-flex;
+                align-items: center;
+                min-height: 34px;
+                padding: 0 10px;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.06);
+                color: #efe7e3 !important;
+                text-decoration: none !important;
+                font-size: 13px;
+                line-height: 1.2;
+                transition: 0.18s ease;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-chip:hover {
+                background: rgba(186, 31, 42, 0.16);
+                color: #fff !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-empty {
+                display: grid;
+                place-items: center;
+                min-height: 220px;
+                text-align: center;
+                color: #bcaea9;
+                padding: 24px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-source .nav-link {
+                color: inherit !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile {
+                scrollbar-width: thin;
+                scrollbar-color: rgba(186, 31, 42, 0.32) transparent;
+                scrollbar-gutter: stable;
+                touch-action: pan-y;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane::-webkit-scrollbar,
+            .o_mega_menu.fetchEcomCategories .syscomify-source::-webkit-scrollbar,
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane::-webkit-scrollbar-thumb,
+            .o_mega_menu.fetchEcomCategories .syscomify-source::-webkit-scrollbar-thumb,
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile::-webkit-scrollbar-thumb {
+                background: rgba(186, 31, 42, 0.26);
+                border-radius: 999px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile {
+                display: none;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-wrap {
+                position: sticky;
+                top: 0;
+                z-index: 2;
+                padding-bottom: 4px;
+                background: linear-gradient(180deg, rgba(20, 23, 28, 0.98), rgba(20, 23, 28, 0.9));
+                backdrop-filter: blur(10px);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-header {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 6px 0 14px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-title {
+                margin: 0.5rem 0.5rem;
+                color: #fff8f4;
+                font-size: 28px;
+                line-height: 1.1;
+                font-weight: 700;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-tools {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex: 0 0 auto;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-view-all,
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-back {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                min-height: 38px;
+                border-radius: 10px;
+                text-decoration: none !important;
+                font-weight: 600;
+                margin: 0.5rem 0.5rem;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-view-all {
+                padding: 0 14px;
+                background: linear-gradient(90deg, #375ed1, #4f77eb);
+                color: #fff !important;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-back {
+                padding: 12px 0 14px;
+                color: #d6c8c2 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-back:hover,
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-back:focus {
+                color: #fff !important;
+                outline: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-list {
+                list-style: none;
+                margin: 0;
+                padding: 10px 0 20px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-list li + li {
+                margin-top: 6px;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                width: 100%;
+                padding: 14px 12px;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.04);
+                color: #f2ebe7 !important;
+                text-decoration: none !important;
+                appearance: none;
+                -webkit-appearance: none;
+                text-align: left;
+                font: inherit;
+                cursor: pointer;
+                transition: 0.18s ease;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-item:hover,
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-item:focus {
+                background: rgba(186, 31, 42, 0.14);
+                border-color: rgba(217, 58, 66, 0.18);
+                color: #fff !important;
+                outline: 0;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-item-main {
+                min-width: 0;
+                flex: 1 1 auto;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-item-title {
+                display: block;
+                font-size: 15px;
+                line-height: 1.3;
+                font-weight: 600;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-item-meta {
+                display: block;
+                margin-top: 4px;
+                color: #bcaea9;
+                font-size: 12px;
+                line-height: 1.2;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-mobile-arrow {
+                flex: 0 0 auto;
+                color: #c7aaa5;
+                font-size: 16px;
+            }
+
+            @media (max-width: 991px) {
+                .o_mega_menu.fetchEcomCategories {
+                width: calc(100vw - 18px) !important;
+                max-width: calc(100vw - 18px) !important;
+                border-radius: 18px !important;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-topbar {
+                flex-wrap: wrap;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-toggle,
+                .o_mega_menu.fetchEcomCategories .syscomify-search {
+                width: 100%;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-shell {
+                grid-template-columns: 1fr;
+                min-height: 0;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-pane--left,
+                .o_mega_menu.fetchEcomCategories .syscomify-pane--center {
+                border-right: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-pane--left {
+                max-height: 240px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-pane--center,
+                .o_mega_menu.fetchEcomCategories .syscomify-pane--right {
+                max-height: 320px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-heading {
+                font-size: 22px;
+                }
+            }
+
+            @media (max-width: 991px) {
+                .o_mega_menu.fetchEcomCategories {
+                width: calc(100vw - 12px) !important;
+                max-width: calc(100vw - 12px) !important;
+                max-height: calc(100dvh - 12px) !important;
+                border-radius: 16px !important;
+                }
+
+                .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-app {
+                padding: 10px 10px 14px !important;
+                height: 100%;
+                overflow: hidden;
+                }
+
+                .o_mega_menu.fetchEcomCategories .s_mega_menu_odoo_menu.syscomify-mode-app .container {
+                display: flex;
+                flex-direction: column;
+                height: auto !important;
+                max-height: calc(100dvh - 40px);
+                min-height: 0;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-topbar {
+                gap: 10px;
+                margin-bottom: 10px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-search input,
+                .o_mega_menu.fetchEcomCategories .syscomify-toggle {
+                height: 38px;
+                border-radius: 10px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-toggle {
+                display: none;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-shell {
+                display: none !important;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-mobile {
+                display: block;
+                flex: 1 1 auto;
+                min-height: 0;
+                overflow-y: auto;
+                overscroll-behavior: contain;
+                -webkit-overflow-scrolling: touch;
+                padding-right: 2px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-mobile-title {
+                font-size: 18px;
+                max-width: 180px;
+                margin: 0.5rem 0.5rem;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-mobile-view-all {
+                min-height: 34px;
+                padding: 0 12px;
+                font-size: 12px;
+                margin: 0.5rem 0.5rem;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-mobile-back {
+                padding: 12px 0;
+                font-size: 13px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-mobile-list {
+                padding-top: 8px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-mobile-item {
+                padding: 14px 10px;
+                border-radius: 10px;
+                }
+
+                .o_mega_menu.fetchEcomCategories .syscomify-mobile-item-title {
+                font-size: 14px;
+                }
+            }
+        </style>    
+
+        <script type="text/javascript">
+            // 
+            (function () {
+            var MENU_SELECTOR = ".o_mega_menu.fetchEcomCategories";
+            var SECTION_SELECTOR = ".s_mega_menu_odoo_menu";
+            var PROCESSED_ATTR = "data-syscomified";
+            var MOBILE_BREAKPOINT = 991;
+            var CATEGORY_REFERENCE_TREE = [{"categoryId":"19","title":"Automatización e Intrusión","url":"/shop/category/automatizacion-e-intrusion-19","children":[{"categoryId":"20","title":"Paneles de Alarma y Accesorios Hikvision","url":"/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-20","children":[{"categoryId":"21","title":"AX HOME Series","url":"/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-ax-home-series-21","children":[]},{"categoryId":"22","title":"AX PRO Series","url":"/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-ax-pro-series-22","children":[]},{"categoryId":"37","title":"AX PRO KITs","url":"/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-ax-pro-kits-37","children":[]},{"categoryId":"196","title":"AX HUB Series","url":"/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-ax-hub-series-196","children":[]}]},{"categoryId":"23","title":"Accesorios","url":"/shop/category/automatizacion-e-intrusion-accesorios-23","children":[{"categoryId":"24","title":"Botones de Pánico","url":"/shop/category/automatizacion-e-intrusion-accesorios-botones-de-panico-24","children":[]},{"categoryId":"43","title":"Sirenas y Estrobos","url":"/shop/category/automatizacion-e-intrusion-accesorios-sirenas-y-estrobos-43","children":[]}]},{"categoryId":"25","title":"Contactos Magnéticos","url":"/shop/category/automatizacion-e-intrusion-contactos-magneticos-25","children":[{"categoryId":"26","title":"Contacto Magnético Inalámbrico","url":"/shop/category/automatizacion-e-intrusion-contactos-magneticos-contacto-magnetico-inalambrico-26","children":[]},{"categoryId":"80","title":"Contacto Magnético Cableado","url":"/shop/category/automatizacion-e-intrusion-contactos-magneticos-contacto-magnetico-cableado-80","children":[]}]},{"categoryId":"27","title":"Detectores / Sensores","url":"/shop/category/automatizacion-e-intrusion-detectores-sensores-27","children":[{"categoryId":"28","title":"Rotura de Vidrios y Cristales","url":"/shop/category/automatizacion-e-intrusion-detectores-sensores-rotura-de-vidrios-y-cristales-28","children":[]},{"categoryId":"29","title":"Movimiento para Exterior","url":"/shop/category/automatizacion-e-intrusion-detectores-sensores-movimiento-para-exterior-29","children":[]},{"categoryId":"30","title":"Movimiento para Interior","url":"/shop/category/automatizacion-e-intrusion-detectores-sensores-movimiento-para-interior-30","children":[]},{"categoryId":"142","title":"Humo","url":"/shop/category/automatizacion-e-intrusion-detectores-sensores-humo-142","children":[]},{"categoryId":"195","title":"Fotoeléctricos y Microondas","url":"/shop/category/automatizacion-e-intrusion-detectores-sensores-fotoelectricos-y-microondas-195","children":[]},{"categoryId":"197","title":"Temperatura","url":"/shop/category/automatizacion-e-intrusion-detectores-sensores-temperatura-197","children":[]}]},{"categoryId":"31","title":"Módulos de Expansión","url":"/shop/category/automatizacion-e-intrusion-modulos-de-expansion-31","children":[{"categoryId":"32","title":"Módulos de Expansión Cableado","url":"/shop/category/automatizacion-e-intrusion-modulos-de-expansion-modulos-de-expansion-cableado-32","children":[]},{"categoryId":"41","title":"Módulos de Expansión de Relevador/ PGM","url":"/shop/category/automatizacion-e-intrusion-modulos-de-expansion-modulos-de-expansion-de-relevador-pgm-41","children":[]},{"categoryId":"42","title":"Receptores Inalámbricos","url":"/shop/category/automatizacion-e-intrusion-modulos-de-expansion-receptores-inalambricos-42","children":[]}]},{"categoryId":"33","title":"Automatización - Casa Inteligente","url":"/shop/category/automatizacion-e-intrusion-automatizacion-casa-inteligente-33","children":[{"categoryId":"34","title":"Sensores y Relevadores","url":"/shop/category/automatizacion-e-intrusion-automatizacion-casa-inteligente-sensores-y-relevadores-34","children":[]},{"categoryId":"267","title":"Cámaras","url":"/shop/category/automatizacion-e-intrusion-automatizacion-casa-inteligente-camaras-267","children":[]}]},{"categoryId":"35","title":"Paneles de Alarma","url":"/shop/category/automatizacion-e-intrusion-paneles-de-alarma-35","children":[{"categoryId":"36","title":"Todos","url":"/shop/category/automatizacion-e-intrusion-paneles-de-alarma-todos-36","children":[]}]},{"categoryId":"44","title":"Teclados","url":"/shop/category/automatizacion-e-intrusion-teclados-44","children":[{"categoryId":"45","title":"Todos","url":"/shop/category/automatizacion-e-intrusion-teclados-todos-45","children":[]}]},{"categoryId":"63","title":"Cables","url":"/shop/category/automatizacion-e-intrusion-cables-63","children":[{"categoryId":"64","title":"Todos","url":"/shop/category/automatizacion-e-intrusion-cables-todos-64","children":[]}]},{"categoryId":"78","title":"Centrales de Monitoreo","url":"/shop/category/automatizacion-e-intrusion-centrales-de-monitoreo-78","children":[{"categoryId":"79","title":"Comunicadores","url":"/shop/category/automatizacion-e-intrusion-centrales-de-monitoreo-comunicadores-79","children":[]}]},{"categoryId":"108","title":"Cercas Eléctricas","url":"/shop/category/automatizacion-e-intrusion-cercas-electricas-108","children":[{"categoryId":"109","title":"Postes","url":"/shop/category/automatizacion-e-intrusion-cercas-electricas-postes-109","children":[]},{"categoryId":"143","title":"Energizadores","url":"/shop/category/automatizacion-e-intrusion-cercas-electricas-energizadores-143","children":[]},{"categoryId":"170","title":"Accesorios","url":"/shop/category/automatizacion-e-intrusion-cercas-electricas-accesorios-170","children":[]}]},{"categoryId":"113","title":"Energía","url":"/shop/category/automatizacion-e-intrusion-energia-113","children":[{"categoryId":"114","title":"Baterías","url":"/shop/category/automatizacion-e-intrusion-energia-baterias-114","children":[]},{"categoryId":"253","title":"Fuentes de Poder","url":"/shop/category/automatizacion-e-intrusion-energia-fuentes-de-poder-253","children":[]},{"categoryId":"254","title":"Transformadores","url":"/shop/category/automatizacion-e-intrusion-energia-transformadores-254","children":[]}]},{"categoryId":"212","title":"Herramientas","url":"/shop/category/automatizacion-e-intrusion-herramientas-212","children":[{"categoryId":"213","title":"Accesorios de Instalación","url":"/shop/category/automatizacion-e-intrusion-herramientas-accesorios-de-instalacion-213","children":[]}]},{"categoryId":"229","title":"Total Connect Honeywell","url":"/shop/category/automatizacion-e-intrusion-total-connect-honeywell-229","children":[{"categoryId":"230","title":"Automatización Z-WAVE","url":"/shop/category/automatizacion-e-intrusion-total-connect-honeywell-automatizacion-z-wave-230","children":[]}]}]},{"categoryId":"38","title":"Alarmas \u0026 Intrusión","url":"/shop/category/alarmas-intrusion-38","children":[{"categoryId":"39","title":"Alarmas","url":"/shop/category/alarmas-intrusion-alarmas-39","children":[{"categoryId":"40","title":"Teclados","url":"/shop/category/alarmas-intrusion-alarmas-teclados-40","children":[]},{"categoryId":"151","title":"Paquetes de Alarma","url":"/shop/category/alarmas-intrusion-alarmas-paquetes-de-alarma-151","children":[]},{"categoryId":"152","title":"Botones","url":"/shop/category/alarmas-intrusion-alarmas-botones-152","children":[]},{"categoryId":"154","title":"Comunicadores y Transmisores","url":"/shop/category/alarmas-intrusion-alarmas-comunicadores-y-transmisores-154","children":[]},{"categoryId":"155","title":"Sensores de Alarma","url":"/shop/category/alarmas-intrusion-alarmas-sensores-de-alarma-155","children":[]},{"categoryId":"160","title":"Accesorios - Alarmas","url":"/shop/category/alarmas-intrusion-alarmas-accesorios-alarmas-160","children":[]},{"categoryId":"162","title":"Módulos","url":"/shop/category/alarmas-intrusion-alarmas-modulos-162","children":[]},{"categoryId":"164","title":"Paneles","url":"/shop/category/alarmas-intrusion-alarmas-paneles-164","children":[]},{"categoryId":"168","title":"Sirenas","url":"/shop/category/alarmas-intrusion-alarmas-sirenas-168","children":[]},{"categoryId":"189","title":"Baterías de equipos DSC","url":"/shop/category/alarmas-intrusion-alarmas-baterias-de-equipos-dsc-189","children":[]},{"categoryId":"191","title":"Centrales de Monitoreo y Complementos","url":"/shop/category/alarmas-intrusion-alarmas-centrales-de-monitoreo-y-complementos-191","children":[]}]},{"categoryId":"193","title":"Automatización","url":"/shop/category/alarmas-intrusion-automatizacion-193","children":[{"categoryId":"194","title":"Control de Iluminación","url":"/shop/category/alarmas-intrusion-automatizacion-control-de-iluminacion-194","children":[]}]}]},{"categoryId":"46","title":"Videovigilancia","url":"/shop/category/videovigilancia-46","children":[{"categoryId":"47","title":"Energía","url":"/shop/category/videovigilancia-energia-47","children":[{"categoryId":"48","title":"Fuentes de Alimentación","url":"/shop/category/videovigilancia-energia-fuentes-de-alimentacion-48","children":[]},{"categoryId":"112","title":"Baterías","url":"/shop/category/videovigilancia-energia-baterias-112","children":[]},{"categoryId":"188","title":"UPS - No Break","url":"/shop/category/videovigilancia-energia-ups-no-break-188","children":[]},{"categoryId":"248","title":"Adaptadores de Pared","url":"/shop/category/videovigilancia-energia-adaptadores-de-pared-248","children":[]},{"categoryId":"249","title":"Transformadores","url":"/shop/category/videovigilancia-energia-transformadores-249","children":[]},{"categoryId":"256","title":"Fuentes de Alimentación con Respaldo","url":"/shop/category/videovigilancia-energia-fuentes-de-alimentacion-con-respaldo-256","children":[]},{"categoryId":"257","title":"Inyectores PoE","url":"/shop/category/videovigilancia-energia-inyectores-poe-257","children":[]}]},{"categoryId":"49","title":"Cables y Conectores","url":"/shop/category/videovigilancia-cables-y-conectores-49","children":[{"categoryId":"50","title":"Para Alimentación y Electricidad","url":"/shop/category/videovigilancia-cables-y-conectores-para-alimentacion-y-electricidad-50","children":[]},{"categoryId":"65","title":"Categoría 5e","url":"/shop/category/videovigilancia-cables-y-conectores-categoria-5e-65","children":[]},{"categoryId":"66","title":"Categoría 6","url":"/shop/category/videovigilancia-cables-y-conectores-categoria-6-66","children":[]},{"categoryId":"71","title":"VGA / DVI / HDMI","url":"/shop/category/videovigilancia-cables-y-conectores-vga-dvi-hdmi-71","children":[]},{"categoryId":"131","title":"Fibra Óptica","url":"/shop/category/videovigilancia-cables-y-conectores-fibra-optica-131","children":[]},{"categoryId":"202","title":"Categoría 6A","url":"/shop/category/videovigilancia-cables-y-conectores-categoria-6a-202","children":[]},{"categoryId":"243","title":"Audio y Video","url":"/shop/category/videovigilancia-cables-y-conectores-audio-y-video-243","children":[]}]},{"categoryId":"54","title":"Cámaras IP y NVRs","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-54","children":[{"categoryId":"55","title":"Bala","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-bala-55","children":[]},{"categoryId":"87","title":"Domo / Eyeball / Turret","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-domo-eyeball-turret-87","children":[]},{"categoryId":"99","title":"NVRs Network Video Recorders","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-nvrs-network-video-recorders-99","children":[]},{"categoryId":"136","title":"PTZ","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-ptz-136","children":[]},{"categoryId":"169","title":"Fisheye y Hemisféricas","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-fisheye-y-hemisfericas-169","children":[]},{"categoryId":"175","title":"Ocultas - Pinhole","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-ocultas-pinhole-175","children":[]},{"categoryId":"246","title":"Lente Motorizado","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-lente-motorizado-246","children":[]},{"categoryId":"266","title":"WiFi","url":"/shop/category/videovigilancia-camaras-ip-y-nvrs-wifi-266","children":[]}]},{"categoryId":"56","title":"Cámaras y DVRs HD TurboHD / AHD / HD-TVI","url":"/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-56","children":[{"categoryId":"57","title":"Bala","url":"/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-bala-57","children":[]},{"categoryId":"84","title":"Videograbadoras Analógicas - TurboHD TVI / AHD / CVI","url":"/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-videograbadoras-analogicas-turbohd-tvi-ahd-cvi-84","children":[]},{"categoryId":"103","title":"Domo / Eyeball / Turret","url":"/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-domo-eyeball-turret-103","children":[]},{"categoryId":"137","title":"Ocultas - Pinhole","url":"/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-ocultas-pinhole-137","children":[]},{"categoryId":"247","title":"PTZ","url":"/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-ptz-247","children":[]}]},{"categoryId":"82","title":"Accesorios Generales","url":"/shop/category/videovigilancia-accesorios-generales-82","children":[{"categoryId":"83","title":"Montajes y Brackets para Cámaras","url":"/shop/category/videovigilancia-accesorios-generales-montajes-y-brackets-para-camaras-83","children":[]},{"categoryId":"92","title":"Kits Extensores, Convertidores , Divisores, HDMI, VGA, DVI","url":"/shop/category/videovigilancia-accesorios-generales-kits-extensores-convertidores-divisores-hdmi-vga-dvi-92","children":[]},{"categoryId":"93","title":"Transceptores de Video","url":"/shop/category/videovigilancia-accesorios-generales-transceptores-de-video-93","children":[]},{"categoryId":"128","title":"Cajas de Interconexión","url":"/shop/category/videovigilancia-accesorios-generales-cajas-de-interconexion-128","children":[]},{"categoryId":"153","title":"Controladores PTZ","url":"/shop/category/videovigilancia-accesorios-generales-controladores-ptz-153","children":[]},{"categoryId":"171","title":"Accesorios para Computadora y Smartphones","url":"/shop/category/videovigilancia-accesorios-generales-accesorios-para-computadora-y-smartphones-171","children":[]}]},{"categoryId":"85","title":"Servidores / Almacenamiento","url":"/shop/category/videovigilancia-servidores-almacenamiento-85","children":[{"categoryId":"86","title":"Discos Duros Mecánicos (HDD)","url":"/shop/category/videovigilancia-servidores-almacenamiento-discos-duros-mecanicos-hdd-86","children":[]},{"categoryId":"100","title":"Unidades de Estado Sólido (SSD)","url":"/shop/category/videovigilancia-servidores-almacenamiento-unidades-de-estado-solido-ssd-100","children":[]},{"categoryId":"242","title":"Accesorios","url":"/shop/category/videovigilancia-servidores-almacenamiento-accesorios-242","children":[]}]},{"categoryId":"94","title":"Videoporteros e Interfonos","url":"/shop/category/videovigilancia-videoporteros-e-interfonos-94","children":[{"categoryId":"95","title":"Videoporteros Analógicos","url":"/shop/category/videovigilancia-videoporteros-e-interfonos-videoporteros-analogicos-95","children":[]},{"categoryId":"163","title":"Interfones","url":"/shop/category/videovigilancia-videoporteros-e-interfonos-interfones-163","children":[]},{"categoryId":"226","title":"Accesorios","url":"/shop/category/videovigilancia-videoporteros-e-interfonos-accesorios-226","children":[]}]},{"categoryId":"110","title":"Kits- Sistemas Completos","url":"/shop/category/videovigilancia-kits-sistemas-completos-110","children":[{"categoryId":"111","title":"IP Megapixel","url":"/shop/category/videovigilancia-kits-sistemas-completos-ip-megapixel-111","children":[]},{"categoryId":"157","title":"TurboHD de 4 Canales","url":"/shop/category/videovigilancia-kits-sistemas-completos-turbohd-de-4-canales-157","children":[]},{"categoryId":"260","title":"TurboHD de 16 Canales","url":"/shop/category/videovigilancia-kits-sistemas-completos-turbohd-de-16-canales-260","children":[]},{"categoryId":"261","title":"TurboHD de 8 Canales","url":"/shop/category/videovigilancia-kits-sistemas-completos-turbohd-de-8-canales-261","children":[]}]},{"categoryId":"244","title":"Monitores Pantallas y Mobiliario","url":"/shop/category/videovigilancia-monitores-pantallas-y-mobiliario-244","children":[{"categoryId":"245","title":"Videowall Seguridad","url":"/shop/category/videovigilancia-monitores-pantallas-y-mobiliario-videowall-seguridad-245","children":[]}]}]},{"categoryId":"51","title":"Energía / Herramientas","url":"/shop/category/energia-herramientas-51","children":[{"categoryId":"52","title":"Ferreteria","url":"/shop/category/energia-herramientas-ferreteria-52","children":[{"categoryId":"53","title":"Terminales y Conectores Eléctricos","url":"/shop/category/energia-herramientas-ferreteria-terminales-y-conectores-electricos-53","children":[]}]},{"categoryId":"58","title":"Baterías y Cargadores","url":"/shop/category/energia-herramientas-baterias-y-cargadores-58","children":[{"categoryId":"59","title":"Baterías","url":"/shop/category/energia-herramientas-baterias-y-cargadores-baterias-59","children":[]}]},{"categoryId":"178","title":"Gabinetes y Cajas","url":"/shop/category/energia-herramientas-gabinetes-y-cajas-178","children":[{"categoryId":"179","title":"Glándulas y Accesorios","url":"/shop/category/energia-herramientas-gabinetes-y-cajas-glandulas-y-accesorios-179","children":[]}]}]},{"categoryId":"60","title":"Detección de Fuego","url":"/shop/category/deteccion-de-fuego-60","children":[{"categoryId":"61","title":"Fuentes de Alimentación","url":"/shop/category/deteccion-de-fuego-fuentes-de-alimentacion-61","children":[{"categoryId":"62","title":"Todo","url":"/shop/category/deteccion-de-fuego-fuentes-de-alimentacion-todo-62","children":[]}]},{"categoryId":"118","title":"Cables","url":"/shop/category/deteccion-de-fuego-cables-118","children":[{"categoryId":"119","title":"Todo","url":"/shop/category/deteccion-de-fuego-cables-todo-119","children":[]}]},{"categoryId":"145","title":"Accesorios y Dispositivos Direccionables","url":"/shop/category/deteccion-de-fuego-accesorios-y-dispositivos-direccionables-145","children":[{"categoryId":"146","title":"Fire-Lite","url":"/shop/category/deteccion-de-fuego-accesorios-y-dispositivos-direccionables-fire-lite-146","children":[]},{"categoryId":"190","title":"Todo","url":"/shop/category/deteccion-de-fuego-accesorios-y-dispositivos-direccionables-todo-190","children":[]}]},{"categoryId":"172","title":"Paneles de Incendio","url":"/shop/category/deteccion-de-fuego-paneles-de-incendio-172","children":[{"categoryId":"173","title":"Todo","url":"/shop/category/deteccion-de-fuego-paneles-de-incendio-todo-173","children":[]}]},{"categoryId":"181","title":"Notificación y Voceo","url":"/shop/category/deteccion-de-fuego-notificacion-y-voceo-181","children":[{"categoryId":"182","title":"Estrobos / Sirenas / Bocinas / Campanas","url":"/shop/category/deteccion-de-fuego-notificacion-y-voceo-estrobos-sirenas-bocinas-campanas-182","children":[]}]}]},{"categoryId":"67","title":"Control de Acceso","url":"/shop/category/control-de-acceso-67","children":[{"categoryId":"68","title":"Accesorios","url":"/shop/category/control-de-acceso-accesorios-68","children":[{"categoryId":"69","title":"Controles Inalámbricos","url":"/shop/category/control-de-acceso-accesorios-controles-inalambricos-69","children":[]},{"categoryId":"70","title":"Botones de Salida","url":"/shop/category/control-de-acceso-accesorios-botones-de-salida-70","children":[]},{"categoryId":"117","title":"Cables para Control de Acceso","url":"/shop/category/control-de-acceso-accesorios-cables-para-control-de-acceso-117","children":[]},{"categoryId":"184","title":"Tarjetas y Tags","url":"/shop/category/control-de-acceso-accesorios-tarjetas-y-tags-184","children":[]},{"categoryId":"223","title":"Bisagras","url":"/shop/category/control-de-acceso-accesorios-bisagras-223","children":[]},{"categoryId":"224","title":"Cierrapuertas","url":"/shop/category/control-de-acceso-accesorios-cierrapuertas-224","children":[]},{"categoryId":"225","title":"Pasacables","url":"/shop/category/control-de-acceso-accesorios-pasacables-225","children":[]},{"categoryId":"265","title":"Contactos Magnéticos","url":"/shop/category/control-de-acceso-accesorios-contactos-magneticos-265","children":[]}]},{"categoryId":"75","title":"Cerraduras","url":"/shop/category/control-de-acceso-cerraduras-75","children":[{"categoryId":"76","title":"Eléctricas","url":"/shop/category/control-de-acceso-cerraduras-electricas-76","children":[]},{"categoryId":"77","title":"Chapas Magnéticas","url":"/shop/category/control-de-acceso-cerraduras-chapas-magneticas-77","children":[]},{"categoryId":"81","title":"Contrachapas","url":"/shop/category/control-de-acceso-cerraduras-contrachapas-81","children":[]},{"categoryId":"104","title":"Accesorios","url":"/shop/category/control-de-acceso-cerraduras-accesorios-104","children":[]},{"categoryId":"228","title":"Autónomas / Inteligentes","url":"/shop/category/control-de-acceso-cerraduras-autonomas-inteligentes-228","children":[]},{"categoryId":"236","title":"De Perno","url":"/shop/category/control-de-acceso-cerraduras-de-perno-236","children":[]}]},{"categoryId":"88","title":"Videoporteros e Interfonos","url":"/shop/category/control-de-acceso-videoporteros-e-interfonos-88","children":[{"categoryId":"89","title":"Videoporteros IP","url":"/shop/category/control-de-acceso-videoporteros-e-interfonos-videoporteros-ip-89","children":[]},{"categoryId":"240","title":"Intercomunicadores","url":"/shop/category/control-de-acceso-videoporteros-e-interfonos-intercomunicadores-240","children":[]},{"categoryId":"241","title":"Multiapartamentos","url":"/shop/category/control-de-acceso-videoporteros-e-interfonos-multiapartamentos-241","children":[]}]},{"categoryId":"90","title":"Fuentes de Alimentación","url":"/shop/category/control-de-acceso-fuentes-de-alimentacion-90","children":[{"categoryId":"91","title":"Fuentes de Respaldo","url":"/shop/category/control-de-acceso-fuentes-de-alimentacion-fuentes-de-respaldo-91","children":[]},{"categoryId":"192","title":"Baterías","url":"/shop/category/control-de-acceso-fuentes-de-alimentacion-baterias-192","children":[]},{"categoryId":"255","title":"Transformadores","url":"/shop/category/control-de-acceso-fuentes-de-alimentacion-transformadores-255","children":[]}]},{"categoryId":"101","title":"Teclados Autónomos","url":"/shop/category/control-de-acceso-teclados-autonomos-101","children":[{"categoryId":"102","title":"Todos","url":"/shop/category/control-de-acceso-teclados-autonomos-todos-102","children":[]}]},{"categoryId":"115","title":"Biométricos","url":"/shop/category/control-de-acceso-biometricos-115","children":[{"categoryId":"116","title":"Para Control de Acceso","url":"/shop/category/control-de-acceso-biometricos-para-control-de-acceso-116","children":[]},{"categoryId":"144","title":"Enroladores y Lectores USB","url":"/shop/category/control-de-acceso-biometricos-enroladores-y-lectores-usb-144","children":[]},{"categoryId":"227","title":"Para Tiempo y Asistencia / Checadores","url":"/shop/category/control-de-acceso-biometricos-para-tiempo-y-asistencia-checadores-227","children":[]}]},{"categoryId":"134","title":"Paneles de Control de Acceso","url":"/shop/category/control-de-acceso-paneles-de-control-de-acceso-134","children":[{"categoryId":"135","title":"Controladores de Acceso","url":"/shop/category/control-de-acceso-paneles-de-control-de-acceso-controladores-de-acceso-135","children":[]},{"categoryId":"233","title":"Accesorios","url":"/shop/category/control-de-acceso-paneles-de-control-de-acceso-accesorios-233","children":[]}]},{"categoryId":"165","title":"Lectoras y Tarjetas","url":"/shop/category/control-de-acceso-lectoras-y-tarjetas-165","children":[{"categoryId":"166","title":"Proximidad (125 KHz)","url":"/shop/category/control-de-acceso-lectoras-y-tarjetas-proximidad-125-khz-166","children":[]},{"categoryId":"167","title":"MIFARE®/iCLASS (13.56 MHz)","url":"/shop/category/control-de-acceso-lectoras-y-tarjetas-mifareiclass-1356-mhz-167","children":[]},{"categoryId":"237","title":"NFC","url":"/shop/category/control-de-acceso-lectoras-y-tarjetas-nfc-237","children":[]},{"categoryId":"238","title":"Bluetooth","url":"/shop/category/control-de-acceso-lectoras-y-tarjetas-bluetooth-238","children":[]},{"categoryId":"239","title":"QR","url":"/shop/category/control-de-acceso-lectoras-y-tarjetas-qr-239","children":[]}]},{"categoryId":"198","title":"Control de Rondas Para Vigilantes","url":"/shop/category/control-de-acceso-control-de-rondas-para-vigilantes-198","children":[{"categoryId":"199","title":"Todos","url":"/shop/category/control-de-acceso-control-de-rondas-para-vigilantes-todos-199","children":[]}]},{"categoryId":"210","title":"Herramientas","url":"/shop/category/control-de-acceso-herramientas-210","children":[{"categoryId":"211","title":"Accesorios de Instalación","url":"/shop/category/control-de-acceso-herramientas-accesorios-de-instalacion-211","children":[]}]},{"categoryId":"231","title":"Administración de Hoteles","url":"/shop/category/control-de-acceso-administracion-de-hoteles-231","children":[{"categoryId":"232","title":"Todos","url":"/shop/category/control-de-acceso-administracion-de-hoteles-todos-232","children":[]}]},{"categoryId":"234","title":"Acceso vehicular","url":"/shop/category/control-de-acceso-acceso-vehicular-234","children":[{"categoryId":"235","title":"Accesorios","url":"/shop/category/control-de-acceso-acceso-vehicular-accesorios-235","children":[]}]}]},{"categoryId":"72","title":"Cableado Estructurado","url":"/shop/category/cableado-estructurado-72","children":[{"categoryId":"73","title":"Canalización","url":"/shop/category/cableado-estructurado-canalizacion-73","children":[{"categoryId":"74","title":"Tubería PVC / Registros PVC","url":"/shop/category/cableado-estructurado-canalizacion-tuberia-pvc-registros-pvc-74","children":[]},{"categoryId":"130","title":"Canaletas","url":"/shop/category/cableado-estructurado-canalizacion-canaletas-130","children":[]}]},{"categoryId":"123","title":"Cableado de Cobre","url":"/shop/category/cableado-estructurado-cableado-de-cobre-123","children":[{"categoryId":"124","title":"Jacks / Plugs","url":"/shop/category/cableado-estructurado-cableado-de-cobre-jacks-plugs-124","children":[]},{"categoryId":"127","title":"Patch Cords","url":"/shop/category/cableado-estructurado-cableado-de-cobre-patch-cords-127","children":[]},{"categoryId":"129","title":"Cajas Superficiales","url":"/shop/category/cableado-estructurado-cableado-de-cobre-cajas-superficiales-129","children":[]},{"categoryId":"174","title":"Patch Panels","url":"/shop/category/cableado-estructurado-cableado-de-cobre-patch-panels-174","children":[]},{"categoryId":"176","title":"Faceplates","url":"/shop/category/cableado-estructurado-cableado-de-cobre-faceplates-176","children":[]}]},{"categoryId":"148","title":"Racks y Gabinetes","url":"/shop/category/cableado-estructurado-racks-y-gabinetes-148","children":[{"categoryId":"149","title":"Gabinetes para Montaje en Pared","url":"/shop/category/cableado-estructurado-racks-y-gabinetes-gabinetes-para-montaje-en-pared-149","children":[]},{"categoryId":"150","title":"Racks Cerrados","url":"/shop/category/cableado-estructurado-racks-y-gabinetes-racks-cerrados-150","children":[]},{"categoryId":"156","title":"Accesorios para Rack/Gabinetes","url":"/shop/category/cableado-estructurado-racks-y-gabinetes-accesorios-para-rackgabinetes-156","children":[]},{"categoryId":"222","title":"Racks Abiertos","url":"/shop/category/cableado-estructurado-racks-y-gabinetes-racks-abiertos-222","children":[]}]},{"categoryId":"200","title":"Cable - Bobinas","url":"/shop/category/cableado-estructurado-cable-bobinas-200","children":[{"categoryId":"201","title":"Categoría 6","url":"/shop/category/cableado-estructurado-cable-bobinas-categoria-6-201","children":[]},{"categoryId":"203","title":"Categoría 6A","url":"/shop/category/cableado-estructurado-cable-bobinas-categoria-6a-203","children":[]},{"categoryId":"204","title":"Categoría 7A","url":"/shop/category/cableado-estructurado-cable-bobinas-categoria-7a-204","children":[]}]},{"categoryId":"205","title":"PDU","url":"/shop/category/cableado-estructurado-pdu-205","children":[{"categoryId":"206","title":"Básicos","url":"/shop/category/cableado-estructurado-pdu-basicos-206","children":[]}]}]},{"categoryId":"96","title":"Audio y Video Profesional","url":"/shop/category/audio-y-video-profesional-96","children":[{"categoryId":"97","title":"Distribución de Video","url":"/shop/category/audio-y-video-profesional-distribucion-de-video-97","children":[{"categoryId":"98","title":"AV sobre IP","url":"/shop/category/audio-y-video-profesional-distribucion-de-video-av-sobre-ip-98","children":[]}]}]},{"categoryId":"105","title":"Redes e IT","url":"/shop/category/redes-e-it-105","children":[{"categoryId":"106","title":"Redes WiFi","url":"/shop/category/redes-e-it-redes-wifi-106","children":[{"categoryId":"107","title":"Puntos de Acceso","url":"/shop/category/redes-e-it-redes-wifi-puntos-de-acceso-107","children":[]},{"categoryId":"177","title":"Repetidores de Señal","url":"/shop/category/redes-e-it-redes-wifi-repetidores-de-senal-177","children":[]}]},{"categoryId":"125","title":"Networking","url":"/shop/category/redes-e-it-networking-125","children":[{"categoryId":"126","title":"Inyectores PoE","url":"/shop/category/redes-e-it-networking-inyectores-poe-126","children":[]},{"categoryId":"141","title":"Switches PoE","url":"/shop/category/redes-e-it-networking-switches-poe-141","children":[]},{"categoryId":"180","title":"Routers, Firewalls, Balanceadores","url":"/shop/category/redes-e-it-networking-routers-firewalls-balanceadores-180","children":[]},{"categoryId":"183","title":"Switches","url":"/shop/category/redes-e-it-networking-switches-183","children":[]},{"categoryId":"187","title":"Transceptores de Fibra","url":"/shop/category/redes-e-it-networking-transceptores-de-fibra-187","children":[]},{"categoryId":"252","title":"Industrial","url":"/shop/category/redes-e-it-networking-industrial-252","children":[]},{"categoryId":"258","title":"PoE de Largo Alcance","url":"/shop/category/redes-e-it-networking-poe-de-largo-alcance-258","children":[]},{"categoryId":"259","title":"Convertidores de Medios","url":"/shop/category/redes-e-it-networking-convertidores-de-medios-259","children":[]}]},{"categoryId":"132","title":"Racks y Gabinetes","url":"/shop/category/redes-e-it-racks-y-gabinetes-132","children":[{"categoryId":"133","title":"Accesorios para Racks y Gabinetes","url":"/shop/category/redes-e-it-racks-y-gabinetes-accesorios-para-racks-y-gabinetes-133","children":[]},{"categoryId":"147","title":"Gabinetes para Intemperie","url":"/shop/category/redes-e-it-racks-y-gabinetes-gabinetes-para-intemperie-147","children":[]},{"categoryId":"218","title":"Gabinetes Uso Múltiple","url":"/shop/category/redes-e-it-racks-y-gabinetes-gabinetes-uso-multiple-218","children":[]},{"categoryId":"220","title":"Racks Cerrados","url":"/shop/category/redes-e-it-racks-y-gabinetes-racks-cerrados-220","children":[]},{"categoryId":"221","title":"Racks Abiertos","url":"/shop/category/redes-e-it-racks-y-gabinetes-racks-abiertos-221","children":[]}]},{"categoryId":"138","title":"VoIP - Telefonía IP - Videoconferencia","url":"/shop/category/redes-e-it-voip-telefonia-ip-videoconferencia-138","children":[{"categoryId":"139","title":"Audio/Video Conferencia","url":"/shop/category/redes-e-it-voip-telefonia-ip-videoconferencia-audiovideo-conferencia-139","children":[]}]},{"categoryId":"158","title":"Enlaces PtP y PtMP","url":"/shop/category/redes-e-it-enlaces-ptp-y-ptmp-158","children":[{"categoryId":"159","title":"5 y 6 GHz","url":"/shop/category/redes-e-it-enlaces-ptp-y-ptmp-5-y-6-ghz-159","children":[]},{"categoryId":"161","title":"2.4 GHz","url":"/shop/category/redes-e-it-enlaces-ptp-y-ptmp-24-ghz-161","children":[]}]},{"categoryId":"185","title":"Redes FTTH/PON","url":"/shop/category/redes-e-it-redes-ftthpon-185","children":[{"categoryId":"186","title":"Herrajes","url":"/shop/category/redes-e-it-redes-ftthpon-herrajes-186","children":[]}]}]},{"categoryId":"120","title":"IoT / GPS / Telemática y Señalización Audiovisual","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-120","children":[{"categoryId":"121","title":"Videograbadoras Móviles y Portátiles","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-videograbadoras-moviles-y-portatiles-121","children":[{"categoryId":"122","title":"Videograbadoras Portátiles","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-videograbadoras-moviles-y-portatiles-videograbadoras-portatiles-122","children":[]},{"categoryId":"140","title":"Videograbadoras Móviles","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-videograbadoras-moviles-y-portatiles-videograbadoras-moviles-140","children":[]}]},{"categoryId":"214","title":"Luces Auxiliares para Motocicletas","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-luces-auxiliares-para-motocicletas-214","children":[{"categoryId":"215","title":"Accesorios-Refacciones","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-luces-auxiliares-para-motocicletas-accesorios-refacciones-215","children":[]}]},{"categoryId":"262","title":"Estrobos / Burbujas Vehiculares","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-estrobos-burbujas-vehiculares-262","children":[{"categoryId":"263","title":"Rojo-Azul-Verde","url":"/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-estrobos-burbujas-vehiculares-rojo-azul-verde-263","children":[]}]}]},{"categoryId":"207","title":"Radiocomunicación","url":"/shop/category/radiocomunicacion-207","children":[{"categoryId":"208","title":"Racks y Gabinetes","url":"/shop/category/radiocomunicacion-racks-y-gabinetes-208","children":[{"categoryId":"209","title":"Accesorios para Racks y Gabinetes","url":"/shop/category/radiocomunicacion-racks-y-gabinetes-accesorios-para-racks-y-gabinetes-209","children":[]},{"categoryId":"219","title":"Gabinetes Uso Múltiple","url":"/shop/category/radiocomunicacion-racks-y-gabinetes-gabinetes-uso-multiple-219","children":[]}]},{"categoryId":"216","title":"Torres y Mástiles","url":"/shop/category/radiocomunicacion-torres-y-mastiles-216","children":[{"categoryId":"217","title":"Accesorios para Torres Arriostradas","url":"/shop/category/radiocomunicacion-torres-y-mastiles-accesorios-para-torres-arriostradas-217","children":[]},{"categoryId":"264","title":"Lámparas de Obstrucción","url":"/shop/category/radiocomunicacion-torres-y-mastiles-lamparas-de-obstruccion-264","children":[]}]},{"categoryId":"250","title":"Energía","url":"/shop/category/radiocomunicacion-energia-250","children":[{"categoryId":"251","title":"Fuentes Industriales de CD","url":"/shop/category/radiocomunicacion-energia-fuentes-industriales-de-cd-251","children":[]}]}]}];
+
+            function cleanText(value) {
+                return (value || "").replace(/\s+/g, " ").trim();
+            }
+
+            function makeEl(tag, className, text) {
+                var el = document.createElement(tag);
+                if (className) el.className = className;
+                if (typeof text === "string") el.textContent = text;
+                return el;
+            }
+
+            function getCategoryId(url) {
+                var match = (url || "").match(/-(\d+)(?:[/?#]|$)/);
+                return match ? match[1] : "";
+            }
+
+            function findDirectChild(node, tagNames) {
+                var names = Array.isArray(tagNames) ? tagNames : [tagNames];
+                names = names.map(function (tagName) {
+                return tagName.toUpperCase();
+                });
+
+                return Array.from(node.children).find(function (child) {
+                return names.indexOf(child.tagName) !== -1;
+                }) || null;
+            }
+
+            function findDirectLink(node) {
+                return Array.from(node.children).find(function (child) {
+                return child.tagName === "A" &amp;&amp; child.hasAttribute("href");
+                }) || null;
+            }
+
+            function getNodeChildren(node) {
+                if (!node) return [];
+                if (node.children &amp;&amp; node.children.length) {
+                return node.children;
+                }
+
+                var refNode = node.categoryId ? CATEGORY_REFERENCE_BY_ID[node.categoryId] : null;
+                return (refNode &amp;&amp; refNode.children || []).map(function (child, idx) {
+                return cloneReferenceNode(child, (node.id || "node") + "-child-" + idx);
+                });
+            }
+
+            function getSectionLinks(section) {
+                if (!section) return [];
+                var refNode = section.categoryId ? CATEGORY_REFERENCE_BY_ID[section.categoryId] : null;
+                if (refNode &amp;&amp; refNode.children &amp;&amp; refNode.children.length) {
+                if (section.links &amp;&amp; section.links.length) {
+                    return normalizeSectionLinks(
+                    section,
+                    mergeNodes(
+                        section.links,
+                        refNode.children,
+                        (section.id || "section") + "-runtime"
+                    )
+                    );
+                }
+
+                return refNode.children.map(function (child, idx) {
+                    return cloneReferenceNode(child, (section.id || "section") + "-link-" + idx);
+                });
+                }
+
+                return (section.links || []).map(function (child, idx) {
+                return cloneReferenceNode(child, (section.id || "section") + "-link-" + idx);
+                });
+            }
+
+            function flattenLinkTitles(link) {
+                var titles = [link.title];
+                getNodeChildren(link).forEach(function (child) {
+                titles.push(flattenLinkTitles(child));
+                });
+                return titles.join(" ");
+            }
+
+            function linkMatchesTerm(link, term) {
+                if (!term) return true;
+                return flattenLinkTitles(link).toLowerCase().indexOf(term) !== -1;
+            }
+
+            function matchesTerm(section, term) {
+                if (!term) return true;
+                var haystack = (
+                section.title + " " + getSectionLinks(section).map(function (link) {
+                    return flattenLinkTitles(link);
+                }).join(" ")
+                ).toLowerCase();
+                return haystack.indexOf(term) !== -1;
+            }
+
+            function filteredLinks(section, term) {
+                var links = getSectionLinks(section);
+                if (!term) return links.slice();
+                return links.filter(function (link) {
+                return linkMatchesTerm(link, term);
+                });
+            }
+
+            function buildTreeFromList(listEl, sectionIndex, trail) {
+                return Array.from(listEl.children)
+                .map(function (itemEl, itemIndex) {
+                    if (itemEl.tagName !== "LI") return null;
+                    return buildTreeNode(itemEl, sectionIndex, trail + "-" + itemIndex);
+                })
+                .filter(Boolean);
+            }
+
+            function buildTreeNode(itemEl, sectionIndex, trail) {
+                var linkEl = findDirectLink(itemEl) || itemEl.querySelector("a[href]");
+                if (!linkEl) return null;
+
+                var title = cleanText(linkEl.textContent);
+                if (!title) return null;
+
+                var href = linkEl.getAttribute("href") || linkEl.href || "";
+                var categoryId = getCategoryId(href);
+                var nestedList = findDirectChild(itemEl, ["UL", "OL"]);
+
+                return {
+                id: categoryId ? "cat-" + categoryId : "sec-" + sectionIndex + trail,
+                categoryId: categoryId || null,
+                title: title,
+                url: linkEl.href,
+                children: nestedList ? buildTreeFromList(nestedList, sectionIndex, trail) : []
+                };
+            }
+
+            function buildLinkTreeFromIndent(col, sectionIndex) {
+                var anchors = Array.from(col.querySelectorAll("nav a[href]"))
+                .map(function (anchor, linkIndex) {
+                    var title = cleanText(anchor.textContent);
+                    if (!title) return null;
+                    var href = anchor.getAttribute("href") || anchor.href || "";
+                    var categoryId = getCategoryId(href);
+
+                    return {
+                    id: categoryId ? "cat-" + categoryId : "sec-" + sectionIndex + "-link-" + linkIndex,
+                    categoryId: categoryId || null,
+                    title: title,
+                    url: anchor.href,
+                    anchor: anchor
+                    };
+                })
+                .filter(Boolean);
+
+                if (!anchors.length) return [];
+
+                var colLeft = col.getBoundingClientRect().left;
+                var indents = anchors.map(function (item) {
+                    var rect = item.anchor.getBoundingClientRect();
+                    return Math.max(0, Math.round(rect.left - colLeft));
+                });
+
+                var buckets = [];
+                indents.forEach(function (indent) {
+                    var hasBucket = buckets.some(function (value) {
+                    return Math.abs(value - indent) &lt; 14;
+                    });
+
+                    if (!hasBucket) {
+                    buckets.push(indent);
+                    }
+                });
+
+                buckets.sort(function (a, b) {
+                    return a - b;
+                });
+
+                var root = [];
+                var stack = [];
+
+                anchors.forEach(function (item, index) {
+                    var level = buckets.findIndex(function (value) {
+                    return Math.abs(value - indents[index]) &lt; 14;
+                    });
+
+                    var node = {
+                    id: item.id,
+                    title: item.title,
+                    url: item.url,
+                    children: []
+                    };
+
+                    while (stack.length &amp;&amp; stack[stack.length - 1].level &gt;= level) {
+                    stack.pop();
+                    }
+
+                    if (level &lt;= 0 || !stack.length) {
+                    root.push(node);
+                    } else {
+                    stack[stack.length - 1].node.children.push(node);
+                    }
+
+                    stack.push({
+                    level: level,
+                    node: node
+                    });
+                });
+
+                return root;
+            }
+
+            function buildLinkTree(col, sectionIndex) {
+                var nav = col.querySelector("nav");
+                var nestedList = nav &amp;&amp; findDirectChild(nav, ["UL", "OL"]);
+                var semanticTree = nestedList ? buildTreeFromList(nestedList, sectionIndex, "") : [];
+
+                if (semanticTree.length) {
+                return semanticTree;
+                }
+
+                return buildLinkTreeFromIndent(col, sectionIndex);
+            }
+
+            function parseSections(row) {
+                return Array.from(row.children)
+                .map(function (col, sectionIndex) {
+                    var titleLink = col.querySelector("h4 a[href]");
+                    if (!titleLink) return null;
+
+                    return {
+                    id: "sec-" + sectionIndex,
+                    categoryId: getCategoryId(titleLink.getAttribute("href") || titleLink.href) || null,
+                    title: cleanText(titleLink.textContent),
+                    url: titleLink.href,
+                    links: buildLinkTree(col, sectionIndex)
+                    };
+                })
+                .filter(function (section) {
+                    return section &amp;&amp; section.title;
+                });
+            }
+
+            function indexReferenceNodes(nodes, registry) {
+                (nodes || []).forEach(function (node) {
+                if (node &amp;&amp; node.categoryId) {
+                    registry[node.categoryId] = node;
+                }
+                indexReferenceNodes(node &amp;&amp; node.children, registry);
+                });
+                return registry;
+            }
+
+            var CATEGORY_REFERENCE_BY_ID = indexReferenceNodes(CATEGORY_REFERENCE_TREE, Object.create(null));
+
+            function cloneReferenceNode(node, fallbackId) {
+                return {
+                id: node.categoryId ? "cat-" + node.categoryId : fallbackId,
+                categoryId: node.categoryId || null,
+                title: cleanText(node.title),
+                url: node.url,
+                children: (node.children || []).map(function (child, idx) {
+                    return cloneReferenceNode(child, fallbackId + "-" + idx);
+                })
+                };
+            }
+
+            function getNodeKey(node) {
+                return (node &amp;&amp; (node.categoryId || getCategoryId(node.url) || cleanText(node.title).toLowerCase())) || "";
+            }
+
+            function normalizePath(url) {
+                if (!url) return "";
+                try {
+                return new URL(url, window.location.origin).pathname.replace(/\/+$/, "");
+                } catch (err) {
+                return String(url)
+                    .replace(/^https?:\/\/[^/]+/i, "")
+                    .replace(/[?#].*$/, "")
+                    .replace(/\/+$/, "");
+                }
+            }
+
+            function isSameCategory(leftNode, rightNode) {
+                if (!leftNode || !rightNode) return false;
+                if (leftNode.categoryId &amp;&amp; rightNode.categoryId) {
+                return leftNode.categoryId === rightNode.categoryId;
+                }
+
+                var leftPath = normalizePath(leftNode.url);
+                var rightPath = normalizePath(rightNode.url);
+                if (leftPath &amp;&amp; rightPath) {
+                return leftPath === rightPath;
+                }
+
+                return cleanText(leftNode.title).toLowerCase() === cleanText(rightNode.title).toLowerCase();
+            }
+
+            function getPreferredLinkIndex(links) {
+                if (!links || !links.length) return 0;
+                var firstWithChildren = links.findIndex(function (link) {
+                return getNodeChildren(link).length &gt; 0;
+                });
+                return firstWithChildren &gt; -1 ? firstWithChildren : 0;
+            }
+
+            function normalizeSectionLinks(section, links) {
+                return (links || []).filter(function (link) {
+                return !isSameCategory(section, link);
+                });
+            }
+
+            function mergeNodes(existingNodes, referenceNodes, prefix) {
+                var existingByKey = Object.create(null);
+                (existingNodes || []).forEach(function (node) {
+                    var key = getNodeKey(node);
+                    if (key) {
+                    existingByKey[key] = node;
+                    }
+                });
+
+                var merged = [];
+
+                (referenceNodes || []).forEach(function (refNode, idx) {
+                    var refKey = getNodeKey(refNode);
+                    var existingNode = refKey ? existingByKey[refKey] : null;
+                    var baseNode = existingNode || cloneReferenceNode(refNode, prefix + "-" + idx);
+
+                    merged.push({
+                    id: baseNode.id || (refNode.categoryId ? "cat-" + refNode.categoryId : prefix + "-" + idx),
+                    categoryId: baseNode.categoryId || refNode.categoryId || getCategoryId(baseNode.url || refNode.url) || null,
+                    title: cleanText(baseNode.title || refNode.title),
+                    url: baseNode.url || refNode.url,
+                    children: mergeNodes(baseNode.children || [], refNode.children || [], prefix + "-" + idx)
+                    });
+
+                    if (refKey) {
+                    delete existingByKey[refKey];
+                    }
+                });
+
+                Object.keys(existingByKey).forEach(function (key) {
+                    merged.push(existingByKey[key]);
+                });
+
+                return merged;
+            }
+
+            function enrichSections(sections) {
+                return (sections || []).map(function (section, index) {
+                var refNode = section.categoryId ? CATEGORY_REFERENCE_BY_ID[section.categoryId] : null;
+                if (!refNode) return section;
+
+                return {
+                    id: section.id,
+                    categoryId: section.categoryId,
+                    title: cleanText(section.title || refNode.title),
+                    url: section.url || refNode.url,
+                    links: normalizeSectionLinks(
+                    section,
+                    mergeNodes(section.links || [], refNode.children || [], "sec-" + index + "-ref")
+                    )
+                };
+                });
+            }
+
+            function indexNodesByCategoryId(nodes) {
+                var registry = Object.create(null);
+                (nodes || []).forEach(function (node) {
+                if (node &amp;&amp; node.categoryId) {
+                    registry[node.categoryId] = node;
+                }
+                });
+                return registry;
+            }
+
+            function buildSectionsFromReference(parsedSections) {
+                if (!CATEGORY_REFERENCE_TREE || CATEGORY_REFERENCE_TREE.length &lt; 2) {
+                return enrichSections(parsedSections || []);
+                }
+
+                var parsedById = indexNodesByCategoryId(parsedSections || []);
+
+                return CATEGORY_REFERENCE_TREE.map(function (refNode, index) {
+                var parsedSection = parsedById[refNode.categoryId] || null;
+                var sectionBase = {
+                    id: parsedSection &amp;&amp; parsedSection.id ? parsedSection.id : "sec-" + index,
+                    categoryId: refNode.categoryId || null,
+                    title: cleanText((parsedSection &amp;&amp; parsedSection.title) || refNode.title),
+                    url: (parsedSection &amp;&amp; parsedSection.url) || refNode.url,
+                    links: mergeNodes(
+                    (parsedSection &amp;&amp; parsedSection.links) || [],
+                    refNode.children || [],
+                    "sec-" + index + "-ref"
+                    )
+                };
+
+                sectionBase.links = normalizeSectionLinks(sectionBase, sectionBase.links);
+                return sectionBase;
+                }).filter(function (section) {
+                return section &amp;&amp; section.title;
+                });
+            }
+
+            function buildInteractiveMenu(sectionEl, sections) {
+                var sourceRow = sectionEl.querySelector(".row");
+                if (!sourceRow || sections.length &lt; 2) return;
+                if (sectionEl.querySelector(".syscomify-shell")) return;
+
+                sectionEl.classList.add("syscomify-mode-app");
+                sourceRow.classList.add("syscomify-source");
+
+                var topbar = makeEl("div", "syscomify-topbar");
+
+                var searchWrap = makeEl("div", "syscomify-search");
+                var searchInput = document.createElement("input");
+                searchInput.type = "search";
+                searchInput.placeholder = "Buscar en el menú";
+                searchInput.setAttribute("autocomplete", "off");
+                searchWrap.appendChild(searchInput);
+
+                var toggleBtn = makeEl("button", "syscomify-toggle", "Clásico");
+                toggleBtn.type = "button";
+
+                topbar.appendChild(searchWrap);
+                topbar.appendChild(toggleBtn);
+
+                var shell = makeEl("div", "syscomify-shell");
+
+                var leftPane = makeEl("aside", "syscomify-pane syscomify-pane--left");
+                var leftList = makeEl("ul", "syscomify-list");
+                leftPane.appendChild(leftList);
+
+                var centerPane = makeEl("section", "syscomify-pane syscomify-pane--center");
+                var centerHeading = makeEl("h3", "syscomify-heading");
+                var centerSubtitle = makeEl("div", "syscomify-subtitle");
+                var centerLinks = makeEl("ul", "syscomify-links");
+                centerPane.appendChild(centerHeading);
+                centerPane.appendChild(centerSubtitle);
+                centerPane.appendChild(centerLinks);
+
+                var rightPane = makeEl("aside", "syscomify-pane syscomify-pane--right");
+                shell.appendChild(leftPane);
+                shell.appendChild(centerPane);
+                shell.appendChild(rightPane);
+
+                var mobilePane = makeEl("section", "syscomify-mobile");
+
+                sourceRow.parentNode.insertBefore(topbar, sourceRow);
+                sourceRow.parentNode.insertBefore(shell, sourceRow.nextSibling);
+                sourceRow.parentNode.insertBefore(mobilePane, shell.nextSibling);
+
+                var state = {
+                term: "",
+                sectionIndex: 0,
+                linkIndex: 0,
+                mobilePath: []
+                };
+
+                function setActiveSection(index, sectionList) {
+                var sourceSections = sectionList || sections;
+                var targetSection = sourceSections[index] || sourceSections[0];
+                state.sectionIndex = index;
+                state.linkIndex = getPreferredLinkIndex(filteredLinks(targetSection, state.term.toLowerCase()));
+                }
+
+                function currentView() {
+                var term = state.term.toLowerCase();
+                var visibleSections = sections.filter(function (section) {
+                    return matchesTerm(section, term);
+                });
+
+                if (!visibleSections.length) {
+                    return {
+                    sections: [],
+                    section: null,
+                    links: [],
+                    selectedLink: null
+                    };
+                }
+
+                if (state.sectionIndex &gt; visibleSections.length - 1) {
+                    state.sectionIndex = 0;
+                }
+
+                var activeSection = visibleSections[state.sectionIndex];
+                var links = filteredLinks(activeSection, term);
+
+                if (!links.length) {
+                    var firstSectionWithLinks = visibleSections.find(function (section) {
+                    return filteredLinks(section, term).length &gt; 0;
+                    });
+
+                    if (firstSectionWithLinks) {
+                    state.sectionIndex = visibleSections.indexOf(firstSectionWithLinks);
+                    activeSection = firstSectionWithLinks;
+                    links = filteredLinks(activeSection, term);
+                    }
+                }
+
+                if (state.linkIndex &gt; links.length - 1) {
+                    state.linkIndex = getPreferredLinkIndex(links);
+                }
+
+                return {
+                    sections: visibleSections,
+                    section: activeSection,
+                    links: links,
+                    selectedLink: links[state.linkIndex] || null
+                };
+                }
+
+                function isMobileViewport() {
+                return window.matchMedia("(max-width: " + MOBILE_BREAKPOINT + "px)").matches;
+                }
+
+                function syncResponsiveMode() {
+                if (!isMobileViewport()) return;
+                sectionEl.classList.add("syscomify-mode-app");
+                sectionEl.classList.remove("syscomify-mode-classic");
+                toggleBtn.textContent = "Clásico";
+                }
+
+                function getMobileEntryChildren(entry) {
+                if (!entry) return [];
+                return entry.type === "section" ? getSectionLinks(entry.node) : getNodeChildren(entry.node);
+                }
+
+                function getMobileEntryMeta(entry) {
+                var count = getMobileEntryChildren(entry).length;
+                if (!count) return "";
+                return count + (count === 1 ? " categoría" : " categorías");
+                }
+
+                function getMobileEntries() {
+                var term = state.term.toLowerCase();
+
+                if (!state.mobilePath.length) {
+                    return sections
+                    .map(function (section, idx) {
+                    return {
+                        type: "section",
+                        node: section,
+                        sectionIndex: idx,
+                        linkIndex: 0
+                    };
+                    })
+                    .filter(function (entry) {
+                    return !term || matchesTerm(entry.node, term);
+                    });
+                }
+
+                var parentEntry = state.mobilePath[state.mobilePath.length - 1];
+                return getMobileEntryChildren(parentEntry)
+                    .map(function (node, idx) {
+                    return {
+                        type: "link",
+                        node: node,
+                        sectionIndex: parentEntry.sectionIndex,
+                        linkIndex: idx
+                    };
+                    })
+                    .filter(function (entry) {
+                    return !term || linkMatchesTerm(entry.node, term);
+                    });
+                }
+
+                function renderMobile() {
+                mobilePane.innerHTML = "";
+
+                if (!isMobileViewport() || !sectionEl.classList.contains("syscomify-mode-app")) {
+                    return;
+                }
+
+                var headerWrap = makeEl("div", "syscomify-mobile-wrap");
+                var header = makeEl("div", "syscomify-mobile-header");
+                var currentParent = state.mobilePath.length ? state.mobilePath[state.mobilePath.length - 1] : null;
+                var title = makeEl("h3", "syscomify-mobile-title", currentParent ? currentParent.node.title : "Categorías");
+                var tools = makeEl("div", "syscomify-mobile-tools");
+
+                header.appendChild(title);
+
+                if (currentParent) {
+                    var viewAll = document.createElement("a");
+                    viewAll.className = "syscomify-mobile-view-all";
+                    viewAll.href = currentParent.node.url;
+                    viewAll.textContent = "Ver todas";
+                    tools.appendChild(viewAll);
+                }
+
+                if (tools.children.length) {
+                    header.appendChild(tools);
+                }
+
+                headerWrap.appendChild(header);
+
+                if (currentParent) {
+                    var backBtn = document.createElement("a");
+                    backBtn.className = "syscomify-mobile-back";
+                    backBtn.href = "#";
+                    backBtn.textContent = "Volver";
+                    backBtn.addEventListener("click", function (ev) {
+                    ev.preventDefault();
+                    state.mobilePath.pop();
+
+                    if (state.mobilePath.length === 1) {
+                        state.linkIndex = state.mobilePath[0].linkIndex || getPreferredLinkIndex(getMobileEntryChildren(state.mobilePath[0]));
+                    }
+
+                    render();
+                    });
+                    headerWrap.appendChild(backBtn);
+                }
+
+                mobilePane.appendChild(headerWrap);
+
+                var items = getMobileEntries();
+                var list = makeEl("ul", "syscomify-mobile-list");
+
+                if (!items.length) {
+                    mobilePane.appendChild(makeEl("div", "syscomify-empty", "No hay categorías para mostrar."));
+                    return;
+                }
+
+                items.forEach(function (entry) {
+                    var li = document.createElement("li");
+                    var childCount = getMobileEntryChildren(entry).length;
+                    var item = document.createElement(childCount ? "button" : "a");
+                    item.className = "syscomify-mobile-item";
+                    if (childCount) {
+                    item.type = "button";
+                    } else {
+                    item.href = entry.node.url;
+                    }
+                    item.innerHTML =
+                    '&lt;span class="syscomify-mobile-item-main"&gt;' +
+                        '&lt;span class="syscomify-mobile-item-title"&gt;' + entry.node.title + '&lt;/span&gt;' +
+                        (getMobileEntryMeta(entry) ? '&lt;span class="syscomify-mobile-item-meta"&gt;' + getMobileEntryMeta(entry) + '&lt;/span&gt;' : '') +
+                    '&lt;/span&gt;' +
+                    '&lt;span class="syscomify-mobile-arrow"&gt;' + (childCount ? '›' : '') + '&lt;/span&gt;';
+
+                    item.addEventListener("click", function (ev) {
+                    if (!childCount) return;
+                    ev.preventDefault();
+                    ev.stopPropagation();
+
+                    if (entry.type === "section") {
+                        state.sectionIndex = entry.sectionIndex;
+                        state.linkIndex = getPreferredLinkIndex(getSectionLinks(entry.node));
+                    } else if (state.mobilePath.length === 1) {
+                        state.linkIndex = entry.linkIndex;
+                    }
+
+                    state.mobilePath.push(entry);
+                    render();
+                    });
+
+                    li.appendChild(item);
+                    list.appendChild(li);
+                });
+
+                mobilePane.appendChild(list);
+                }
+
+                function renderLeft(view) {
+                leftList.innerHTML = "";
+
+                if (!view.sections.length) {
+                    leftPane.innerHTML = '&lt;div class="syscomify-empty"&gt;No encontré categorías con ese texto.&lt;/div&gt;';
+                    return;
+                }
+
+                if (!leftPane.contains(leftList)) {
+                    leftPane.innerHTML = "";
+                    leftPane.appendChild(leftList);
+                }
+
+                view.sections.forEach(function (section, idx) {
+                    var li = document.createElement("li");
+                    var btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "syscomify-section-btn" + (idx === state.sectionIndex ? " is-active" : "");
+                    btn.innerHTML =
+                    '&lt;span&gt;&lt;span&gt;' + section.title + '&lt;/span&gt;&lt;span class="syscomify-section-meta"&gt;' + getSectionLinks(section).length + ' subcategorías&lt;/span&gt;&lt;/span&gt;' +
+                    '&lt;span class="syscomify-arrow"&gt;›&lt;/span&gt;';
+
+                    btn.addEventListener("mouseenter", function () {
+                    setActiveSection(idx, view.sections);
+                    render();
+                    });
+
+                    btn.addEventListener("focus", function () {
+                    setActiveSection(idx, view.sections);
+                    render();
+                    });
+
+                    btn.addEventListener("click", function () {
+                    setActiveSection(idx, view.sections);
+                    render();
+                    });
+
+                    li.appendChild(btn);
+                    leftList.appendChild(li);
+                });
+                }
+
+                function renderCenter(view) {
+                centerLinks.innerHTML = "";
+
+                if (!view.section) {
+                    centerHeading.textContent = "Sin resultados";
+                    centerSubtitle.textContent = "Prueba con otro texto.";
+                    centerPane.appendChild(centerLinks);
+                    return;
+                }
+
+                centerHeading.textContent = view.section.title;
+                centerSubtitle.textContent = view.links.length
+                    ? view.links.length + " accesos directos disponibles"
+                    : "Esta categoría no tiene enlaces visibles.";
+
+                if (!view.links.length) {
+                    centerLinks.innerHTML = '&lt;li&gt;&lt;div class="syscomify-empty"&gt;No hay subcategorías para mostrar aquí.&lt;/div&gt;&lt;/li&gt;';
+                    return;
+                }
+
+                view.links.forEach(function (link, idx) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    var childCount = getNodeChildren(link).length;
+                    a.className = "syscomify-link" + (idx === state.linkIndex ? " is-active" : "");
+                    a.href = link.url;
+                    a.innerHTML = '&lt;span&gt;' + link.title + '&lt;/span&gt;&lt;small&gt;' + (childCount ? childCount + ' categorías' : 'abrir') + '&lt;/small&gt;';
+
+                    a.addEventListener("mouseenter", function () {
+                    state.linkIndex = idx;
+                    renderRight(currentView());
+                    updateCenterActiveState();
+                    });
+
+                    a.addEventListener("focus", function () {
+                    state.linkIndex = idx;
+                    renderRight(currentView());
+                    updateCenterActiveState();
+                    });
+
+                    a.addEventListener("click", function (ev) {
+                    if (!childCount) return;
+                    ev.preventDefault();
+                    state.linkIndex = idx;
+                    render();
+                    });
+
+                    li.appendChild(a);
+
+                    if (childCount &amp;&amp; idx === state.linkIndex) {
+                    var childList = makeEl("ul", "syscomify-sub-links");
+
+                    getNodeChildren(link).forEach(function (child) {
+                        var childItem = document.createElement("li");
+                        var childLink = document.createElement("a");
+                        childLink.className = "syscomify-sub-link";
+                        childLink.href = child.url;
+                        childLink.innerHTML = '&lt;span&gt;' + child.title + '&lt;/span&gt;&lt;small&gt;abrir&lt;/small&gt;';
+                        childItem.appendChild(childLink);
+                        childList.appendChild(childItem);
+                    });
+
+                    li.appendChild(childList);
+                    }
+
+                    centerLinks.appendChild(li);
+                });
+                }
+
+                function updateCenterActiveState() {
+                Array.from(centerLinks.querySelectorAll(".syscomify-link")).forEach(function (linkEl, idx) {
+                    linkEl.classList.toggle("is-active", idx === state.linkIndex);
+                });
+                }
+
+                function renderRight(view) {
+                rightPane.innerHTML = "";
+
+                if (!view.section) {
+                    rightPane.innerHTML = '&lt;div class="syscomify-empty"&gt;Sin información para mostrar.&lt;/div&gt;';
+                    return;
+                }
+
+                var selectedLink = view.selectedLink;
+                var finalLinks = selectedLink ? getNodeChildren(selectedLink) : [];
+                var card = makeEl("div", "syscomify-card");
+                var label = makeEl("div", "syscomify-card-label", selectedLink ? "Subcategoría seleccionada" : "Categoría principal");
+                var title = makeEl("h4", "syscomify-card-title", selectedLink ? selectedLink.title : view.section.title);
+                var text = makeEl(
+                    "div",
+                    "syscomify-card-text",
+                    selectedLink
+                    ? "Acceso rápido" /* dentro de " + view.section.title + ". Si luego agregas un nivel extra desde Odoo, esta tercera columna puede usarse para mostrar nietas reales."*/
+                    : "Selecciona una subcategoría del panel central o entra directo a la categoría principal."
+                );
+
+                var cta = document.createElement("a");
+                cta.className = "syscomify-cta";
+                cta.href = selectedLink ? selectedLink.url : view.section.url;
+                cta.textContent = selectedLink ? "Ir a " + selectedLink.title : "Ver todo en " + view.section.title;
+
+                card.appendChild(label);
+                card.appendChild(title);
+                card.appendChild(text);
+                card.appendChild(cta);
+                rightPane.appendChild(card);
+
+                if (selectedLink &amp;&amp; finalLinks.length) {
+                    text.textContent = "Estas son las categorías finales disponibles dentro de esta subcategoría.";
+                }
+
+                var quickTitle = makeEl("h5", "syscomify-mini-title", "Accesos rápidos");
+                var chipList = makeEl("ul", "syscomify-chip-list");
+
+                view.links.forEach(function (link) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.className = "syscomify-chip";
+                    a.href = link.url;
+                    a.textContent = link.title;
+                    li.appendChild(a);
+                    chipList.appendChild(li);
+                });
+
+                rightPane.appendChild(quickTitle);
+                rightPane.appendChild(chipList);
+
+                if (finalLinks.length) {
+                    var finalTitle = makeEl("h5", "syscomify-mini-title", "Categorías finales");
+                    var finalList = makeEl("ul", "syscomify-right-links");
+
+                    finalLinks.forEach(function (link) {
+                    var finalItem = document.createElement("li");
+                    var finalLink = document.createElement("a");
+                    finalLink.className = "syscomify-right-link";
+                    finalLink.href = link.url;
+                    finalLink.innerHTML = '&lt;span&gt;' + link.title + '&lt;/span&gt;&lt;small&gt;abrir&lt;/small&gt;';
+                    finalItem.appendChild(finalLink);
+                    finalList.appendChild(finalItem);
+                    });
+
+                    rightPane.appendChild(finalTitle);
+                    rightPane.appendChild(finalList);
+                }
+                }
+
+                function render() {
+                syncResponsiveMode();
+                var view = currentView();
+                renderLeft(view);
+                renderCenter(view);
+                renderRight(view);
+                renderMobile();
+                }
+
+                searchInput.addEventListener("input", function () {
+                state.term = cleanText(searchInput.value);
+                setActiveSection(0);
+                state.mobilePath = [];
+                render();
+                });
+
+                toggleBtn.addEventListener("click", function () {
+                if (isMobileViewport()) {
+                    syncResponsiveMode();
+                    return;
+                }
+                var isApp = sectionEl.classList.contains("syscomify-mode-app");
+                sectionEl.classList.toggle("syscomify-mode-app", !isApp);
+                sectionEl.classList.toggle("syscomify-mode-classic", isApp);
+                toggleBtn.textContent = isApp ? "Nuevo" : "Clásico";
+                });
+
+                window.addEventListener("resize", function () {
+                render();
+                });
+
+                setActiveSection(0);
+                render();
+            }
+
+            function enhanceMenus(root) {
+                (root || document).querySelectorAll(MENU_SELECTOR).forEach(function (menu) {
+                if (menu.getAttribute(PROCESSED_ATTR) === "1") return;
+
+                var sectionEl = menu.querySelector(SECTION_SELECTOR);
+                var row = sectionEl &amp;&amp; sectionEl.querySelector(".row");
+                if (!sectionEl || !row) return;
+
+                var parsedSections = parseSections(row);
+                var sections = buildSectionsFromReference(parsedSections);
+                if (sections.length &lt; 2) return;
+
+                menu.setAttribute(PROCESSED_ATTR, "1");
+                buildInteractiveMenu(sectionEl, sections);
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                enhanceMenus(document);
+            });
+
+            window.addEventListener("load", function () {
+                enhanceMenus(document);
+            });
+
+            var observer = new MutationObserver(function () {
+                enhanceMenus(document);
+            });
+
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+            })();
+            // 
+        </script>

@@ -1,0 +1,34 @@
+<t name="Helpdesk Team" t-name="website_helpdesk.team">
+    
+        <t t-call="website.layout">
+            <t t-set="additional_title">Enviar un ticket</t>
+            <div id="wrap" class="container mt-4">
+                <t t-set="editor_message">ARRASTRE LOS BLOQUES DE CREACIÓN AQUÍ PARA QUE ESTÉN DISPONIBLES PARA TODOS LOS EQUIPOS DE SOPORTE AL CLIENTE</t>
+                <div class="row mb16">
+                    <div class="oe_structure oe_empty w-100 mb-2" id="oe_structure_website_helpdesk_team_1" t-att-data-editor-message="editor_message"/>
+                    <div class="col-md-9">
+                        <h1 class="o_page_header mt0 d-none h2-fs" id="team-page"/>
+                    </div>
+                    <div class="col-md-8 ps-4">
+                        <div t-if="team.use_website_helpdesk_form">
+                            <t t-set="template_xmlid" t-value="team.website_form_view_id.xml_id"/>
+                            <t t-call="#{template_xmlid}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="right-column">
+                        <div class="oe_structure oe_empty" id="oe_structure_website_helpdesk_team_2" t-att-data-editor-message="editor_message"/>
+                        <t t-if="not is_html_empty(team.description)">
+                            <div class="card mt-2 w-75 pull-right" id="about_team">
+                                <h6 class="card-header">Conoce a nuestro equipo</h6>
+                            <div class="card-body">
+                                <span t-field="team.description"/>
+                            </div>
+                            </div>
+                        </t>
+                        <div class="oe_structure oe_empty" id="oe_structure_website_helpdesk_team_3" t-att-data-editor-message="editor_message"/>
+                    </div>
+                </div>
+                <div class="oe_structure oe_empty" id="oe_structure_website_helpdesk_team_4" t-att-data-editor-message="editor_message"/>
+            </div>
+        </t>
+    </t>

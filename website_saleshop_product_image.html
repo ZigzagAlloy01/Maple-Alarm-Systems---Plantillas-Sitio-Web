@@ -1,0 +1,45 @@
+<t t-name="website_sale.shop_product_image">
+        <style>
+            .product_detail_img {
+                max-width: 500px !important;
+                max-height: 500px !important;
+
+                width: auto !important;
+                height: auto !important;
+
+                object-fit: contain !important;
+
+                margin: 0 auto;
+                display: block;
+            }
+
+            .o_product_detail_img_wrapper {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+
+                width: 100%;
+                min-height: 500px;
+            }
+
+            @media (max-width: 768px) {
+                .product_detail_img {
+                    max-width: 100% !important;
+                    max-height: 320px !important;
+                }
+
+                .o_product_detail_img_wrapper {
+                    min-height: 320px;
+                }
+            }
+        </style>    
+        <span t-attf-class="o_ribbons o_not_editable #{ribbon._get_css_classes()} z-1" t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color}" t-att-data-ribbon-id="ribbon.id" t-out="ribbon.name or ''"/>
+        <div t-if="product_image._name == 'product.image' and product_image.embed_code" t-att-class="image_classes + ' ratio ratio-16x9'">
+            <t t-out="product_image.embed_code"/>
+        </div>
+        <div t-elif="len(product_images) == 1 and website.product_page_image_layout != 'grid'" class="position-relative d-inline-flex overflow-hidden m-auto h-100 w-100">
+            <span t-field="product_image.image_1920" name="o_img_with_max_suggested_width" class="o_product_detail_img_wrapper d-flex align-items-start justify-content-center h-100 w-100 oe_unmovable" t-options="{                     'widget': 'image',                     'preview_image': 'image_1024',                     'class': 'oe_unmovable product_detail_img',                     'alt-field': 'name',                     'zoom': product_image.can_image_1024_be_zoomed and 'image_1920',                 }"/>
+
+        </div>
+        <div t-else="" t-field="product_image.image_1920" t-att-class="image_classes + ' o_product_detail_img_wrapper oe_unmovable'" t-attf-style="{{                 image_natural_index and ('--o-wsale-grid-product-img-natural-order: ' + str(image_natural_index)) or false             }}" t-options="{                 'widget': 'image',                 'preview_image': 'image_1024',                 'class': 'oe_unmovable product_detail_img',                 'alt-field': 'name',                 'zoom': product_image.can_image_1024_be_zoomed and 'image_1920',             }"/>
+    </t>

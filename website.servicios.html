@@ -1,0 +1,287 @@
+<t name="Services" t-name="website.servicios">
+    
+        <t t-call="website.layout">
+            <div id="wrap" class="js_sale">
+                <div class="oe_structure">
+                    <section class="s_title bg-black-50 o_colored_level s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box pb40 pt32" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="0" style="background-image: url(&quot;/web/image/6018-899e137b/White%20Yellow%20Real%20Estate%20%28Banner%20%28Landscape%29%29%20%281%29.webp&quot;);" data-attachment-id="5830" data-format-mimetype="image/webp" data-original-id="5830" data-original-src="/web/image/5830-cd512ed8/White%20Yellow%20Real%20Estate%20%28Banner%20%28Landscape%29%29%20%281%29.png" data-mimetype-before-conversion="image/png" data-resize-width="1848" data-mimetype="image/webp">
+                        
+                        
+                        <div class="container">
+                            <h1 style="text-align: center;">Servicio de Monitoreo</h1>
+                        </div>
+                    </section>
+                </div>
+                <div class="oe_structure"><section class="s_comparisons pt48 pb48 o_colored_level" data-vxml="001" data-vcss="001" data-snippet="s_comparisons" data-name="Comparaciones">
+        <div class="container">
+            
+            <div class="row gap-4 gap-lg-0 o_grid_mode" data-row-count="33"><div class="o_grid_item g-col-lg-12 g-height-5 col-lg-12" style="grid-area: 1 / 1 / 4 / 12; z-index: 1;"><div class="mb-4" style="margin-bottom: 2rem !important;">
+                <h2 class="h3-fs">Tarifas disponibles para el servicio de monitoreo</h2>
+                <p class="lead">Comienza o renueva tu suscripción de monitoreo de alarmas.</p><p class="lead">Ponte en contacto con nosotros si tienes dudas sobre cual es el plan que mejor se adapta a tu sistema.</p><p class="lead">Si tu alarma transmite sus señales por medio de la linea telefonica, te recomendamos visitar nuestra seccion de comunicadores de alarma.</p><p class="lead">Llama a nuestra <strong>linea de soporte al 800 123 23 5484 </strong>o agenda la visita de un técnico para que revise tu sistema de alarma <strong>Sin costo.</strong></p>
+            </div></div>
+                <div class="o_grid_item g-col-lg-3 g-height-14 col-lg-3" data-name="Plan" style="animation-name: dummy; grid-area: 8 / 1 / 33 / 4; z-index: 2;">
+                    <div class="s_card card o_cc h-100 my-0 o_colored_level rounded shadow o_cc1" data-vxml="001" data-snippet="s_card" data-name="Card" style="--box-border-bottom-left-radius: 10px; --box-border-bottom-right-radius: 10px; --box-border-top-right-radius: 10px; --box-border-top-left-radius: 10px; box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px 2px !important; background-image: linear-gradient(135deg, #2c4f96 0%, #1B365D 75%);">
+                        <div class="card-body">
+                            <h3 class="card-title h5-fs">Monitoreo Vía Internet</h3>
+                            <div class="my-2">
+                                <strong class="h2-fs">$330.00</strong>
+                                <small class="text-muted">al mes<br/>Utiliza tu servicio de internet para monitorear tu alarma</small></div>
+                            <p class="card-text small">Rápido y confiable. Haz que tu alarma envie las señales a la central de monitoreo de forma rápida y sin problemas.</p>
+                            <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via internet mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                            <form t-if="internet_monitoring_product" class="oe_website_sale js_product js_main_product mb-3">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" class="o_not_editable product_id" name="product_id" t-att-value="internet_monitoring_product.product_variant_id.id"/>
+                                <input type="hidden" class="o_not_editable product_template_id" name="product_template_id" t-att-value="internet_monitoring_product.id"/>
+                                <input t-if="internet_monitoring_product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="internet_monitoring_product.public_categ_ids.ids[0]"/>
+                                <input type="hidden" name="product_type" t-att-value="internet_monitoring_product.type"/>
+                                <input type="hidden" class="quantity" name="add_qty" value="1"/>
+                                <a id="add_to_cart_internet_monitoring" role="button" href="#" data-animation-selector=".s_comparisons" class="btn btn-outline-primary w-100 o_internet_monitoring_add_to_cart" t-att-data-product-id="internet_monitoring_product.product_variant_id.id" t-att-data-product-template-id="internet_monitoring_product.id" data-add-qty="1">
+                                    <i class="fa fa-shopping-cart me-2"/>
+                                    Empezar ahora
+                                </a>
+                            </form>
+                            <a t-if="not internet_monitoring_product" href="/contactus" class="btn btn-outline-primary w-100 mb-3">Empezar ahora</a>
+                            <ul class="list-group list-group-flush text-start">
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Asistencia telefónica</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Reportes (negocios)</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Test periódico cada 24 h</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-times text-danger" role="img"/>  Sin app móvil</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <small class="text-center">Sin costos adicionales en tu servicio</small><br/></div>
+                    </div>
+                </div>
+                
+                <div class="o_grid_item g-col-lg-3 g-height-14 col-lg-3" data-name="Plan" style="z-index: 3; grid-area: 8 / 4 / 33 / 7;">
+                    <div class="s_card card h-100 my-0 o_colored_level o_cc rounded o_cc1 shadow" data-vxml="001" data-snippet="s_card" data-name="Card" style="--box-border-bottom-left-radius: 10px; --box-border-bottom-right-radius: 10px; --box-border-top-right-radius: 10px; --box-border-top-left-radius: 10px; box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px 2px !important; background-image: linear-gradient(135deg, #2c4f96 0%, #1B365D 75%);">
+                        <div class="card-body">
+                            <h3 class="card-title h5-fs">Monitoreo M2M</h3>
+                            <div class="my-2">
+                                <strong class="h2-fs">$350.00</strong>
+                                <small class="text-muted">al mes<br/>Brinda a tu alarma un servicio multicompañia datos móviles</small></div>
+                            <p class="card-text small">Señales inalámbricas. Para un monitoreo más seguro y con app móvil para armar y desarmar los equipos.</p>
+                            <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via M2M modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                            <form t-if="internet_monitoring_product" class="oe_website_sale js_product js_main_product mb-3">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" class="o_not_editable product_id" name="product_id" t-att-value="internet_monitoring_product.product_variant_id.id"/>
+                                <input type="hidden" class="o_not_editable product_template_id" name="product_template_id" t-att-value="internet_monitoring_product.id"/>
+                                <input t-if="internet_monitoring_product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="internet_monitoring_product.public_categ_ids.ids[0]"/>
+                                <input type="hidden" name="product_type" t-att-value="internet_monitoring_product.type"/>
+                                <input type="hidden" class="quantity" name="add_qty" value="1"/>
+                                <a id="add_to_cart_internet_monitoring" role="button" href="#" data-animation-selector=".s_comparisons" class="btn btn-outline-primary w-100 o_internet_monitoring_add_to_cart" t-att-data-product-id="internet_monitoring_product.product_variant_id.id" t-att-data-product-template-id="internet_monitoring_product.id" data-add-qty="1">
+                                    <i class="fa fa-shopping-cart me-2"/>
+                                    Empezar ahora
+                                </a>
+                            </form>
+                            <a t-if="not internet_monitoring_product" href="/contactus" class="btn btn-outline-primary w-100 mb-3">Empezar ahora</a>
+                            <ul class="list-group list-group-flush text-start">
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Asistencia telefónica</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Reportes (negocios)</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Test periódico cada 1 h</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  App móvil para activar y desactivar</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Botón policiaco, ambulancia y bomberos</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Comunicación inalámbrica</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <small class="text-center">Configuración instantánea. Te devolvemos tu dinero si no quedas satisfecho.</small></div>
+                    </div>
+                </div><div class="o_grid_item g-col-lg-3 g-height-14 col-lg-3" data-name="Plan" style="z-index: 5; grid-area: 8 / 7 / 33 / 10">
+                    <div class="s_card card o_cc h-100 my-0 o_colored_level rounded shadow o_cc1" data-vxml="001" data-snippet="s_card" data-name="Card" style="--box-border-bottom-left-radius: 10px; --box-border-bottom-right-radius: 10px; --box-border-top-right-radius: 10px; --box-border-top-left-radius: 10px; box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px 2px !important; background-image: linear-gradient(135deg, #2c4f96 0%, #1B365D 75%);">
+                        <div class="card-body">
+                            <h3 class="card-title h5-fs">Monitoreo GSM</h3>
+                            <div class="my-2">
+                                <strong class="h2-fs">$420.00</strong>
+                                <small class="text-muted">al mes<br/>Señales inalámbricas con datos móviles para más seguridad.</small></div>
+                            <p class="card-text small">Datos móviles. Tu alarma utiliza la red de Telcel para enviar sus señales. Las activaciones siempre se recibirán.</p>
+                            <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via GSM mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                            <form t-if="internet_monitoring_product" class="oe_website_sale js_product js_main_product mb-3">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" class="o_not_editable product_id" name="product_id" t-att-value="internet_monitoring_product.product_variant_id.id"/>
+                                <input type="hidden" class="o_not_editable product_template_id" name="product_template_id" t-att-value="internet_monitoring_product.id"/>
+                                <input t-if="internet_monitoring_product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="internet_monitoring_product.public_categ_ids.ids[0]"/>
+                                <input type="hidden" name="product_type" t-att-value="internet_monitoring_product.type"/>
+                                <input type="hidden" class="quantity" name="add_qty" value="1"/>
+                                <a id="add_to_cart_internet_monitoring" role="button" href="#" data-animation-selector=".s_comparisons" class="btn btn-outline-primary w-100 o_internet_monitoring_add_to_cart" t-att-data-product-id="internet_monitoring_product.product_variant_id.id" t-att-data-product-template-id="internet_monitoring_product.id" data-add-qty="1">
+                                    <i class="fa fa-shopping-cart me-2"/>
+                                    Empezar ahora
+                                </a>
+                            </form>
+                            <a t-if="not internet_monitoring_product" href="/contactus" class="btn btn-outline-primary w-100 mb-3">Empezar ahora</a>
+                            <ul class="list-group list-group-flush text-start">
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Asistencia telefónica</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Reportes (negocios)</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Test periódico cada 1 h</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  App móvil para activar y desactivar</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Botón policiaco, ambulancia y bomberos</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Comunicación inalámbrica</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <small class="text-center">Configuración instantánea. Te devolvemos tu dinero si no quedas satisfecho.</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="o_grid_item g-col-lg-3 g-height-14 col-lg-3" data-name="Plan" style="z-index: 6; grid-area: 8 / 10 / 33 / 13;">
+                    <div class="s_card card o_cc h-100 my-0 rounded o_colored_level shadow o_cc1" data-vxml="001" data-snippet="s_card" data-name="Card" style="--box-border-bottom-left-radius: 10px; --box-border-bottom-right-radius: 10px; --box-border-top-right-radius: 10px; --box-border-top-left-radius: 10px; box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px 2px !important; background-image: linear-gradient(135deg, #2c4f96 0%, #1B365D 75%);">
+                        <div class="card-body">
+                            <h3 class="card-title h5-fs">Alarm.com</h3>
+                            <div class="my-2">
+                                <strong class="h2-fs">$520.00</strong>
+                                <small class="text-muted">al mes<br/>Sistema de alarma + Automatizaciones desde tu app</small></div>
+                            <p class="card-text small">Una solución avanzada que combina seguridad con comodidad. Convierte tu casa en un Hogar Inteligente.</p>
+                            <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via Alarm.com modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                            <form t-if="internet_monitoring_product" class="oe_website_sale js_product js_main_product mb-3">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" class="o_not_editable product_id" name="product_id" t-att-value="internet_monitoring_product.product_variant_id.id"/>
+                                <input type="hidden" class="o_not_editable product_template_id" name="product_template_id" t-att-value="internet_monitoring_product.id"/>
+                                <input t-if="internet_monitoring_product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="internet_monitoring_product.public_categ_ids.ids[0]"/>
+                                <input type="hidden" name="product_type" t-att-value="internet_monitoring_product.type"/>
+                                <input type="hidden" class="quantity" name="add_qty" value="1"/>
+                                <a id="add_to_cart_internet_monitoring" role="button" href="#" data-animation-selector=".s_comparisons" class="btn btn-outline-primary w-100 o_internet_monitoring_add_to_cart" t-att-data-product-id="internet_monitoring_product.product_variant_id.id" t-att-data-product-template-id="internet_monitoring_product.id" data-add-qty="1">
+                                    <i class="fa fa-shopping-cart me-2"/>
+                                    Empezar ahora
+                                </a>
+                            </form>
+                            <a t-if="not internet_monitoring_product" href="/contactus" class="btn btn-outline-primary w-100 mb-3">Empezar ahora</a>
+                            <ul class="list-group list-group-flush text-start">
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Asistencia telefónica</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Reportes (negocios)</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Test periódico cada 1 h</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  App móvil para activar y desactivar</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Botón policiaco, ambulancia y bomberos</li>
+                                <li class="list-group-item px-0 bg-transparent text-reset"><i class="fa fa-check text-success" role="img"/>  Comunicación inalámbrica</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <small class="text-center">Configuración instantánea. Te devolvemos tu dinero si no quedas satisfecho.</small>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+        </div>
+    </section></div>
+                <style>
+                        .container-lg, .container-md, .container-sm, .container {
+                            max-width: 1300px;
+                        }
+                    }
+                    .o_grid_mode {
+                        grid-auto-rows: 50px;
+                    
+                    }
+                    .text-center {
+                        margin-bottom: 1rem;
+                        padding: 0 0.5rem 1rem 0.5rem;
+                    }
+                    
+                    .g-col-lg-3 .s_card .card-body {
+                        color: white;
+                        font-size: 1.2rem;
+                    }
+                    
+                    .g-col-lg-3 .s_card .card-footer  {
+                        color: white;
+                        font-size: 1.2rem;
+                    }
+                    
+                    .g-col-lg-3 .s_card .card-body .h2-fs {
+                        color: white;
+                        font-size: 2.8rem;
+                    }
+                    
+                    .g-col-lg-3 .s_card .card-body .text-muted {
+                        color: white !important;
+                        font-size: 1.4rem;
+                        
+                    }
+                    
+                    .card-title.h5-fs {
+                        font-size: 1.6rem;
+                    }
+                   .card-body &gt; * {
+                        margin-bottom: 2rem;
+                    }
+            
+                    .card-body &gt; div.my-2 strong, 
+                    .card-body &gt; div.my-2 small {
+                        display: block;     
+                        margin-bottom: 2rem;
+                    }
+                </style>
+                <script>
+                    //
+                    document.addEventListener('click', function (event) {
+                        var button = event.target.closest('.o_internet_monitoring_add_to_cart');
+                        if (!button) {
+                            return;
+                        }
+
+                        event.preventDefault();
+                        if (button.classList.contains('disabled')) {
+                            return;
+                        }
+
+                        var productId = parseInt(button.dataset.productId, 10);
+                        var addQty = parseInt(button.dataset.addQty || '1', 10);
+                        if (!productId) {
+                            window.location.href = '/contactus';
+                            return;
+                        }
+
+                        button.classList.add('disabled');
+                        button.setAttribute('aria-disabled', 'true');
+
+                        var csrfTokenInput = button.closest('form').querySelector('input[name="csrf_token"]');
+                        var productTemplateId = parseInt(button.dataset.productTemplateId, 10);
+                        var params = {
+                            product_template_id: productTemplateId,
+                            product_id: productId,
+                            quantity: addQty,
+                            csrf_token: csrfTokenInput ? csrfTokenInput.value : '',
+                        };
+
+                        var addToCart = function (body) {
+                            return fetch('/shop/cart/add', {
+                                method: 'POST',
+                                credentials: 'same-origin',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-Requested-With': 'XMLHttpRequest',
+                                },
+                                body: JSON.stringify(body),
+                            }).then(function (response) {
+                                if (!response.ok) {
+                                    throw new Error('No se pudo agregar el producto al carrito.');
+                                }
+                                return response.json();
+                            }).then(function (payload) {
+                                if (payload.error) {
+                                    throw new Error(payload.error.message || 'No se pudo agregar el producto al carrito.');
+                                }
+                                return payload.result;
+                            });
+                        };
+
+                        addToCart({params: params}).catch(function () {
+                            return addToCart({
+                                jsonrpc: '2.0',
+                                method: 'call',
+                                params: params,
+                                id: Date.now(),
+                            });
+                        }).then(function () {
+                            window.location.href = '/shop/cart';
+                        }).catch(function () {
+                            button.classList.remove('disabled');
+                            button.removeAttribute('aria-disabled');
+                            window.alert('No se pudo agregar el servicio al carrito. Por favor intenta desde la ficha del producto o contáctanos.');
+                        });
+                    });
+                    //
+                </script>
+            </div>
+        </t>
+    </t>
