@@ -1304,17 +1304,11 @@ body,
                 flex-shrink: 0 !important;
             }
 
-            @media (max-width: 575.98px) {
-                .o_wsale_suggested_products_grid {
-                    grid-template-columns: 1fr;
-                }
+            span[data-oe-type="monetary"], .o_wsale_product_sub.justify-content-between.gap-2 .product_price .mb-0.fw-bold .oe_currency_value {
+                white-space: nowrap;
+                font-size: 2.4rem;
             }
-            
-            @media (max-width: 450px) {
-                .oe_currency_value, .oe_price {
-                    font-size: 2rem;
-                }
-            }
+
           
           @media (max-width: 1478px) {
               .o_wsale_suggested_product_price,
@@ -1328,6 +1322,10 @@ body,
           .o_wsale_suggested_product_price .oe_currency_value {
                   font-size: 1.6rem !important;
               }
+
+              .o_wsale_product_sub.justify-content-between.gap-2 .product_price span[data-oe-type="monetary"], .o_wsale_product_sub.justify-content-between.gap-2 .product_price .mb-0.fw-bold .oe_currency_value {
+                font-size: 2rem;
+            }
           }
           
           @media (max-width: 1200px) {
@@ -1356,10 +1354,19 @@ body,
               ul.navbar-nav .o_no_autohide_item &gt; a {
                   padding-right: 0 !important;
               }
+
+              span[data-oe-type="monetary"], .mb-0.fw-bold .oe_currency_value {
+                font-size: 1.6rem;
+            }
+          }
+
+          @media (max-width: 1150px) {
+             .o_wsale_product_sub.justify-content-between.gap-2 .product_price span[data-oe-type="monetary"], .o_wsale_product_sub.justify-content-between.gap-2 .product_price .mb-0.fw-bold .oe_currency_value {
+                font-size: 1.6rem;
+            }
           }
           
           @media (max-width: 991px) {
-
               .o_mega_menu.fetchEcomCategories :is(.s_mega_menu_odoo_menu, .s_mega_menu_multi_menus).syscomify-mode-app {
                     background: var(--maple-white);
                 }
@@ -1616,7 +1623,24 @@ body,
           .navbar-toggler-icon {
                   font-size: 2rem !important;
               }
+
+              .navbar-nav.gap-2.mt-3.w-100 li .oe_structure.oe_structure_solo, .navbar-nav li .s_text_block.mt-2.text-end {
+                display: none;
+              }
           }
+
+          @media (max-width: 880px) {
+              .o_wsale_products_opt_actions_promote .o_wsale_product_btn .o_add_wishlist, .oe_product_cart .o_wsale_product_btn .btn:where(.o_wsale_product_btn_primary) {
+                width: 4rem;
+              }
+          }
+
+          @media (max-width: 767.98px) {
+            .o_connected_user_navbar .o_switch_company_menu:empty,
+            .navbar-collapse .dropdown-menu:empty {
+                display: none !important;
+            }
+        }
           
           @media (max-width: 720px) {
               .fa.fa-1x.fa-heart,
@@ -1678,6 +1702,28 @@ body,
               }
           }
 
+          @media (max-width: 540px) {
+              .s_dynamic_snippet_row.row {
+                  display: flex !important;
+                  flex-wrap: nowrap !important;
+                  overflow-x: hidden;
+              }
+
+              .s_dynamic_snippet_row > .d-flex.col-6 {
+                  flex: 0 0 100% !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
+              }
+
+              .carousel-item {
+                  min-height: auto !important; 
+              }
+
+              .o_wsale_product_sub.justify-content-between.gap-2 .product_price span[data-oe-type="monetary"], .o_wsale_product_sub.justify-content-between.gap-2 .product_price .mb-0.fw-bold .oe_currency_value {
+                font-size: 1.2rem;
+            }
+          }
+
           @media (max-width: 480px) {
               .fa.fa-1x.fa-heart,
           .fa.fa-shopping-cart,
@@ -1702,6 +1748,18 @@ body,
                   font-size: 1.15rem !important;
               }
           }
+
+          @media (max-width: 575.98px) {
+                .o_wsale_suggested_products_grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+            @media (max-width: 450px) {
+                .oe_currency_value, .oe_price {
+                    font-size: 2rem;
+                }
+            }
           
           @media (max-width: 405px) {
               .fa.fa-1x.fa-heart,
@@ -4178,70 +4236,94 @@ body,
                 window.setTimeout(render, 150);
             }
 
-            function enhanceMenus(root) {
-                (root || document).querySelectorAll(MENU_SELECTOR).forEach(function (menu) {
-                if (!isTargetMegaMenu(menu)) return;
-                removeDuplicatedMenuSections(menu);
-                if (menu.getAttribute(PROCESSED_ATTR) === "1") {
-                    var existingSection = menu.querySelector(SECTION_SELECTOR);
-                    removeDuplicatedInteractiveBlocks(existingSection);
-                    var rerender = menu._syscomifyRender || (existingSection &amp;&amp; existingSection._syscomifyRender);
-                    if (typeof rerender === "function") {
-                    return;
-                    }
-                    resetClonedMenu(menu);
+            (function () {
+                var isModifyingDOM = false;
+
+                function enhanceMenus(root) {
+                    if (isModifyingDOM) return;
+
+                    (root || document).querySelectorAll(MENU_SELECTOR).forEach(function (menu) {
+                        if (!isTargetMegaMenu(menu)) return;
+                        removeDuplicatedMenuSections(menu);
+                        
+                        if (menu.getAttribute(PROCESSED_ATTR) === "1") {
+                            var existingSection = menu.querySelector(SECTION_SELECTOR);
+                            removeDuplicatedInteractiveBlocks(existingSection);
+                            var rerender = menu._syscomifyRender || (existingSection && existingSection._syscomifyRender);
+                            if (typeof rerender === "function") {
+                                return;
+                            }
+                            resetClonedMenu(menu);
+                        }
+
+                        try {
+                            isModifyingDOM = true;
+
+                            menu.classList.add(MENU_ROOT_CLASS);
+
+                            var scaffold = ensureMenuScaffold(menu);
+                            if (!scaffold) {
+                                isModifyingDOM = false;
+                                return;
+                            }
+
+                            var parsedSections = parseSections(scaffold.sourceRow);
+                            var sections = buildSectionsFromReference(parsedSections);
+                            if (sections.length < 2) {
+                                isModifyingDOM = false;
+                                return;
+                            }
+
+                            menu.setAttribute(PROCESSED_ATTR, "1");
+                            buildInteractiveMenu(scaffold.sectionEl, sections, scaffold.sourceRow);
+
+                        } catch (error) {
+                            console.error("[Syscomify Mega Menu]", error);
+                        } finally {
+                            isModifyingDOM = false;
+                        }
+                    });
                 }
 
-                try {
-                    menu.classList.add(MENU_ROOT_CLASS);
-
-                    var scaffold = ensureMenuScaffold(menu);
-                    if (!scaffold) return;
-
-                    var parsedSections = parseSections(scaffold.sourceRow);
-                    var sections = buildSectionsFromReference(parsedSections);
-                    if (sections.length &lt; 2) return;
-
-                    menu.setAttribute(PROCESSED_ATTR, "1");
-                    buildInteractiveMenu(scaffold.sectionEl, sections, scaffold.sourceRow);
-                } catch (error) {
-                    console.error("[Syscomify Mega Menu]", error);
-                }
+                document.addEventListener("DOMContentLoaded", function () {
+                    enhanceMenus(document);
                 });
-            }
 
-            document.addEventListener("DOMContentLoaded", function () {
-                enhanceMenus(document);
-            });
+                window.addEventListener("load", function () {
+                    enhanceMenus(document);
+                });
 
-            window.addEventListener("load", function () {
-                enhanceMenus(document);
-            });
+                var pendingEnhance = null;
+                var observer = new MutationObserver(function () {
+                    if (isModifyingDOM) return;
 
-            var pendingEnhance = null;
-            var observer = new MutationObserver(function () {
-                window.clearTimeout(pendingEnhance);
-                pendingEnhance = window.setTimeout(function () {
-                enhanceMenus(document);
-                }, 120);
-            });
+                    window.clearTimeout(pendingEnhance);
+                    pendingEnhance = window.setTimeout(function () {
+                        enhanceMenus(document);
+                    }, 120);
+                });
 
-            observer.observe(document.documentElement, {
-                childList: true,
-                subtree: true
-            });
+                observer.observe(document.documentElement, {
+                    childList: true,
+                    subtree: true
+                });
 
-            function syscomifyRefreshAfterClick() {
-                window.setTimeout(function () {
-                enhanceMenus(document);
-                }, 80);
-            }
+                var lastClickTime = 0;
+                function syscomifyRefreshAfterClick(e) {
+                    var currentTime = new Date().getTime();
+                    if (currentTime - lastClickTime < 100) return;
+                    lastClickTime = currentTime;
 
-            document.addEventListener("click", syscomifyRefreshAfterClick, true);
-            document.addEventListener("touchend", syscomifyRefreshAfterClick, true);
+                    window.setTimeout(function () {
+                        enhanceMenus(document);
+                    }, 80);
+                }
+
+                document.addEventListener("click", syscomifyRefreshAfterClick, true);
+                document.addEventListener("touchend", syscomifyRefreshAfterClick, true);
             })();
-            
-            document.addEventListener("DOMContentLoaded", function () {
+
+            document.addEventListener("DOMContentLoaded", function() {
                 document.querySelectorAll('header a[href="/shop"], header a[href^="/shop?"]').forEach(function (link) {
                     var item = link.closest("li");
                     if (item) {
@@ -4250,57 +4332,54 @@ body,
                         link.remove();
                     }
                 });
-            });
-            
-            document.addEventListener("DOMContentLoaded", function() {
-              const copyrightBlocks = document.querySelectorAll(".o_footer_copyright");
-              const currentYear = new Date().getFullYear();
-              const companyName = "Maple Alarm Systems";
-              
-              copyrightBlocks.forEach(function(block, index) {
-                if(index &gt; 0) {
-                  block.remove();
-                  return;
-                }
+
+                const copyrightBlocks = document.querySelectorAll(".o_footer_copyright");
+                const currentYear = new Date().getFullYear();
+                const companyName = "Maple Alarm Systems";
                 
-                block.innerHTML = `
-                  <div class="container py-3">
-                    <div class="row row-gap-2">
-                      <div class="text-center col-md text-md-start">
-                        <span class="o_footer_copyright_name me-2 small">
-                          Todos los Derechos Reservados © ${currentYear} ${companyName}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                `;
-              });
-            });
-            
-            document.addEventListener("DOMContentLoaded", function() {
+                copyrightBlocks.forEach(function(block, index) {
+                    if(index > 0) {
+                        block.remove();
+                        return;
+                    }
+                    
+                    block.innerHTML = `
+                        <div class="container py-3">
+                            <div class="row row-gap-2">
+                                <div class="text-center col-md text-md-start">
+                                    <span class="o_footer_copyright_name me-2 small">
+                                        Todos los Derechos Reservados © ${currentYear} ${companyName}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
                 if(window.location.pathname.includes('/helpdesk')) {
                     var helpdeskLink = document.querySelector('.nav-item a[href="/helpdesk"]');
                     if(helpdeskLink) {
                         helpdeskLink.classList.add('active');
                     }
                 }
-            });
-            
-            document.addEventListener("DOMContentLoaded", function() {
-                const botonBarraMovil = document.querySelector('.btn.nav-link.oi.oi-chevron-left.ms-n2.px-2');
-                if (botonBarraMovil) {
-                  botonBarraMovil.textContent = 'Regresar';
-                  botonBarraMovil.style.color = 'white';
-                  botonBarraMovil.style.margin = '1rem 1rem';
-                  botonBarraMovil.style.padding = '0rem 1rem';
-                }
-            });
-            
-            document.addEventListener("DOMContentLoaded", () =&gt; {
-                const enlaceSucursales = document.querySelector('div.container &gt; a.oe_unremovable.btn.btn-primary[href="/contactus"]:first-of-type');
-                if (enlaceSucursales) {
-                  enlaceSucursales.textContent = 'Cotizaciones';
-                }
+
+                const enlacesSucursales = document.querySelectorAll('a[href="/contactus"]');
+                enlacesSucursales.forEach(enlace => {
+                    if (enlace.textContent.trim() === 'Contactos' || enlace.textContent.trim() === 'Sucursales') {
+                        enlace.textContent = 'Cotizaciones';
+                    }
+                });
+
+                const botonesBarraMovil = document.querySelectorAll('.btn.nav-link.oi.oi-chevron-left, .oi-chevron-left');
+                botonesBarraMovil.forEach(boton => {
+                    const contenedorBoton = boton.closest('a') || boton.closest('button') || boton;
+                    if (contenedorBoton && contenedorBoton.textContent.trim() !== 'Regresar') {
+                        contenedorBoton.textContent = 'Regresar';
+                        contenedorBoton.style.color = 'white';
+                        contenedorBoton.style.margin = '1rem 1rem';
+                        contenedorBoton.style.padding = '0rem 1rem';
+                    }
+                });
             });
         </script>
     </xpath>
