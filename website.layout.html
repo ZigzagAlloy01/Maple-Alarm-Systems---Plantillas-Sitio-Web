@@ -127,7 +127,8 @@
             
         <t t-if="website.google_analytics_key and not editable">
 
-            <script id="tracking_code" t-attf-src="https://www.googletagmanager.com/gtag/js?id={{ website.google_analytics_key }}" async="async"/>
+            <script id="tracking_code" t-attf-src="https://www.googletagmanager.com/gtag/js?id={{ website.google_analytics_key }}" async="async"/><![CDATA[
+
             <script id="tracking_code_config">
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -157,10 +158,12 @@
                         {once: true}
                     );
                 </t>
-            </script>
+            
+]]></script>
         </t>
         <t t-if="website.plausible_shared_key and not editable">
-            <script id="plausible_script" name="plausible" defer="defer" t-att-data-domain="website.plausible_site" t-att-src="website._get_plausible_script_url()"/>
+            <script id="plausible_script" name="plausible" defer="defer" t-att-data-domain="website.plausible_site" t-att-src="website._get_plausible_script_url()"/><![CDATA[
+
         </t>
     </xpath>
 
@@ -4405,6 +4408,7 @@ body,
                     }
                 });
             });
-        </script>
+        
+]]></script>
     </xpath>
 </data>
