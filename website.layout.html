@@ -1798,7 +1798,15 @@ body,
                   margin: 0.5rem;
               }
           }
-        </style>
+        
+.syscomify-mobile > .syscomify-mobile-wrap:not(:first-child){
+    display:none !important;
+}
+.syscomify-mobile > .syscomify-mobile-list:not(:last-child){
+    display:none !important;
+}
+
+</style>
     </xpath>
 
     <xpath expr="//head" position="inside">
@@ -3905,7 +3913,13 @@ body,
                 }
 
                 function renderMobile() {
-                mobilePane.innerHTML = "";
+                while (mobilePane.firstChild) {
+                    mobilePane.removeChild(mobilePane.firstChild);
+                }
+
+                mobilePane.querySelectorAll(
+                    ".syscomify-mobile-wrap,.syscomify-mobile-header,.syscomify-mobile-back,.syscomify-mobile-view-all,.syscomify-mobile-list"
+                ).forEach(function(node){ node.remove(); });
 
                 if (!isMobileViewport() || !sectionEl.classList.contains("syscomify-mode-app")) {
                     return;
@@ -3941,6 +3955,10 @@ body,
                     backBtn.addEventListener("click", function (ev) {
                     ev.preventDefault();
                     state.mobilePath.pop();
+
+                    while (mobilePane.firstChild) {
+                        mobilePane.removeChild(mobilePane.firstChild);
+                    }
 
                     if (state.mobilePath.length === 1) {
                         state.linkIndex = state.mobilePath[0].linkIndex || getPreferredLinkIndex(getMobileEntryChildren(state.mobilePath[0]));
@@ -4294,8 +4312,14 @@ body,
                 });
 
                 var pendingEnhance = null;
-                var observer = new MutationObserver(function () {
+                var observer = new MutationObserver(function (mutations) {
                     if (isModifyingDOM) return;
+
+                    var internalMobileUpdate = mutations.every(function (m) {
+                        return m.target && m.target.closest && m.target.closest(".syscomify-mobile");
+                    });
+
+                    if (internalMobileUpdate) return;
 
                     window.clearTimeout(pendingEnhance);
                     pendingEnhance = window.setTimeout(function () {
