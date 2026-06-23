@@ -1,4 +1,4 @@
-body,
+ body,
           input,
           textarea,
           select,
@@ -948,6 +948,28 @@ body,
                 color: var(--primary, #0d6efd);
                 font-size: .95rem;
                 white-space: nowrap;
+            }
+
+            #top_menu_collapse_mobile.offcanvas {
+                position: fixed !important;
+                top: 0 !important;
+                bottom: 0 !important;
+                height: 100vh !important;
+                max-height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            #top_menu_collapse_mobile .offcanvas-body.h-100 {
+                height: auto !important;      
+                flex: 1 1 auto !important;  
+                overflow-y: auto !important;   
+                overflow-x: hidden !important;
+                padding-bottom: 50px !important; 
+            }
+
+            #top_menu_collapse_mobile .offcanvas-body &gt; ul.navbar-nav {
+                flex-shrink: 0 !important;
             }
 
             @media (max-width: 575.98px) {
