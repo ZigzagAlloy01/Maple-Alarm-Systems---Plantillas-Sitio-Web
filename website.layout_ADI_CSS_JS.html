@@ -1,4 +1,4 @@
-<data name="Main layout" inherit_id="portal.frontend_layout">
+   <data name="Main layout" inherit_id="portal.frontend_layout">
     
     <xpath expr="//html" position="before">
         <t t-set="html_data" t-value="{             'lang': lang.replace('_', '-'),             'data-website-id': website.id,             'data-edit_translations': '1' if edit_translations else None,             'data-main-object': repr(main_object) if main_object else None,             'data-seo-object': repr(seo_object) if seo_object else None,         }"/>
