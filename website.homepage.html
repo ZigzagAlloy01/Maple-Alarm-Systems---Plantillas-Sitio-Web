@@ -1,6 +1,130 @@
 <t name="Homepage" t-name="website.homepage">
     <t t-call="website.layout" pageName.f="homepage">
-        <t t-set="maple_home_categories" t-value="[             {                 'id': '19',                 'title': 'Automatización e Intrusión',                 'subtitle': 'Alarmas, automatización y accesorios instalables.',                 'href': '/shop/category/automatizacion-e-intrusion-19',                 'meta': '14 subcategorías',                 'tone': 'red'             },             {                 'id': '268',                 'title': 'Intrusión y Automatización',                 'subtitle': 'Paneles, sensores, sirenas y comunicadores.',                 'href': '/shop/category/intrusion-y-automatizacion-268',                 'meta': '7 subcategorías',                'tone': 'amber'             },             {                 'id': '46',                 'title': 'Videovigilancia',                 'subtitle': 'Cámaras, grabadores, energía y accesorios CCTV.',                 'href': '/shop/category/videovigilancia-46',                 'meta': '9 subcategorías',                 'tone': 'red'             },             {                 'id': '51',                 'title': 'Energía / Herramientas',                 'subtitle': 'Baterías, cargadores, ferretería y gabinetes.',                 'href': '/shop/category/energia-herramientas-51',                 'meta': '3 subcategorías',                 'tone': 'amber'             },             {                 'id': '60',                 'title': 'Detección de Fuego',                 'subtitle': 'Paneles, notificación, cableado y dispositivos convencionales.',                 'href': '/shop/category/deteccion-de-fuego-60',                 'meta': '6 subcategorías',                 'tone': 'fire'             },             {                 'id': '67',                 'title': 'Control de Acceso',                 'subtitle': 'Cerraduras, biométricos, lectoras y control vehicular.',                 'href': '/shop/category/control-de-acceso-67',                 'meta': '12 subcategorías',                 'tone': 'amber'             },             {                 'id': '72',                 'title': 'Cableado Estructurado',                 'subtitle': 'Canalización, racks, patch panels y cable de cobre.',                 'href': '/shop/category/cableado-estructurado-72',                 'meta': '5 subcategorías',                 'tone': 'red'             },             {                 'id': '96',                 'title': 'Audio y Video Profesional',                 'subtitle': 'Distribución de video y soluciones AV sobre IP.',                 'href': '/shop/category/audio-y-video-profesional-96',                 'meta': '1 subcategoría',                 'tone': 'amber'             },             {                 'id': '105',                 'title': 'Redes e IT',                 'subtitle': 'WiFi, switches, enlaces, VoIP y redes FTTH/PON.',                 'href': '/shop/category/redes-e-it-105',                 'meta': '6 subcategorías',                 'tone': 'fire'             },             {                 'id': '120',                 'title': 'IoT / GPS / Telemática',                 'subtitle': 'Grabación móvil, señalización audiovisual y accesorios.',                 'href': '/shop/category/iot-gps-telematica-y-senalizacion-audiovisual-120',                 'meta': '3 subcategorías',                 'tone': 'amber'             }, {                 'id': '207',                 'title': 'Radiocomunicación',                 'subtitle': 'Racks, gabinetes, accesorios y luz estroboscópica.',                 'href': '/shop/category/radiocomunicacion-207',                 'meta': '3 subcategorías',                 'tone': 'red'             }     ]"/>
+        <t t-set="maple_home_categories" t-value="
+                    [
+                {
+                    'id': '72',
+                    'title': 'Cableado Estructurado',
+                    'subtitle': 'Infraestructura de red, canalización, racks y conectividad.',
+                    'href': '/shop/category/cableado-estructurado-72',
+                    'meta': '5 subcategorías',
+                    'tone': 'red'
+                },
+                {
+                    'id': '335',
+                    'title': 'Controles de Acceso',
+                    'subtitle': 'Equipos y accesorios para control y administración de accesos.',
+                    'href': '/shop/category/controles-de-acceso-335',
+                    'meta': '4 subcategorías',
+                    'tone': 'amber'
+                },
+                {
+                    'id': '338',
+                    'title': 'Cámaras de Seguridad',
+                    'subtitle': 'Soluciones de videovigilancia para hogares, negocios e industria.',
+                    'href': '/shop/category/camaras-de-seguridad-338',
+                    'meta': '8 subcategorías',
+                    'tone': 'red'
+                },
+                {
+                    'id': '341',
+                    'title': 'Baterías',
+                    'subtitle': 'Respaldo energético para sistemas de seguridad y telecomunicaciones.',
+                    'href': '/shop/category/baterias-341',
+                    'meta': '3 subcategorías',
+                    'tone': 'amber'
+                },
+                {
+                    'id': '351',
+                    'title': 'Cercas Eléctricas',
+                    'subtitle': 'Protección perimetral mediante sistemas de electrificación y monitoreo.',
+                    'href': '/shop/category/cercas-electricas-351',
+                    'meta': '4 subcategorías',
+                    'tone': 'fire'
+                },
+                {
+                    'id': '358',
+                    'title': 'Cables',
+                    'subtitle': 'Cableado especializado para energía, datos, audio y seguridad.',
+                    'href': '/shop/category/cables-358',
+                    'meta': '6 subcategorías',
+                    'tone': 'red'
+                },
+                {
+                    'id': '365',
+                    'title': 'Redes',
+                    'subtitle': 'Conectividad, switching, WiFi y soluciones de infraestructura IT.',
+                    'href': '/shop/category/redes-365',
+                    'meta': '6 subcategorías',
+                    'tone': 'fire'
+                },
+                {
+                    'id': '374',
+                    'title': 'Sistemas de Alarma',
+                    'subtitle': 'Equipos de detección, notificación y respuesta ante intrusiones.',
+                    'href': '/shop/category/sistemas-de-alarma-374',
+                    'meta': '5 subcategorías',
+                    'tone': 'red'
+                },
+                {
+                    'id': '393',
+                    'title': 'Tierras Fisicas',
+                    'subtitle': 'Protección eléctrica y sistemas de puesta a tierra.',
+                    'href': '/shop/category/tierras-fisicas-393',
+                    'meta': '2 subcategorías',
+                    'tone': 'amber'
+                },
+                {
+                    'id': '411',
+                    'title': 'Fuentes de Alimentación',
+                    'subtitle': 'Conversión y suministro de energía para dispositivos electrónicos.',
+                    'href': '/shop/category/fuentes-de-alimentacion-411',
+                    'meta': '4 subcategorías',
+                    'tone': 'amber'
+                },
+                {
+                    'id': '442',
+                    'title': 'Baja',
+                    'subtitle': 'Productos y accesorios especializados de baja tensión.',
+                    'href': '/shop/category/baja-442',
+                    'meta': '3 subcategorías',
+                    'tone': 'red'
+                },
+                {
+                    'id': '482',
+                    'title': 'Instalaciones',
+                    'subtitle': 'Herramientas, accesorios y materiales para proyectos de instalación.',
+                    'href': '/shop/category/instalaciones-482',
+                    'meta': '5 subcategorías',
+                    'tone': 'amber'
+                },
+                {
+                    'id': '485',
+                    'title': 'Joysticks para Camaras PTZ',
+                    'subtitle': 'Control profesional para cámaras PTZ y sistemas de monitoreo.',
+                    'href': '/shop/category/joysticks-para-camaras-ptz-485',
+                    'meta': '1 subcategoría',
+                    'tone': 'red'
+                },
+                {
+                    'id': '501',
+                    'title': 'Hogar Inteligente',
+                    'subtitle': 'Automatización residencial, control remoto y dispositivos inteligentes.',
+                    'href': '/shop/category/hogar-inteligente-501',
+                    'meta': '6 subcategorías',
+                    'tone': 'fire'
+                },
+                {
+                    'id': '514',
+                    'title': 'Fuentes de Alimentacion',
+                    'subtitle': 'Soluciones de energía y respaldo para sistemas electrónicos.',
+                    'href': '/shop/category/fuentes-de-alimentacion-514',
+                    'meta': '4 subcategorías',
+                    'tone': 'amber'
+                }
+            ]
+        
+        "/>
         <div id="wrap" class="oe_structure maple-homepage">
             <section class="maple-hero" data-name="Inicio">
                 <div class="maple-hero__media" aria-hidden="true"/>
