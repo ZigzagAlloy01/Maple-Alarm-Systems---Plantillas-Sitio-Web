@@ -625,11 +625,13 @@ body,
           }
           
           .o_mega_menu.fetchEcomCategories {
-              width: min(1240px, calc(100vw - 40px)) !important;
-              max-width: 1240px !important;
+              width: 100vw !important;
+              max-width: none !important;
               max-height: calc(100dvh - 40px) !important;
+              left:50% !important;
               padding: 0 !important;
               overflow: hidden;
+              transform:translateX(-50%) !important;
               border: 0 !important;
               border-radius: 0 0 18px 18px !important;
               box-shadow: 0 20px 60px var(--shadow-24) !important;
@@ -678,13 +680,6 @@ body,
           }
           
           .o_mega_menu.fetchEcomCategories :is(.s_mega_menu_odoo_menu, .s_mega_menu_multi_menus).syscomify-mode-classic .syscomify-topbar {
-              margin-bottom: 14px;
-          }
-          
-          .o_mega_menu.fetchEcomCategories .syscomify-topbar {
-              display: flex;
-              align-items: center;
-              gap: 12px;
               margin-bottom: 14px;
           }
           
@@ -744,12 +739,13 @@ body,
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-shell {
-              display: grid;
-              grid-template-columns: 250px minmax(320px, 1fr) minmax(260px, 0.9fr);
-              min-height: 490px;
+            display: grid;  
+            grid-template-columns: 20rem 60rem 30rem;
+              min-height:560px !important;
+              max-height:calc(200vh - 2rem)!important;
+              border-radius:0!important;
               overflow: hidden;
               border: 1px solid var(--overlay-white-08);
-              border-radius: 18px;
               background: var(--surface-shell);
               backdrop-filter: blur(10px);
           }
@@ -759,8 +755,8 @@ body,
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-pane--left {
-              padding: 14px 10px;
-              overflow: auto;
+              padding:0!important;
+              overflow-y:auto!important;
               border-right: 1px solid var(--overlay-white-08);
               background: var(--maple-white);
               color: var(--asphalt-black);
@@ -776,9 +772,12 @@ body,
               border-right: 1px solid var(--overlay-white-08);
               background: var(--maple-white);
               color: var(--asphalt-black);
+              padding: 18px 22px!important;
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-pane--right {
+              display:block!important;
+              padding:20px!important; 
               background: var(--maple-white);
               color: var(--asphalt-black);
           }
@@ -790,6 +789,12 @@ body,
               padding: 0;
               list-style: none;
           }
+
+          .o_mega_menu.fetchEcomCategories .syscomify-links {
+              display: grid!important;
+              grid-template-columns: repeat(4,minmax(170px,1fr))!important;
+              gap: 10px 24px!important;
+          }
           
           .o_mega_menu.fetchEcomCategories .syscomify-section-btn {
               display: flex;
@@ -797,11 +802,13 @@ body,
               justify-content: space-between;
               gap: 10px;
               width: 100%;
+              min-height: 44px!important;
               padding: 12px 12px;
               border: 0;
               border-radius: 12px;
               background: transparent;
               color: var(--maple-black);
+              font-size: 13px!important;
               font-weight: 500;
               line-height: 1.3;
               text-align: left;
@@ -822,11 +829,12 @@ body,
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-section-meta {
-              display: block;
-              margin-top: 3px;
+              display: inline-block;
+              margin: 0 0 0 1rem;
               color: var(--maple-black);
               font-size: 12px;
               font-weight: 400;
+              white-space: nowrap;
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-arrow {
@@ -848,11 +856,20 @@ body,
               color: var(--maple-black);
               font-size: 13px;
           }
+
+          .o_mega_menu.fetchEcomCategories .syscomify-links li{
+            margin: 0!important;
+            }
           
           .o_mega_menu.fetchEcomCategories .syscomify-links li + li,
           .o_mega_menu.fetchEcomCategories .syscomify-list li + li {
               margin-top: 4px;
           }
+
+          .o_mega_menu.fetchEcomCategories .syscomify-links a{
+              font-size: 13px!important;
+              line-height: 1.35!important;
+            }
           
           .o_mega_menu.fetchEcomCategories .syscomify-link {
               display: flex;
@@ -1483,7 +1500,7 @@ body,
               .o_mega_menu.fetchEcomCategories .syscomify-topbar {
                   flex-wrap: wrap;
                   gap: 10px;
-                  margin-bottom: 10px;
+                  margin-bottom: 2rem;
               }
           
               .o_mega_menu.fetchEcomCategories .syscomify-search {
@@ -1508,6 +1525,7 @@ body,
           .o_mega_menu.fetchEcomCategories .syscomify-pane--center {
                   border-bottom: 1px solid var(--overlay-white-08);
                   border-right: 0;
+                  
               }
           
               .o_mega_menu.fetchEcomCategories .syscomify-pane--left {
@@ -1811,136 +1829,230 @@ body,
             var MOBILE_BREAKPOINT = 991;
             var CATEGORY_REFERENCE_TREE = [
             {
-              "categoryId": "19",
-              "title": "Automatización e Intrusión",
-              "url": "/shop/category/automatizacion-e-intrusion-19",
+              "categoryId": "520",
+              "title": "Cámaras de Seguridad",
+              "url": "/shop/category/camaras-de-seguridad-520",
               "children": [
                 {
-                  "categoryId": "20",
-                  "title": "Paneles de Alarma y Accesorios Hikvision",
-                  "url": "/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-20",
+                  "categoryId": "521",
+                  "title": "Grabadores para Cámaras IP (NVR)",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-521",
                   "children": [
                     {
-                      "categoryId": "22",
-                      "title": "AX PRO Series",
-                      "url": "/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-ax-pro-series-22",
+                      "categoryId": "522",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-todos-522",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "categoryId": "33",
-                  "title": "Automatización - Casa Inteligente",
-                  "url": "/shop/category/automatizacion-e-intrusion-automatizacion-casa-inteligente-33",
+                  "categoryId": "523",
+                  "title": "Kits listos para instalar",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-523",
                   "children": [
                     {
-                      "categoryId": "315",
-                      "title": "Cámaras Wi-Fi Inteligentes",
-                      "url": "/shop/category/automatizacion-e-intrusion-automatizacion-casa-inteligente-camaras-wi-fi-inteligentes-315",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "268",
-              "title": "Intrusión y Automatización",
-              "url": "/shop/category/intrusion-y-automatizacion-268",
-              "children": [
-                {
-                  "categoryId": "273",
-                  "title": "Sirenas y Notificación",
-                  "url": "/shop/category/intrusion-y-automatizacion-sirenas-y-notificacion-273",
-                  "children": [
-                    {
-                      "categoryId": "285",
-                      "title": "Sirenas y Estrobos",
-                      "url": "/shop/category/intrusion-y-automatizacion-sirenas-y-notificacion-sirenas-y-estrobos-285",
+                      "categoryId": "524",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-camaras-de-seguridad-kits-listos-para-instalar-todos-524",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "categoryId": "277",
-                  "title": "Sensores y Detectores",
-                  "url": "/shop/category/intrusion-y-automatizacion-sensores-y-detectores-277",
-                  "children": [
-                    {
-                      "categoryId": "519",
-                      "title": "Contactos Magnéticos Inalámbricos",
-                      "url": "/shop/category/intrusion-y-automatizacion-sensores-y-detectores-contactos-magneticos-inalambricos-519",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "280",
-                      "title": "Movimiento (PIR) Inalámbricos",
-                      "url": "/shop/category/intrusion-y-automatizacion-sensores-y-detectores-movimiento-pir-inalambricos-280",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "46",
-              "title": "Videovigilancia",
-              "url": "/shop/category/videovigilancia-46",
-              "children": [
-                {
-                  "categoryId": "54",
-                  "title": "Cámaras IP y NVRs",
-                  "url": "/shop/category/videovigilancia-camaras-ip-y-nvrs-54",
-                  "children": [
-                    {
-                      "categoryId": "87",
-                      "title": "Turret",
-                      "url": "/shop/category/videovigilancia-camaras-ip-y-nvrs-domo-eyeball-turret-87",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "99",
-                      "title": "NVRs Network Video Recorders",
-                      "url": "/shop/category/videovigilancia-camaras-ip-y-nvrs-nvrs-network-video-recorders-99",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "56",
-                  "title": "HD-TVI",
-                  "url": "/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-56",
-                  "children": [
-                    {
-                      "categoryId": "84",
-                      "title": "CVI",
-                      "url": "/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-videograbadoras-analogicas-turbohd-tvi-ahd-cvi-84",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "85",
+                  "categoryId": "525",
                   "title": "Almacenamiento",
-                  "url": "/shop/category/videovigilancia-servidores-almacenamiento-85",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-525",
                   "children": [
                     {
-                      "categoryId": "86",
-                      "title": "Discos Duros Mecánicos (HDD)",
-                      "url": "/shop/category/videovigilancia-servidores-almacenamiento-discos-duros-mecanicos-hdd-86",
+                      "categoryId": "526",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-camaras-de-seguridad-almacenamiento-todos-526",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "categoryId": "110",
-                  "title": "Kits- Sistemas Completos",
-                  "url": "/shop/category/videovigilancia-kits-sistemas-completos-110",
+                  "categoryId": "531",
+                  "title": "Accesorios para Cámaras de Seguridad",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-531",
                   "children": [
                     {
-                      "categoryId": "111",
-                      "title": "IP Megapixel",
-                      "url": "/shop/category/videovigilancia-kits-sistemas-completos-ip-megapixel-111",
+                      "categoryId": "532",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-todos-532",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "533",
+                  "title": "Cámaras IP",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-533",
+                  "children": [
+                    {
+                      "categoryId": "534",
+                      "title": "Cámaras tipo bala",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-bala-534",
+                      "children": []
+                    },
+                    {
+                      "categoryId": "543",
+                      "title": "Cámaras tipo Domo",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-domo-543",
+                      "children": []
+                    },
+                    {
+                      "categoryId": "547",
+                      "title": "Cámaras con movimiento (PTZ)",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-movimiento-ptz-547",
+                      "children": []
+                    },
+                    {
+                      "categoryId": "556",
+                      "title": "Cámaras con vision 180° y 360°",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-vision-180-y-360-556",
+                      "children": []
+                    },
+                    {
+                      "categoryId": "557",
+                      "title": "Cámaras especiales",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-especiales-557",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "535",
+                  "title": "Cámaras Analogicas HD",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-535",
+                  "children": [
+                    {
+                      "categoryId": "536",
+                      "title": "Cámaras tipo Bala",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-bala-536",
+                      "children": []
+                    },
+                    {
+                      "categoryId": "544",
+                      "title": "Cámaras tipo Domo",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-domo-544",
+                      "children": []
+                    },
+                    {
+                      "categoryId": "548",
+                      "title": "Cámaras especiales",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-especiales-548",
+                      "children": []
+                    },
+                    {
+                      "categoryId": "562",
+                      "title": "Cámaras con movimiento PTZ",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-con-movimiento-ptz-562",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "537",
+                  "title": "Extensión de Video y Multipantalla",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-537",
+                  "children": [
+                    {
+                      "categoryId": "538",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-camaras-de-seguridad-extension-de-video-y-multipantalla-todos-538",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "539",
+                  "title": "Montajes para Cámaras de Seguridad",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-539",
+                  "children": [
+                    {
+                      "categoryId": "540",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-todos-540",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "541",
+                  "title": "Grabadores para Cámaras Analogicas HD",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-541",
+                  "children": [
+                    {
+                      "categoryId": "542",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-todos-542",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "545",
+                  "title": "Bodycam",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-545",
+                  "children": [
+                    {
+                      "categoryId": "546",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-camaras-de-seguridad-bodycam-todos-546",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "549",
+                  "title": "Cámaras Web",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-549",
+                  "children": [
+                    {
+                      "categoryId": "550",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-camaras-de-seguridad-camaras-web-todos-550",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "551",
+                  "title": "Dashcam",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-551",
+                  "children": [
+                    {
+                      "categoryId": "552",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-camaras-de-seguridad-dashcam-todos-552",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "558",
+                  "title": "Gabinetes para grabadores",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-558",
+                  "children": [
+                    {
+                      "categoryId": "559",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-camaras-de-seguridad-gabinetes-para-grabadores-todos-559",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "categoryId": "560",
+                  "title": "Cámaras Autónomas",
+                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-560",
+                  "children": [
+                    {
+                      "categoryId": "561",
+                      "title": "Todos",
+                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-camaras-de-seguridad-camaras-autonomas-todos-561",
                       "children": []
                     }
                   ]
@@ -1948,65 +2060,19 @@ body,
               ]
             },
             {
-              "categoryId": "67",
-              "title": "Control de Acceso",
-              "url": "/shop/category/control-de-acceso-67",
+              "categoryId": "553",
+              "title": "Joysticks para Cámaras PTZ",
+              "url": "/shop/category/joysticks-para-camaras-ptz-553",
               "children": [
                 {
-                  "categoryId": "75",
-                  "title": "Cerraduras",
-                  "url": "/shop/category/control-de-acceso-cerraduras-75",
+                  "categoryId": "554",
+                  "title": "Todos",
+                  "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-554",
                   "children": [
                     {
-                      "categoryId": "304",
-                      "title": "Chapas y Contrachapas",
-                      "url": "/shop/category/control-de-acceso-cerraduras-chapas-y-contrachapas-304",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "134",
-                  "title": "Paneles de Control de Acceso",
-                  "url": "/shop/category/control-de-acceso-paneles-de-control-de-acceso-134",
-                  "children": [
-                    {
-                      "categoryId": "135",
-                      "title": "Controladores de Acceso",
-                      "url": "/shop/category/control-de-acceso-paneles-de-control-de-acceso-controladores-de-acceso-135",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "234",
-                  "title": "Acceso vehicular",
-                  "url": "/shop/category/control-de-acceso-acceso-vehicular-234",
-                  "children": [
-                    {
-                      "categoryId": "235",
-                      "title": "Accesorios",
-                      "url": "/shop/category/control-de-acceso-acceso-vehicular-accesorios-235",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "72",
-              "title": "Cableado Estructurado",
-              "url": "/shop/category/cableado-estructurado-72",
-              "children": [
-                {
-                  "categoryId": "148",
-                  "title": "Racks y Gabinetes",
-                  "url": "/shop/category/cableado-estructurado-racks-y-gabinetes-148",
-                  "children": [
-                    {
-                      "categoryId": "150",
-                      "title": "Racks Cerrados",
-                      "url": "/shop/category/cableado-estructurado-racks-y-gabinetes-racks-cerrados-150",
+                      "categoryId": "555",
+                      "title": "Todos",
+                      "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-joysticks-para-camaras-ptz-todos-todos-555",
                       "children": []
                     }
                   ]
@@ -2040,19 +2106,6 @@ body,
                       "categoryId": "345",
                       "title": "Todos",
                       "url": "/shop/category/controles-de-acceso-controles-de-acceso-controles-remotos-controles-de-acceso-controles-remotos-todos-345",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "346",
-                  "title": "Chapas Magneticas y Electricas",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-346",
-                  "children": [
-                    {
-                      "categoryId": "347",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-controles-de-acceso-chapas-magneticas-y-electricas-todos-347",
                       "children": []
                     }
                   ]
@@ -2250,247 +2303,16 @@ body,
                       "children": []
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "categoryId": "338",
-              "title": "Cámaras de Seguridad",
-              "url": "/shop/category/camaras-de-seguridad-338",
-              "children": [
+                },
                 {
-                  "categoryId": "339",
-                  "title": "Accesorios para Cámaras de Seguridad",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-339",
+                  "categoryId": "527",
+                  "title": "Chapas Magnéticas y Eléctricas",
+                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-527",
                   "children": [
                     {
-                      "categoryId": "340",
+                      "categoryId": "528",
                       "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-todos-340",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "391",
-                  "title": "Gabinetes para grabadores",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-391",
-                  "children": [
-                    {
-                      "categoryId": "392",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-camaras-de-seguridad-gabinetes-para-grabadores-todos-392",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "438",
-                  "title": "Cámaras IP",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-438",
-                  "children": [
-                    {
-                      "categoryId": "439",
-                      "title": "Cámaras tipo bala",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-bala-439",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "456",
-                      "title": "Cámaras tipo Domo",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-domo-456",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "476",
-                      "title": "Cámaras con movimiento (PTZ)",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-movimiento-ptz-476",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "490",
-                      "title": "Cámaras con vision 180° y 360°",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-vision-180-y-360-490",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "491",
-                      "title": "Cámaras especiales",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-especiales-491",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "440",
-                  "title": "Cámaras Analogicas HD",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-440",
-                  "children": [
-                    {
-                      "categoryId": "441",
-                      "title": "Cámaras tipo Bala",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-bala-441",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "463",
-                      "title": "Cámaras tipo Domo",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-domo-463",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "477",
-                      "title": "Cámaras especiales",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-especiales-477",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "513",
-                      "title": "Cámaras con movimiento PTZ",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-con-movimiento-ptz-513",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "447",
-                  "title": "Extension y Multipantalla",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-y-multipantalla-447",
-                  "children": [
-                    {
-                      "categoryId": "448",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-y-multipantalla-camaras-de-seguridad-extension-y-multipantalla-todos-448",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "349",
-                  "title": "Extensión de Video y Multipantalla",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-349",
-                  "children": [
-                    {
-                      "categoryId": "350",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-camaras-de-seguridad-extension-de-video-y-multipantalla-todos-350",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "511",
-                  "title": "Cámaras Autónomas",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-511",
-                  "children": [
-                    {
-                      "categoryId": "512",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-camaras-de-seguridad-camaras-autonomas-todos-512",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "450",
-                  "title": "Montajes para Cámaras de Seguridad",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-450",
-                  "children": [
-                    {
-                      "categoryId": "451",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-todos-451",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "452",
-                  "title": "Grabadores para Camaras Analogicas HD",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-452",
-                  "children": [
-                    {
-                      "categoryId": "453",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-todos-453",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "454",
-                  "title": "Almacenamiento",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-454",
-                  "children": [
-                    {
-                      "categoryId": "455",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-camaras-de-seguridad-almacenamiento-todos-455",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "461",
-                  "title": "Grabadores para Camaras IP (NVR)",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-461",
-                  "children": [
-                    {
-                      "categoryId": "462",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-todos-462",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "466",
-                  "title": "Kits listos para instalar",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-466",
-                  "children": [
-                    {
-                      "categoryId": "467",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-camaras-de-seguridad-kits-listos-para-instalar-todos-467",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "472",
-                  "title": "Bodycam",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-472",
-                  "children": [
-                    {
-                      "categoryId": "473",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-camaras-de-seguridad-bodycam-todos-473",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "478",
-                  "title": "Cámaras Web",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-478",
-                  "children": [
-                    {
-                      "categoryId": "479",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-camaras-de-seguridad-camaras-web-todos-479",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "480",
-                  "title": "Dashcam",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-480",
-                  "children": [
-                    {
-                      "categoryId": "481",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-camaras-de-seguridad-dashcam-todos-481",
+                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-controles-de-acceso-chapas-magneticas-y-electricas-todos-528",
                       "children": []
                     }
                   ]
@@ -3041,34 +2863,14 @@ body,
                   ]
                 },
                 {
-                  "categoryId": "436",
+                  "categoryId": "529",
                   "title": "Fuentes para Cámaras de Seguridad",
-                  "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-436",
+                  "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-529",
                   "children": [
                     {
-                      "categoryId": "437",
+                      "categoryId": "530",
                       "title": "Todos",
-                      "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-todos-437",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "442",
-              "title": "Baja",
-              "url": "/shop/category/baja-442",
-              "children": [
-                {
-                  "categoryId": "443",
-                  "title": "Todos",
-                  "url": "/shop/category/baja-baja-todos-443",
-                  "children": [
-                    {
-                      "categoryId": "444",
-                      "title": "Todos",
-                      "url": "/shop/category/baja-baja-todos-baja-todos-todos-444",
+                      "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-todos-530",
                       "children": []
                     }
                   ]
@@ -3089,26 +2891,6 @@ body,
                       "categoryId": "484",
                       "title": "Todos",
                       "url": "/shop/category/instalaciones-instalaciones-gabinetes-instalaciones-gabinetes-todos-484",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "485",
-              "title": "Joysticks para Camaras PTZ",
-              "url": "/shop/category/joysticks-para-camaras-ptz-485",
-              "children": [
-                {
-                  "categoryId": "486",
-                  "title": "Todos",
-                  "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-486",
-                  "children": [
-                    {
-                      "categoryId": "487",
-                      "title": "Todos",
-                      "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-joysticks-para-camaras-ptz-todos-todos-487",
                       "children": []
                     }
                   ]
@@ -3154,26 +2936,6 @@ body,
                       "categoryId": "507",
                       "title": "Apagadores y Control de Iluminación",
                       "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-hogar-inteligente-dispositivos-z-wave-apagadores-y-control-de-iluminacion-507",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "514",
-              "title": "Fuentes de Alimentacion",
-              "url": "/shop/category/fuentes-de-alimentacion-514",
-              "children": [
-                {
-                  "categoryId": "515",
-                  "title": "Fuentes para Cámaras de Seguridad",
-                  "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-515",
-                  "children": [
-                    {
-                      "categoryId": "516",
-                      "title": "Todos",
-                      "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-todos-516",
                       "children": []
                     }
                   ]
@@ -4360,6 +4122,58 @@ body,
                   enlaceSucursales.textContent = 'Cotizaciones';
                 }
             });
+            
+            
+            
+            
+            document.addEventListener('DOMContentLoaded',function(){
+    function adiDesktopify(){
+        if(window.innerWidth &lt; 1200){return;}
+
+        document.querySelectorAll('.o_mega_menu.fetchEcomCategories').forEach(function(menu){
+
+            var center = menu.querySelector('.syscomify-pane--center');
+
+            if(!center || center.dataset.adiApplied==='1'){
+                return;
+            }
+
+            center.dataset.adiApplied='1';
+
+            var links = center.querySelector('.syscomify-links');
+
+            if(links){
+
+                var items=[].slice.call(links.children);
+
+                if(items.length&gt;12){
+
+                    var wrapper=document.createElement('div');
+
+                    wrapper.className='adi-columns';
+                    wrapper.style.display='grid';
+                    wrapper.style.gridTemplateColumns='repeat(4,minmax(180px,1fr))';
+                    wrapper.style.gap='24px';
+
+                    for(var i=0;i&lt;4;i++){
+                        var col=document.createElement('div');
+                        wrapper.appendChild(col);
+                    }
+
+                    items.forEach(function(el,idx){
+                        wrapper.children[idx%4].appendChild(el);
+                    });
+
+                    links.innerHTML='';
+                    links.appendChild(wrapper);
+                }
+            }
+        });
+    }
+
+    setTimeout(adiDesktopify,800);
+    window.addEventListener('resize',adiDesktopify);
+});
         </script>
     </xpath>
 </data>

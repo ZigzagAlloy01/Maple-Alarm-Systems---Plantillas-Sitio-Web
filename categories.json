@@ -1,1372 +1,1116 @@
 [
-            {
-              "categoryId": "19",
-              "title": "Automatización e Intrusión",
-              "url": "/shop/category/automatizacion-e-intrusion-19",
-              "children": [
-                {
-                  "categoryId": "20",
-                  "title": "Paneles de Alarma y Accesorios Hikvision",
-                  "url": "/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-20",
-                  "children": [
-                    {
-                      "categoryId": "22",
-                      "title": "AX PRO Series",
-                      "url": "/shop/category/automatizacion-e-intrusion-paneles-de-alarma-y-accesorios-hikvision-ax-pro-series-22",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "33",
-                  "title": "Automatización - Casa Inteligente",
-                  "url": "/shop/category/automatizacion-e-intrusion-automatizacion-casa-inteligente-33",
-                  "children": [
-                    {
-                      "categoryId": "315",
-                      "title": "Cámaras Wi-Fi Inteligentes",
-                      "url": "/shop/category/automatizacion-e-intrusion-automatizacion-casa-inteligente-camaras-wi-fi-inteligentes-315",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "268",
-              "title": "Intrusión y Automatización",
-              "url": "/shop/category/intrusion-y-automatizacion-268",
-              "children": [
-                {
-                  "categoryId": "273",
-                  "title": "Sirenas y Notificación",
-                  "url": "/shop/category/intrusion-y-automatizacion-sirenas-y-notificacion-273",
-                  "children": [
-                    {
-                      "categoryId": "285",
-                      "title": "Sirenas y Estrobos",
-                      "url": "/shop/category/intrusion-y-automatizacion-sirenas-y-notificacion-sirenas-y-estrobos-285",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "277",
-                  "title": "Sensores y Detectores",
-                  "url": "/shop/category/intrusion-y-automatizacion-sensores-y-detectores-277",
-                  "children": [
-                    {
-                      "categoryId": "519",
-                      "title": "Contactos Magnéticos Inalámbricos",
-                      "url": "/shop/category/intrusion-y-automatizacion-sensores-y-detectores-contactos-magneticos-inalambricos-519",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "280",
-                      "title": "Movimiento (PIR) Inalámbricos",
-                      "url": "/shop/category/intrusion-y-automatizacion-sensores-y-detectores-movimiento-pir-inalambricos-280",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "46",
-              "title": "Videovigilancia",
-              "url": "/shop/category/videovigilancia-46",
-              "children": [
-                {
-                  "categoryId": "54",
-                  "title": "Cámaras IP y NVRs",
-                  "url": "/shop/category/videovigilancia-camaras-ip-y-nvrs-54",
-                  "children": [
-                    {
-                      "categoryId": "87",
-                      "title": "Turret",
-                      "url": "/shop/category/videovigilancia-camaras-ip-y-nvrs-domo-eyeball-turret-87",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "99",
-                      "title": "NVRs Network Video Recorders",
-                      "url": "/shop/category/videovigilancia-camaras-ip-y-nvrs-nvrs-network-video-recorders-99",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "56",
-                  "title": "HD-TVI",
-                  "url": "/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-56",
-                  "children": [
-                    {
-                      "categoryId": "84",
-                      "title": "CVI",
-                      "url": "/shop/category/videovigilancia-camaras-y-dvrs-hd-turbohd-ahd-hd-tvi-videograbadoras-analogicas-turbohd-tvi-ahd-cvi-84",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "85",
-                  "title": "Almacenamiento",
-                  "url": "/shop/category/videovigilancia-servidores-almacenamiento-85",
-                  "children": [
-                    {
-                      "categoryId": "86",
-                      "title": "Discos Duros Mecánicos (HDD)",
-                      "url": "/shop/category/videovigilancia-servidores-almacenamiento-discos-duros-mecanicos-hdd-86",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "110",
-                  "title": "Kits- Sistemas Completos",
-                  "url": "/shop/category/videovigilancia-kits-sistemas-completos-110",
-                  "children": [
-                    {
-                      "categoryId": "111",
-                      "title": "IP Megapixel",
-                      "url": "/shop/category/videovigilancia-kits-sistemas-completos-ip-megapixel-111",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "67",
-              "title": "Control de Acceso",
-              "url": "/shop/category/control-de-acceso-67",
-              "children": [
-                {
-                  "categoryId": "75",
-                  "title": "Cerraduras",
-                  "url": "/shop/category/control-de-acceso-cerraduras-75",
-                  "children": [
-                    {
-                      "categoryId": "304",
-                      "title": "Chapas y Contrachapas",
-                      "url": "/shop/category/control-de-acceso-cerraduras-chapas-y-contrachapas-304",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "134",
-                  "title": "Paneles de Control de Acceso",
-                  "url": "/shop/category/control-de-acceso-paneles-de-control-de-acceso-134",
-                  "children": [
-                    {
-                      "categoryId": "135",
-                      "title": "Controladores de Acceso",
-                      "url": "/shop/category/control-de-acceso-paneles-de-control-de-acceso-controladores-de-acceso-135",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "234",
-                  "title": "Acceso vehicular",
-                  "url": "/shop/category/control-de-acceso-acceso-vehicular-234",
-                  "children": [
-                    {
-                      "categoryId": "235",
-                      "title": "Accesorios",
-                      "url": "/shop/category/control-de-acceso-acceso-vehicular-accesorios-235",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "72",
-              "title": "Cableado Estructurado",
-              "url": "/shop/category/cableado-estructurado-72",
-              "children": [
-                {
-                  "categoryId": "148",
-                  "title": "Racks y Gabinetes",
-                  "url": "/shop/category/cableado-estructurado-racks-y-gabinetes-148",
-                  "children": [
-                    {
-                      "categoryId": "150",
-                      "title": "Racks Cerrados",
-                      "url": "/shop/category/cableado-estructurado-racks-y-gabinetes-racks-cerrados-150",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "335",
-              "title": "Controles de Acceso",
-              "url": "/shop/category/controles-de-acceso-335",
-              "children": [
-                {
-                  "categoryId": "336",
-                  "title": "Cerraduras Autónomas",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-autonomas-336",
-                  "children": [
-                    {
-                      "categoryId": "337",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-autonomas-controles-de-acceso-cerraduras-autonomas-todos-337",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "344",
-                  "title": "Controles Remotos",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-controles-remotos-344",
-                  "children": [
-                    {
-                      "categoryId": "345",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-controles-remotos-controles-de-acceso-controles-remotos-todos-345",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "346",
-                  "title": "Chapas Magneticas y Electricas",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-346",
-                  "children": [
-                    {
-                      "categoryId": "347",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-controles-de-acceso-chapas-magneticas-y-electricas-todos-347",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "354",
-                  "title": "Lectores Biometricos",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-biometricos-354",
-                  "children": [
-                    {
-                      "categoryId": "355",
-                      "title": "Biometricos para controladores",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-biometricos-controles-de-acceso-lectores-biometricos-biometricos-para-controladores-355",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "398",
-                      "title": "Biometricos autonomos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-biometricos-controles-de-acceso-lectores-biometricos-biometricos-autonomos-398",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "356",
-                  "title": "Botones",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-botones-356",
-                  "children": [
-                    {
-                      "categoryId": "357",
-                      "title": "Botones de petición de salida",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-botones-controles-de-acceso-botones-botones-de-peticion-de-salida-357",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "508",
-                      "title": "Botones de paro de emergencia",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-botones-controles-de-acceso-botones-botones-de-paro-de-emergencia-508",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "368",
-                  "title": "Lectores de Proximidad",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-proximidad-368",
-                  "children": [
-                    {
-                      "categoryId": "369",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-proximidad-controles-de-acceso-lectores-de-proximidad-todos-369",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "379",
-                  "title": "Accesorios para Controles de Acceso",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-accesorios-para-controles-de-acceso-379",
-                  "children": [
-                    {
-                      "categoryId": "380",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-accesorios-para-controles-de-acceso-controles-de-acceso-accesorios-para-controles-de-acceso-todos-380",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "396",
-                  "title": "Cierra Puertas",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-cierra-puertas-396",
-                  "children": [
-                    {
-                      "categoryId": "397",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-cierra-puertas-controles-de-acceso-cierra-puertas-todos-397",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "399",
-                  "title": "Controladores de Acceso",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-controladores-de-acceso-399",
-                  "children": [
-                    {
-                      "categoryId": "400",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-controladores-de-acceso-controles-de-acceso-controladores-de-acceso-todos-400",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "401",
-                  "title": "Cerraduras de Perno",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-de-perno-401",
-                  "children": [
-                    {
-                      "categoryId": "402",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-de-perno-controles-de-acceso-cerraduras-de-perno-todos-402",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "403",
-                  "title": "Lectores de QR",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-qr-403",
-                  "children": [
-                    {
-                      "categoryId": "404",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-qr-controles-de-acceso-lectores-de-qr-todos-404",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "405",
-                  "title": "Tarjetas de Proximidad",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-tarjetas-de-proximidad-405",
-                  "children": [
-                    {
-                      "categoryId": "406",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-tarjetas-de-proximidad-controles-de-acceso-tarjetas-de-proximidad-todos-406",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "407",
-                  "title": "Enroladores de Tarjetas",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-enroladores-de-tarjetas-407",
-                  "children": [
-                    {
-                      "categoryId": "408",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-enroladores-de-tarjetas-controles-de-acceso-enroladores-de-tarjetas-todos-408",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "409",
-                  "title": "Teclados Autonomos",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-teclados-autonomos-409",
-                  "children": [
-                    {
-                      "categoryId": "410",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-teclados-autonomos-controles-de-acceso-teclados-autonomos-todos-410",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "457",
-                  "title": "Video Porteros",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-video-porteros-457",
-                  "children": [
-                    {
-                      "categoryId": "458",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-video-porteros-controles-de-acceso-video-porteros-todos-458",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "459",
-                  "title": "Interfones y Porteros",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-interfones-y-porteros-459",
-                  "children": [
-                    {
-                      "categoryId": "460",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-interfones-y-porteros-controles-de-acceso-interfones-y-porteros-todos-460",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "509",
-                  "title": "Terminales de Tiempo y Asistencia",
-                  "url": "/shop/category/controles-de-acceso-controles-de-acceso-terminales-de-tiempo-y-asistencia-509",
-                  "children": [
-                    {
-                      "categoryId": "510",
-                      "title": "Todos",
-                      "url": "/shop/category/controles-de-acceso-controles-de-acceso-terminales-de-tiempo-y-asistencia-controles-de-acceso-terminales-de-tiempo-y-asistencia-todos-510",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "338",
-              "title": "Cámaras de Seguridad",
-              "url": "/shop/category/camaras-de-seguridad-338",
-              "children": [
-                {
-                  "categoryId": "339",
-                  "title": "Accesorios para Cámaras de Seguridad",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-339",
-                  "children": [
-                    {
-                      "categoryId": "340",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-todos-340",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "391",
-                  "title": "Gabinetes para grabadores",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-391",
-                  "children": [
-                    {
-                      "categoryId": "392",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-camaras-de-seguridad-gabinetes-para-grabadores-todos-392",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "438",
-                  "title": "Cámaras IP",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-438",
-                  "children": [
-                    {
-                      "categoryId": "439",
-                      "title": "Cámaras tipo bala",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-bala-439",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "456",
-                      "title": "Cámaras tipo Domo",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-domo-456",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "476",
-                      "title": "Cámaras con movimiento (PTZ)",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-movimiento-ptz-476",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "490",
-                      "title": "Cámaras con vision 180° y 360°",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-vision-180-y-360-490",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "491",
-                      "title": "Cámaras especiales",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-especiales-491",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "440",
-                  "title": "Cámaras Analogicas HD",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-440",
-                  "children": [
-                    {
-                      "categoryId": "441",
-                      "title": "Cámaras tipo Bala",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-bala-441",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "463",
-                      "title": "Cámaras tipo Domo",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-domo-463",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "477",
-                      "title": "Cámaras especiales",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-especiales-477",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "513",
-                      "title": "Cámaras con movimiento PTZ",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-con-movimiento-ptz-513",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "447",
-                  "title": "Extension y Multipantalla",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-y-multipantalla-447",
-                  "children": [
-                    {
-                      "categoryId": "448",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-y-multipantalla-camaras-de-seguridad-extension-y-multipantalla-todos-448",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "349",
-                  "title": "Extensión de Video y Multipantalla",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-349",
-                  "children": [
-                    {
-                      "categoryId": "350",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-camaras-de-seguridad-extension-de-video-y-multipantalla-todos-350",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "511",
-                  "title": "Cámaras Autónomas",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-511",
-                  "children": [
-                    {
-                      "categoryId": "512",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-camaras-de-seguridad-camaras-autonomas-todos-512",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "450",
-                  "title": "Montajes para Cámaras de Seguridad",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-450",
-                  "children": [
-                    {
-                      "categoryId": "451",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-todos-451",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "452",
-                  "title": "Grabadores para Camaras Analogicas HD",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-452",
-                  "children": [
-                    {
-                      "categoryId": "453",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-todos-453",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "454",
-                  "title": "Almacenamiento",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-454",
-                  "children": [
-                    {
-                      "categoryId": "455",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-camaras-de-seguridad-almacenamiento-todos-455",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "461",
-                  "title": "Grabadores para Camaras IP (NVR)",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-461",
-                  "children": [
-                    {
-                      "categoryId": "462",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-todos-462",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "466",
-                  "title": "Kits listos para instalar",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-466",
-                  "children": [
-                    {
-                      "categoryId": "467",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-camaras-de-seguridad-kits-listos-para-instalar-todos-467",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "472",
-                  "title": "Bodycam",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-472",
-                  "children": [
-                    {
-                      "categoryId": "473",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-camaras-de-seguridad-bodycam-todos-473",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "478",
-                  "title": "Cámaras Web",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-478",
-                  "children": [
-                    {
-                      "categoryId": "479",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-camaras-de-seguridad-camaras-web-todos-479",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "480",
-                  "title": "Dashcam",
-                  "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-480",
-                  "children": [
-                    {
-                      "categoryId": "481",
-                      "title": "Todos",
-                      "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-camaras-de-seguridad-dashcam-todos-481",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "341",
-              "title": "Baterías",
-              "url": "/shop/category/baterias-341",
-              "children": [
-                {
-                  "categoryId": "342",
-                  "title": "Baterias para Sistemas de Seguridad",
-                  "url": "/shop/category/baterias-baterias-baterias-para-sistemas-de-seguridad-342",
-                  "children": [
-                    {
-                      "categoryId": "343",
-                      "title": "Todos",
-                      "url": "/shop/category/baterias-baterias-baterias-para-sistemas-de-seguridad-baterias-baterias-para-sistemas-de-seguridad-todos-343",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "492",
-                  "title": "Equipos para Respaldo UPS No Break",
-                  "url": "/shop/category/baterias-baterias-equipos-para-respaldo-ups-no-break-492",
-                  "children": [
-                    {
-                      "categoryId": "493",
-                      "title": "Todos",
-                      "url": "/shop/category/baterias-baterias-equipos-para-respaldo-ups-no-break-baterias-equipos-para-respaldo-ups-no-break-todos-493",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "351",
-              "title": "Cercas Eléctricas",
-              "url": "/shop/category/cercas-electricas-351",
-              "children": [
-                {
-                  "categoryId": "352",
-                  "title": "Postes y Aisladores",
-                  "url": "/shop/category/cercas-electricas-cercas-electricas-postes-y-aisladores-352",
-                  "children": [
-                    {
-                      "categoryId": "353",
-                      "title": "Todos",
-                      "url": "/shop/category/cercas-electricas-cercas-electricas-postes-y-aisladores-cercas-electricas-postes-y-aisladores-todos-353",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "361",
-                  "title": "Alambre y cable bujía",
-                  "url": "/shop/category/cercas-electricas-cercas-electricas-alambre-y-cable-bujia-361",
-                  "children": [
-                    {
-                      "categoryId": "362",
-                      "title": "Todos",
-                      "url": "/shop/category/cercas-electricas-cercas-electricas-alambre-y-cable-bujia-cercas-electricas-alambre-y-cable-bujia-todos-362",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "363",
-                  "title": "Energizadores y Kits",
-                  "url": "/shop/category/cercas-electricas-cercas-electricas-energizadores-y-kits-363",
-                  "children": [
-                    {
-                      "categoryId": "364",
-                      "title": "Todos",
-                      "url": "/shop/category/cercas-electricas-cercas-electricas-energizadores-y-kits-cercas-electricas-energizadores-y-kits-todos-364",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "370",
-                  "title": "Accesorios para Cercas Eléctricas",
-                  "url": "/shop/category/cercas-electricas-cercas-electricas-accesorios-para-cercas-electricas-370",
-                  "children": [
-                    {
-                      "categoryId": "371",
-                      "title": "Todos",
-                      "url": "/shop/category/cercas-electricas-cercas-electricas-accesorios-para-cercas-electricas-cercas-electricas-accesorios-para-cercas-electricas-todos-371",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "358",
-              "title": "Cables",
-              "url": "/shop/category/cables-358",
-              "children": [
-                {
-                  "categoryId": "359",
-                  "title": "Patch Cords",
-                  "url": "/shop/category/cables-cables-patch-cords-359",
-                  "children": [
-                    {
-                      "categoryId": "360",
-                      "title": "Todos",
-                      "url": "/shop/category/cables-cables-patch-cords-cables-patch-cords-todos-360",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "385",
-                  "title": "Cable UTP",
-                  "url": "/shop/category/cables-cables-cable-utp-385",
-                  "children": [
-                    {
-                      "categoryId": "386",
-                      "title": "Todos",
-                      "url": "/shop/category/cables-cables-cable-utp-cables-cable-utp-todos-386",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "445",
-                  "title": "Cables para Sistemas de Alarma y Automatización",
-                  "url": "/shop/category/cables-cables-cables-para-sistemas-de-alarma-y-automatizacion-445",
-                  "children": [
-                    {
-                      "categoryId": "446",
-                      "title": "Todos",
-                      "url": "/shop/category/cables-cables-cables-para-sistemas-de-alarma-y-automatizacion-cables-cables-para-sistemas-de-alarma-y-automatizacion-todos-446",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "468",
-                  "title": "Cables para Controles de Acceso",
-                  "url": "/shop/category/cables-cables-cables-para-controles-de-acceso-468",
-                  "children": [
-                    {
-                      "categoryId": "469",
-                      "title": "Todos",
-                      "url": "/shop/category/cables-cables-cables-para-controles-de-acceso-cables-cables-para-controles-de-acceso-todos-469",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "470",
-                  "title": "Cables para Sistemas de Detección de Incendio",
-                  "url": "/shop/category/cables-cables-cables-para-sistemas-de-deteccion-de-incendio-470",
-                  "children": [
-                    {
-                      "categoryId": "471",
-                      "title": "Todos",
-                      "url": "/shop/category/cables-cables-cables-para-sistemas-de-deteccion-de-incendio-cables-cables-para-sistemas-de-deteccion-de-incendio-todos-471",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "365",
-              "title": "Redes",
-              "url": "/shop/category/redes-365",
-              "children": [
-                {
-                  "categoryId": "366",
-                  "title": "Gabinetes para Redes",
-                  "url": "/shop/category/redes-redes-gabinetes-para-redes-366",
-                  "children": [
-                    {
-                      "categoryId": "367",
-                      "title": "Todos",
-                      "url": "/shop/category/redes-redes-gabinetes-para-redes-redes-gabinetes-para-redes-todos-367",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "372",
-                  "title": "Cajas y accesorios para cableado estructurado",
-                  "url": "/shop/category/redes-redes-cajas-y-accesorios-para-cableado-estructurado-372",
-                  "children": [
-                    {
-                      "categoryId": "373",
-                      "title": "Todos",
-                      "url": "/shop/category/redes-redes-cajas-y-accesorios-para-cableado-estructurado-redes-cajas-y-accesorios-para-cableado-estructurado-todos-373",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "387",
-                  "title": "Tomacorrientes para Rack (PDU)",
-                  "url": "/shop/category/redes-redes-tomacorrientes-para-rack-pdu-387",
-                  "children": [
-                    {
-                      "categoryId": "388",
-                      "title": "Todos",
-                      "url": "/shop/category/redes-redes-tomacorrientes-para-rack-pdu-redes-tomacorrientes-para-rack-pdu-todos-388",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "389",
-                  "title": "Accesorios para Rack",
-                  "url": "/shop/category/redes-redes-accesorios-para-rack-389",
-                  "children": [
-                    {
-                      "categoryId": "390",
-                      "title": "Todos",
-                      "url": "/shop/category/redes-redes-accesorios-para-rack-redes-accesorios-para-rack-todos-390",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "464",
-                  "title": "Access Point",
-                  "url": "/shop/category/redes-redes-access-point-464",
-                  "children": [
-                    {
-                      "categoryId": "465",
-                      "title": "Todos",
-                      "url": "/shop/category/redes-redes-access-point-redes-access-point-todos-465",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "474",
-                  "title": "Inyectores y Switches",
-                  "url": "/shop/category/redes-redes-inyectores-y-switches-474",
-                  "children": [
-                    {
-                      "categoryId": "475",
-                      "title": "Todos",
-                      "url": "/shop/category/redes-redes-inyectores-y-switches-redes-inyectores-y-switches-todos-475",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "488",
-                  "title": "Antenas PtP y PtMP",
-                  "url": "/shop/category/redes-redes-antenas-ptp-y-ptmp-488",
-                  "children": [
-                    {
-                      "categoryId": "489",
-                      "title": "Todos",
-                      "url": "/shop/category/redes-redes-antenas-ptp-y-ptmp-redes-antenas-ptp-y-ptmp-todos-489",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "374",
-              "title": "Sistemas de Alarma",
-              "url": "/shop/category/sistemas-de-alarma-374",
-              "children": [
-                {
-                  "categoryId": "375",
-                  "title": "Comunicadores para Alarmas",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comunicadores-para-alarmas-375",
-                  "children": [
-                    {
-                      "categoryId": "376",
-                      "title": "Servicios de paga para comunicadores",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comunicadores-para-alarmas-sistemas-de-alarma-comunicadores-para-alarmas-servicios-de-paga-para-comunicadores-376",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "449",
-                      "title": "Comunicadores para Monitoreo y App",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comunicadores-para-alarmas-sistemas-de-alarma-comunicadores-para-alarmas-comunicadores-para-monitoreo-y-app-449",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "377",
-                  "title": "Sirenas y Estrobos",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sirenas-y-estrobos-377",
-                  "children": [
-                    {
-                      "categoryId": "378",
-                      "title": "Todos",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sirenas-y-estrobos-sistemas-de-alarma-sirenas-y-estrobos-todos-378",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "381",
-                  "title": "Comprar por marca",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comprar-por-marca-381",
-                  "children": [
-                    {
-                      "categoryId": "382",
-                      "title": "Hikvision AX PRO",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comprar-por-marca-sistemas-de-alarma-comprar-por-marca-hikvision-ax-pro-382",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "383",
-                  "title": "Sensores y Detectores",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-383",
-                  "children": [
-                    {
-                      "categoryId": "384",
-                      "title": "Sensores de movimiento",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-de-movimiento-384",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "418",
-                      "title": "Botones de Pánico",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-botones-de-panico-418",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "419",
-                      "title": "Sensores de humo y temperatura",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-de-humo-y-temperatura-419",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "422",
-                      "title": "Contactos magnéticos",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-contactos-magneticos-422",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "433",
-                      "title": "Sensores de rotura de cristales",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-de-rotura-de-cristales-433",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "494",
-                      "title": "Fotoceldas",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-fotoceldas-494",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "495",
-                      "title": "Sensores varios",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-varios-495",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "517",
-                      "title": "Estaciones de jalón",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-estaciones-de-jalon-517",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "414",
-                  "title": "Fuentes de Poder y Transformadores",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-fuentes-de-poder-y-transformadores-414",
-                  "children": [
-                    {
-                      "categoryId": "415",
-                      "title": "Todos",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-fuentes-de-poder-y-transformadores-sistemas-de-alarma-fuentes-de-poder-y-transformadores-todos-415",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "423",
-                  "title": "Controles y",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-controles-y-423",
-                  "children": [
-                    {
-                      "categoryId": "424",
-                      "title": "o llaveros",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-controles-y-sistemas-de-alarma-controles-y-o-llaveros-424",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "425",
-                  "title": "Kits listos para Instalar",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-kits-listos-para-instalar-425",
-                  "children": [
-                    {
-                      "categoryId": "426",
-                      "title": "Alarmas inalámbricas",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-kits-listos-para-instalar-sistemas-de-alarma-kits-listos-para-instalar-alarmas-inalambricas-426",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "498",
-                      "title": "Alarmas cableadas",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-kits-listos-para-instalar-sistemas-de-alarma-kits-listos-para-instalar-alarmas-cableadas-498",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "427",
-                  "title": "Accesorios para Sistemas de Alarma",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-accesorios-para-sistemas-de-alarma-427",
-                  "children": [
-                    {
-                      "categoryId": "428",
-                      "title": "Todos",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-accesorios-para-sistemas-de-alarma-sistemas-de-alarma-accesorios-para-sistemas-de-alarma-todos-428",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "429",
-                  "title": "Paneles o Tablillas de Alarma",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-paneles-o-tablillas-de-alarma-429",
-                  "children": [
-                    {
-                      "categoryId": "430",
-                      "title": "Todos",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-paneles-o-tablillas-de-alarma-sistemas-de-alarma-paneles-o-tablillas-de-alarma-todos-430",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "431",
-                  "title": "Teclados",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-teclados-431",
-                  "children": [
-                    {
-                      "categoryId": "432",
-                      "title": "Todos",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-teclados-sistemas-de-alarma-teclados-todos-432",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "434",
-                  "title": "Modulos Adicionales para Alarmas",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-434",
-                  "children": [
-                    {
-                      "categoryId": "435",
-                      "title": "Modulos para Hikvision AX PRO",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-sistemas-de-alarma-modulos-adicionales-para-alarmas-modulos-para-hikvision-ax-pro-435",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "496",
-                  "title": "Modulos adicionales para alarmas",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-496",
-                  "children": [
-                    {
-                      "categoryId": "497",
-                      "title": "Modulos para DSC Neo",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-sistemas-de-alarma-modulos-adicionales-para-alarmas-modulos-para-dsc-neo-497",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "499",
-                  "title": "Gabinetes para Sistemas de Alarma",
-                  "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-gabinetes-para-sistemas-de-alarma-499",
-                  "children": [
-                    {
-                      "categoryId": "500",
-                      "title": "Todos",
-                      "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-gabinetes-para-sistemas-de-alarma-sistemas-de-alarma-gabinetes-para-sistemas-de-alarma-todos-500",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "393",
-              "title": "Tierras Fisicas",
-              "url": "/shop/category/tierras-fisicas-393",
-              "children": [
-                {
-                  "categoryId": "394",
-                  "title": "Kits y Accesorios",
-                  "url": "/shop/category/tierras-fisicas-tierras-fisicas-kits-y-accesorios-394",
-                  "children": [
-                    {
-                      "categoryId": "395",
-                      "title": "Todos",
-                      "url": "/shop/category/tierras-fisicas-tierras-fisicas-kits-y-accesorios-tierras-fisicas-kits-y-accesorios-todos-395",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "411",
-              "title": "Fuentes de Alimentación",
-              "url": "/shop/category/fuentes-de-alimentacion-411",
-              "children": [
-                {
-                  "categoryId": "412",
-                  "title": "Eliminadores de Corriente",
-                  "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-eliminadores-de-corriente-412",
-                  "children": [
-                    {
-                      "categoryId": "413",
-                      "title": "Todos",
-                      "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-eliminadores-de-corriente-fuentes-de-alimentacion-eliminadores-de-corriente-todos-413",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "416",
-                  "title": "Fuentes para Control de Acceso",
-                  "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-control-de-acceso-416",
-                  "children": [
-                    {
-                      "categoryId": "417",
-                      "title": "Todos",
-                      "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-control-de-acceso-fuentes-de-alimentacion-fuentes-para-control-de-acceso-todos-417",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "436",
-                  "title": "Fuentes para Cámaras de Seguridad",
-                  "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-436",
-                  "children": [
-                    {
-                      "categoryId": "437",
-                      "title": "Todos",
-                      "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-todos-437",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "442",
-              "title": "Baja",
-              "url": "/shop/category/baja-442",
-              "children": [
-                {
-                  "categoryId": "443",
-                  "title": "Todos",
-                  "url": "/shop/category/baja-baja-todos-443",
-                  "children": [
-                    {
-                      "categoryId": "444",
-                      "title": "Todos",
-                      "url": "/shop/category/baja-baja-todos-baja-todos-todos-444",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "482",
-              "title": "Instalaciones",
-              "url": "/shop/category/instalaciones-482",
-              "children": [
-                {
-                  "categoryId": "483",
-                  "title": "Gabinetes",
-                  "url": "/shop/category/instalaciones-instalaciones-gabinetes-483",
-                  "children": [
-                    {
-                      "categoryId": "484",
-                      "title": "Todos",
-                      "url": "/shop/category/instalaciones-instalaciones-gabinetes-instalaciones-gabinetes-todos-484",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "485",
-              "title": "Joysticks para Camaras PTZ",
-              "url": "/shop/category/joysticks-para-camaras-ptz-485",
-              "children": [
-                {
-                  "categoryId": "486",
-                  "title": "Todos",
-                  "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-486",
-                  "children": [
-                    {
-                      "categoryId": "487",
-                      "title": "Todos",
-                      "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-joysticks-para-camaras-ptz-todos-todos-487",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "501",
-              "title": "Hogar Inteligente",
-              "url": "/shop/category/hogar-inteligente-501",
-              "children": [
-                {
-                  "categoryId": "502",
-                  "title": "Accesorios para Automatizacion del Hogar",
-                  "url": "/shop/category/hogar-inteligente-hogar-inteligente-accesorios-para-automatizacion-del-hogar-502",
-                  "children": [
-                    {
-                      "categoryId": "503",
-                      "title": "Todos",
-                      "url": "/shop/category/hogar-inteligente-hogar-inteligente-accesorios-para-automatizacion-del-hogar-hogar-inteligente-accesorios-para-automatizacion-del-hogar-todos-503",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "categoryId": "504",
-                  "title": "Dispositivos Z-WAVE",
-                  "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-504",
-                  "children": [
-                    {
-                      "categoryId": "505",
-                      "title": "Todos",
-                      "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-hogar-inteligente-dispositivos-z-wave-todos-505",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "506",
-                      "title": "Enchufes y Sockets Inteligentes",
-                      "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-hogar-inteligente-dispositivos-z-wave-enchufes-y-sockets-inteligentes-506",
-                      "children": []
-                    },
-                    {
-                      "categoryId": "507",
-                      "title": "Apagadores y Control de Iluminación",
-                      "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-hogar-inteligente-dispositivos-z-wave-apagadores-y-control-de-iluminacion-507",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "categoryId": "514",
-              "title": "Fuentes de Alimentacion",
-              "url": "/shop/category/fuentes-de-alimentacion-514",
-              "children": [
-                {
-                  "categoryId": "515",
-                  "title": "Fuentes para Cámaras de Seguridad",
-                  "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-515",
-                  "children": [
-                    {
-                      "categoryId": "516",
-                      "title": "Todos",
-                      "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-todos-516",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+  {
+    "categoryId": "520",
+    "title": "Cámaras de Seguridad",
+    "url": "/shop/category/camaras-de-seguridad-520",
+    "children": [
+      {
+        "categoryId": "521",
+        "title": "Grabadores para Cámaras IP (NVR)",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-521",
+        "children": [
+          {
+            "categoryId": "522",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-camaras-de-seguridad-grabadores-para-camaras-ip-nvr-todos-522",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "523",
+        "title": "Kits listos para instalar",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-523",
+        "children": [
+          {
+            "categoryId": "524",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-kits-listos-para-instalar-camaras-de-seguridad-kits-listos-para-instalar-todos-524",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "525",
+        "title": "Almacenamiento",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-525",
+        "children": [
+          {
+            "categoryId": "526",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-almacenamiento-camaras-de-seguridad-almacenamiento-todos-526",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "531",
+        "title": "Accesorios para Cámaras de Seguridad",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-531",
+        "children": [
+          {
+            "categoryId": "532",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-camaras-de-seguridad-accesorios-para-camaras-de-seguridad-todos-532",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "533",
+        "title": "Cámaras IP",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-533",
+        "children": [
+          {
+            "categoryId": "534",
+            "title": "Cámaras tipo bala",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-bala-534",
+            "children": []
+          },
+          {
+            "categoryId": "543",
+            "title": "Cámaras tipo Domo",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-tipo-domo-543",
+            "children": []
+          },
+          {
+            "categoryId": "547",
+            "title": "Cámaras con movimiento (PTZ)",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-movimiento-ptz-547",
+            "children": []
+          },
+          {
+            "categoryId": "556",
+            "title": "Cámaras con vision 180° y 360°",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-con-vision-180-y-360-556",
+            "children": []
+          },
+          {
+            "categoryId": "557",
+            "title": "Cámaras especiales",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-ip-camaras-de-seguridad-camaras-ip-camaras-especiales-557",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "535",
+        "title": "Cámaras Analogicas HD",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-535",
+        "children": [
+          {
+            "categoryId": "536",
+            "title": "Cámaras tipo Bala",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-bala-536",
+            "children": []
+          },
+          {
+            "categoryId": "544",
+            "title": "Cámaras tipo Domo",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-tipo-domo-544",
+            "children": []
+          },
+          {
+            "categoryId": "548",
+            "title": "Cámaras especiales",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-especiales-548",
+            "children": []
+          },
+          {
+            "categoryId": "562",
+            "title": "Cámaras con movimiento PTZ",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-analogicas-hd-camaras-de-seguridad-camaras-analogicas-hd-camaras-con-movimiento-ptz-562",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "537",
+        "title": "Extensión de Video y Multipantalla",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-537",
+        "children": [
+          {
+            "categoryId": "538",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-extension-de-video-y-multipantalla-camaras-de-seguridad-extension-de-video-y-multipantalla-todos-538",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "539",
+        "title": "Montajes para Cámaras de Seguridad",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-539",
+        "children": [
+          {
+            "categoryId": "540",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-camaras-de-seguridad-montajes-para-camaras-de-seguridad-todos-540",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "541",
+        "title": "Grabadores para Cámaras Analogicas HD",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-541",
+        "children": [
+          {
+            "categoryId": "542",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-camaras-de-seguridad-grabadores-para-camaras-analogicas-hd-todos-542",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "545",
+        "title": "Bodycam",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-545",
+        "children": [
+          {
+            "categoryId": "546",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-bodycam-camaras-de-seguridad-bodycam-todos-546",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "549",
+        "title": "Cámaras Web",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-549",
+        "children": [
+          {
+            "categoryId": "550",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-web-camaras-de-seguridad-camaras-web-todos-550",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "551",
+        "title": "Dashcam",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-551",
+        "children": [
+          {
+            "categoryId": "552",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-dashcam-camaras-de-seguridad-dashcam-todos-552",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "558",
+        "title": "Gabinetes para grabadores",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-558",
+        "children": [
+          {
+            "categoryId": "559",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-gabinetes-para-grabadores-camaras-de-seguridad-gabinetes-para-grabadores-todos-559",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "560",
+        "title": "Cámaras Autónomas",
+        "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-560",
+        "children": [
+          {
+            "categoryId": "561",
+            "title": "Todos",
+            "url": "/shop/category/camaras-de-seguridad-camaras-de-seguridad-camaras-autonomas-camaras-de-seguridad-camaras-autonomas-todos-561",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "553",
+    "title": "Joysticks para Cámaras PTZ",
+    "url": "/shop/category/joysticks-para-camaras-ptz-553",
+    "children": [
+      {
+        "categoryId": "554",
+        "title": "Todos",
+        "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-554",
+        "children": [
+          {
+            "categoryId": "555",
+            "title": "Todos",
+            "url": "/shop/category/joysticks-para-camaras-ptz-joysticks-para-camaras-ptz-todos-joysticks-para-camaras-ptz-todos-todos-555",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "335",
+    "title": "Controles de Acceso",
+    "url": "/shop/category/controles-de-acceso-335",
+    "children": [
+      {
+        "categoryId": "336",
+        "title": "Cerraduras Autónomas",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-autonomas-336",
+        "children": [
+          {
+            "categoryId": "337",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-autonomas-controles-de-acceso-cerraduras-autonomas-todos-337",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "344",
+        "title": "Controles Remotos",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-controles-remotos-344",
+        "children": [
+          {
+            "categoryId": "345",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-controles-remotos-controles-de-acceso-controles-remotos-todos-345",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "354",
+        "title": "Lectores Biometricos",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-biometricos-354",
+        "children": [
+          {
+            "categoryId": "355",
+            "title": "Biometricos para controladores",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-biometricos-controles-de-acceso-lectores-biometricos-biometricos-para-controladores-355",
+            "children": []
+          },
+          {
+            "categoryId": "398",
+            "title": "Biometricos autonomos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-biometricos-controles-de-acceso-lectores-biometricos-biometricos-autonomos-398",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "356",
+        "title": "Botones",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-botones-356",
+        "children": [
+          {
+            "categoryId": "357",
+            "title": "Botones de petición de salida",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-botones-controles-de-acceso-botones-botones-de-peticion-de-salida-357",
+            "children": []
+          },
+          {
+            "categoryId": "508",
+            "title": "Botones de paro de emergencia",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-botones-controles-de-acceso-botones-botones-de-paro-de-emergencia-508",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "368",
+        "title": "Lectores de Proximidad",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-proximidad-368",
+        "children": [
+          {
+            "categoryId": "369",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-proximidad-controles-de-acceso-lectores-de-proximidad-todos-369",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "379",
+        "title": "Accesorios para Controles de Acceso",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-accesorios-para-controles-de-acceso-379",
+        "children": [
+          {
+            "categoryId": "380",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-accesorios-para-controles-de-acceso-controles-de-acceso-accesorios-para-controles-de-acceso-todos-380",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "396",
+        "title": "Cierra Puertas",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-cierra-puertas-396",
+        "children": [
+          {
+            "categoryId": "397",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-cierra-puertas-controles-de-acceso-cierra-puertas-todos-397",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "399",
+        "title": "Controladores de Acceso",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-controladores-de-acceso-399",
+        "children": [
+          {
+            "categoryId": "400",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-controladores-de-acceso-controles-de-acceso-controladores-de-acceso-todos-400",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "401",
+        "title": "Cerraduras de Perno",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-de-perno-401",
+        "children": [
+          {
+            "categoryId": "402",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-cerraduras-de-perno-controles-de-acceso-cerraduras-de-perno-todos-402",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "403",
+        "title": "Lectores de QR",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-qr-403",
+        "children": [
+          {
+            "categoryId": "404",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-lectores-de-qr-controles-de-acceso-lectores-de-qr-todos-404",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "405",
+        "title": "Tarjetas de Proximidad",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-tarjetas-de-proximidad-405",
+        "children": [
+          {
+            "categoryId": "406",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-tarjetas-de-proximidad-controles-de-acceso-tarjetas-de-proximidad-todos-406",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "407",
+        "title": "Enroladores de Tarjetas",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-enroladores-de-tarjetas-407",
+        "children": [
+          {
+            "categoryId": "408",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-enroladores-de-tarjetas-controles-de-acceso-enroladores-de-tarjetas-todos-408",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "409",
+        "title": "Teclados Autonomos",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-teclados-autonomos-409",
+        "children": [
+          {
+            "categoryId": "410",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-teclados-autonomos-controles-de-acceso-teclados-autonomos-todos-410",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "457",
+        "title": "Video Porteros",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-video-porteros-457",
+        "children": [
+          {
+            "categoryId": "458",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-video-porteros-controles-de-acceso-video-porteros-todos-458",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "459",
+        "title": "Interfones y Porteros",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-interfones-y-porteros-459",
+        "children": [
+          {
+            "categoryId": "460",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-interfones-y-porteros-controles-de-acceso-interfones-y-porteros-todos-460",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "509",
+        "title": "Terminales de Tiempo y Asistencia",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-terminales-de-tiempo-y-asistencia-509",
+        "children": [
+          {
+            "categoryId": "510",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-terminales-de-tiempo-y-asistencia-controles-de-acceso-terminales-de-tiempo-y-asistencia-todos-510",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "527",
+        "title": "Chapas Magnéticas y Eléctricas",
+        "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-527",
+        "children": [
+          {
+            "categoryId": "528",
+            "title": "Todos",
+            "url": "/shop/category/controles-de-acceso-controles-de-acceso-chapas-magneticas-y-electricas-controles-de-acceso-chapas-magneticas-y-electricas-todos-528",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "341",
+    "title": "Baterías",
+    "url": "/shop/category/baterias-341",
+    "children": [
+      {
+        "categoryId": "342",
+        "title": "Baterias para Sistemas de Seguridad",
+        "url": "/shop/category/baterias-baterias-baterias-para-sistemas-de-seguridad-342",
+        "children": [
+          {
+            "categoryId": "343",
+            "title": "Todos",
+            "url": "/shop/category/baterias-baterias-baterias-para-sistemas-de-seguridad-baterias-baterias-para-sistemas-de-seguridad-todos-343",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "492",
+        "title": "Equipos para Respaldo UPS No Break",
+        "url": "/shop/category/baterias-baterias-equipos-para-respaldo-ups-no-break-492",
+        "children": [
+          {
+            "categoryId": "493",
+            "title": "Todos",
+            "url": "/shop/category/baterias-baterias-equipos-para-respaldo-ups-no-break-baterias-equipos-para-respaldo-ups-no-break-todos-493",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "351",
+    "title": "Cercas Eléctricas",
+    "url": "/shop/category/cercas-electricas-351",
+    "children": [
+      {
+        "categoryId": "352",
+        "title": "Postes y Aisladores",
+        "url": "/shop/category/cercas-electricas-cercas-electricas-postes-y-aisladores-352",
+        "children": [
+          {
+            "categoryId": "353",
+            "title": "Todos",
+            "url": "/shop/category/cercas-electricas-cercas-electricas-postes-y-aisladores-cercas-electricas-postes-y-aisladores-todos-353",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "361",
+        "title": "Alambre y cable bujía",
+        "url": "/shop/category/cercas-electricas-cercas-electricas-alambre-y-cable-bujia-361",
+        "children": [
+          {
+            "categoryId": "362",
+            "title": "Todos",
+            "url": "/shop/category/cercas-electricas-cercas-electricas-alambre-y-cable-bujia-cercas-electricas-alambre-y-cable-bujia-todos-362",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "363",
+        "title": "Energizadores y Kits",
+        "url": "/shop/category/cercas-electricas-cercas-electricas-energizadores-y-kits-363",
+        "children": [
+          {
+            "categoryId": "364",
+            "title": "Todos",
+            "url": "/shop/category/cercas-electricas-cercas-electricas-energizadores-y-kits-cercas-electricas-energizadores-y-kits-todos-364",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "370",
+        "title": "Accesorios para Cercas Eléctricas",
+        "url": "/shop/category/cercas-electricas-cercas-electricas-accesorios-para-cercas-electricas-370",
+        "children": [
+          {
+            "categoryId": "371",
+            "title": "Todos",
+            "url": "/shop/category/cercas-electricas-cercas-electricas-accesorios-para-cercas-electricas-cercas-electricas-accesorios-para-cercas-electricas-todos-371",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "358",
+    "title": "Cables",
+    "url": "/shop/category/cables-358",
+    "children": [
+      {
+        "categoryId": "359",
+        "title": "Patch Cords",
+        "url": "/shop/category/cables-cables-patch-cords-359",
+        "children": [
+          {
+            "categoryId": "360",
+            "title": "Todos",
+            "url": "/shop/category/cables-cables-patch-cords-cables-patch-cords-todos-360",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "385",
+        "title": "Cable UTP",
+        "url": "/shop/category/cables-cables-cable-utp-385",
+        "children": [
+          {
+            "categoryId": "386",
+            "title": "Todos",
+            "url": "/shop/category/cables-cables-cable-utp-cables-cable-utp-todos-386",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "445",
+        "title": "Cables para Sistemas de Alarma y Automatización",
+        "url": "/shop/category/cables-cables-cables-para-sistemas-de-alarma-y-automatizacion-445",
+        "children": [
+          {
+            "categoryId": "446",
+            "title": "Todos",
+            "url": "/shop/category/cables-cables-cables-para-sistemas-de-alarma-y-automatizacion-cables-cables-para-sistemas-de-alarma-y-automatizacion-todos-446",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "468",
+        "title": "Cables para Controles de Acceso",
+        "url": "/shop/category/cables-cables-cables-para-controles-de-acceso-468",
+        "children": [
+          {
+            "categoryId": "469",
+            "title": "Todos",
+            "url": "/shop/category/cables-cables-cables-para-controles-de-acceso-cables-cables-para-controles-de-acceso-todos-469",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "470",
+        "title": "Cables para Sistemas de Detección de Incendio",
+        "url": "/shop/category/cables-cables-cables-para-sistemas-de-deteccion-de-incendio-470",
+        "children": [
+          {
+            "categoryId": "471",
+            "title": "Todos",
+            "url": "/shop/category/cables-cables-cables-para-sistemas-de-deteccion-de-incendio-cables-cables-para-sistemas-de-deteccion-de-incendio-todos-471",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "365",
+    "title": "Redes",
+    "url": "/shop/category/redes-365",
+    "children": [
+      {
+        "categoryId": "366",
+        "title": "Gabinetes para Redes",
+        "url": "/shop/category/redes-redes-gabinetes-para-redes-366",
+        "children": [
+          {
+            "categoryId": "367",
+            "title": "Todos",
+            "url": "/shop/category/redes-redes-gabinetes-para-redes-redes-gabinetes-para-redes-todos-367",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "372",
+        "title": "Cajas y accesorios para cableado estructurado",
+        "url": "/shop/category/redes-redes-cajas-y-accesorios-para-cableado-estructurado-372",
+        "children": [
+          {
+            "categoryId": "373",
+            "title": "Todos",
+            "url": "/shop/category/redes-redes-cajas-y-accesorios-para-cableado-estructurado-redes-cajas-y-accesorios-para-cableado-estructurado-todos-373",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "387",
+        "title": "Tomacorrientes para Rack (PDU)",
+        "url": "/shop/category/redes-redes-tomacorrientes-para-rack-pdu-387",
+        "children": [
+          {
+            "categoryId": "388",
+            "title": "Todos",
+            "url": "/shop/category/redes-redes-tomacorrientes-para-rack-pdu-redes-tomacorrientes-para-rack-pdu-todos-388",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "389",
+        "title": "Accesorios para Rack",
+        "url": "/shop/category/redes-redes-accesorios-para-rack-389",
+        "children": [
+          {
+            "categoryId": "390",
+            "title": "Todos",
+            "url": "/shop/category/redes-redes-accesorios-para-rack-redes-accesorios-para-rack-todos-390",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "464",
+        "title": "Access Point",
+        "url": "/shop/category/redes-redes-access-point-464",
+        "children": [
+          {
+            "categoryId": "465",
+            "title": "Todos",
+            "url": "/shop/category/redes-redes-access-point-redes-access-point-todos-465",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "474",
+        "title": "Inyectores y Switches",
+        "url": "/shop/category/redes-redes-inyectores-y-switches-474",
+        "children": [
+          {
+            "categoryId": "475",
+            "title": "Todos",
+            "url": "/shop/category/redes-redes-inyectores-y-switches-redes-inyectores-y-switches-todos-475",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "488",
+        "title": "Antenas PtP y PtMP",
+        "url": "/shop/category/redes-redes-antenas-ptp-y-ptmp-488",
+        "children": [
+          {
+            "categoryId": "489",
+            "title": "Todos",
+            "url": "/shop/category/redes-redes-antenas-ptp-y-ptmp-redes-antenas-ptp-y-ptmp-todos-489",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "374",
+    "title": "Sistemas de Alarma",
+    "url": "/shop/category/sistemas-de-alarma-374",
+    "children": [
+      {
+        "categoryId": "375",
+        "title": "Comunicadores para Alarmas",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comunicadores-para-alarmas-375",
+        "children": [
+          {
+            "categoryId": "376",
+            "title": "Servicios de paga para comunicadores",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comunicadores-para-alarmas-sistemas-de-alarma-comunicadores-para-alarmas-servicios-de-paga-para-comunicadores-376",
+            "children": []
+          },
+          {
+            "categoryId": "449",
+            "title": "Comunicadores para Monitoreo y App",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comunicadores-para-alarmas-sistemas-de-alarma-comunicadores-para-alarmas-comunicadores-para-monitoreo-y-app-449",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "377",
+        "title": "Sirenas y Estrobos",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sirenas-y-estrobos-377",
+        "children": [
+          {
+            "categoryId": "378",
+            "title": "Todos",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sirenas-y-estrobos-sistemas-de-alarma-sirenas-y-estrobos-todos-378",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "381",
+        "title": "Comprar por marca",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comprar-por-marca-381",
+        "children": [
+          {
+            "categoryId": "382",
+            "title": "Hikvision AX PRO",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-comprar-por-marca-sistemas-de-alarma-comprar-por-marca-hikvision-ax-pro-382",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "383",
+        "title": "Sensores y Detectores",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-383",
+        "children": [
+          {
+            "categoryId": "384",
+            "title": "Sensores de movimiento",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-de-movimiento-384",
+            "children": []
+          },
+          {
+            "categoryId": "418",
+            "title": "Botones de Pánico",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-botones-de-panico-418",
+            "children": []
+          },
+          {
+            "categoryId": "419",
+            "title": "Sensores de humo y temperatura",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-de-humo-y-temperatura-419",
+            "children": []
+          },
+          {
+            "categoryId": "422",
+            "title": "Contactos magnéticos",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-contactos-magneticos-422",
+            "children": []
+          },
+          {
+            "categoryId": "433",
+            "title": "Sensores de rotura de cristales",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-de-rotura-de-cristales-433",
+            "children": []
+          },
+          {
+            "categoryId": "494",
+            "title": "Fotoceldas",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-fotoceldas-494",
+            "children": []
+          },
+          {
+            "categoryId": "495",
+            "title": "Sensores varios",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-sensores-varios-495",
+            "children": []
+          },
+          {
+            "categoryId": "517",
+            "title": "Estaciones de jalón",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-sensores-y-detectores-sistemas-de-alarma-sensores-y-detectores-estaciones-de-jalon-517",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "414",
+        "title": "Fuentes de Poder y Transformadores",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-fuentes-de-poder-y-transformadores-414",
+        "children": [
+          {
+            "categoryId": "415",
+            "title": "Todos",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-fuentes-de-poder-y-transformadores-sistemas-de-alarma-fuentes-de-poder-y-transformadores-todos-415",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "423",
+        "title": "Controles y",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-controles-y-423",
+        "children": [
+          {
+            "categoryId": "424",
+            "title": "o llaveros",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-controles-y-sistemas-de-alarma-controles-y-o-llaveros-424",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "425",
+        "title": "Kits listos para Instalar",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-kits-listos-para-instalar-425",
+        "children": [
+          {
+            "categoryId": "426",
+            "title": "Alarmas inalámbricas",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-kits-listos-para-instalar-sistemas-de-alarma-kits-listos-para-instalar-alarmas-inalambricas-426",
+            "children": []
+          },
+          {
+            "categoryId": "498",
+            "title": "Alarmas cableadas",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-kits-listos-para-instalar-sistemas-de-alarma-kits-listos-para-instalar-alarmas-cableadas-498",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "427",
+        "title": "Accesorios para Sistemas de Alarma",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-accesorios-para-sistemas-de-alarma-427",
+        "children": [
+          {
+            "categoryId": "428",
+            "title": "Todos",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-accesorios-para-sistemas-de-alarma-sistemas-de-alarma-accesorios-para-sistemas-de-alarma-todos-428",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "429",
+        "title": "Paneles o Tablillas de Alarma",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-paneles-o-tablillas-de-alarma-429",
+        "children": [
+          {
+            "categoryId": "430",
+            "title": "Todos",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-paneles-o-tablillas-de-alarma-sistemas-de-alarma-paneles-o-tablillas-de-alarma-todos-430",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "431",
+        "title": "Teclados",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-teclados-431",
+        "children": [
+          {
+            "categoryId": "432",
+            "title": "Todos",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-teclados-sistemas-de-alarma-teclados-todos-432",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "434",
+        "title": "Modulos Adicionales para Alarmas",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-434",
+        "children": [
+          {
+            "categoryId": "435",
+            "title": "Modulos para Hikvision AX PRO",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-sistemas-de-alarma-modulos-adicionales-para-alarmas-modulos-para-hikvision-ax-pro-435",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "496",
+        "title": "Modulos adicionales para alarmas",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-496",
+        "children": [
+          {
+            "categoryId": "497",
+            "title": "Modulos para DSC Neo",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-modulos-adicionales-para-alarmas-sistemas-de-alarma-modulos-adicionales-para-alarmas-modulos-para-dsc-neo-497",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "499",
+        "title": "Gabinetes para Sistemas de Alarma",
+        "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-gabinetes-para-sistemas-de-alarma-499",
+        "children": [
+          {
+            "categoryId": "500",
+            "title": "Todos",
+            "url": "/shop/category/sistemas-de-alarma-sistemas-de-alarma-gabinetes-para-sistemas-de-alarma-sistemas-de-alarma-gabinetes-para-sistemas-de-alarma-todos-500",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "393",
+    "title": "Tierras Fisicas",
+    "url": "/shop/category/tierras-fisicas-393",
+    "children": [
+      {
+        "categoryId": "394",
+        "title": "Kits y Accesorios",
+        "url": "/shop/category/tierras-fisicas-tierras-fisicas-kits-y-accesorios-394",
+        "children": [
+          {
+            "categoryId": "395",
+            "title": "Todos",
+            "url": "/shop/category/tierras-fisicas-tierras-fisicas-kits-y-accesorios-tierras-fisicas-kits-y-accesorios-todos-395",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "411",
+    "title": "Fuentes de Alimentación",
+    "url": "/shop/category/fuentes-de-alimentacion-411",
+    "children": [
+      {
+        "categoryId": "412",
+        "title": "Eliminadores de Corriente",
+        "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-eliminadores-de-corriente-412",
+        "children": [
+          {
+            "categoryId": "413",
+            "title": "Todos",
+            "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-eliminadores-de-corriente-fuentes-de-alimentacion-eliminadores-de-corriente-todos-413",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "416",
+        "title": "Fuentes para Control de Acceso",
+        "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-control-de-acceso-416",
+        "children": [
+          {
+            "categoryId": "417",
+            "title": "Todos",
+            "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-control-de-acceso-fuentes-de-alimentacion-fuentes-para-control-de-acceso-todos-417",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "529",
+        "title": "Fuentes para Cámaras de Seguridad",
+        "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-529",
+        "children": [
+          {
+            "categoryId": "530",
+            "title": "Todos",
+            "url": "/shop/category/fuentes-de-alimentacion-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-fuentes-de-alimentacion-fuentes-para-camaras-de-seguridad-todos-530",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "482",
+    "title": "Instalaciones",
+    "url": "/shop/category/instalaciones-482",
+    "children": [
+      {
+        "categoryId": "483",
+        "title": "Gabinetes",
+        "url": "/shop/category/instalaciones-instalaciones-gabinetes-483",
+        "children": [
+          {
+            "categoryId": "484",
+            "title": "Todos",
+            "url": "/shop/category/instalaciones-instalaciones-gabinetes-instalaciones-gabinetes-todos-484",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "501",
+    "title": "Hogar Inteligente",
+    "url": "/shop/category/hogar-inteligente-501",
+    "children": [
+      {
+        "categoryId": "502",
+        "title": "Accesorios para Automatizacion del Hogar",
+        "url": "/shop/category/hogar-inteligente-hogar-inteligente-accesorios-para-automatizacion-del-hogar-502",
+        "children": [
+          {
+            "categoryId": "503",
+            "title": "Todos",
+            "url": "/shop/category/hogar-inteligente-hogar-inteligente-accesorios-para-automatizacion-del-hogar-hogar-inteligente-accesorios-para-automatizacion-del-hogar-todos-503",
+            "children": []
+          }
+        ]
+      },
+      {
+        "categoryId": "504",
+        "title": "Dispositivos Z-WAVE",
+        "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-504",
+        "children": [
+          {
+            "categoryId": "505",
+            "title": "Todos",
+            "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-hogar-inteligente-dispositivos-z-wave-todos-505",
+            "children": []
+          },
+          {
+            "categoryId": "506",
+            "title": "Enchufes y Sockets Inteligentes",
+            "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-hogar-inteligente-dispositivos-z-wave-enchufes-y-sockets-inteligentes-506",
+            "children": []
+          },
+          {
+            "categoryId": "507",
+            "title": "Apagadores y Control de Iluminación",
+            "url": "/shop/category/hogar-inteligente-hogar-inteligente-dispositivos-z-wave-hogar-inteligente-dispositivos-z-wave-apagadores-y-control-de-iluminacion-507",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
