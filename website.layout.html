@@ -625,7 +625,7 @@ body,
           }
           
           .o_mega_menu.fetchEcomCategories {
-              width: 100vw !important;
+              width: 98vw !important;
               max-width: none !important;
               max-height: calc(100dvh - 40px) !important;
               left:50% !important;
@@ -740,14 +740,14 @@ body,
           
           .o_mega_menu.fetchEcomCategories .syscomify-shell {
             display: grid;  
-            grid-template-columns: 20rem 60rem 30rem;
-              min-height:560px !important;
-              max-height:calc(200vh - 2rem)!important;
-              border-radius:0!important;
-              overflow: hidden;
-              border: 1px solid var(--overlay-white-08);
-              background: var(--surface-shell);
-              backdrop-filter: blur(10px);
+            grid-template-columns: 1fr 3fr 1fr;
+            min-height:560px !important;
+            max-height:calc(200vh - 2rem)!important;
+            border-radius:0!important;
+            overflow: hidden;
+            border: 1px solid var(--overlay-white-08);
+            background: var(--surface-shell);
+            backdrop-filter: blur(10px);
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-pane {
@@ -792,7 +792,7 @@ body,
 
           .o_mega_menu.fetchEcomCategories .syscomify-links {
               display: grid!important;
-              grid-template-columns: repeat(4,minmax(170px,1fr))!important;
+              grid-template-columns: repeat(3,minmax(170px,1fr))!important;
               gap: 10px 24px!important;
           }
           
@@ -956,6 +956,9 @@ body,
               border: 1px solid var(--overlay-white-08);
               border-radius: 16px;
               background: linear-gradient(90deg, var(--maple-white), var(--maple-red-soft));
+              word-wrap: break-word;
+              word-break: break-word;
+              overflow-wrap: break-word;
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-card-label {
@@ -981,6 +984,8 @@ body,
           
           .o_mega_menu.fetchEcomCategories .syscomify-cta {
               display: inline-flex;
+              max-width: 100%;
+              box-sizing: border-box;
               align-items: center;
               gap: 8px;
               min-height: 40px;
@@ -992,6 +997,9 @@ body,
               color: var(--maple-white) !important;
               font-weight: 700;
               text-decoration: none !important;
+              overflow-wrap: break-word;
+              word-wrap: break-word;
+              white-space: normal;
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-cta:hover {
@@ -1380,6 +1388,16 @@ body,
           @media (max-width: 1150px) {
              .o_wsale_product_sub.justify-content-between.gap-2 .product_price span[data-oe-type="monetary"], .o_wsale_product_sub.justify-content-between.gap-2 .product_price .mb-0.fw-bold .oe_currency_value {
                 font-size: 1.6rem;
+            }
+          }
+
+          @media (max-width: 1100px) {
+            .o_mega_menu.fetchEcomCategories .syscomify-card, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-chip-list, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-right-links{
+              display: none;
+            }
+            
+            .o_mega_menu.fetchEcomCategories .syscomify-shell{
+              grid-template-columns: 1fr 4fr;
             }
           }
           
@@ -4127,53 +4145,53 @@ body,
             
             
             document.addEventListener('DOMContentLoaded',function(){
-    function adiDesktopify(){
-        if(window.innerWidth &lt; 1200){return;}
-
-        document.querySelectorAll('.o_mega_menu.fetchEcomCategories').forEach(function(menu){
-
-            var center = menu.querySelector('.syscomify-pane--center');
-
-            if(!center || center.dataset.adiApplied==='1'){
-                return;
-            }
-
-            center.dataset.adiApplied='1';
-
-            var links = center.querySelector('.syscomify-links');
-
-            if(links){
-
-                var items=[].slice.call(links.children);
-
-                if(items.length&gt;12){
-
-                    var wrapper=document.createElement('div');
-
-                    wrapper.className='adi-columns';
-                    wrapper.style.display='grid';
-                    wrapper.style.gridTemplateColumns='repeat(4,minmax(180px,1fr))';
-                    wrapper.style.gap='24px';
-
-                    for(var i=0;i&lt;4;i++){
-                        var col=document.createElement('div');
-                        wrapper.appendChild(col);
+            function adiDesktopify(){
+                if(window.innerWidth &lt; 1200){return;}
+        
+                document.querySelectorAll('.o_mega_menu.fetchEcomCategories').forEach(function(menu){
+        
+                    var center = menu.querySelector('.syscomify-pane--center');
+        
+                    if(!center || center.dataset.adiApplied==='1'){
+                        return;
                     }
-
-                    items.forEach(function(el,idx){
-                        wrapper.children[idx%4].appendChild(el);
-                    });
-
-                    links.innerHTML='';
-                    links.appendChild(wrapper);
-                }
+        
+                    center.dataset.adiApplied='1';
+        
+                    var links = center.querySelector('.syscomify-links');
+        
+                    if(links){
+        
+                        var items=[].slice.call(links.children);
+        
+                        if(items.length&gt;12){
+        
+                            var wrapper=document.createElement('div');
+        
+                            wrapper.className='adi-columns';
+                            wrapper.style.display='grid';
+                            wrapper.style.gridTemplateColumns='repeat(4,minmax(180px,1fr))';
+                            wrapper.style.gap='24px';
+        
+                            for(var i=0;i&lt;4;i++){
+                                var col=document.createElement('div');
+                                wrapper.appendChild(col);
+                            }
+        
+                            items.forEach(function(el,idx){
+                                wrapper.children[idx%4].appendChild(el);
+                            });
+        
+                            links.innerHTML='';
+                            links.appendChild(wrapper);
+                        }
+                    }
+                });
             }
+        
+            setTimeout(adiDesktopify,800);
+            window.addEventListener('resize',adiDesktopify);
         });
-    }
-
-    setTimeout(adiDesktopify,800);
-    window.addEventListener('resize',adiDesktopify);
-});
         </script>
     </xpath>
 </data>
