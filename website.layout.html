@@ -740,14 +740,14 @@ body,
           
           .o_mega_menu.fetchEcomCategories .syscomify-shell {
             display: grid;  
-            grid-template-columns: 1fr 3fr 1fr;
-            min-height:560px !important;
-            max-height:calc(200vh - 2rem)!important;
-            border-radius:0!important;
-            overflow: hidden;
-            border: 1px solid var(--overlay-white-08);
-            background: var(--surface-shell);
-            backdrop-filter: blur(10px);
+            grid-template-columns: 20% 60% 20%;
+              min-height:560px !important;
+              max-height:calc(200vh - 2rem)!important;
+              border-radius:0!important;
+              overflow: hidden;
+              border: 1px solid var(--overlay-white-08);
+              background: var(--surface-shell);
+              backdrop-filter: blur(10px);
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-pane {
@@ -1383,21 +1383,24 @@ body,
               span[data-oe-type="monetary"], .mb-0.fw-bold .oe_currency_value {
                 font-size: 1.6rem;
             }
-          }
 
-          @media (max-width: 1150px) {
-             .o_wsale_product_sub.justify-content-between.gap-2 .product_price span[data-oe-type="monetary"], .o_wsale_product_sub.justify-content-between.gap-2 .product_price .mb-0.fw-bold .oe_currency_value {
-                font-size: 1.6rem;
-            }
-          }
-
-          @media (max-width: 1100px) {
             .o_mega_menu.fetchEcomCategories .syscomify-card, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-chip-list, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-right-links{
               display: none;
             }
             
             .o_mega_menu.fetchEcomCategories .syscomify-shell{
-              grid-template-columns: 1fr 4fr;
+              grid-template-columns: 20% 80%;
+            }
+
+            .o_mega_menu.fetchEcomCategories .syscomify-pane--center {
+              margin-bottom: -3rem;
+            }
+            
+          }
+
+          @media (max-width: 1150px) {
+             .o_wsale_product_sub.justify-content-between.gap-2 .product_price span[data-oe-type="monetary"], .o_wsale_product_sub.justify-content-between.gap-2 .product_price .mb-0.fw-bold .oe_currency_value {
+                font-size: 1.6rem;
             }
           }
           
@@ -3849,7 +3852,7 @@ body,
                     var childCount = getNodeChildren(link).length;
                     a.className = "syscomify-link" + (idx === state.linkIndex ? " is-active" : "");
                     a.href = link.url;
-                    a.innerHTML = '<span>' + link.title + '</span><small>' + (childCount ? childCount + " " + cleanText(" categorÃ­as") : 'abrir') + '</small>';
+                    a.innerHTML = '<span>' + link.title + '</span>';
 
                     a.addEventListener("mouseenter", function () {
                     state.linkIndex = idx;
@@ -3872,7 +3875,7 @@ body,
 
                     li.appendChild(a);
 
-                    if (childCount &amp;&amp; idx === state.linkIndex) {
+                    if (childCount) {
                     var childList = makeEl("ul", "syscomify-sub-links");
 
                     getNodeChildren(link).forEach(function (child) {
@@ -3880,7 +3883,7 @@ body,
                         var childLink = document.createElement("a");
                         childLink.className = "syscomify-sub-link";
                         childLink.href = child.url;
-                        childLink.innerHTML = '&lt;span&gt;' + child.title + '&lt;/span&gt;&lt;small&gt;abrir&lt;/small&gt;';
+                        childLink.innerHTML = '&lt;span&gt;' + child.title + '&lt;/span&gt;';
                         childItem.appendChild(childLink);
                         childList.appendChild(childItem);
                     });
@@ -4145,53 +4148,68 @@ body,
             
             
             document.addEventListener('DOMContentLoaded',function(){
-            function adiDesktopify(){
-                if(window.innerWidth &lt; 1200){return;}
-        
-                document.querySelectorAll('.o_mega_menu.fetchEcomCategories').forEach(function(menu){
-        
-                    var center = menu.querySelector('.syscomify-pane--center');
-        
-                    if(!center || center.dataset.adiApplied==='1'){
-                        return;
-                    }
-        
-                    center.dataset.adiApplied='1';
-        
-                    var links = center.querySelector('.syscomify-links');
-        
-                    if(links){
-        
-                        var items=[].slice.call(links.children);
-        
-                        if(items.length&gt;12){
-        
-                            var wrapper=document.createElement('div');
-        
-                            wrapper.className='adi-columns';
-                            wrapper.style.display='grid';
-                            wrapper.style.gridTemplateColumns='repeat(4,minmax(180px,1fr))';
-                            wrapper.style.gap='24px';
-        
-                            for(var i=0;i&lt;4;i++){
-                                var col=document.createElement('div');
-                                wrapper.appendChild(col);
-                            }
-        
-                            items.forEach(function(el,idx){
-                                wrapper.children[idx%4].appendChild(el);
-                            });
-        
-                            links.innerHTML='';
-                            links.appendChild(wrapper);
+                function adiDesktopify(){
+                    if(window.innerWidth &lt; 1200){return;}
+
+                    document.querySelectorAll('.o_mega_menu.fetchEcomCategories').forEach(function(menu){
+
+                        var center = menu.querySelector('.syscomify-pane--center');
+
+                        if(!center || center.dataset.adiApplied==='1'){
+                            return;
                         }
-                    }
+
+                        center.dataset.adiApplied='1';
+
+                        var links = center.querySelector('.syscomify-links');
+
+                        if(links){
+
+                            var items=[].slice.call(links.children);
+
+                            if(items.length&gt;12){
+
+                                var wrapper=document.createElement('div');
+
+                                wrapper.className='adi-columns';
+                                wrapper.style.display='grid';
+                                wrapper.style.gridTemplateColumns='repeat(4,minmax(180px,1fr))';
+                                wrapper.style.gap='24px';
+
+                                for(var i=0;i&lt;4;i++){
+                                    var col=document.createElement('div');
+                                    wrapper.appendChild(col);
+                                }
+
+                                items.forEach(function(el,idx){
+                                    wrapper.children[idx%4].appendChild(el);
+                                });
+
+                                links.innerHTML='';
+                                links.appendChild(wrapper);
+                            }
+                        }
+                    });
+                }
+
+                setTimeout(adiDesktopify,800);
+                window.addEventListener('resize',adiDesktopify);
+            });
+
+            const subtitleObserver = new MutationObserver((mutations) => {
+              const subtitles = document.querySelectorAll('.syscomify-section-meta');
+              if(subtitles.length > 0) {
+                subtitles.forEach(subtitle => subtitle.remove());
+              }
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                subtitleObserver.observe(document.body, {
+                    childList: true,
+                    subtree: true
                 });
-            }
-        
-            setTimeout(adiDesktopify,800);
-            window.addEventListener('resize',adiDesktopify);
-        });
+            });
+
         </script>
     </xpath>
 </data>
