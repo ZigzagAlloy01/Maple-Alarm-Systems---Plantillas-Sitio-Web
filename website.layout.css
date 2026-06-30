@@ -328,7 +328,7 @@ body,
           .o_mega_menu.fetchEcomCategories :is(.s_mega_menu_odoo_menu, .s_mega_menu_multi_menus).syscomify-mode-app .container {
               width: 100% !important;
               max-width: 100% !important;
-              max-height: calc(90dvh - 15rem);
+              max-height: calc(100dvh - 15rem);
               height: auto;
               margin-top: 2rem;
               overflow-y: auto;
@@ -344,6 +344,14 @@ body,
               border: 1px solid var(--overlay-white-08);
               background: var(--maple-white);
               backdrop-filter: blur(10px);
+          }
+
+          .syscomify-links li .syscomify-link span {
+            font-weight: bold;
+          }
+
+          li.nav-item.mb-1 {
+              font-weight: 700;
           }
           
           .o_mega_menu.fetchEcomCategories :is(.s_mega_menu_odoo_menu, .s_mega_menu_multi_menus).syscomify-mode-app .syscomify-source {
