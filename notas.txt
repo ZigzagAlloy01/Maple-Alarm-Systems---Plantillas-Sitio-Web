@@ -38,3 +38,70 @@
                 <i class="oi oi-chevron-left d-lg-none me-1" role="img" data-oe-model="ir.ui.view" data-oe-id="6100" data-oe-field="arch" data-oe-xpath="/t[1]/t[4]/div[1]/section[1]/div[1]/div[1]/ol[1]/t[1]/li[1]/a[1]/i[1]"></i>
                 Intrusión y Automatización
             </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+            // document.addEventListener('DOMContentLoaded', function () {
+
+            //     const desiredOrder = [
+            //         '/shop/category/sistemas-de-alarma-374',
+            //         '/shop/category/hogar-inteligente-501',
+            //         '/shop/category/camaras-de-seguridad-520',
+            //         '/shop/category/controles-de-acceso-335',
+            //         '/shop/category/cercas-electricas-351',
+            //         '/shop/category/redes-365',
+            //         '/shop/category/cables-358',
+            //         '/shop/category/fuentes-de-poder-y-respaldo-808',
+            //         '/shop/category/instalaciones-482'
+            //     ];
+            
+            //     const containerSelector = '.nav.d-flex.flex-column.mb-3';
+            
+            //     function reorderCategories() {
+            
+            //         const container = document.querySelector(containerSelector);
+            
+            //         if (!container) {
+            //             return;
+            //         }
+            
+            //         const items = [...container.children];
+            
+            //         items.sort((a, b) =&gt; {
+            
+            //             const linkA = a.querySelector('a[href]');
+            //             const linkB = b.querySelector('a[href]');
+            
+            //             const hrefA = linkA ? linkA.getAttribute('href') : '';
+            //             const hrefB = linkB ? linkB.getAttribute('href') : '';
+            
+            //             let indexA = desiredOrder.indexOf(hrefA);
+            //             let indexB = desiredOrder.indexOf(hrefB);
+            
+            //             if (indexA === -1) indexA = Number.MAX_SAFE_INTEGER;
+            //             if (indexB === -1) indexB = Number.MAX_SAFE_INTEGER;
+            
+            //             return indexA - indexB;
+            
+            //         });
+            
+            //         items.forEach(item =&gt; container.appendChild(item));
+            
+            //     }
+            
+            //     reorderCategories();
+            
+            // });
