@@ -1556,7 +1556,7 @@
 
           @media (min-width: 1160px) {
               .o_wsale_products_opt_img_secondary_show .oe_product_cart {
-                  margin-bottom: 1rem;
+                  margin: 0 1rem 5rem 0;
                   padding: 1rem;
               }
           }
@@ -1572,6 +1572,9 @@
 
             .o_mega_menu.fetchEcomCategories .syscomify-pane--center {
               margin-bottom: -3rem;
+            }
+            .grid .g-col-lg-3 {
+                grid-column: auto / span 4;
             }
           }
 
@@ -1892,7 +1895,7 @@
               }
           
               .o_header_sales_two_top .o_header_sales_two_lang_selector_placeholder,
-          .o_header_sales_two_top .o_header_sales_two_social_links_placeholder {
+              .o_header_sales_two_top .o_header_sales_two_social_links_placeholder {
                   display: none !important;
               }
           
@@ -1910,9 +1913,9 @@
               }
           
               .fa.fa-1x.fa-heart,
-          .fa.fa-shopping-cart,
-          .fa.fa-1x.fa-fw.fa-user,
-          .navbar-toggler-icon {
+              .fa.fa-shopping-cart,
+              .fa.fa-1x.fa-fw.fa-user,
+              .navbar-toggler-icon {
                   font-size: 2rem !important;
               }
 
@@ -1944,6 +1947,23 @@
           @media (max-width: 880px) {
               .o_wsale_products_opt_actions_promote .o_wsale_product_btn .o_add_wishlist, .oe_product_cart .o_wsale_product_btn .btn:where(.o_wsale_product_btn_primary) {
                 width: 4rem;
+              }
+          }
+
+          @media (max-width: 920px) {
+              .grid .g-col-md-3 {
+                  grid-column: auto / span 4 !important;
+              }
+
+              .o_wsale_product_sub {
+                  justify-content: flex-start !important;
+                  padding-bottom: 2rem;
+              }              
+          }
+
+          @media (max-width: 920px) and (min-width: 575.98px) {
+              .o_wsale_product_sub {
+                  margin-bottom: 0rem;
               }
           }
 
