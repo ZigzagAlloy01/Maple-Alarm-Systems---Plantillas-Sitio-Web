@@ -1,0 +1,41 @@
+                @media (max-width: 480px) {
+
+                    .products_header {
+                        display: flex !important;
+                        flex-wrap: wrap !important;
+                        align-items: stretch !important;
+                        gap: 0.5rem !important;
+                    }
+
+                    .products_header .o_wsale_products_header_search_form_container {
+                        flex: 0 0 100%;
+                        width: 100%;
+                        max-width: 100%;
+                        margin-right: 0 !important;
+                    }
+                
+                    .products_header .o_wsale_products_searchbar_form {
+                        width: 100%;
+                    }
+
+                    .products_header .o_sortby_dropdown {
+                        flex: 1 1 calc(50% - .25rem);
+                        min-width: 0;
+                    }
+                
+                    .products_header .o_sortby_dropdown > .btn {
+                        width: 100%;
+                        justify-content: center;
+                        padding-left: .5rem;
+                        padding-right: .5rem;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .products_header button[data-bs-target="#o_wsale_offcanvas"] {
+                        flex: 1 1 calc(50% - .25rem);
+                        justify-content: center;
+                    }
+                }
+                

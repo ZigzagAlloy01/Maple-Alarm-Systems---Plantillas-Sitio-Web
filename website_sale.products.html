@@ -261,133 +261,6 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
                 <style type="text/css">
 
-                .o_wsale_products_grid_before_rail.vh-100.ms-n2.px-lg-2.ps-2.overflow-y-scroll {
-                    margin-right: 1rem;
-                }
-
-                :where(#o_wsale_container) #products_grid_before {
-                    flex: 0 0 25%;
-                    min-width: 22rem;
-                    max-width: 100%
-                    top: var(--o_ws_sidebar_top_gap);
-                    margin-right: 1rem;
-                }
-
-                ul.nav.d-flex.flex-column.mb-3 > li.nav-item > a {
-                    text-align: center;
-                }
-
-                #products_grid_before > div.o_wsale_products_grid_before_rail.vh-100.ms-n2.px-lg-2.ps-2.overflow-y-scroll {
-                    width: 100% !important;
-                }
-
-                li.nav-item.mb-1 {
-                    font-weight: 700;
-                    padding: 0 2rem 0 -1rem !important;
-                }
-
-                .tvc-public-category-tree ul {
-                    list-style: none;
-                }
-
-                .mb-1 {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                }
-
-                .mb-1 .p-0 {
-                    display: flex;
-                    align-content: center;
-                    align-items: center;
-                    border-radius: 1.5rem; 
-                    border: 0.0625rem solid #dee2e6; 
-                    background-color: #ffffff;
-                    color: #212529;
-                    font-family: 'Montserrat', sans-serif;
-                    font-size: 0.875rem;
-                    transition: all 0.2s ease-in-out;
-                    text-decoration: none;
-                    width: 90%;
-
-                }
-
-                .mb-1 .p-0.active {
-                    background-color: #343a40;
-                    color: #ffffff;
-                    border-color: #343a40;
-                }
-
-                .mb-1 .p-0:hover {
-                    background-color: #f8f9fa;
-                    border-color: #adb5bd;
-                    cursor: pointer;
-                }
-
-                .mb-1 .p-0::before {
-                    content: "";
-                    display: inline-block;
-                    width: 0.5rem;
-                    height: 0.5rem;
-                    background-color: #a81c1c;
-                    margin-right: 0.75rem;
-                    border-radius: 50%;
-                    margin: 0 1rem 0 0;
-                }
-
-                .mb-1 .p-0.active::before {
-                    background-color: #ffffff;
-                }
-                
-                .oe_currency_value {
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                    margin: 1.6rem 0 1.6rem 0;
-                }
-                
-                .fw-bold {
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                }
-                
-                .oe_product .o_wsale_product_short_description {
-                    display: -webkit-box;
-                    margin: 1.6rem 0 1.6rem 0;
-                    height: auto;
-                    overflow: hidden;
-                    color: #6c757d;
-                    font-size: 1rem;
-                    line-height: 1.35;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 6;
-                }
-                
-                .o_wsale_products_item_title a span{
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    line-height: 1.2em; 
-                    max-height: 3.6em;
-                }
-                
-                .oe_product_image {
-                    display: flex;
-                    height: 32rem;
-                    align-items: center;
-                    justify-content: center;
-                }
-                
-                @media (max-width: 450px) {
-                    .oe_currency_value, .fw-bold {
-                        font-size: 1.2rem;
-                    }
-                    
-                    .oe_product_image {
-                        height: 16rem;
-                    }
-                }
-                
                 @media (max-width: 480px) {
 
                     .products_header {
@@ -413,7 +286,7 @@
                         min-width: 0;
                     }
                 
-                    .products_header .o_sortby_dropdown &gt; .btn {
+                    .products_header .o_sortby_dropdown > .btn {
                         width: 100%;
                         justify-content: center;
                         padding-left: .5rem;
@@ -429,17 +302,9 @@
                     }
                 }
                 
-                @media (max-width: 576px) {
-                    #o_wsale_products_grid {
-                        grid-template-columns: 1fr !important;
-                    }
-                }
+
                 
-                @media (max-width: 1464px) {
-                    .oe_product_image {
-                        height: 18rem;
-                    }
-                }
+
             </style>
         </xpath>
         <xpath expr="//head" position="inside">
@@ -569,6 +434,14 @@
                 });
 
                 document.querySelectorAll('div.o_wsale_filmstrip_item.position-relative.d-flex.w-100.h-100 span[data-oe-model="product.public.category"]').forEach(el =&gt; {
+                    const txt = el.textContent.trim();
+                
+                    if (txt.includes('/')) {
+                        el.textContent = txt.split('/').pop().trim();
+                    }
+                });
+
+                document.querySelectorAll('li.breadcrumb-item span.d-inline-block').forEach(el =&gt; {
                     const txt = el.textContent.trim();
                 
                     if (txt.includes('/')) {
