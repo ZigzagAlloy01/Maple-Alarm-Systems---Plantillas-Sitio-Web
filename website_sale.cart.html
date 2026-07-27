@@ -1,0 +1,427 @@
+<t name="Shopping Cart" t-name="website_sale.cart">
+    
+        <t t-call="website_sale.checkout_layout">
+            <t t-set="show_shorter_cart_summary" t-value="True"/>
+            <t t-set="show_footer" t-value="True"/>
+            <t t-set="oe_structure">
+                <!-- This is the drag-and-drop area for website building blocs at the end of each
+                     checkout page. This is append at the of the page in `checkout_layout`. The
+                     templates created in the database to store blocs are hooked using XPath on the
+                     `oe_struture` element ID. Therefore, we can't use dynamic IDs (like with
+                     t-att-id) and each template needs to define a div element. -->
+                <div class="oe_structure" id="oe_structure_website_sale_cart_2"/>
+
+                
+            </t>
+                
+            <div id="shop_cart" class="col">
+                <div class="d-flex align-items-center mb-3">
+                    <h4 class="mb-0">Resumen de la orden</h4>
+                    <div class="ms-3 border-start ps-2"><t t-call="website_sale.quick_reorder_button"/></div>
+                </div>
+                <div t-if="abandoned_proceed or access_token" class="alert alert-info mt8 mb8" role="alert"> <!-- abandoned cart choices -->
+                    <t t-if="abandoned_proceed">
+                        <p>Se ha completado su carrito anterior.</p>
+                        <p t-if="website_sale_order">Continúe con su carrito actual.</p>
+                    </t>
+                    <t t-if="access_token">
+                        <p>Este es su carrito actual.</p>
+                        <p>
+                            <strong>
+                                <a class="o_translate_inline" t-attf-href="/shop/cart/?id={{id}}&amp;access_token={{access_token}}&amp;revive_method=squash">Haga clic aquí</a>
+                            </strong> si desea restaurar su carrito anterior. Su carrito actual será reemplazado por su carrito anterior.
+                        </p>
+                        <p>
+                            <strong>
+                                <a class="o_translate_inline" t-attf-href="/shop/cart/?id={{id}}&amp;access_token={{access_token}}&amp;revive_method=merge">Haga clic aquí</a>
+                            </strong> si desea fusionar su carrito anterior con el carrito actual.
+                        </p>
+                    </t>
+                </div>
+                
+                <t t-call="website_sale.cart_lines"/>
+
+                
+
+                <div class="clearfix"/>
+                <div class="oe_structure" id="oe_structure_website_sale_cart_1"/>
+
+                <div id="cart_compact_services" class="mt-5 pt-4 border-top">
+                    <h4 class="mb-4">Complementa tu equipo con nuestros servicios</h4>
+                        
+                        <div class="row g-3 justify-content-center" id="suscriptions_container_cards">
+                            
+                            <!-- TARJETA 1: M2M -->
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card h-100 custom-dark-card p-3 position-relative">
+                                    <div class="card-body p-0 d-flex flex-column">
+                                        <h5 class="text-uppercase tracking-wide text-white mb-1" style="font-size: 1rem;">Monitoreo M2M</h5>
+                                        <div class="mb-2 pb-2 border-bottom border-secondary">
+                                            <strong class="text-white fs-4">$350.00</strong> <small class="text-light">/ mes</small>
+                                        </div>
+                                        <p class="small text-light mb-3 flex-grow-1" style="font-size: 0.85rem; line-height: 1.2;">
+                                            Señales inalámbricas multicompañía con app móvil para armado/desarmado.
+                                        </p>
+                                        
+                                        <t t-set="m2m_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via M2M modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <form class="oe_website_sale js_product js_main_product mt-auto" t-if="m2m_monitoring_product">
+                                            <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
+                                            <input class="o_not_editable product_id" name="product_id" t-att-value="m2m_monitoring_product.product_variant_id.id" type="hidden"/>
+                                            <input class="o_not_editable product_template_id" name="product_template_id" t-att-value="m2m_monitoring_product.id" type="hidden"/>
+                                            <input name="product_type" t-att-value="m2m_monitoring_product.type" type="hidden"/>
+                                            <input class="quantity" name="add_qty" type="hidden" value="1"/>
+                                            <a class="btn custom-btn-subscribe w-100 py-1 o_internet_monitoring_add_to_cart" data-add-qty="1" href="#" role="button" t-att-data-product-id="m2m_monitoring_product.product_variant_id.id" t-att-data-product-template-id="m2m_monitoring_product.id" style="min-height: auto; font-size: 0.85rem;">
+                                                Agregar
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA 2: Alarm.com (Destacada) -->
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card h-100 highlighted-card custom-dark-card p-3 position-relative mt-3 mt-lg-0">
+                                    <span class="badge bg-info text-dark position-absolute start-50 translate-middle-x px-2 py-1 rounded-pill text-uppercase fw-bold" style="top: -10px; font-size: 0.7rem; z-index: 10;">Más Vendido</span>
+                                    <div class="card-body p-0 d-flex flex-column">
+                                        <h5 class="text-uppercase tracking-wide text-white mb-1" style="font-size: 1rem;">Alarm.com</h5>
+                                        <div class="mb-2 pb-2 border-bottom border-secondary">
+                                            <strong class="text-white fs-4">$520.00</strong> <small class="text-light">/ mes</small>
+                                        </div>
+                                        <p class="small text-light mb-3 flex-grow-1" style="font-size: 0.85rem; line-height: 1.2;">
+                                            Seguridad y comodidad. Convierte tu casa en un Hogar Inteligente desde la app.
+                                        </p>
+                                        
+                                        <t t-set="alarmcom_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via Alarm.com modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <form class="oe_website_sale js_product js_main_product mt-auto" t-if="alarmcom_product">
+                                            <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
+                                            <input class="o_not_editable product_id" name="product_id" t-att-value="alarmcom_product.product_variant_id.id" type="hidden"/>
+                                            <input class="o_not_editable product_template_id" name="product_template_id" t-att-value="alarmcom_product.id" type="hidden"/>
+                                            <input name="product_type" t-att-value="alarmcom_product.type" type="hidden"/>
+                                            <input class="quantity" name="add_qty" type="hidden" value="1"/>
+                                            <a class="btn custom-btn-subscribe-highlight w-100 py-1 o_internet_monitoring_add_to_cart" data-add-qty="1" href="#" role="button" t-att-data-product-id="alarmcom_product.product_variant_id.id" t-att-data-product-template-id="alarmcom_product.id" style="min-height: auto; font-size: 0.85rem;">
+                                                Agregar
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA 3: GSM -->
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card h-100 custom-dark-card p-3 position-relative">
+                                    <div class="card-body p-0 d-flex flex-column">
+                                        <h5 class="text-uppercase tracking-wide text-white mb-1" style="font-size: 1rem;">Monitoreo GSM</h5>
+                                        <div class="mb-2 pb-2 border-bottom border-secondary">
+                                            <strong class="text-white fs-4">$420.00</strong> <small class="text-light">/ mes</small>
+                                        </div>
+                                        <p class="small text-light mb-3 flex-grow-1" style="font-size: 0.85rem; line-height: 1.2;">
+                                            Datos móviles mediante red Telcel. Activaciones 100% garantizadas.
+                                        </p>
+                                        
+                                        <t t-set="gsm_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via GSM mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <form class="oe_website_sale js_product js_main_product mt-auto" t-if="gsm_monitoring_product">
+                                            <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
+                                            <input class="o_not_editable product_id" name="product_id" t-att-value="gsm_monitoring_product.product_variant_id.id" type="hidden"/>
+                                            <input class="o_not_editable product_template_id" name="product_template_id" t-att-value="gsm_monitoring_product.id" type="hidden"/>
+                                            <input name="product_type" t-att-value="gsm_monitoring_product.type" type="hidden"/>
+                                            <input class="quantity" name="add_qty" type="hidden" value="1"/>
+                                            <a class="btn custom-btn-subscribe w-100 py-1 o_internet_monitoring_add_to_cart" data-add-qty="1" href="#" role="button" t-att-data-product-id="gsm_monitoring_product.product_variant_id.id" t-att-data-product-template-id="gsm_monitoring_product.id" style="min-height: auto; font-size: 0.85rem;">
+                                                Agregar
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA 4: Internet -->
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="card h-100 custom-dark-card p-3 position-relative">
+                                    <div class="card-body p-0 d-flex flex-column">
+                                        <h5 class="text-uppercase tracking-wide text-white mb-1" style="font-size: 1rem;">Vía Internet</h5>
+                                        <div class="mb-2 pb-2 border-bottom border-secondary">
+                                            <strong class="text-white fs-4">$330.00</strong> <small class="text-light">/ mes</small>
+                                        </div>
+                                        <p class="small text-light mb-3 flex-grow-1" style="font-size: 0.85rem; line-height: 1.2;">
+                                            Rápido y confiable a través de tu conexión de banda ancha residencial.
+                                        </p>
+                                        
+                                        <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via internet mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <form class="oe_website_sale js_product js_main_product mt-auto" t-if="internet_monitoring_product">
+                                            <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
+                                            <input class="o_not_editable product_id" name="product_id" t-att-value="internet_monitoring_product.product_variant_id.id" type="hidden"/>
+                                            <input class="o_not_editable product_template_id" name="product_template_id" t-att-value="internet_monitoring_product.id" type="hidden"/>
+                                            <input class="product_category_id" name="product_category_id" t-att-value="internet_monitoring_product.public_categ_ids.ids[0]" t-if="internet_monitoring_product.public_categ_ids.ids" type="hidden"/>
+                                            <input name="product_type" t-att-value="internet_monitoring_product.type" type="hidden"/>
+                                            <input class="quantity" name="add_qty" type="hidden" value="1"/>
+                                            <a class="btn custom-btn-subscribe w-100 py-1 o_internet_monitoring_add_to_cart" data-add-qty="1" href="#" role="button" t-att-data-product-id="internet_monitoring_product.product_variant_id.id" t-att-data-product-template-id="internet_monitoring_product.id" style="min-height: auto; font-size: 0.85rem;">
+                                                Agregar
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            <xpath expr="//head" position="inside">
+                <style>
+                    .oe_structure_suscriptions_container_full, .oe_structure_suscriptions_subcontainer_full, #suscriptions_container_full, .suscriptions_subcontainer {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                    .oe_structure_suscriptions_container_full {
+                        padding: 4rem 2rem;
+                    }
+                    .card-body {
+                        background-color: var(--maple-purple-light) !important;
+                        border-top-right-radius: inherit;
+                        border-top-left-radius: inherit;
+                    }
+                    .custom-dark-card {
+                        background-color: var(--maple-purple-light) !important;
+                        border: 1px solid #31343e !important;
+                        border-radius: 12px !important;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+                        transition: transform 0.3s ease, border-color 0.3s ease;
+                        color: #f9f9f9;
+                    }
+                    
+                    .custom-dark-card:hover {
+                        transform: translateY(-5px);
+                        border-color: #4a4e5a !important;
+                    }
+
+                    h3.card-title.h5-fs.text-uppercase.tracking-wide, .list-group-ite.text-muted {
+                        color: white;
+                    }
+                  
+                    .highlighted-card {
+                        border: 1px solid var(--technologic-cian) !important;
+                        box-shadow: 0 0 20px rgba(2, 214, 232, 0.15) !important;
+                    }
+                    
+                    .custom-btn-subscribe {
+                        display: inline-flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        min-height: var(--btn-height) !important;
+                        padding: var(--btn-padding) !important;
+                        border: 1px solid var(--navy-blue-dark) !important;
+                        border-radius: var(--btn-radius) !important;
+                        background: var(--navy-blue-dark) !important;
+                        color: var(--maple-white) !important;
+                        text-transform: uppercase;
+                        font-weight: var(--btn-weight) !important;
+                        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease !important;
+                    }
+                    
+                    .custom-btn-subscribe:hover {
+                        background-color: var(--navy-blue-pitch-dark) !important;
+                        border: 1px solid var(--technologic-cian) !important;
+                    }
+                    
+                    .custom-btn-subscribe-highlight {
+                        background-color: #3300FF;
+                        color: var(--maple-white) !important;
+                        border: none;
+                        padding: 12px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        border-radius: 8px;
+                        transition: background-color 0.2s;
+                    }
+                    
+                    .custom-btn-subscribe-highlight:hover {
+                        background-color: #2700CD;
+                        border: 1px solid var(--technologic-cian) !important;
+                    }
+
+                    a#add_to_cart_internet_monitoring:hover {
+                        border: 1px solid var(--technologic-cian) !important;
+                    }
+                    
+                    .custom-list-group .list-group-item {
+                        background: transparent !important;
+                        color: var(--maple-white) !important;
+                        border: none !important;
+                        padding: 0.5rem 0;
+                    }
+                    
+                    .custom-muted-text {
+                        color: var(--maple-white) !important;
+                        line-height: 1.4;
+                    }
+
+                    .lead, p.card-text.small.mb-4.text-light, .custom-muted-text, .custom-list-group .list-group-item, .card-footer.custom-card-footer small {
+                        font-size: 1.2rem;
+                        font-weight: 500 !important;
+                    }
+                    
+                    .custom-card-footer {
+                        background: transparent !important;
+                        border-top: 1px solid #31343e !important;
+                        color: var(--maple-white) !important;
+                        padding: 1.5rem;
+                        text-align: center;
+                    }
+                    
+                    .h2-fs {
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                    }
+                    
+                    .tracking-wide {
+                        letter-spacing: 0.05em;
+                    }
+
+                    .oe_structure_suscriptions_subcontainer_full,
+                    #suscriptions_container_full,
+                    .suscriptions_subcontainer,
+                    #suscriptions_container_cards,
+                    .row {
+                        overflow: visible !important;
+                    }
+
+                    .col-lg-3:has(.highlighted-card),
+                    div[data-name="Plan"]:has(.highlighted-card) {
+                        position: relative !important;
+                        z-index: 99 !important;
+                        overflow: visible !important;
+                    }
+
+                    .highlighted-card {
+                        position: relative !important;
+                        overflow: visible !important;
+                        z-index: 99 !important;
+                    }
+
+                    .highlighted-card .badge {
+                        position: absolute !important;
+                        top: -12px !important;
+                        left: 50% !important;
+                        transform: translateX(-50%) !important;
+                        z-index: 9999 !important;
+                    }
+
+                    .o_wsale_shorter_cart_summary.offset-xxl-1.col-lg-5.col-xxl-4 {
+                        border-radius: 2rem !important;
+                        margin: 2rem 0 0 0;
+                    }
+
+                    .col-12.col-md-6.col-lg-3 .card.h-100.highlighted-card.custom-dark-card.p-3.position-relative.mt-3.mt-lg-0 {
+                        margin: 0 0 0 0 !important;
+                    }
+
+                    .card-body.p-0.p-lg-4 .o_cart_total.o_checkout_cart_total.pt-2.pt-lg-0 table.table.mb-0 tbody tr, .card-body.p-0.p-lg-4 .o_cart_total.o_checkout_cart_total.pt-2.pt-lg-0 table.table.mb-0 tbody tr td, a.mt-2.mt-lg-0.text-center  {
+                        color: var(--maple-white) !important;
+                    }
+
+                    a.btn.custom-btn-subscribe-highlight.w-100.py-1.o_internet_monitoring_add_to_cart {
+                        height: 3rem;
+                        padding: 0.75rem 0 !important;
+                    }
+
+                    #suscriptions_container_cards {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1rem;
+                    }
+
+                    #suscriptions_container_cards &gt; div {
+                        flex: 1 1 calc(25% - 1rem); 
+                        min-width: 15rem;
+                        max-width: 15rem;
+                    }
+
+                    /* .card-body.p-0.p-lg-4 .o_cart_total.o_checkout_cart_total.pt-2.pt-lg-0 table.table.mb-0 tbody tr td.text-end.border-0.pb-2.pe-0.pt-0 {
+                        color: white;
+                    } */
+                    /* .col-12.col-md-6.col-lg-3 {
+                        background-color: var(--maple-purple-dark);
+                    } */
+
+                    @media (max-width: 991px) {
+                        .o_total_card.card.o_wsale_sticky_object.sticky-lg-top  {
+                            padding: 1rem 1rem;
+                            background-color: var(--maple-purple-light) !important;
+                        }
+                    }                    
+                    
+                </style>
+            </xpath>
+            <xpath expr="//head" position="inside">
+                <script>
+                    document.addEventListener('click', function (event) {
+                        var button = event.target.closest('.o_internet_monitoring_add_to_cart');
+                        if (!button) {
+                            return;
+                        }
+
+                        event.preventDefault();
+                        if (button.classList.contains('disabled')) {
+                            return;
+                        }
+
+                        var productId = parseInt(button.dataset.productId, 10);
+                        var addQty = parseInt(button.dataset.addQty || '1', 10);
+                        if (!productId) {
+                            window.location.href = '/contactus';
+                            return;
+                        }
+
+                        button.classList.add('disabled');
+                        button.setAttribute('aria-disabled', 'true');
+
+                        var csrfTokenInput = button.closest('form').querySelector('input[name="csrf_token"]');
+                        var productTemplateId = parseInt(button.dataset.productTemplateId, 10);
+                        var params = {
+                            product_template_id: productTemplateId,
+                            product_id: productId,
+                            quantity: addQty,
+                            csrf_token: csrfTokenInput ? csrfTokenInput.value : '',
+                        };
+
+                        var addToCart = function (body) {
+                            return fetch('/shop/cart/add', {
+                                method: 'POST',
+                                credentials: 'same-origin',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-Requested-With': 'XMLHttpRequest',
+                                },
+                                body: JSON.stringify(body),
+                            }).then(function (response) {
+                                if (!response.ok) {
+                                    throw new Error('No se pudo agregar el producto al carrito.');
+                                }
+                                return response.json();
+                            }).then(function (payload) {
+                                if (payload.error) {
+                                    throw new Error(payload.error.message || 'No se pudo agregar el producto al carrito.');
+                                }
+                                return payload.result;
+                            });
+                        };
+
+                        addToCart({params: params}).catch(function () {
+                            return addToCart({
+                                jsonrpc: '2.0',
+                                method: 'call',
+                                params: params,
+                                id: Date.now(),
+                            });
+                        }).then(function () {
+                            window.location.href = '/shop/cart';
+                        }).catch(function () {
+                            button.classList.remove('disabled');
+                            button.removeAttribute('aria-disabled');
+                            window.alert('No se pudo agregar el servicio al carrito. Por favor intenta desde la ficha del producto o contáctanos.');
+                        });
+                    });
+                </script>
+            </xpath>
+        </t>
+    </t>

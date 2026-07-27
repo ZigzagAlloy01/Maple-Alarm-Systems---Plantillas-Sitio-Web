@@ -286,7 +286,7 @@
                         min-width: 0;
                     }
                 
-                    .products_header .o_sortby_dropdown > .btn {
+                    .products_header .o_sortby_dropdown &gt; .btn {
                         width: 100%;
                         justify-content: center;
                         padding-left: .5rem;
@@ -424,29 +424,68 @@
                         }
                     });
                 })();
-                
-                document.querySelectorAll('a[data-oe-model="product.public.category"]').forEach(el =&gt; {
-                    const txt = el.textContent.trim();
-                
-                    if (txt.includes('/')) {
-                        el.textContent = txt.split('/').pop().trim();
-                    }
-                });
 
-                document.querySelectorAll('div.o_wsale_filmstrip_item.position-relative.d-flex.w-100.h-100 span[data-oe-model="product.public.category"]').forEach(el =&gt; {
-                    const txt = el.textContent.trim();
-                
-                    if (txt.includes('/')) {
-                        el.textContent = txt.split('/').pop().trim();
-                    }
-                });
+                 document.addEventListener("DOMContentLoaded", function() {
+                     document.querySelectorAll('a[data-oe-model="product.public.category"]').forEach(el =&gt; {
+                         const txt = el.textContent.trim();
+                    
+                         if (txt.includes('/')) {
+                             el.textContent = txt.split('/').pop().trim();
+                         }
+                     });
 
-                document.querySelectorAll('li.breadcrumb-item span.d-inline-block').forEach(el =&gt; {
-                    const txt = el.textContent.trim();
-                
-                    if (txt.includes('/')) {
-                        el.textContent = txt.split('/').pop().trim();
+                     document.querySelectorAll('div.o_wsale_filmstrip_item.position-relative.d-flex.w-100.h-100 span[data-oe-model="product.public.category"]').forEach(el =&gt; {
+                         const txt = el.textContent.trim();
+                    
+                         if (txt.includes('/')) {
+                             el.textContent = txt.split('/').pop().trim();
+                         }
+                     });
+
+                     document.querySelectorAll('li.breadcrumb-item span.d-inline-block').forEach(el =&gt; {
+                         const txt = el.textContent.trim();
+                    
+                         if (txt.includes('/')) {
+                             el.textContent = txt.split('/').pop().trim();
+                         }
+                     });
+                 });
+
+                document.addEventListener("DOMContentLoaded", () =&gt; {
+
+                    function limpiarCategorias() {
+
+                        document.querySelectorAll(`
+                            ul.nav.d-flex.flex-column.mb-3 li.nav-item.mb-1 ul.nav.flex-column.nav-hierarchy.mt-1.ps-3 li.nav-item.mb-1 a.p-0, 
+                            ul.o_wsale_filmstrip.d-flex.align-items-stretch.mb-0.list-unstyled.overflow-visible li a.o_wsale_filmstrip_link.d-block.w-100.h-100.text-decoration-none .o_wsale_filmstrip_item.position-relative.d-flex.w-100.h-100.active span,
+                            ol.breadcrumb.w-100.p-0.mb-0.small.mb-2.mb-lg-0 li.breadcrumb-item a,
+                            .o_wsale_filmstrip_item.position-relative.d-flex.w-100.h-100 span
+                        `).forEach(el =&gt; {
+
+                            const txt = el.textContent.trim();
+
+                            if (txt.includes('/')) {
+                                el.textContent = txt.split('/').pop().trim();
+                            }
+
+                        });
+
                     }
+
+                    limpiarCategorias();
+
+                    let timeout;
+
+                    const observer = new MutationObserver(() =&gt; {
+                        clearTimeout(timeout);
+                        timeout = setTimeout(limpiarCategorias, 50);
+                    });
+
+                    observer.observe(document.body, {
+                        childList: true,
+                        subtree: true
+                    });
+
                 });
             </script>
         </xpath>

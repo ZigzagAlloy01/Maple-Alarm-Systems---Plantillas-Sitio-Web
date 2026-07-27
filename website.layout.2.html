@@ -221,7 +221,7 @@
     <xpath expr="//head" position="inside">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
         <style type="text/css">
-            :root {
+                    :root {
               --font-body: "Noto Sans", sans-serif;
               --font-heading: "Montserrat", sans-serif;
               --body-font-family: var(--font-body);
@@ -247,8 +247,6 @@
               --carbon-dark: #1c1f2b;
               --maple-purple-gray: #34333B;
               --maple-purple-gray-dark: #121117;
-              --maple-purple-light: #2e0747; 
-              --maple-purple-dark: #040714;
 
               --maple-red-alarm: #D32F2F;
               --maple-red-alarm-dark: #611414;
@@ -716,7 +714,7 @@
               content: "⌕";
               position: absolute;
               top: 50%;
-              left: 1rem;
+              left: 2rem;
               color: var(--sys-muted-2);
               font-size: 16px;
               line-height: 1;
@@ -789,7 +787,7 @@
           }
           
           .o_mega_menu.fetchEcomCategories .syscomify-pane--right {
-              display: block;
+              display:block!important;
               padding:20px!important; 
               background: var(--maple-white);
               color: var(--asphalt-black);
@@ -1169,7 +1167,7 @@
               align-items: center;
               justify-content: space-between;
               gap: 12px;
-              width: 90%;
+              width: 100%;
               padding: 14px 12px;
               border: 1px solid var(--accent-red-34);
               border-radius: 12px;
@@ -1953,18 +1951,6 @@
             header a[href="/shop"], header a[href^="/shop?"] {
                 display: none !important;
             }
-
-            .o_footer_copyright.o_colored_level.o_cc {
-              background-color: var(--maple-purple-dark);
-            }
-
-            span.o_footer_copyright_name.me-2.small {
-              color: var(--maple-white) !important;
-            }
-
-            .row.row-gap-2 {
-              justify-self: center;
-            }
                       
           @media (max-width: 1478px) {
               .o_wsale_suggested_product_price,
@@ -2032,16 +2018,16 @@
           }
 
           @media (max-width: 1500px) and (min-width: 991px) {
-            .o_mega_menu.fetchEcomCategories .syscomify-card, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-chip-list, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-right-links, .o_mega_menu.fetchEcomCategories .syscomify-pane--right {
-              display: none !important;
+            .o_mega_menu.fetchEcomCategories .syscomify-card, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-chip-list, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-right-links{
+              display: none;
             }
             
             .o_mega_menu.fetchEcomCategories .syscomify-shell{
               grid-template-columns: 20% 80%;
             }
 
-            .o_mega_menu.fetchEcomCategories .syscomify-pane, .o_mega_menu.fetchEcomCategories .syscomify-pane--left {
-              margin-bottom: 0rem;
+            .o_mega_menu.fetchEcomCategories .syscomify-pane--center {
+              margin-bottom: -3rem;
             }
             .grid:not(.o_wsale_products_grid_table) .g-col-lg-3 {
                 grid-column: auto / span 4;
@@ -2091,14 +2077,6 @@
                   overflow-y: auto !important;
                   background: var(--maple-white);
                   inset: 0 0 0 4rem !important;
-                }
-
-                .o_mega_menu.fetchEcomCategories .syscomify-search::before {
-                    left: 2rem;
-                }
-
-                .o_mega_menu.fetchEcomCategories .syscomify-card, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-chip-list, .o_mega_menu.fetchEcomCategories .syscomify-mini-title, .o_mega_menu.fetchEcomCategories .syscomify-right-links, .o_mega_menu.fetchEcomCategories .syscomify-pane--right {
-                  display: none !important;
                 }
 
                 .offcanvas-body .dropdown-menu,
@@ -2261,7 +2239,7 @@
               .o_mega_menu.fetchEcomCategories .syscomify-topbar, .o_mega_menu.fetchEcomCategories .syscomify-mobile {
                 display: flex;
                 position: static !important;
-                width: 90% !important;
+                width: 22rem !important;
                 max-width: 100%;
                 box-sizing: border-box !important;
                 margin: 0 !important;
@@ -2332,7 +2310,6 @@
                     width: 5rem;
                     display: flex;
                     flex-direction: column;
-                    margin-left: auto;
               }
           
               .o_mega_menu.fetchEcomCategories .syscomify-mobile-list {
@@ -2589,15 +2566,14 @@
 
               .o_mega_menu.fetchEcomCategories :is(.s_mega_menu_odoo_menu, .s_mega_menu_multi_menus).syscomify-mode-app {
                   inset: 0 0 0 0rem !important;
-              }
+                }
 
-              .o_mega_menu.fetchEcomCategories .syscomify-topbar, .o_mega_menu.fetchEcomCategories .syscomify-mobile {
-                width: 24rem !important;
+                .o_mega_menu.fetchEcomCategories .syscomify-topbar, .o_mega_menu.fetchEcomCategories .syscomify-mobile {
                 padding-left: 0 !important;
               }
 
               .o_mega_menu.fetchEcomCategories .syscomify-mobile-item {
-                  margin: 0 0 0 1rem !important;
+                  margin: 0 0 0 2rem !important;
               }
           }
 
@@ -2686,18 +2662,11 @@
           
               .o_mega_menu.fetchEcomCategories .syscomify-mobile-back {
                   margin: 0.5rem;
-                  padding: 0 0 0 0.5rem;
-                  height: 3rem;
-                  justify-content: center;
               }
 
               .o_wsale_products_grid_table_wrapper .o_wsale_product_btn_primary .o_label {
                     display: none !important;
-              }
-
-              .o_mega_menu.fetchEcomCategories .syscomify-mobile-wrap {
-                margin: 0 0 0 0.5rem !important;
-              }
+                }
           }
 
 
@@ -5847,36 +5816,35 @@
                 buildOrderMap(CATEGORY_REFERENCE_TREE);
 
                 function reorderAllCategories() {
-                        const containers = document.querySelectorAll('.nav, .dropdown-menu, .o_mega_menu, .s_mega_menu_multi_menus');
+                    const containers = document.querySelectorAll('.nav, .dropdown-menu, .o_mega_menu, .s_mega_menu_multi_menus');
+                    
+                    console.log("Contenedores encontrados:", containers.length);
+            
+                    containers.forEach(container =&gt; {
+                        const items = Array.from(container.children).filter(item =&gt; item.querySelector('a[href*="/shop/category"]'));
                         
-                        console.log("Contenedores encontrados:", containers.length);
-                
-                        containers.forEach(container =&gt; {
-                            const items = Array.from(container.children).filter(item =&gt; item.querySelector('a[href*="/shop/category"]'));
-                            
-                            console.log("Items encontrados en contenedor:", items.length);
-                
-                            items.sort((a, b) =&gt; {
-                                const linkA = a.querySelector('a[href*="/shop/category"]');
-                                const linkB = b.querySelector('a[href*="/shop/category"]');
-                                const hrefA = linkA ? linkA.getAttribute('href') : '';
-                                const hrefB = linkB ? linkB.getAttribute('href') : '';
-                
-                                const indexA = orderMap.hasOwnProperty(hrefA) ? orderMap[hrefA] : 999999;
-                                const indexB = orderMap.hasOwnProperty(hrefB) ? orderMap[hrefB] : 999999;
-                
-                                return indexA - indexB;
-                            });
-                
-                            items.forEach(item =&gt; container.appendChild(item));
+                        console.log("Items encontrados en contenedor:", items.length);
+            
+                        items.sort((a, b) =&gt; {
+                            const linkA = a.querySelector('a[href*="/shop/category"]');
+                            const linkB = b.querySelector('a[href*="/shop/category"]');
+                            const hrefA = linkA ? linkA.getAttribute('href') : '';
+                            const hrefB = linkB ? linkB.getAttribute('href') : '';
+            
+                            const indexA = orderMap.hasOwnProperty(hrefA) ? orderMap[hrefA] : 999999;
+                            const indexB = orderMap.hasOwnProperty(hrefB) ? orderMap[hrefB] : 999999;
+            
+                            return indexA - indexB;
                         });
-                    }
-    
-                    window.addEventListener('load', reorderAllCategories);
-                    setTimeout(reorderAllCategories, 1000);
-                })();
-                
-                
+            
+                        items.forEach(item =&gt; container.appendChild(item));
+                    });
+                }
+
+                window.addEventListener('load', reorderAllCategories);
+                setTimeout(reorderAllCategories, 1000);
+            })();
+
         </script>
     </xpath>
 </data>

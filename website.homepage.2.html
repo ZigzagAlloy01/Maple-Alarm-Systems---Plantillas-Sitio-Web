@@ -2208,76 +2208,30 @@
                     }
                 }
 
-                @media(max-width:768px) {
+                @media(max-width:768px){
 
                     .maple-featured-products__header{
+
                         flex-direction:column;
                         align-items:flex-start;
+
                     }
 
-                    /* Ocultamos los botones del JS ya que usaremos scroll nativo */
                     .maple-carousel__button{
-                        display:none !important;
+
+                        display:none;
+
                     }
 
-                    /* 1. Anulamos la restricción del viewport para evitar cortes */
-                    .maple-carousel__viewport {
-                        overflow: visible !important;
-                    }
+                }
 
-                    /* 2. Convertimos el track y el grid en contenedores de scroll nativo */
-                    .maple-category-grid, 
-                    .maple-carousel__track { 
-                        display: flex !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
-                        flex-wrap: nowrap !important;
-                        overflow-x: auto !important;
-                        scroll-snap-type: x mandatory !important;
-                        -webkit-overflow-scrolling: touch;
-                        gap: 16px !important;
-                        padding-bottom: 15px; 
-                        min-height: 250px !important;
-                        
-                        /* FIX CLAVE: Reseteamos los cálculos del JS */
-                        transform: none !important; 
-                        width: 100% !important; 
-                    }
-
-                    /* 3. Forzamos a que CADA tarjeta sea visible y ocupe el 85% de la pantalla */
-                    .maple-category-card,
-                    .maple-product-card {
-                        display: flex !important;
-                        flex-direction: column !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
-                        flex: 0 0 85% !important; 
-                        min-width: 85% !important;
-                        max-width: 85% !important;
-                        scroll-snap-align: center !important; 
-                        box-sizing: border-box !important;
-
-                        /* Evita que el JS colapse la altura de la tarjeta individual */
-                        height: auto !important;
-                    }
-
-                    /* 4. Ajuste fino de padding para móviles */
-                    .maple-category-card-content,
-                    .maple-product-card__content {
-                        padding: 1rem !important;
-                    }
-
-                    /* 5. Evita que los textos largos desborden el contenedor */
-                    .maple-product-card__name,
-                    h3, h4 {
-                        font-size: clamp(0.95rem, 4vw, 1.2rem) !important; 
-                        white-space: normal !important;
-                        word-break: break-word !important;
-                    }
-
+                @media (max-width:767px){
                     .maple-hero h1{
+
                         font-size:1.5rem;
+
                     }
+
                 }
                 
                 @media (max-width: 720px) {
@@ -2413,7 +2367,7 @@
                         flex-direction: row !important;
                         align-items: center !important;
                         justify-content: flex-start !important;
-                        padding: 0.25rem !important;
+                        padding: 12px !important;
                         min-height: auto !important;
                     }
                 
@@ -2449,14 +2403,6 @@
                         min-width:85vw;
                         width:85vw;
 
-                    }
-                }
-
-                @media screen and (max-width: 375px) {
-                    .maple-category-card,
-                    .maple-product-card {
-                        flex: 0 0 92% !important; 
-                        min-width: 100% !important;
                     }
                 }
             </style>
@@ -3462,6 +3408,46 @@
 
                 // Carrusel de productos en página de inicio
 
+
+                const FEATURED_CODES = [
+                    "DS-2CD2346G2P-ISU/SL(C)",
+                    "DS-2CD2T46G2P-ISU/SL(C)",
+                    "DS-2CD2743G2-IZS",
+                    "DS-2CD3T87G2P-LSU/SL(C)",
+                    "DS-2CD6365G1-IVS",
+                    "DS-2CD63C5G1-IVS",
+                    "DS-2CD6924G0-IHS(D)",
+                    "DS-2CD6D44G1-IZS",
+                    "DS-2CD6D44G1H-IZS",
+                    "DS-6901UDI(C)",
+                    "DS-7104NI-K1/W/M(C)",
+                    "DS-7108NI-K1/W/M(C)",
+                    "DS-7604NI-Q1/W",
+                    "DS-7608NXI-I2/8P/S(E)",
+                    "DS-7608NXI-K2/8P(D)",
+                    "DS-7616NI-M2/16P",
+                    "DS-7616NXI-I2/16P/S(E)",
+                    "DS-7616NXI-I2/16P/VPRO",
+                    "DS-7716NI-M4/16P",
+                    "DS-7716NXI-I4/16P/S(E)",
+                    "DS-7716NXI-I4/16P/VPRO",
+                    "DS-7716NXI-K4(D)",
+                    "DS-7716NXI-K4/16P(D)",
+                    "DS-7732NI-M4/16P",
+                    "DS-7732NXI-I4/16P/VPRO",
+                    "DS-7732NXI-K4/16P(E)",
+                    "DS-9632NI-M8",
+                    "DS-TCG406-E(S)",
+                    "IDS-2CD7186G2-IZS",
+                    "IDS-2CD7A45G2-IZHS",
+                    "IDS-7608NXI-M2/8P/X",
+                    "IDS-7616NXI-M2/16P/X",
+                    "IPC-B460HAD-LUF/SL",
+                    "IPC-B480HAD-LUF/SL",
+                    "IPC-T260HAD-LUF/SL",
+                    "IPC-T280HAD-LUF/SL"
+                ];
+
                 class MapleFeaturedProducts {
 
                     constructor(container) {
@@ -3597,7 +3583,9 @@
                             }
 
                             this.state.products = rawProducts
-                                .map(p =&gt; this.normalizeProduct(p));
+                                .map(p =&gt; this.normalizeProduct(p))
+                                // Order according to the FEATURED_CODES array
+                                .sort((a, b) =&gt; FEATURED_CODES.indexOf(a.code) - FEATURED_CODES.indexOf(b.code));
 
                             this.renderProducts();
                             return true;
@@ -3609,26 +3597,54 @@
                     }
 
                     async fetchProducts() {
-                        if (this.abortController) {
-                            this.abortController.abort();
-                        }
-                        this.abortController = new AbortController();
+                        const payload = {
+                        jsonrpc: "2.0",
+                        method: "call",
+                        params: {
+                            model: "product.template",
+                            method: "search_read",
+                            args: [[
+                                ["default_code", "in", FEATURED_CODES],
+                                ["website_published", "=", true],
+                                ["active", "=", true],
+                                ["sale_ok", "=", true]
+                            ]],
+                            kwargs: {
+                                fields: [
+                                    "id",
+                                    "name",
+                                    "default_code",
+                                    "website_url",
+                                    "description_sale",
+                                    "list_price",
+                                    "currency_id"
+                                ],
+                                context: {
+                                    website_id: 1,
+                                    display_default_code: false,
+                                }
+                            }
+                        },
+                        id: Date.now()
+                    };
 
-                        const response = await fetch('https://maple-carousel-api.vercel.app/api/productos', {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'application/json'
-                            },
-                            signal: this.abortController.signal
-                        });
+                    const response = await fetch("/jsonrpc", {
+                        method: "POST",
+                        credentials: "same-origin",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload)
+                    });
 
-                        if (!response.ok) {
-                            throw new Error(`Error HTTP: ${response.status}`);
-                        }
+                    const data = await response.json();
 
-                        const data = await response.json();
+                    if (data.error) {
+                        console.error(data.error);
+                        return [];
+                    }
 
-                        return data || [];
+                    return data.result;
                     }
 
                     normalizeProduct(rawData) {
@@ -3641,7 +3657,7 @@
                             price: rawData.list_price || 0,
                             currency: Array.isArray(rawData.currency_id) ? rawData.currency_id[1] : (rawData.currency_id || '$'),
                             currencyId: Array.isArray(rawData.currency_id) ? rawData.currency_id[0] : null,
-                            image: rawData.image_url || null,
+                            image: rawData.image_512 ? true : false, 
                             brand: rawData.default_code || ''
                         };
                     }
@@ -3790,7 +3806,7 @@
 
                     getImageUrl(product) {
                         if (product.image) {
-                            return product.image;
+                            return `/web/image/product.template/${product.id}/image_512`;
                         }
                         return '/web/static/img/placeholder.png';
                     }
