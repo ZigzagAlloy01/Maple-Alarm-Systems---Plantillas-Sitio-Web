@@ -20,6 +20,7 @@ class MapleFeaturedProducts {
                             cardWidth: 0,
                             gap: 16, // Default gap
                             isDragging: false,
+                            hasDragged: false,
                             startX: 0,
                             currentX: 0,
                             dragOffset: 0,
@@ -109,7 +110,6 @@ class MapleFeaturedProducts {
                         this.dom.track.addEventListener('transitionend', this._handleTransitionEnd);
 
                         this.setupMouseDrag();
-                        this.setupTouch();
                         this.setupKeyboard();
                         this.setupWheel();
 
@@ -590,29 +590,44 @@ class MapleFeaturedProducts {
                     * Configures mouse drag interactions.
                     */
                     setupMouseDrag() {
+                        this.dom.track.style.touchAction = 'pan-y';
+
                         this.dom.track.addEventListener('pointerdown', this._handleDragStart, { passive: true });
                         document.addEventListener('pointermove', this._handleDragMove, { passive: false });
                         document.addEventListener('pointerup', this._handleDragEnd, { passive: true });
+                        document.addEventListener('pointercancel', this._handleDragEnd, { passive: true });
+
+                        this.dom.track.addEventListener('dragstart', (e) =&gt; e.preventDefault());
+                        
+                        this.dom.track.addEventListener('click', (e) =&gt; {
+                            if (this.state.hasDragged) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                            }
+                        }, { capture: true });
                     }
 
                     /**
                     * Configures touch interactions.
                     */
-                    setupTouch() {
-                        this.dom.track.addEventListener('touchstart', this._handleDragStart, { passive: true });
-                        document.addEventListener('touchmove', this._handleDragMove, { passive: false });
-                        document.addEventListener('touchend', this._handleDragEnd, { passive: true });
-                    }
+                    // setupTouch() {
+                    //     this.dom.track.addEventListener('touchstart', this._handleDragStart, { passive: true });
+                    //     document.addEventListener('touchmove', this._handleDragMove, { passive: false });
+                    //     document.addEventListener('touchend', this._handleDragEnd, { passive: true });
+                    // }
 
                     _handleDragStart(e) {
-                        if (e.type === 'pointerdown' &amp;&amp; e.pointerType === 'mouse' &amp;&amp; e.button !== 0) return; // Only left click
+                        if (e.type === 'pointerdown' &amp;&amp; e.pointerType === 'mouse' &amp;&amp; e.button !== 0) return; 
+                        if (e.pointerId !== undefined) {
+                            this.dom.track.setPointerCapture(e.pointerId);
+                        }
                         
                         this.state.isDragging = true;
+                        this.state.hasDragged = false;
                         this.state.isTransitioning = false;
                         this.pause();
 
-                        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-                        this.state.startX = clientX;
+                        this.state.startX = e.clientX;
                         this.dom.track.style.transition = 'none';
                     }
 
@@ -622,10 +637,14 @@ class MapleFeaturedProducts {
                         // Prevent default scrolling when dragging horizontally
                         if (e.cancelable) e.preventDefault();
 
-                        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-                        this.state.currentX = clientX;
+                        this.state.currentX = e.clientX;
                         
                         const diff = this.state.currentX - this.state.startX;
+
+                        if (Math.abs(diff) &gt; 5) {
+                            this.state.hasDragged = true;
+                        }
+
                         this.state.dragOffset = diff * this.config.dragFriction;
                         
                         const baseOffset = -(this.state.currentIndex * (this.state.cardWidth + this.state.gap));
@@ -660,9 +679,6 @@ class MapleFeaturedProducts {
                         }
                     }
 
-                    /**
-                    * Clones DOM slides to enable seamless infinite looping.
-                    */
                     cloneSlides() {
                         const children = Array.from(this.dom.track.children);
                         if (children.length === 0) return;
@@ -698,9 +714,7 @@ class MapleFeaturedProducts {
                         this.dom.track.append(fragmentAfter);
                     }
 
-                    /**
-                    * Cleans up all event listeners, timers, and observers to prevent memory leaks.
-                    */
+
                     destroy() {
                         this.stopAutoplay();
                         
@@ -714,8 +728,7 @@ class MapleFeaturedProducts {
 
                         document.removeEventListener('pointermove', this._handleDragMove);
                         document.removeEventListener('pointerup', this._handleDragEnd);
-                        document.removeEventListener('touchmove', this._handleDragMove);
-                        document.removeEventListener('touchend', this._handleDragEnd);
+                        document.removeEventListener('pointercancel', this._handleDragEnd);
 
                         // Remove track content
                         if (this.dom.track) {

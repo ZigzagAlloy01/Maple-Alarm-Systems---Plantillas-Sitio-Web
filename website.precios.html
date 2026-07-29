@@ -1,0 +1,1097 @@
+<t name="Pricing" t-name="website.precios">
+    
+        <t t-call="website.layout">
+            <!-- <div id="wrap" class="">
+                <div class="oe_structure">
+                    <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24 o_colored_level" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1">
+                        <span class="s_parallax_bg oe_img_bg" style="background-image: url('/web/image/website.s_parallax_default_image'); background-position: 50% 0;"/>
+                        <div class="o_we_bg_filter bg-black-50"/>
+                        <div class="container">
+                            <h1>Precios</h1>
+                        </div>
+                    </section>
+                </div>
+                <div class="oe_structure"/>
+                
+            </div> -->
+            <div id="alarm_video" class="alarm-hero-section">
+                <div class="alarm-hero-content">
+                    <h1 class="alarm-title">SEGURIDAD PARA EL HOGAR <span class="alarm-highlight">MÁS INTELIGENTE</span></h1>
+                    <p class="alarm-description">
+                        Obtenga la mejor seguridad en su clase y las soluciones para el hogar inteligente que toda la familia adorará. Controle y monitoree su propiedad desde cualquier lugar.
+                    </p>
+                    
+                    <div class="volume-control-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="volume-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        <input type="range" id="video-volume" min="0" max="100" value="0" step="1" title="Ajustar volumen"/>
+                    </div>
+                </div>
+
+                <div class="alarm-hero-video-wrapper">
+                    <div id="youtube-player"/>
+                    <div id="video-overlay-click"/>
+                </div>
+            </div>
+            <div id="alarm_whoweare">
+                <div class="alarm-container">
+                    <div class="alarm-header">
+                        <h2>Seguridad empresarial y para el hogar más inteligente</h2>
+                        <p>Alarm.com crea una tecnología innovadora que lo mantiene conectado con su hogar o negocio, brindándole control, comodidad y tranquilidad. Cada día, más de 6 millones de usuarios activos y 6.000 proveedores de servicios autorizados en todo el mundo confían en Alarm.com para soluciones de seguridad, monitoreo por video y automatización confiables.</p>
+                        <p>Alarm.com ofrece servicios más inteligentes para el hogar y los negocios en más de 30 países en todo el mundo.</p>
+                    </div>
+
+                    <!-- Contenedor del Carrusel -->
+                    <div class="alarm-carousel-wrapper">
+                        <button class="alarm-btn prev-btn" id="alarmPrevBtn">❮</button>
+                        
+                        <div class="alarm-carousel-track-container">
+                            <ul class="alarm-carousel-track" id="alarmTrack">
+                                
+                                <!-- Diapositiva 1: Historia -->
+                                <li class="alarm-carousel-slide current-slide">
+                                    <div class="slide-content">
+                                        <h3>Nuestra Historia</h3>
+                                        <p>Fundada en el año 2000, inventamos una nueva forma de monitorear y administrar de manera remota la seguridad del hogar, revolucionando la forma en que las personas interactúan con sus hogares.</p>
+                                        <ul>
+                                            <li>Alarm.com lanza la primera solución interactiva de seguridad para el hogar.</li>
+                                            <li>Se presenta la primera conexión celular GSM dedicada y resistente a la manipulación a nivel nacional.</li>
+                                            <li>Somos los primeros en habilitar el monitoreo remoto y las alertas para un sistema de seguridad desarmado.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <!-- Diapositiva 2: Presencia Global -->
+                                <li class="alarm-carousel-slide">
+                                    <div class="slide-content">
+                                        <h3>Presencia Global</h3>
+                                        <p>Alarm.com está disponible en más de 30 países alrededor del mundo y continúa expandiéndose. Algunos de los países incluyen:</p>
+                                        <div class="country-grid">
+                                            <ul>
+                                                <li>Argentina</li>
+                                                <li>Colombia</li>
+                                                <li>México</li>
+                                                <li>España</li>
+                                            </ul>
+                                            <ul>
+                                                <li>Australia</li>
+                                                <li>Reino Unido</li>
+                                                <li>Japón</li>
+                                                <li>Uruguay</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Diapositiva 3: Reconocimientos -->
+                                <li class="alarm-carousel-slide">
+                                    <div class="slide-content">
+                                        <h3>Galardonado</h3>
+                                        <ul>
+                                            <li><strong>2018:</strong> Premio MVP, control de acceso más inteligente (Ventas e integración de seguridad).</li>
+                                            <li><strong>2018:</strong> Premio Quest for Quality de CE Pro.</li>
+                                            <li><strong>2016:</strong> Premio a la innovación ESX, Comunicaciones con clientes.</li>
+                                            <li><strong>2016:</strong> Premio MVP, Academia de Alarm.com.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <!-- Diapositiva 4: Proveedores -->
+                                <li class="alarm-carousel-slide">
+                                    <div class="slide-content">
+                                        <h3>Busque o Conviértase en un Proveedor</h3>
+                                        <p>Nuestros servicios están disponibles exclusivamente a través de una red de proveedores de servicios de alta seguridad que se comprometen a brindar una mejor seguridad con el más alto nivel de servicio al cliente.</p>
+                                        <p>Con más de una década de experiencia y más de 6 millones de usuarios activos, Alarm.com continúa siendo un líder en tecnología. Únase a la familia de Alarm.com y conviértase en un proveedor de servicios hoy.</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        
+                        <button class="alarm-btn next-btn" id="alarmNextBtn">❯</button>
+                    </div>
+                </div>
+            </div>
+            <div id="alarm_solutions">
+                <div class="alarm-container">
+                    <div class="alarm-header">
+                        <h2>Descubra nuestras Soluciones Inteligentes</h2>
+                        <p>Seleccione su entorno para conocer cómo podemos proteger y automatizar su espacio.</p>
+                    </div>
+
+                    <div class="alarm-tabs">
+                        <button class="alarm-tab-btn active" onclick="openTab(event, 'tab-hogar')">
+                        <i class="icon-home"/> Hogar Inteligente
+                        </button>
+                        <button class="alarm-tab-btn" onclick="openTab(event, 'tab-negocio')">
+                        <i class="icon-business"/> Negocio Inteligente
+                        </button>
+                    </div>
+
+                    <div id="tab-hogar" class="alarm-tab-content active">
+                        <div class="alarm-content-grid">
+                        <div class="alarm-text-section">
+                            <h3>Seguridad para el Hogar Más Inteligente</h3>
+                            <p>Como líder en seguridad para el hogar inteligente, Alarm.com tiene soluciones para monitorear, proteger y automatizar su hogar.</p>
+                            
+                            <ul class="alarm-feature-list">
+                            <li><strong>Conexión Dedicada:</strong> El sistema proporciona una protección ininterrumpida y continúa comunicándose incluso si se corta el teléfono, no hay energía o si Internet está fuera de servicio.</li>
+                            <li><strong>Control de Acceso:</strong> Olvídese de dejar llaves escondidas; bloquee la puerta desde la aplicación de forma remota, dé códigos propios a familiares y reciba una notificación cuando ingresen.</li>
+                            <li><strong>Monitoreo por Video:</strong> Reciba alertas de video cuando se detecte actividad para no perderse ningún momento en su casa.</li>
+                            <li><strong>Administración de Energía:</strong> Ahorre dinero y manténgase cómodo con la automatización basada en la ubicación y recomendaciones de uso personalizadas.</li>
+                            </ul>
+                        </div>
+                        <div class="alarm-devices-section">
+                            <h4>Ecosistema de Dispositivos</h4>
+                            <div class="alarm-tags">
+                            <span>Panel de seguridad</span>
+                            <span>Cámara de video</span>
+                            <span>Timbre con cámara</span>
+                            <span>Cerradura inteligente</span>
+                            <span>Termostato inteligente</span>
+                            <span>Control de iluminación</span>
+                            <span>Detectores de humo y CO</span>
+                            <span>Sensor de agua y de imagen</span>
+                            <span>Sensor de puerta y ventana</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-negocio" class="alarm-tab-content">
+                        <div class="alarm-content-grid">
+                        <div class="alarm-text-section">
+                            <h3>Impulsando el Negocio Inteligente</h3>
+                            <p>Una solución única y rentable para medianas empresas que combina detección de intrusión inteligente, vigilancia por video, control de acceso y administración de energía.</p>
+                            
+                            <ul class="alarm-feature-list">
+                            <li><strong>Visibilidad y Control Total:</strong> A diferencia de sistemas tradicionales, le brinda visibilidad de su negocio independientemente de si el sistema está armado o no, mediante notificaciones en tiempo real y control remoto.</li>
+                            <li><strong>Información Empresarial:</strong> Obtenga reportes comerciales sobre horarios de apertura y cierre, períodos de mayor actividad y tráfico de clientes en cada una de sus ubicaciones.</li>
+                            <li><strong>Administración de Energía:</strong> Reciba recomendaciones de uso personalizadas y automatización inteligente basadas en los patrones de actividad específicos de su negocio.</li>
+                            <li><strong>Respaldo de Clientes:</strong> Negocios reales afirman que la plataforma les ahorra tiempo y dinero, teniendo sus cámaras y controles en una sola aplicación.</li>
+                            </ul>
+                        </div>
+                        <div class="alarm-devices-section">
+                            <h4>Ecosistema de Dispositivos</h4>
+                            <div class="alarm-tags">
+                            <span>Panel de seguridad</span>
+                            <span>Cámara para interiores</span>
+                            <span>Cámara para exteriores</span>
+                            <span>Cerradura inteligente</span>
+                            <span>Termostato inteligente</span>
+                            <span>Control de iluminación</span>
+                            <span>Sensor de imagen</span>
+                            <span>Sensor de puerta y ventana</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div id="alarm_products_services">
+                <div class="services-showcase-container">
+                    <div class="services-showcase-header">
+                        <h2>Nuestros Productos y Servicios</h2>
+                        <p>Explore nuestro ecosistema completo diseñado para brindarle tranquilidad, control y eficiencia en cada aspecto de su vida diaria.</p>
+                    </div>
+
+                    <div class="services-layout">
+                        <div class="services-sidebar">
+                            <button class="service-nav-btn active" onclick="openService(event, 'srv-seguridad')">
+                                <i class="ph ph-shield-check nav-icon"></i> Seguridad Interactiva
+                            </button>
+                            
+                            <button class="service-nav-btn" onclick="openService(event, 'srv-video')">
+                                <i class="ph ph-video-camera nav-icon"></i> Monitoreo por Video
+                            </button>
+                            
+                            <button class="service-nav-btn" onclick="openService(event, 'srv-automatizacion')">
+                                <i class="ph ph-gear nav-icon"></i> Automatización
+                            </button>
+                            
+                            <button class="service-nav-btn" onclick="openService(event, 'srv-bienestar')">
+                                <i class="ph ph-heartbeat nav-icon"></i> Bienestar
+                            </button>
+                            
+                            <button class="service-nav-btn" onclick="openService(event, 'srv-aplicaciones')">
+                                <i class="ph ph-device-mobile nav-icon"></i> Aplicaciones
+                            </button>
+                        </div>
+
+                        <div class="services-content-area">
+
+                        <div id="srv-seguridad" class="service-panel active">
+                            <div class="panel-header">
+                            <h3>Seguridad Interactiva</h3>
+                            <p>La vida es impredecible, pero su sistema de seguridad no tiene por qué serlo. Cuente siempre con una protección confiable y continua.</p>
+                            </div>
+                            <div class="features-grid">
+                            <div class="feature-card">
+                                <h4>Conexión Dedicada</h4>
+                                <p>Utilizamos una conexión celular resistente a la manipulación, dedicada exclusivamente a su sistema. Su sistema continuará comunicándose incluso si el teléfono o la línea de cable se cortan, si no hay electricidad o conexión a Internet.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Vigilancia Inteligente</h4>
+                                <p>Nuestra tecnología aprende los patrones de actividad únicos de su casa y le alerta rápidamente acerca de eventos inusuales, como la apertura de la puerta del frente a altas horas de la noche.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Códigos de Usuario Únicos</h4>
+                                <p>Cree y deshabilite fácilmente códigos de usuario para proporcionar a cada persona un código único. Vea quién ha armado o desarmado el sistema y deshabilite códigos en minutos desde su computadora o tableta.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Notificaciones Proactivas</h4>
+                                <p>Manténgase al tanto con alertas cuando hay actividad, cuando olvida armar su propiedad o cerrar una puerta, o cuando hay un evento de alarma mediante notificaciones Push y correo electrónico.</p>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div id="srv-video" class="service-panel">
+                            <div class="panel-header">
+                            <h3>Monitoreo por Video</h3>
+                            <p>Vea lo que está sucediendo en su propiedad, incluso cuando no está allí, con un sistema visual de alta tecnología.</p>
+                            </div>
+                            <div class="features-grid">
+                            <div class="feature-card">
+                                <h4>Video en Vivo</h4>
+                                <p>Vea una transmisión en vivo de su propiedad directamente en su teléfono, tableta o computadora desde cualquier lugar, controlando fácilmente a familiares o visitantes con videos de calidad HD.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Videoclips Grabados</h4>
+                                <p>Establezca un horario de grabación de video para capturar actividades importantes cuando esté ausente. Entérese de todo con una biblioteca de videoclips grabados en la que se puede buscar.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Timbre con Cámara</h4>
+                                <p>Vea quién está en la puerta del frente con el timbre con cámara WiFi e incluso hable con las personas a través de nuestra aplicación.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Alertas de Video</h4>
+                                <p>Reciba notificaciones de video cuando haya alguna actividad relevante en su propiedad y establezca activadores personalizados por hora, día, cámara y movimiento.</p>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div id="srv-automatizacion" class="service-panel">
+                            <div class="panel-header">
+                            <h3>Automatización Inteligente</h3>
+                            <p>Conecte todos los dispositivos en su hogar para una experiencia perfecta. Pueden trabajar automáticamente para mantenerlo cómodo y seguro.</p>
+                            </div>
+                            <div class="features-grid">
+                            <div class="feature-card">
+                                <h4>Integración Perfecta y Control Remoto</h4>
+                                <p>Conecte y controle todos sus dispositivos clave a través de una aplicación inteligente. Cierre la puerta, encienda luces y arme su propiedad con solo tocar un botón.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Creación de Escenas</h4>
+                                <p>Prepárese para cualquier ocasión controlando múltiples dispositivos simultáneamente con solo un toque, ya sea para una noche de cine o a la hora de jugar.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Reglas y Horarios</h4>
+                                <p>Haga que sus dispositivos se comuniquen entre sí, como establecer una regla que apague las luces cuando arme su sistema, o determine horarios personalizados para su comportamiento.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Geo-servicios</h4>
+                                <p>Active automáticamente su sistema para enviarle recordatorios o ajustar la temperatura de su propiedad al entrar y salir de su geo-cerca virtual.</p>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div id="srv-bienestar" class="service-panel">
+                            <div class="panel-header">
+                            <h3>Bienestar</h3>
+                            <p>Descubra la tranquilidad brindando a su ser querido una opción segura y rentable para la vida independiente.</p>
+                            </div>
+                            <div class="features-grid">
+                            <div class="feature-card">
+                                <h4>Vida Independiente</h4>
+                                <p>Nuestra solución respalda la vida independiente con tecnología inteligente y proactiva, y una conexión constante con las personas interesadas.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Monitoreo de Actividad</h4>
+                                <p>Comprenda el patrón de actividad típico de un familiar y reciba una alerta de "Actividad inusual" si algo está fuera de lo común, o use "Bien y activo" para asegurar que esté activo en horas esperadas.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Seguridad Durante la Noche</h4>
+                                <p>Reciba alertas cuando las puertas se abren a horas inusuales o si la cama está vacía durante mucho tiempo por la noche.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Respuesta de Emergencia</h4>
+                                <p>Obtenga tranquilidad adicional con respuesta de emergencia 24/7 para intrusión, incendio y emergencias médicas, complementado con un sencillo control de voz para el entorno.</p>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div id="srv-aplicaciones" class="service-panel">
+                            <div class="panel-header">
+                            <h3>Aplicaciones y Conectividad</h3>
+                            <p>Manténgase conectado a su hogar o negocio desde cualquier lugar con una aplicación única e intuitiva.</p>
+                            </div>
+                            <div class="features-grid single-card-layout">
+                            <div class="feature-card showcase-card">
+                                <h4>Control Total en sus Dispositivos</h4>
+                                <p>Ya sea desde su smartphone, tableta o reloj inteligente, monitoree y controle su propiedad desde una sola pantalla.</p>
+                                <p>Ya sea que esté en el trabajo, de vacaciones o en casa, la aplicación pone la seguridad, el acceso y la comodidad de su propiedad al alcance de su mano. Disponible con las mejores calificaciones en Google Play y App Store.</p>
+                            </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div id="alarm_providers">
+                <div>
+                    <p>
+                        Hola, este es un ejemplo
+                    </p>
+                </div>
+            </div>
+            <xpath expr="//head" position="inside">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+                <script src="https://unpkg.com/@phosphor-icons/web"></script>
+                <style type="text/css">
+                    #alarm_video.alarm-hero-section {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        background-color: var(--maple-white);
+                        padding: 3.2rem 8%;
+                        min-height: 60vh;
+                        box-sizing: border-box;
+                        font-family: var(--font-body);
+                        gap: 2.5rem;
+                    }
+
+                    .alarm-hero-content {
+                        flex: 1;
+                        max-width: 50%;
+                    }
+
+                    .alarm-title {
+                        font-family: var(--font-heading);
+                        font-size: 3rem;
+                        font-weight: 800;
+                        line-height: 1.1;
+                        color: #1a1a1a;
+                        margin: 0 0 1.25rem 0;
+                        text-transform: uppercase;
+                    }
+
+                    .alarm-title .alarm-highlight {
+                        display: block;
+                        color: var(--maple-alarm-orange);    
+                    }
+
+                    .alarm-description {
+                        font-size: 1.15rem;
+                        line-height: 1.6;
+                        text-align: justify;
+                        color: #4a4a4a;
+                        margin: 0 0 2.2rem 0;
+                    }
+
+                    .volume-control-container {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.95rem;
+                        background-color: #f5f5f5;
+                        padding: 0.75rem 1.25rem;
+                        border-radius: 3.125rem;
+                        width: fit-content;
+                        box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+                    }
+
+                    .volume-icon {
+                        color: var(--maple-alarm-orange);
+                    }
+
+                    input[type=range]#video-volume {
+                        width: 9.375rem;
+                        accent-color: #007bff;
+                        cursor: pointer;
+                    }
+
+                    .alarm-hero-video-wrapper {
+                        flex: 1;
+                        width: 100%;
+                        max-width: 50%;
+                        position: relative;
+                        padding-bottom: 28.125%;
+                        height: 0;
+                        border-radius: 1rem;
+                        overflow: hidden;
+                        box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,0.15);
+                        background-color: #000;
+                    }
+
+                    .alarm-hero-video-wrapper iframe {
+                        position: absolute;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        pointer-events: none;
+                    }
+
+                    #video-overlay-click {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                        z-index: 10;
+                    }
+
+                    #alarm_whoweare {
+                        font-family: var(--font-body);
+                        color: #333;
+                        line-height: 1.6;
+                        padding: 0rem;
+                        max-width: 100%;
+                        margin: 0 auto;
+                    }
+
+                    .alarm-header {
+                        text-align: center;
+                        margin: 0 0 2.5rem 0;
+                    }
+
+                    .alarm-header h2 {
+                        color: var(--maple-alarm-orange);
+                        font-size: 2rem;
+                        margin: 0 0 1rem 0;
+                    }
+
+                    .alarm-carousel-wrapper {
+                        position: relative;
+                        width: 80%;
+                        max-width: 80%;
+                        margin: 0 auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #f9f9f9;
+                        border-radius: 0.5rem;
+                        box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+                        padding: 1.25rem 0;
+                    }
+
+                    .alarm-carousel-track-container {
+                        overflow: hidden;
+                        width: 80%;
+                        position: relative;
+                    }
+
+                    .alarm-carousel-track {
+                        display: flex;
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                        transition: transform 0.4s ease-in-out;
+                    }
+
+                    .alarm-carousel-slide {
+                        min-width: 100%;
+                        box-sizing: border-box;
+                        padding: 20px 40px;
+                    }
+
+                    .slide-content h3 {
+                        color: #0055a5;
+                        margin-top: 0;
+                        border-bottom: 2px solid var(--maple-alarm-orange);
+                        padding-bottom: 10px;
+                    }
+
+                    .slide-content ul {
+                        padding-left: 20px;
+                    }
+
+                    .slide-content li {
+                        margin-bottom: 10px;
+                    }
+
+                    .country-grid {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .country-grid ul {
+                        width: 45%;
+                        list-style-type: square;
+                    }
+
+                    /* Botones de navegación */
+                    .alarm-btn {
+                        background: transparent;
+                        border: none;
+                        font-size: 2rem;
+                        color: #666;
+                        cursor: pointer;
+                        transition: color 0.3s ease;
+                        padding: 10px;
+                        z-index: 10;
+                    }
+
+                    .alarm-btn:hover {
+                        color: var(--maple-alarm-orange);
+                    }
+
+                    .alarm-btn:focus {
+                        outline: none;
+                    }
+
+                    .alarm-container {
+                        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                        max-width: 100%;
+                        margin: 0 auto;
+                        background: #ffffff;
+                        border-radius: 12px;
+                        overflow: hidden;
+                    }
+
+                    .alarm-header {
+                        text-align: center;
+                        padding: 40px 20px 20px;
+                    }
+
+                    .alarm-header p {
+                        color: var(--alarm-text-light);
+                        font-size: 16px;
+                    }
+
+                    .alarm-tabs {
+                        display: flex;
+                        justify-content: center;
+                        gap: 15px;
+                        padding: 20px;
+                        background: var(--alarm-secondary);
+                        border-bottom: 1px solid var(--alarm-border);
+                    }
+
+                    .alarm-tab-btn {
+                        background: transparent;
+                        border: 2px solid var(--alarm-primary);
+                        color: var(--alarm-primary);
+                        padding: 12px 30px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border-radius: 30px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+
+                    .alarm-tab-btn:hover {
+                        background: rgba(0, 86, 179, 0.1);
+                    }
+
+                    .alarm-tab-btn.active {
+                        background: var(--maple-alarm-orange);
+                        border: 2px solid var(--maple-alarm-orange);
+                        color: #ffffff;
+                        box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+                    }
+
+                    .alarm-tab-content {
+                        display: none;
+                        padding: 40px;
+                        animation: fadeIn 0.5s ease;
+                    }
+
+                    .alarm-tab-content.active {
+                        display: block;
+                    }
+
+                    .alarm-content-grid {
+                        display: grid;
+                        grid-template-columns: 2fr 1fr;
+                        gap: 40px;
+                    }
+
+                    .alarm-text-section h3 {
+                        color: var(--alarm-text-dark);
+                        font-size: 24px;
+                        margin-bottom: 15px;
+                        border-left: 4px solid var(--maple-alarm-orange);
+                        padding-left: 15px;
+                    }
+
+                    .alarm-text-section p {
+                        color: var(--alarm-text-light);
+                        line-height: 1.6;
+                        margin-bottom: 25px;
+                    }
+
+                    .alarm-feature-list {
+                        list-style: none;
+                        padding: 0;
+                    }
+
+                    .alarm-feature-list li {
+                        position: relative;
+                        padding-left: 30px;
+                        margin-bottom: 15px;
+                        line-height: 1.5;
+                        color: var(--alarm-text-dark);
+                    }
+
+                    .alarm-feature-list li::before {
+                        content: '✓';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        color: var(--maple-alarm-orange);
+                        font-weight: bold;
+                        font-size: 18px;
+                    }
+
+                    .alarm-devices-section {
+                        background: var(--alarm-secondary);
+                        padding: 25px;
+                        border-radius: 10px;
+                        height: fit-content;
+                    }
+
+                    .alarm-devices-section h4 {
+                        color: var(--alarm-primary);
+                        margin-bottom: 20px;
+                        text-align: center;
+                        font-size: 18px;
+                    }
+
+                    .alarm-tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        justify-content: center;
+                    }
+
+                    .alarm-tags span {
+                        background: #ffffff;
+                        border: 1px solid var(--alarm-border);
+                        padding: 8px 15px;
+                        border-radius: 20px;
+                        color: var(--alarm-text-light);
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+                        font-weight: 700;
+                        font-size: 1rem;
+                        text-align: center;
+                    }
+
+                    #alarm_solutions {
+                        margin: 1rem 0 0 0;
+                    }
+
+                    .services-showcase-container {
+                        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                        width: 100%; 
+                        margin: 0 auto;
+                        background-color: #ffffff;
+                        border-radius: 12px;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                        overflow: hidden;
+                        color: #333333;
+                    }
+
+                    .services-showcase-header {
+                        text-align: center;
+                        padding: 50px 5%;
+                        background-color: #f8f9fa;
+                        border-bottom: 1px solid #eaeaea;
+                    }
+
+                    .services-showcase-header h2 {
+                        color: var(--maple-alarm-orange);
+                        font-size: 32px;
+                        margin-bottom: 15px;
+                        font-weight: 700;
+                    }
+
+                    .services-showcase-header p {
+                        color: #555555;
+                        font-size: 18px;
+                        max-width: 800px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                    }
+
+                    .services-layout {
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                    }
+
+                    .services-sidebar {
+                        width: 30%;
+                        background-color: #f1f3f5;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 20px 0;
+                        border-right: 1px solid #eaeaea;
+                    }
+
+                    .service-nav-btn {
+                        background: transparent;
+                        border: none;
+                        text-align: left;
+                        padding: 20px 30px;
+                        font-size: 17px;
+                        font-weight: 600;
+                        color: #444444;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .service-nav-btn:hover {
+                        background-color: rgba(0, 0, 0, 0.03);
+                        color: var(--maple-alarm-orange);
+                    }
+
+                    .service-nav-btn.active {
+                        background-color: #ffffff;
+                        color: var(--maple-alarm-orange);
+                        border-left: 5px solid var(--maple-alarm-orange);
+                        box-shadow: -3px 0px 10px rgba(0,0,0,0.02) inset;
+                    }
+
+                    .nav-icon {
+                        font-size: 24px;
+                        line-height: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: color 0.3s ease;
+                    }
+                    
+                    .service-nav-btn.active .nav-icon {
+                        color: var(--maple-alarm-orange);
+                    }
+
+                    .services-content-area {
+                        width: 70%;
+                        padding: 40px 5%;
+                        background-color: #ffffff;
+                        position: relative;
+                        min-height: 500px;
+                    }
+
+                    .service-panel {
+                        display: none;
+                        animation: slideFadeIn 0.4s ease forwards;
+                    }
+
+                    .service-panel.active {
+                        display: block;
+                    }
+
+                    .panel-header {
+                        margin-bottom: 30px;
+                        padding-bottom: 20px;
+                        border-bottom: 2px solid #f0f0f0;
+                    }
+
+                    .panel-header h3 {
+                        color: var(--maple-alarm-orange);
+                        font-size: 28px;
+                        margin-bottom: 10px;
+                    }
+
+                    .panel-header p {
+                        font-size: 16px;
+                        color: #666666;
+                        line-height: 1.6;
+                    }
+
+                    .features-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 25px;
+                        width: 100%;
+                    }
+
+                    .single-card-layout {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .feature-card {
+                        background-color: #fafbfc;
+                        border: 1px solid #edf1f5;
+                        border-radius: 8px;
+                        padding: 25px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        border-top: 4px solid var(--maple-alarm-orange);
+                    }
+
+                    .feature-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 20px rgba(0,0,0,0.06);
+                    }
+
+                    .feature-card h4 {
+                        color: #222222;
+                        font-size: 18px;
+                        margin-bottom: 12px;
+                        margin-top: 0;
+                    }
+
+                    .feature-card p {
+                        color: #555555;
+                        font-size: 14.5px;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+
+                    .showcase-card {
+                        padding: 40px;
+                        background: linear-gradient(to right bottom, #ffffff, #fafbfc);
+                    }
+
+                    .showcase-card p {
+                        margin-bottom: 15px;
+                        font-size: 16px;
+                    }
+
+                    @keyframes slideFadeIn {
+                        from { 
+                            opacity: 0; 
+                            transform: translateX(15px); 
+                        }
+                        to { 
+                            opacity: 1; 
+                            transform: translateX(0); 
+                        }
+                    }
+
+                    @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(10px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+
+                    @media (max-width: 991px) {
+                        .services-layout {
+                            flex-direction: column;
+                        }
+                        
+                        .services-sidebar {
+                            width: 100%;
+                            flex-direction: row;
+                            overflow-x: auto;
+                            white-space: nowrap;
+                            border-right: none;
+                            border-bottom: 1px solid #eaeaea;
+                            padding: 0;
+                        }
+                        
+                        .service-nav-btn {
+                            flex: 1;
+                            text-align: center;
+                            justify-content: center;
+                            padding: 15px 20px;
+                            border-left: none;
+                            border-bottom: 3px solid transparent;
+                        }
+                        
+                        .service-nav-btn.active {
+                            border-left: none;
+                            border-bottom: 3px solid var(--maple-alarm-orange);
+                        }
+                        
+                        .services-content-area {
+                            width: 100%;
+                            padding: 30px 5%;
+                        }
+
+                        #alarm_video.alarm-hero-section {
+                            flex-direction: column;
+                            text-align: center;
+                            padding: 2.5rem 5%;
+                        }
+
+                        .alarm-hero-content, .alarm-hero-video-wrapper {
+                            max-width: 100%;
+                        }
+
+                        .alarm-title { font-size: 2.2rem; }
+                        .volume-control-container { margin: 0 auto; }
+                        .alarm-hero-video-wrapper {
+                            padding-bottom: 56.25%;
+                            margin-top: 1.875rem;
+                        }
+
+                        .alarm-carousel-wrapper {
+                            width: 90%;
+                            max-width: 90%;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        .alarm-content-grid {
+                            grid-template-columns: 1fr;
+                        }
+                        .alarm-tabs {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                        .alarm-tab-btn {
+                            width: 100%;
+                            max-width: 300px;
+                        }
+                        .alarm-tab-content {
+                            padding: 20px;
+                        }
+                        .features-grid {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                </style>
+            </xpath>
+
+            <xpath expr="//head" position="inside">
+                <script type="text/javascript">
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    var alarmVideoPlayer;
+                    function onYouTubeIframeAPIReady() {
+                        alarmVideoPlayer = new YT.Player('youtube-player', {
+                            videoId: 'hl_-C4QhdYk', 
+                            playerVars: {
+                                'autoplay': 1,
+                                'controls': 0,
+                                'disablekb': 1,
+                                'fs': 0,
+                                'modestbranding': 1,
+                                'rel': 0,
+                                'showinfo': 0,
+                                'mute': 1,
+                                'loop': 1,
+                                'playlist': 'hl_-C4QhdYk'
+                            },
+                            events: {
+                                'onReady': onPlayerReady
+                            }
+                        });
+                    }
+
+                    function onPlayerReady(e) {
+                        e.target.playVideo();
+                        e.target.mute();
+
+                        var volumeSlider = document.getElementById('video-volume');
+
+                        volumeSlider.addEventListener('input', function() {
+                            var currentVol = parseInt(volumeSlider.value);
+
+                            if(currentVol &gt; 0) {
+                                alarmVideoPlayer.unMute();
+                            } else {
+                                alarmVideoPlayer.mute();
+                            }
+
+                            alarmVideoPlayer.setVolume(currentVol);
+                        });
+                    }
+
+                    var isPlaying = true;
+                    document.getElementById('video-overlay-click').addEventListener('click', function() {
+                        if (!alarmVideoPlayer || typeof alarmVideoPlayer.getPlayerState !== 'function') return;
+
+                        var playerState = alarmVideoPlayer.getPlayerState();
+
+                        if(playerState === YT.PlayerState.PLAYING) {
+                            alarmVideoPlayer.pauseVideo();
+                        } else {
+                            alarmVideoPlayer.playVideo();
+                        }
+                    });
+
+                    document.addEventListener('DOMContentLoaded', () =&gt; {
+                        const track = document.getElementById('alarmTrack');
+                        const slides = Array.from(track.children);
+                        const nextButton = document.getElementById('alarmNextBtn');
+                        const prevButton = document.getElementById('alarmPrevBtn');
+
+                        let currentIndex = 0;
+
+                        const updateCarousel = (index) =&gt; {
+                            const slideWidth = slides[0].getBoundingClientRect().width;
+                            track.style.transform = 'translateX(-' + (slideWidth * index) + 'px)';
+                        };
+
+                        nextButton.addEventListener('click', () =&gt; {
+                            if (currentIndex &lt; slides.length - 1) {
+                                currentIndex++;
+                            } else {
+                                currentIndex = 0;
+                            }
+                            updateCarousel(currentIndex);
+                        });
+
+                        prevButton.addEventListener('click', () =&gt; {
+                            if (currentIndex &gt; 0 ) {
+                                currentIndex--;
+                            } else {
+                                currentIndex = slides.length - 1;
+                            }
+                            updateCarousel(currentIndex);
+                        });
+
+                        window.addEventListener('resize', () =&gt; {
+                            updateCarousel(currentIndex);
+                        });
+                    });
+
+                    function openTab(evt, tabName) {
+                        let tabContent = document.getElementsByClassName("alarm-tab-content");
+                        for (let i = 0; i &lt; tabContent.length; i++) {
+                            tabContent[i].style.display = "none";
+                            tabContent[i].classList.remove("active");
+                        }
+
+                        let tabButtons = document.getElementsByClassName("alarm-tab-btn");
+                        for (let i = 0; i &lt; tabButtons.length; i++) {
+                            tabButtons[i].classList.remove("active");
+                        }
+
+                        document.getElementById(tabName).style.display = "block";
+
+                        setTimeout(() =&gt; {
+                            document.getElementById(tabName).classList.add("active");
+                        }, 10);
+                        
+                        evt.currentTarget.classList.add("active");
+                    }
+
+                    function openService(e, serviceName) {
+                        let panels = document.getElementsByClassName("service-panel");
+                        for (let i = 0; i &lt; panels.length; i++) {
+                            panels[i].style.display = "none";
+                            panels[i].classList.remove("active");
+                        }
+
+                        let navBtns = document.getElementsByClassName("service-nav-btn");
+                        for (let i = 0; i &lt; panels.length; i++) {
+                            navBtns[i].classList.remove("active");
+                        }
+
+                        let targetPanel = document.getElementById(serviceName);
+                        targetPanel.style.display = "block";
+
+                        setTimeout(() =&gt; {
+                            targetPanel.classList.add("active");
+                        }, 10);
+
+                        e.currentTarget.classList.add("active");
+                    }
+                </script>
+            </xpath>
+        </t>
+    </t>

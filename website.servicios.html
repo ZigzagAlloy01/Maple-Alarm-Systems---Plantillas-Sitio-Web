@@ -43,10 +43,10 @@
                                     <div class="col-lg-3" data-name="Plan">
                                         <div class="s_card card h-100 my-0 custom-dark-card position-relative" data-name="Card" data-snippet="s_card">
                                             
-                                            <div class="card-body mt-2">
-                                                <h3 class="card-title h5-fs text-uppercase tracking-wide text-white">Monitoreo M2M</h3>
+                                            <div class="card-body">
+                                                <h3 class="card-title h5-fs text-uppercase tracking-wide">Monitoreo M2M</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block text-white">$350.00</strong>
+                                                    <strong class="h2-fs d-block">$350.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Brinda a tu alarma un servicio multicompañía datos móviles</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
@@ -88,7 +88,7 @@
                                             <div class="card-body">
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Alarm.com</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block text-white">$520.00</strong>
+                                                    <strong class="h2-fs d-block">$520.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Sistema de alarma + Automatizaciones desde tu app</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
@@ -130,7 +130,7 @@
                                             <div class="card-body">
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Monitoreo GSM</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block text-white">$420.00</strong>
+                                                    <strong class="h2-fs d-block">$420.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Señales inalámbricas con datos móviles para más seguridad.</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
@@ -171,7 +171,7 @@
                                             <div class="card-body">
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Monitoreo Vía Internet</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block text-white">$330.00</strong>
+                                                    <strong class="h2-fs d-block">$330.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Utiliza tu servicio de internet para monitorear tu alarma</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
@@ -186,7 +186,7 @@
                                                     <input class="product_category_id" name="product_category_id" t-att-value="internet_monitoring_product.public_categ_ids.ids[0]" t-if="internet_monitoring_product.public_categ_ids.ids" type="hidden"/>
                                                     <input name="product_type" t-att-value="internet_monitoring_product.type" type="hidden"/>
                                                     <input class="quantity" name="add_qty" type="hidden" value="1"/>
-                                                    <a class="btn custom-btn-subscribe w-100 o_internet_monitoring_add_to_cart" data-add-qty="1" href="#" id="add_to_cart_internet_monitoring" role="button" t-att-data-product-id="internet_monitoring_product.product_variant_id.id" t-att-data-product-template-id="internet_monitoring_product.id">
+                                                    <a class="btn custom-btn-subscribe w-100 o_internet_monitoring_add_to_cart" data-add-qty="1" href="#" role="button" t-att-data-product-id="internet_monitoring_product.product_variant_id.id" t-att-data-product-template-id="internet_monitoring_product.id">
                                                         Suscribirse
                                                     </a>
                                                 </form>
@@ -196,7 +196,7 @@
                                                     <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Asistencia telefónica</li>
                                                     <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Reportes (negocios)</li>
                                                     <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Test periódico cada 24 h</li>
-                                                    <li class="list-group-item text-muted"><i class="fa fa-minus me-2"/>Sin app móvil</li>
+                                                    <li class="list-group-item"><i class="fa fa-minus me-2"/>Sin app móvil</li>
                                                 </ul>
                                             </div>
                                             <div class="card-footer custom-card-footer">
@@ -222,17 +222,23 @@
                         padding: 4rem 2rem;
                     }
                     .card-body {
-                        background-color: #2e0747 !important;
+                        /* background-color: var(--maple-purple-light) !important; */
+                        background-color: #e2e4e2 !important;
                         border-top-right-radius: inherit;
                         border-top-left-radius: inherit;
                     }
+
+                    .custom-muted-text, h3.card-title.h5-fs.text-uppercase.tracking-wide, .list-group-ite.text-muted, .custom-dark-card, .h2-fs.d-block, p.card-text.small.mb-4.text-light, .custom-list-group .list-group-item, .custom-list-group .list-group-item.text-muted {
+                        color: black !important;
+                    }
+
                     .custom-dark-card {
                         background-color: #1a1d29 !important;
                         border: 1px solid #31343e !important;
                         border-radius: 12px !important;
                         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
                         transition: transform 0.3s ease, border-color 0.3s ease;
-                        color: #f9f9f9;
+                        /* color: #f9f9f9; */
                     }
                     
                     .custom-dark-card:hover {
@@ -240,9 +246,9 @@
                         border-color: #4a4e5a !important;
                     }
 
-                    h3.card-title.h5-fs.text-uppercase.tracking-wide, .list-group-ite.text-muted {
+                    /* h3.card-title.h5-fs.text-uppercase.tracking-wide, .list-group-ite.text-muted {
                         color: white;
-                    }
+                    } */
                   
                     .highlighted-card {
                         border: 1px solid var(--technologic-cian) !important;
@@ -255,22 +261,17 @@
                         justify-content: center !important;
                         min-height: var(--btn-height) !important;
                         padding: var(--btn-padding) !important;
-                        border: 1px solid var(--navy-blue-dark) !important;
+                        /* background: var(--navy-blue-dark) !important;
+                        border: 1px solid var(--navy-blue-dark) !important; */
                         border-radius: var(--btn-radius) !important;
-                        background: var(--navy-blue-dark) !important;
                         color: var(--maple-white) !important;
                         text-transform: uppercase;
                         font-weight: var(--btn-weight) !important;
                         transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease !important;
                     }
                     
-                    .custom-btn-subscribe:hover {
-                        background-color: var(--navy-blue-pitch-dark) !important;
-                        border: 1px solid var(--technologic-cian) !important;
-                    }
-                    
                     .custom-btn-subscribe-highlight {
-                        background-color: #3300FF;
+                        /* background-color: #3300FF; */
                         color: var(--maple-white) !important;
                         border: none;
                         padding: 12px;
@@ -281,24 +282,26 @@
                         transition: background-color 0.2s;
                     }
                     
-                    .custom-btn-subscribe-highlight:hover {
-                        background-color: #2700CD;
-                        border: 1px solid var(--technologic-cian) !important;
+
+                    .custom-btn-subscribe, .custom-btn-subscribe-highlight {
+                        background: #16A34A !important;
+                        border: 1px solid #16A34A !important;
                     }
 
-                    a#add_to_cart_internet_monitoring:hover {
-                        border: 1px solid var(--technologic-cian) !important;
+                    .custom-btn-subscribe:hover, .custom-btn-subscribe-highlight:hover {
+                        background: #0f6e32 !important;
                     }
                     
                     .custom-list-group .list-group-item {
                         background: transparent !important;
-                        color: var(--maple-white) !important;
+                        /* color: var(--maple-white) !important; */
                         border: none !important;
                         padding: 0.5rem 0;
                     }
                     
                     .custom-muted-text {
-                        color: var(--maple-white) !important;
+                        /* color: var(--maple-white) !important; */
+
                         line-height: 1.4;
                     }
 
