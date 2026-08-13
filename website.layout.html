@@ -1609,11 +1609,11 @@
                 white-space: nowrap;
             }
 
-            @media (min-width: 1920px) {
-                :where(#o_wsale_container) #products_grid_before .nav-item.mb-1 {
-                    width: 130%;
-                }
-            }
+            // @media (min-width: 1920px) {
+            //     :where(#o_wsale_container) #products_grid_before .nav-item.mb-1 {
+            //         width: 130%;
+            //     }
+            // }
 
             @media (max-width: 1199.98px) {
                 :where(#o_wsale_container) #products_grid_before {
@@ -5884,7 +5884,30 @@
                     setTimeout(reorderAllCategories, 1000);
                 })();
                 
-                
+                function ajustarAnchoGridProductos() {
+                  const wrapper = document.querySelector('.o_wsale_products_grid_table_wrapper');
+                  if(!wrapper) return;
+
+                  const products = wrapper.querySelectorAll('#o_wsale_products_grid &gt; .oe_product');
+
+                  if(products.length &gt; 0 &amp;&amp; products.length &lt;= 2) {
+                    wrapper.style.width = '54%';
+                  } else {
+                    wrapper.style.width = '100%';
+                  }
+                }
+
+                document.addEventListener('DOMContentLoaded', ajustarAnchoGridProductos);
+
+                const observer = new MutationObserver(() =&gt; {
+                    ajustarAnchoGridProductos();
+                });
+
+                const gridContainer = document.querySelector('#o_wsale_products_grid');
+                if (gridContainer) {
+                    observer.observe(gridContainer, { childList: true, subtree: true });
+                }
+
         </script>
     </xpath>
 </data>

@@ -47,8 +47,10 @@
                 <div class="oe_structure" id="oe_structure_website_sale_cart_1"/>
 
                 <div id="cart_compact_services" class="mt-5 pt-4 border-top">
-                    <h4 class="mb-4">Complementa tu equipo con nuestros servicios</h4>
-                        
+                    <div class="titulos_servicios_suscripcion">
+                        <h4 class="mb-4">Complementa tu equipo con nuestros servicios</h4>
+                        <h6 class="mb-4">Válido solo para las categorías de Sistemas de Alarma "Kits listos para Instalar", "Comprar por Familia de Productos" y "Paneles y Tablillas de Alarma"</h6>
+                    </div>
                         <div class="row g-3 justify-content-center" id="suscriptions_container_cards">
                             
                             <!-- TARJETA 1: M2M -->
@@ -167,19 +169,30 @@
 
             <xpath expr="//head" position="inside">
                 <style>
+                    .titulos_servicios_suscripcion {
+                        justify-items: center;
+                    }
+
+                    .titulos_servicios_suscripcion h4, .titulos_servicios_suscripcion h6 {
+                        text-align: center;
+                    }
+
                     .oe_structure_suscriptions_container_full, .oe_structure_suscriptions_subcontainer_full, #suscriptions_container_full, .suscriptions_subcontainer {
                         width: 100%;
                         max-width: 100%;
                     }
+
                     .oe_structure_suscriptions_container_full {
                         padding: 4rem 2rem;
                     }
+
                     .card-body {
                         /* background-color: var(--maple-purple-light) !important; */
                         background-color: #e2e4e2 !important;
                         border-top-right-radius: inherit;
                         border-top-left-radius: inherit;
                     }
+
                     .custom-dark-card {
                         /* background-color: var(--maple-purple-light) !important; */
                         background-color: #e2e4e2 !important;
@@ -328,7 +341,7 @@
                     }
 
                     .card-body.p-0.p-lg-4 .o_cart_total.o_checkout_cart_total.pt-2.pt-lg-0 table.table.mb-0 tbody tr, .card-body.p-0.p-lg-4 .o_cart_total.o_checkout_cart_total.pt-2.pt-lg-0 table.table.mb-0 tbody tr td, a.mt-2.mt-lg-0.text-center  {
-                        color: var(--maple-white) !important;
+                        color: var(--maple-black) !important;
                     }
 
                     a.btn.custom-btn-subscribe-highlight.w-100.py-1.o_internet_monitoring_add_to_cart {
@@ -358,10 +371,16 @@
                     @media (max-width: 991px) {
                         .o_total_card.card.o_wsale_sticky_object.sticky-lg-top  {
                             padding: 1rem 1rem;
-                            background-color: var(--maple-purple-light) !important;
+                            background-color: #e2e4e2 !important;
                         }
-                    }                    
+                    }          
                     
+                    @media (max-width: 600px) {
+                        .o_cart_product.d-flex.gap-3.pb-4 {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
                 </style>
             </xpath>
             <xpath expr="//head" position="inside">
@@ -432,6 +451,57 @@
                             button.removeAttribute('aria-disabled');
                             window.alert('No se pudo agregar el servicio al carrito. Por favor intenta desde la ficha del producto o contáctanos.');
                         });
+                    });
+
+                    function validarServiciosMonitoreo() {
+                        const categorias = document.querySelectorAll('#span_categ_id');
+                        const contenedorServicios = document.getElementById('cart_compact_services');
+
+                        if (!contenedorServicios) {
+                            return;
+                        }
+
+                        const categoriasPermitidas = [
+                            'Alarmas cableadas',
+                            'Alarmas Inalámbricas',
+                            'Hikvision AX PRO',
+                            'Hikvision AX HYBRID PRO',
+                            'Qolsys IQ',
+                            'DSC NEO',
+                            'Paneles',
+                            'Tablillas de Alarma'
+                        ];
+
+                        let mostrarServicios = false;
+
+                        categorias.forEach(span =&gt; {
+                            const categoria = span.textContent.trim();
+
+                            if(categoriasPermitidas.some(nombre =&gt; categoria.includes(nombre))) {
+                                mostrarServicios = true;
+                            }
+
+                            console.log("Spans encontrados:", categorias.length);
+
+                        console.log("Categoría:", categoria);
+
+                        console.log("¿Coincide?", categoria.includes("Alarmas cableadas"));
+                        });
+
+                        contenedorServicios.style.display = mostrarServicios ? '' : 'none';
+
+                        
+                    }
+
+                    document.addEventListener('DOMContentLoaded', validarServiciosMonitoreo);
+
+                    const observerValidarServiciosMonitoreo = new MutationObserver(() =&gt; {
+                        validarServiciosMonitoreo();
+                    });
+
+                    observerValidarServiciosMonitoreo.observe(document.body, {
+                        childList: true,
+                        subtree: true
                     });
                 </script>
             </xpath>
