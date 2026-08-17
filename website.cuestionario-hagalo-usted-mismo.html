@@ -1,0 +1,158 @@
+<t t-name="website.cuestionario-hagalo-usted-mismo">
+    <t t-call="website.layout">
+        <section class="py-5">
+            <div class="container" style="max-width: 800px;">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center mb-4">Configura tu Sistema de Alarma</h2>
+                        <form id="formularioCuestionarioAlarma">
+                            
+                            <!-- 1. Tamaño de la propiedad -->
+                            <div class="mb-4">
+                                <label for="q_tamano" class="form-label fw-bold">1. ¿Qué tamaño tiene la propiedad?</label>
+                                <select class="form-select" id="q_tamano" name="tamano" required="required">
+                                    <option value="" selected="selected" disabled="disabled">Selecciona una opción...</option>
+                                    <option value="pequeño">Pequeña</option>
+                                    <option value="mediano">Mediana</option>
+                                    <option value="grande">Grande</option>
+                                </select>
+                            </div>
+
+                            <!-- 2. Puertas al exterior -->
+                            <div class="mb-4">
+                                <label for="q_puertas" class="form-label fw-bold">2. ¿Cuántas puertas que dan al exterior tiene el domicilio?</label>
+                                <select class="form-select" id="q_puertas" name="puertas" required="required">
+                                    <option value="" selected="selected" disabled="disabled">Selecciona una cantidad...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+
+                            <!-- 3. Detectores de movimiento -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">3. ¿Quieres detectores de movimiento dentro de la propiedad?</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="movimiento_bool" id="mov_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="mov_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="movimiento_bool" id="mov_no" value="no"/>
+                                    <label class="form-check-label" for="mov_no">No</label>
+                                </div>
+                                
+                                <!-- Contenedor oculto para la cantidad -->
+                                <div id="contenedor_cantidad_movimiento" class="mt-3 d-none">
+                                    <label for="q_movimiento_cantidad" class="form-label text-muted">¿Cuántos?</label>
+                                    <select class="form-select" id="q_movimiento_cantidad" name="movimiento_cantidad">
+                                        <option value="1" selected="selected">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 4. Mascotas -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">4. ¿Tienes mascotas?</label>
+                                <small class="text-muted d-block mb-2">Esto es vital para sugerir sensores especializados antimascotas y evitar falsas alarmas (por ejemplo, si tienes una cachorra pug corriendo por la casa).</small>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="mascotas_bool" id="mascotas_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="mascotas_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="mascotas_bool" id="mascotas_no" value="no"/>
+                                    <label class="form-check-label" for="mascotas_no">No</label>
+                                </div>
+                            </div>
+
+                            <!-- 5. Control celular -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">5. ¿Quieres controlar tu alarma desde tu celular?</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="celular_bool" id="celular_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="celular_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="celular_bool" id="celular_no" value="no"/>
+                                    <label class="form-check-label" for="celular_no">No</label>
+                                </div>
+                            </div>
+
+                            <!-- 6. Monitoreo -->
+                            <div class="mb-5">
+                                <label class="form-label fw-bold d-block">6. ¿Quieres monitoreo 24/7?</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="monitoreo_bool" id="monitoreo_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="monitoreo_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="monitoreo_bool" id="monitoreo_no" value="no"/>
+                                    <label class="form-check-label" for="monitoreo_no">No</label>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+            <style type="text/css">
+
+            </style>
+        </xpath>
+
+        <xpath expr="//head" position="inside">
+            <script type="text/javascript">
+                const respuestasCuestionario = [];
+                
+                document.addEventListener('DOMContentLoaded', () =&gt; {
+                    const form = document.getElementById('formularioCuestionarioAlarma');
+                    const radioMovSi = document.getElementById('mov_si');
+                    const radioMovNo = document.getElementById('mov_no');
+                    const contenedorCantidad = document.getElementById('contenedor_cantidad_movimiento');
+                    const selectCantidad = document.getElementById('q_movimiento_cantidad');
+
+                    radioMovSi.addEventListener('change', () =&gt; {
+                        contenedorCantidad.classList.add('d-none');
+                    });
+
+                    form.addEventListener('submit', (e) =&gt; {
+                        e.preventDefault()
+
+                        const formData = new FormData(form);
+
+                        const quiereMovimiento = formData.get('movimiento_bool') === 'si';
+
+                        const datosActuales = {
+                            tamano_propiedad: formData.get('tamano'),
+                            puertas_exterior: parseInt(formData.get('puertas'), 10),
+                            detectores_movimiento: quiereMovimiento,
+                            cantidad_movimiento: quiereMovimiento ? parseInt(selectCantidad.value, 10) : 0,
+                            tiene_mascotas: formData.get('mascotas_bool') === 'si',
+                            control_celular: formData.get('celular_bool') === 'si',
+                            monitoreo_247: formData.get('monitoreo_bool') === 'si'
+                        };
+
+                        sessionStorage.setItem('hagalo_usted_respuestas', JSON.stringify(datosActuales));
+
+                        const params = new URLSearchParams(window.location.search);
+                        const categoryId = params.get('category') || '';
+
+                        window.location.href = `/productos-hagalo-usted-mismo?category=${encodeURIComponent(categoryId)}`;
+                    });
+                });
+            </script>
+        </xpath>
+    </t>
+</t>
