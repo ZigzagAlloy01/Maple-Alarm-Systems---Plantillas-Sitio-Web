@@ -1,0 +1,626 @@
+<t t-name="website.hagalo-usted-mismo">
+    <t t-call="website.layout">
+        <section>
+            <div class="container_hagalo_usted">
+                <div id="mapleHagaloUstedHeader"/>
+                <div id="mapleHagaloUstedGridPrincipal"/>
+            </div>
+        </section>
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+            <style type="text/css">
+                .container_hagalo_usted {
+                    margin: 2rem 0 0 0;
+                }
+
+                div#mapleHagaloUstedGridPrincipal {
+                    display: flex;
+                    justify-content: center;
+                    margin: 2rem 0 2rem 0;
+                }
+
+                .hagalo_usted_cards {
+                    display: flex;
+                    max-width: fit-content;
+                    gap: 2rem;
+                }
+
+                @media (max-width: 650px) {
+                    .hagalo_usted_cards {
+                        flex-direction: column;
+                    }
+                }
+            </style>
+        </xpath>
+        <xpath expr="//head" position="inside">
+            <script type="text/javascript">
+                const HAGALO_USTED_CATEGORIAS = [
+                    {
+                        "categoryId": "10",
+                        "title": "Alarmas",
+                        "url": "/hagalo-usted-mismo",
+                        "children":[
+                            {
+                                "categoryId": "11",
+                                "title": "Alarmas para el hogar",
+                                "url": "/11"
+                            },
+                            {
+                                "categoryId": "12",
+                                "title": "Alarmas para negocios",
+                                "url": "/12"
+                            }
+                        ]
+                    }
+                ]
+
+                function getHagaloUstedCategorias(categoryId) {
+                    return HAGALO_USTED_CATEGORIAS.find(categoria =&gt; 
+                        String(categoria.categoryId) === String(categoryId)  
+                    ); 
+                }
+
+                function renderHagaloUstedUI(categoryId) {
+                    const categoria = getHagaloUstedCategorias(categoryId);
+                    const headerContainer = document.getElementById('mapleHagaloUstedHeader');
+                    const gridContainer = document.getElementById('mapleHagaloUstedGridPrincipal');
+                    const MAPLE_LANDING_URL = `/cuestionario-hagalo-usted-mismo`;
+
+                    if (!categoria) {
+                        if (headerContainer) headerContainer.innerHTML = '<h1 class="text-center">Categoría no encontrada</h1>';
+                        if (gridContainer) gridContainer.innerHTML = '';
+                        return;
+                    }
+
+                    if (headerContainer) {
+                        headerContainer.innerHTML = `
+                            <h1 class="text-center">${categoria.title}</h1>
+                        `;
+                    }
+
+                    if (gridContainer &amp;&amp; categoria.children &amp;&amp; categoria.children.length &gt; 0) {
+                        let cardsHTML = '<div class="hagalo_usted_cards">';
+                        categoria.children.forEach(child =&gt; {
+                            const urlDestino = `${MAPLE_LANDING_URL}?category=${encodeURIComponent(child.categoryId)}`;
+                            cardsHTML += `
+                                <div class="hagalo_usted_card">
+                                    <a onclick="window.location.href='${urlDestino}'" class="card h-100 text-decoration-none text-dark shadow-sm">
+                                        <div class="card-body d-flex align-items-center justify-content-between">
+                                            <h5 class="card-title m-0">${child.title}</h5>
+                                            <i class="fa-solid fa-chevron-right text-muted"/>
+                                        </div>
+                                    </a>
+                                </div>
+                            `;
+                        });
+                        
+                        cardsHTML += '</div>';
+                        gridContainer.innerHTML = cardsHTML;
+
+                    } else if (gridContainer) {
+                        gridContainer.innerHTML = '<p class="text-center">No hay subcategorías disponibles.</p>';
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', () =&gt; {
+                    if (HAGALO_USTED_CATEGORIAS &amp;&amp; HAGALO_USTED_CATEGORIAS.length &gt; 0) {
+                            const firstCategoryId = HAGALO_USTED_CATEGORIAS[0].categoryId;
+                        renderHagaloUstedUI(firstCategoryId);
+                    } else {
+                        const headerContainer = document.getElementById('mapleHagaloUstedHeader');
+                        const gridContainer = document.getElementById('mapleHagaloUstedGridPrincipal');
+                        if (headerContainer) {
+                            headerContainer.innerHTML = '<h1 class="text-center">No hay categorías configuradas</h1>';
+                        }
+                        if (gridContainer) {
+                            gridContainer.innerHTML = '';
+                        }
+                    }
+                });     
+            </script>
+        </xpath>
+    </t>
+</t>
+
+<t t-name="website.cuestionario-hagalo-usted-mismo">
+    <t t-call="website.layout">
+        <section class="py-5">
+            <div class="container" style="max-width: 800px;">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center mb-4">Configura tu Sistema de Alarma</h2>
+                        <form id="formularioCuestionarioAlarma">
+                            
+                            <!-- 1. Tamaño de la propiedad -->
+                            <div class="mb-4">
+                                <label for="q_tamano" class="form-label fw-bold">1. ¿Qué tamaño tiene la propiedad?</label>
+                                <select class="form-select" id="q_tamano" name="tamano" required="required">
+                                    <option value="" selected="selected" disabled="disabled">Selecciona una opción...</option>
+                                    <option value="pequeño">Pequeña</option>
+                                    <option value="mediano">Mediana</option>
+                                    <option value="grande">Grande</option>
+                                </select>
+                            </div>
+
+                            <!-- 2. Puertas al exterior -->
+                            <div class="mb-4">
+                                <label for="q_puertas" class="form-label fw-bold">2. ¿Cuántas puertas que dan al exterior tiene el domicilio?</label>
+                                <select class="form-select" id="q_puertas" name="puertas" required="required">
+                                    <option value="" selected="selected" disabled="disabled">Selecciona una cantidad...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+
+                            <!-- 3. Detectores de movimiento -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">3. ¿Quieres detectores de movimiento dentro de la propiedad?</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="movimiento_bool" id="mov_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="mov_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="movimiento_bool" id="mov_no" value="no"/>
+                                    <label class="form-check-label" for="mov_no">No</label>
+                                </div>
+                                
+                                <!-- Contenedor oculto para la cantidad -->
+                                <div id="contenedor_cantidad_movimiento" class="mt-3 d-none">
+                                    <label for="q_movimiento_cantidad" class="form-label text-muted">¿Cuántos?</label>
+                                    <select class="form-select" id="q_movimiento_cantidad" name="movimiento_cantidad">
+                                        <option value="1" selected="selected">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 4. Mascotas -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">4. ¿Tienes mascotas?</label>
+                                <small class="advice_dogs d-block mb-2">Esto es vital para sugerir sensores especializados antimascotas y evitar falsas alarmas (por ejemplo, si tienes una cachorra pug corriendo por la casa).</small>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="mascotas_bool" id="mascotas_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="mascotas_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="mascotas_bool" id="mascotas_no" value="no"/>
+                                    <label class="form-check-label" for="mascotas_no">No</label>
+                                </div>
+                            </div>
+
+                            <!-- 5. Control celular -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">5. ¿Quieres controlar tu alarma desde tu celular?</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="celular_bool" id="celular_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="celular_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="celular_bool" id="celular_no" value="no"/>
+                                    <label class="form-check-label" for="celular_no">No</label>
+                                </div>
+                            </div>
+
+                            <!-- 6. Monitoreo -->
+                            <div class="mb-5">
+                                <label class="form-label fw-bold d-block">6. ¿Quieres monitoreo 24/7?</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="monitoreo_bool" id="monitoreo_si" value="si" required="required"/>
+                                    <label class="form-check-label" for="monitoreo_si">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="monitoreo_bool" id="monitoreo_no" value="no"/>
+                                    <label class="form-check-label" for="monitoreo_no">No</label>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+            <style type="text/css">
+                .advice_dogs {
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    text-align: justify;
+                }
+            </style>
+        </xpath>
+
+        <xpath expr="//head" position="inside">
+            <script type="text/javascript">
+                const respuestasCuestionario = [];
+                
+                document.addEventListener('DOMContentLoaded', () =&gt; {
+                    const form = document.getElementById('formularioCuestionarioAlarma');
+                    const radioMovSi = document.getElementById('mov_si');
+                    const radioMovNo = document.getElementById('mov_no');
+                    const contenedorCantidad = document.getElementById('contenedor_cantidad_movimiento');
+                    const selectCantidad = document.getElementById('q_movimiento_cantidad');
+
+                    radioMovSi.addEventListener('change', () =&gt; {
+                        contenedorCantidad.classList.add('d-none');
+                    });
+
+                    form.addEventListener('submit', (e) =&gt; {
+                        e.preventDefault()
+
+                        const formData = new FormData(form);
+
+                        const quiereMovimiento = formData.get('movimiento_bool') === 'si';
+
+                        const datosActuales = {
+                            tamano_propiedad: formData.get('tamano'),
+                            puertas_exterior: parseInt(formData.get('puertas'), 10),
+                            detectores_movimiento: quiereMovimiento,
+                            cantidad_movimiento: quiereMovimiento ? parseInt(selectCantidad.value, 10) : 0,
+                            tiene_mascotas: formData.get('mascotas_bool') === 'si',
+                            control_celular: formData.get('celular_bool') === 'si',
+                            monitoreo_247: formData.get('monitoreo_bool') === 'si'
+                        };
+
+                        sessionStorage.setItem('hagalo_usted_respuestas', JSON.stringify(datosActuales));
+
+                        const params = new URLSearchParams(window.location.search);
+                        const categoryId = params.get('category') || '';
+                        const currentDomain = window.location.origin;
+                        window.location.href = `/productos-hagalo-usted-mismo?category=${encodeURIComponent(categoryId)}`;
+                    });
+                });
+            </script>
+        </xpath>
+    </t>
+</t>
+
+<t t-name="website.productos-hagalo-usted-mismo">
+    <t t-call="website.layout">
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Sistemas Recomendados para ti</h2>
+                    <p class="text-muted" id="subtituloFiltros">Cargando recomendaciones personalizadas...</p>
+                </div>
+                <div id="gridProductosHagaloUsted" class="row"/>
+            </div>
+        </section>
+
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+            <style type="text/css">
+                .see_product {
+                    border: none;
+                    border-radius: 0.8rem;
+                    background: #0D2E67;
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    height: fit-content;
+                    align-content: center;
+                    padding: 0.5rem 1rem;
+                    text-align: center;
+                }
+
+                .see_product:hover {
+                    background: #041127;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 24px rgba(13, 46, 103, .25);
+                }
+
+                .diy_model_brand_container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+
+                .diy_brand_text, .diy_model_text {
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+
+                .card-text.text-muted.flex-grow-1.diy_product_description {
+                    font-size: 1rem !important;
+                    font-weight: 700;
+                    text-align: justify;
+                }
+
+                .diy_price_cards {
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+            </style>
+        </xpath>
+
+        <xpath expr="//head" position="inside">
+            <script type="text/javascript">
+                const CATALOGO_REGLAS = {
+                    // --- Equipos de Video ---
+                    "DS-7604NI-Q1/W": {
+                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-2CD2346G2P-ISU/SL(C)": {
+                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "IPC-B460HAD-LUF/SL": {
+                        tamanoPropiedadAsignado: ["pequeño"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    // --- Serie AX PRO e Inalámbricos Hikvision ---
+                    "DS-PDP15P-EG2-WB(B)": {
+                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PDMC-EG2-WB(B)": {
+                        tamanoPropiedadAsignado: ["pequeño"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PDMCS-EG2-WB(B)": {
+                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PS1-E-WB/B": {
+                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PS1-E-WB/R": {
+                        tamanoPropiedadAsignado: ["grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PDCM15PF-IR": {
+                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PKF1-WB(B)": {
+                        tamanoPropiedadAsignado: ["pequeño"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PK1-E-WB": {
+                        tamanoPropiedadAsignado: ["mediano"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PS403I-WB": {
+                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PDMCX-E-WB": {
+                        tamanoPropiedadAsignado: ["grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PDP18-HM-WB": {
+                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PK1-LT-WB": {
+                        tamanoPropiedadAsignado: ["pequeño", "mediano", "grande"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true
+                    },
+                    "DS-PDPC12P-EG2-WB(B)": {
+                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "DS-PD452SMK-WB": {
+                        tamanoPropiedadAsignado: ["pequeño"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    // --- Serie AX HOME ---
+                    "DS-PD201P10-WB": {
+                        tamanoPropiedadAsignado: ["pequeño"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11"]
+                    },
+                    "DS-PD201MC-WB": {
+                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11"]
+                    },
+                    "DS-PKF201-WB": {
+                        tamanoPropiedadAsignado: ["pequeño"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11"]
+                    },
+                    "DS-PS201-WB": {
+                        tamanoPropiedadAsignado: ["mediano"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11"]
+                    },
+                    "DS-PK201B-WB": {
+                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11"]
+                    },
+                    "DS-PD201PC10-WB": {
+                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11"]
+                    },
+                    "DS-PC201N": {
+                        tamanoPropiedadAsignado: ["pequeño"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11"]
+                    }
+                };
+
+                document.addEventListener('DOMContentLoaded', async () =&gt; {
+                    const gridContainer = document.getElementById('gridProductosHagaloUsted');
+                    const subtitulo = document.getElementById('subtituloFiltros');
+                    const respuestasGuardadas = sessionStorage.getItem('hagalo_usted_respuestas');
+                    const params = new URLSearchParams(window.location.search);
+                    const categoryId = params.get('category');
+
+                    if (!respuestasGuardadas) {
+                        gridContainer.innerHTML = `
+                            <div class="col-12 text-center py-5">
+                                <p class="text-warning fw-bold">No se encontraron respuestas previas.</p>
+                                <a href="/hagalo-usted-mismo" class="btn btn-outline-primary">Volver a iniciar</a>
+                            </div>`;
+                        return;
+                    }
+
+                    const respuestas = JSON.parse(respuestasGuardadas);
+                    let tipoPropiedad = categoryId === "11" ? "Hogar" : categoryId === "12" ? "Negocio" : "Propiedad";
+                    subtitulo.innerText = `Mostrando opciones para ${tipoPropiedad} de tamaño ${respuestas.tamano_propiedad}`;
+
+                    try {
+                        const respuestaAPI = await fetch('https://maple-carousel-api.vercel.app/api/productos');
+                        const productosOdoo = await respuestaAPI.json();
+
+                        const productosEnriquecidos = productosOdoo.map(producto =&gt; {
+                            const reglas = CATALOGO_REGLAS[producto.default_code] || {
+                                tamanoPropiedadAsignado: ["pequeño", "mediano", "grande"],
+                                isControlledByPhone: true,
+                                isViableConMascotas: true,
+                                hayMonitoreoDisponible: true,
+                                categoriasDestino: ["11", "12"]
+                            };
+
+                            const urlImagenFija = `https://maplealarmsystems.odoo.com/web/image/product.template/${producto.id}/image_512`;
+
+                            return {
+                                id: producto.id,
+                                modelo: producto.default_code,
+                                marca: producto.description_purchase,
+                                productName: producto.name,
+                                descripcion: producto.description_sale || '',
+                                price: producto.list_price,
+                                imgURL: urlImagenFija,
+                                websiteUrl: producto.website_url,
+                                ...reglas
+                            };
+                        });
+
+                        const productosFiltrados = productosEnriquecidos.filter(producto =&gt; {
+                            const coincideTamano = producto.tamanoPropiedadAsignado.includes(respuestas.tamano_propiedad);
+                            const coincideCelular = !respuestas.control_celular || producto.isControlledByPhone;
+                            const coincideMascotas = !respuestas.tiene_mascotas || producto.isViableConMascotas;
+                            const coincideCategoria = !categoryId || (producto.categoriasDestino &amp;&amp; producto.categoriasDestino.includes(categoryId));
+
+                            return coincideTamano &amp;&amp; coincideCelular &amp;&amp; coincideMascotas &amp;&amp; coincideCategoria;
+                        });
+
+                        if (productosFiltrados.length === 0) {
+                            gridContainer.innerHTML = '<p class="text-center col-12">No se encontraron productos exactos para esta configuración.</p>';
+                            return;
+                        }
+
+                        let html = '';
+                        productosFiltrados.forEach(producto =&gt; {
+                            let price_plus_iva = producto.price * 1.08;
+                            html += `
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="card h-100 shadow-sm border-0">
+                                        <img srcset="${producto.imgURL} 1x" class="card-img-top p-3" alt="${producto.productName}" style="max-height: 220px; object-fit: contain; loading: lazy;"/>
+                                        <div class="card-body d-flex flex-column">
+                                            <div class="diy_model_brand_container">
+                                                <small class="diy_brand_text">${producto.marca}</small>
+                                                <small class="diy_model_text">${producto.modelo}</small>
+                                            </div>
+                                            <h5 class="card-title mt-1">${producto.productName}</h5>
+                                            <p class="card-text text-muted flex-grow-1 diy_product_description" style="font-size: 0.9rem;">
+                                                ${producto.descripcion}
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                                <span class="diy_price_cards fw-bold text-primary">$${price_plus_iva.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MXN</span>
+                                                <a onclick="window.location.href='${producto.websiteUrl}'" class="see_product">Ver Producto</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        gridContainer.innerHTML = html;
+                        console.log(
+                            document.querySelector('#gridProductosHagaloUsted img')?.src
+                        );
+
+                    } catch (err) {
+                        console.error('Error al consultar productos:', err);
+                        gridContainer.innerHTML = '<p class="text-center text-danger col-12">Ocurrió un error al cargar las recomendaciones.</p>';
+                    }
+                });
+            </script>
+        </xpath>
+    </t>
+</t>

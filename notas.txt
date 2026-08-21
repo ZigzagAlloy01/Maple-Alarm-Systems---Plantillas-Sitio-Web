@@ -1,107 +1,90 @@
-<div class="o_wsale_product_details_content_section o_wsale_product_details_content_section_cta mb-4">
-            <div class="availability_messages o_not_editable" data-oe-id="4354" data-oe-xpath="/data/xpath/div" data-oe-model="ir.ui.view" data-oe-field="arch"><div id="product_stock_availability"></div></div>
-            <input id="wsale_user_email" type="hidden" data-oe-id="4354" data-oe-xpath="/data/xpath/input" data-oe-model="ir.ui.view" data-oe-field="arch" value="sistemas@storemaple.com">
-        <div id="o_wsale_cta_wrapper" class="d-flex flex-wrap align-items-center gap-2 mb-4 w-100 w-lg-auto">
-            <div id="add_to_cart_wrap" class="d-flex flex-grow-1 flex-lg-grow-0 flex-wrap align-items-center gap-2 d-inline-flex">
-                <a id="add_to_cart" role="button" href="#" data-animation-selector=".o_wsale_product_images" data-oe-model="ir.ui.view" data-oe-id="4191" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/a[1]" class="btn btn-primary js_check_product a-submit flex-grow-1" data-show-quantity="True" data-subscription-plan-id="">
-                    <i class="fa fa-shopping-cart me-2"></i>
-                    Agregar al carrito
-                </a>
-            <div contenteditable="false" class="css_quantity input-group d-inline-flex order-first align-middle border">
-                <a class="css_quantity_minus btn btn-link pe-2 js_add_cart_json border-0" aria-label="Eliminar uno" title="Eliminar uno" name="remove_one" data-oe-model="ir.ui.view" data-oe-id="4204" data-oe-field="arch" data-oe-xpath="/data/div/div/a[1]" href="#">
-                    <i class="oi oi-minus text-600"></i>
-                </a>
-                <input type="text" data-min="1" name="add_qty" data-oe-model="ir.ui.view" data-oe-id="4204" data-oe-field="arch" data-oe-xpath="/data/div/div/input[1]" class="form-control quantity text-center border-0" value="1">
-                <a class="css_quantity_plus btn btn-link ps-2 js_add_cart_json border-0" aria-label="Agregar uno" title="Agregar uno" data-oe-model="ir.ui.view" data-oe-id="4204" data-oe-field="arch" data-oe-xpath="/data/div/div/a[2]" href="#">
-                    <i class="oi oi-plus text-600"></i>
-                </a>
+<section id="seccionMonitoreo24" class="d-none mt-5 pt-5 border-top">
+
+    <div class="row align-items-center g-4">
+
+        <div class="col-lg-6">
+
+            <h4 class="fw-bold mb-4">
+                ¿Quieres agregar monitoreo de alarma 24/7?
+            </h4>
+
+            <p class="monitoreo-descripcion">
+                Tu sistema permanece conectado a nuestra central de monitoreo
+                las 24 horas. Ante una señal de alarma, emergencia o evento
+                relevante, nuestro personal verifica la situación y aplica
+                el protocolo correspondiente para ayudarte a responder con rapidez.
+            </p>
+
+            <div class="monitoreo-card">
+
+                <div class="monitoreo-card-header">
+                    <span>VÍA INTERNET</span>
+                    <strong id="precioMonitoreo">$330.00</strong>
+                    <small>/ mes</small>
+                </div>
+
+                <div class="monitoreo-card-body">
+                    <p id="descripcionMonitoreo">
+                        Rápido y confiable a través de tu conexión de banda
+                        ancha residencial.
+                    </p>
+
+                    <button
+                        id="btnAgregarMonitoreo"
+                        type="button"
+                        class="btn btn-success w-100">
+                        AGREGAR
+                    </button>
+                </div>
+
             </div>
-            </div>
-            <div id="product_option_block" class="d-flex d-empty-none flex-wrap gap-2 w-100 w-sm-auto">
-            
-            <a data-action="o_wishlist" title="Agregar a la lista de deseos" class="o_add_wishlist_dyn btn btn-outline-primary text-nowrap flex-grow-1 flex-sm-grow-0" data-product-template-id="32" data-product-product-id="32">
-                <i class="fa fa-heart-o me-2 me-lg-0" role="img" aria-label="Agregar a la lista de deseos" data-oe-model="ir.ui.view" data-oe-id="4372" data-oe-field="arch" data-oe-xpath="/data/xpath/a/i[1]"></i>
-                <span data-oe-model="ir.ui.view" data-oe-id="4372" data-oe-field="arch" data-oe-xpath="/data/xpath/a/span[1]" class="d-inline d-lg-none">Agregar a la lista de deseos</span>
-            </a></div>
+
         </div>
-        <small class="text-muted mb-0" data-oe-model="ir.ui.view" data-oe-id="4201" data-oe-field="arch" data-oe-xpath="/t[1]/small[1]">
-            <a href="/terms" class="o_translate_inline text-muted"><u>Términos y condiciones</u></a><br>
-            Grantía de devolución de 30 días<br>
-            Envío: 2-3 días hábiles
-        </small>
-                                    </div>
 
+        <div class="col-lg-6 text-center">
 
+            <img
+                id="imagenMonitoreo"
+                src="https://maplealarmsystems.odoo.com/web/image/website/logo"
+                alt="Monitoreo de alarma 24/7"
+                class="img-fluid monitoreo-imagen"
+            />
 
+        </div>
 
-        <a class="py-2 py-lg-0" href="/shop/category/intrusion-y-automatizacion-268">
-                <i class="oi oi-chevron-left d-lg-none me-1" role="img" data-oe-model="ir.ui.view" data-oe-id="6100" data-oe-field="arch" data-oe-xpath="/t[1]/t[4]/div[1]/section[1]/div[1]/div[1]/ol[1]/t[1]/li[1]/a[1]/i[1]"></i>
-                Intrusión y Automatización
-            </a>
+    </div>
 
+</section>
 
+<section id="seccionRecomendaciones" class="mt-5 pt-5 border-top">
 
+    <h5 class="fw-bold mb-4">
+        Otros sensores y dispositivos compatibles con tu sistema de alarma que puedes incluir
+    </h5>
 
+    <div class="recomendaciones-carousel">
 
+        <button
+            type="button"
+            id="btnRecomendacionesAnterior"
+            class="carousel-btn carousel-btn-left"
+            aria-label="Productos anteriores">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
+        <div
+            id="carouselRecomendaciones"
+            class="recomendaciones-track">
+        </div>
 
+        <button
+            type="button"
+            id="btnRecomendacionesSiguiente"
+            class="carousel-btn carousel-btn-right"
+            aria-label="Productos siguientes">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
 
+    </div>
 
-
-
-
-
-
-                        
-
-            // document.addEventListener('DOMContentLoaded', function () {
-
-            //     const desiredOrder = [
-            //         '/shop/category/sistemas-de-alarma-374',
-            //         '/shop/category/hogar-inteligente-501',
-            //         '/shop/category/camaras-de-seguridad-520',
-            //         '/shop/category/controles-de-acceso-335',
-            //         '/shop/category/cercas-electricas-351',
-            //         '/shop/category/redes-365',
-            //         '/shop/category/cables-358',
-            //         '/shop/category/fuentes-de-poder-y-respaldo-808',
-            //         '/shop/category/instalaciones-482'
-            //     ];
-            
-            //     const containerSelector = '.nav.d-flex.flex-column.mb-3';
-            
-            //     function reorderCategories() {
-            
-            //         const container = document.querySelector(containerSelector);
-            
-            //         if (!container) {
-            //             return;
-            //         }
-            
-            //         const items = [...container.children];
-            
-            //         items.sort((a, b) =&gt; {
-            
-            //             const linkA = a.querySelector('a[href]');
-            //             const linkB = b.querySelector('a[href]');
-            
-            //             const hrefA = linkA ? linkA.getAttribute('href') : '';
-            //             const hrefB = linkB ? linkB.getAttribute('href') : '';
-            
-            //             let indexA = desiredOrder.indexOf(hrefA);
-            //             let indexB = desiredOrder.indexOf(hrefB);
-            
-            //             if (indexA === -1) indexA = Number.MAX_SAFE_INTEGER;
-            //             if (indexB === -1) indexB = Number.MAX_SAFE_INTEGER;
-            
-            //             return indexA - indexB;
-            
-            //         });
-            
-            //         items.forEach(item =&gt; container.appendChild(item));
-            
-            //     }
-            
-            //     reorderCategories();
-            
-            // });
+</section>

@@ -1,7 +1,7 @@
 <t t-name="website.hagalo-usted-mismo">
     <t t-call="website.layout">
         <section>
-            <div class="container">
+            <div class="container_hagalo_usted">
                 <div id="mapleHagaloUstedHeader"/>
                 <div id="mapleHagaloUstedGridPrincipal"/>
             </div>
@@ -9,7 +9,27 @@
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
             <style type="text/css">
+                .container_hagalo_usted {
+                    margin: 2rem 0 0 0;
+                }
 
+                div#mapleHagaloUstedGridPrincipal {
+                    display: flex;
+                    justify-content: center;
+                    margin: 2rem 0 2rem 0;
+                }
+
+                .hagalo_usted_cards {
+                    display: flex;
+                    max-width: fit-content;
+                    gap: 2rem;
+                }
+
+                @media (max-width: 650px) {
+                    .hagalo_usted_cards {
+                        flex-direction: column;
+                    }
+                }
             </style>
         </xpath>
         <xpath expr="//head" position="inside">
@@ -44,7 +64,7 @@
                     const categoria = getHagaloUstedCategorias(categoryId);
                     const headerContainer = document.getElementById('mapleHagaloUstedHeader');
                     const gridContainer = document.getElementById('mapleHagaloUstedGridPrincipal');
-                    const MAPLE_LANDING_URL = "/cuestionario-hagalo-usted-mismo"
+                    const MAPLE_LANDING_URL = `/cuestionario-hagalo-usted-mismo`;
 
                     if (!categoria) {
                         if (headerContainer) headerContainer.innerHTML = '<h1 class="text-center">Categoría no encontrada</h1>';
@@ -59,12 +79,12 @@
                     }
 
                     if (gridContainer &amp;&amp; categoria.children &amp;&amp; categoria.children.length &gt; 0) {
-                        let cardsHTML = '<div class="row">';
+                        let cardsHTML = '<div class="hagalo_usted_cards">';
                         categoria.children.forEach(child =&gt; {
                             const urlDestino = `${MAPLE_LANDING_URL}?category=${encodeURIComponent(child.categoryId)}`;
                             cardsHTML += `
-                                <div class="col-md-6 col-lg-4 mb-4">
-                                    <a href="${urlDestino}" class="card h-100 text-decoration-none text-dark shadow-sm">
+                                <div class="hagalo_usted_card">
+                                    <a onclick="window.location.href='${urlDestino}'" class="card h-100 text-decoration-none text-dark shadow-sm">
                                         <div class="card-body d-flex align-items-center justify-content-between">
                                             <h5 class="card-title m-0">${child.title}</h5>
                                             <i class="fa-solid fa-chevron-right text-muted"/>

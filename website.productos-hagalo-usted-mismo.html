@@ -3,190 +3,536 @@
         <section class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2>Sistemas Recomendados para ti</h2>
+                    <h2>Tu Sistema Ideal</h2>
                     <p class="text-muted" id="subtituloFiltros">Cargando recomendaciones personalizadas...</p>
                 </div>
-                <div id="gridProductosHagaloUsted" class="row"></div>
+                <div id="kitPrincipalContainer" class="mb-5"/>
+                <div class="alert alert-success text-center mb-5 d-none shadow-sm border-0" id="bannerMonitoreo" style="background-color: #e8f5e9; color: #1b5e20;">
+                    <h5 class="alert-heading fw-bold mb-1"><i class="fa-solid fa-shield-halved"/> Compatible con Monitoreo 24/7</h5>
+                    <p class="mb-0 small">Este sistema principal puede enlazarse a nuestra central de monitoreo profesional.</p>
+                </div>
+                <div class="text-center mb-4">
+                    <h3 id="tituloComplementos" class="fw-bold d-none">Complementos Sugeridos</h3>
+                </div>
+                <div id="gridProductosHagaloUsted" class="row"/>
+                <section id="seccionMonitoreo24" class="d-none mt-5 pt-5 border-top">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <h4 class="fw-bold mb-4">
+                                ¿Quieres agregar monitoreo de alarma 24/7?
+                            </h4>
+                            <p class="monitoreo-descripcion">
+                                Tu sistema permanece conectado a nuestra central de monitoreo
+                                las 24 horas. Ante una señal de alarma, emergencia o evento
+                                relevante, nuestro personal verifica la situación y aplica
+                                el protocolo correspondiente para ayudarte a responder con rapidez.
+                            </p>
+                            <div class="monitoreo-card">
+                                <div class="monitoreo-card-header">
+                                    <span>VÍA INTERNET</span>
+                                    <strong id="precioMonitoreo">$330.00</strong>
+                                    <small>/ mes</small>
+                                </div>
+                                <div class="monitoreo-card-body">
+                                    <p id="descripcionMonitoreo">
+                                        Rápido y confiable a través de tu conexión de banda
+                                        ancha residencial.
+                                    </p>
+                                    <button id="btnAgregarMonitoreo" type="button" class="btn btn-success w-100">
+                                        AGREGAR
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <img id="imagenMonitoreo" src="https://plus.unsplash.com/premium_photo-1748853983673-6e48199324fe?q=80&amp;w=774&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Monitoreo de alarma 24/7" class="img-fluid monitoreo-imagen"/>
+                        </div>
+                    </div>
+                </section>
+                <section id="seccionRecomendaciones" class="mt-5 pt-5 border-top">
+                    <h5 class="fw-bold mb-4">
+                        Otros sensores y dispositivos compatibles con tu sistema de alarma que puedes incluir
+                    </h5>
+                    <div class="recomendaciones-carousel">
+                        <button type="button" id="btnRecomendacionesAnterior" class="carousel-btn carousel-btn-left" aria-label="Productos anteriores">
+                            <i class="fa-solid fa-chevron-left"/>
+                        </button>
+                        <div id="carouselRecomendaciones" class="recomendaciones-track">
+                        </div>
+                        <button type="button" id="btnRecomendacionesSiguiente" class="carousel-btn carousel-btn-right" aria-label="Productos siguientes">
+                            <i class="fa-solid fa-chevron-right"/>
+                        </button>
+                    </div>
+                </section>
             </div>
         </section>
 
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
             <style type="text/css">
+                .see_product {
+                    border: none;
+                    border-radius: 0.8rem;
+                    background: #0D2E67;
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    height: fit-content;
+                    align-content: center;
+                    padding: 0.5rem 1rem;
+                    text-align: center;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                }
 
+                .see_product:hover {
+                    background: #041127;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 24px rgba(13, 46, 103, .25);
+                    color: white;
+                }
+
+                .diy_model_brand_container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+
+                .diy_brand_text, .diy_model_text {
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+
+                .card-text.text-muted.flex-grow-1.diy_product_description {
+                    font-size: 1rem !important;
+                    font-weight: 700;
+                    text-align: justify;
+                }
+
+                .diy_price_cards {
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+
+                #seccionMonitoreo24 {
+                    margin-bottom: 4rem;
+                }
+
+                .monitoreo-descripcion {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    max-width: 750px;
+                }
+
+                .monitoreo-card {
+                    width: 180px;
+                    margin: 2rem auto 0;
+                    border: 1px solid #aaa;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background: #fff;
+                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+                }
+
+                .monitoreo-card-header {
+                    padding: 12px 14px 8px;
+                    border-bottom: 1px solid #c00;
+                }
+
+                .monitoreo-card-header span {
+                    display: block;
+                    font-size: 0.85rem;
+                    letter-spacing: 0.05em;
+                }
+
+                .monitoreo-card-header strong {
+                    font-size: 1.25rem;
+                    display: inline-block;
+                    margin-top: 5px;
+                }
+
+                .monitoreo-card-header small {
+                    font-size: 0.8rem;
+                }
+
+                .monitoreo-card-body {
+                    padding: 10px 14px 14px;
+                }
+
+                .monitoreo-card-body p {
+                    font-size: 0.8rem;
+                    line-height: 1.25;
+                    min-height: 55px;
+                    margin-bottom: 12px;
+                }
+
+                .monitoreo-imagen {
+                    width: 100%;
+                    max-width: 500px;
+                    height: 310px;
+                    object-fit: cover;
+                }
+
+                .recomendaciones-carousel {
+                    position: relative;
+                    width: 100%;
+                    padding: 0 45px;
+                }
+
+                .recomendaciones-track {
+                    display: flex;
+                    gap: 12px;
+                    overflow-x: auto;
+                    scroll-behavior: smooth;
+                    scroll-snap-type: x mandatory;
+
+                    scrollbar-width: none;
+                }
+
+                .recomendaciones-track::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .recomendacion-item {
+                    flex: 0 0 calc(25% - 9px);
+                    min-width: 250px;
+
+                    scroll-snap-align: start;
+
+                    border: 1px solid #e1e5ea;
+                    border-radius: 7px;
+                    background: #fff;
+
+                    overflow: hidden;
+
+                    transition: transform 0.2s ease,
+                                box-shadow 0.2s ease;
+                }
+
+                .recomendacion-item:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                }
+
+                .recomendacion-imagen {
+                    width: 100%;
+                    height: 240px;
+                    object-fit: contain;
+                    padding: 10px;
+                    background: #fafafa;
+                }
+
+                .recomendacion-body {
+                    padding: 14px;
+                }
+
+                .recomendacion-marca {
+                    display: block;
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    margin-bottom: 3px;
+                }
+
+                .recomendacion-modelo {
+                    display: block;
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }
+
+                .recomendacion-nombre {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    min-height: 45px;
+                }
+
+                .recomendacion-descripcion {
+                    color: #777;
+                    font-size: 0.85rem;
+                    line-height: 1.35;
+
+                    min-height: 65px;
+                }
+
+                .recomendacion-precio {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin-top: 10px;
+                }
+
+                .carousel-btn {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    width: 38px;
+                    height: 38px;
+
+                    border: none;
+                    border-radius: 50%;
+
+                    background: #fff;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+                    z-index: 5;
+
+                    cursor: pointer;
+
+                    transition: all 0.2s ease;
+                }
+
+                .carousel-btn:hover {
+                    transform: translateY(-50%) scale(1.08);
+                }
+
+                .carousel-btn-left {
+                    left: 0;
+                }
+
+                .carousel-btn-right {
+                    right: 0;
+                }
+
+                #imagenMonitoreo {
+                    border-radius: 1rem;
+                }
+
+                @media (max-width: 991px) {
+
+                    .recomendacion-item {
+                        flex: 0 0 calc(50% - 6px);
+                    }
+
+                    .monitoreo-imagen {
+                        height: 280px;
+                    }
+                }
+
+
+                @media (max-width: 575px) {
+
+                    .recomendaciones-carousel {
+                        padding: 0 35px;
+                    }
+
+                    .recomendacion-item {
+                        flex: 0 0 85%;
+                    }
+
+                    .monitoreo-imagen {
+                        height: 220px;
+                    }
+
+                    .monitoreo-card {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
             </style>
         </xpath>
 
         <xpath expr="//head" position="inside">
             <script type="text/javascript">
+                const PERFILES_PAQUETES = {
+                    "hik_axhome_1": {
+                        kitPrincipal: "DS-PWA48-Kit-WB",
+                        sugerencias: ["DS-PD201P10-WB", "DS-PD201MC-WB", "DS-PKF201-WB", "DS-PS201-WB", "DS-PD201PC10-WB"]
+                    },
+                    "hik_axpro_1": {
+                        kitPrincipal: "DS-PWA96-Kit-WB",
+                        sugerencias: ["DS-PDP15P-EG2-WB(B)", "DS-PDMC-EG2-WB(B)", "DS-PKF1-WB(B)", "DS-PS1-E-WB/B", "DS-PDP18-HM-WB"]
+                    }
+                };
+
                 const CATALOGO_REGLAS = {
-                    // --- Equipos de Video ---
                     "DS-7604NI-Q1/W": {
-                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        tamanoPropiedadAsignado: ["compacta", "familiar"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
+
                     "DS-2CD2346G2P-ISU/SL(C)": {
-                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        tamanoPropiedadAsignado: ["familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: false,
                         categoriasDestino: ["11", "12"]
                     },
+
                     "IPC-B460HAD-LUF/SL": {
-                        tamanoPropiedadAsignado: ["pequeño"],
+                        tamanoPropiedadAsignado: ["compacta"],
                         isControlledByPhone: true,
                         isViableConMascotas: false,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
 
-                    // --- Serie AX PRO e Inalámbricos Hikvision ---
                     "DS-PDP15P-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        tamanoPropiedadAsignado: ["familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
+
                     "DS-PDMC-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["pequeño"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PDMCS-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
-                        isControlledByPhone: false,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PS1-E-WB/B": {
-                        tamanoPropiedadAsignado: ["mediano", "grande"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PS1-E-WB/R": {
-                        tamanoPropiedadAsignado: ["grande"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PDCM15PF-IR": {
-                        tamanoPropiedadAsignado: ["mediano", "grande"],
-                        isControlledByPhone: false,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PKF1-WB(B)": {
-                        tamanoPropiedadAsignado: ["pequeño"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PK1-E-WB": {
-                        tamanoPropiedadAsignado: ["mediano"],
-                        isControlledByPhone: false,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PS403I-WB": {
-                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PDMCX-E-WB": {
-                        tamanoPropiedadAsignado: ["grande"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PDP18-HM-WB": {
-                        tamanoPropiedadAsignado: ["mediano", "grande"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PK1-LT-WB": {
-                        tamanoPropiedadAsignado: ["pequeño", "mediano", "grande"],
-                        isControlledByPhone: false,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: true
-                    },
-                    "DS-PDPC12P-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["mediano", "grande"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-                    "DS-PD452SMK-WB": {
-                        tamanoPropiedadAsignado: ["pequeño"],
+                        tamanoPropiedadAsignado: ["compacta"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: false,
                         categoriasDestino: ["11", "12"]
                     },
 
-                    // --- Serie AX HOME ---
+                    "DS-PDMCS-EG2-WB(B)": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PS1-E-WB/B": {
+                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PS1-E-WB/R": {
+                        tamanoPropiedadAsignado: ["amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PDCM15PF-IR": {
+                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PKF1-WB(B)": {
+                        tamanoPropiedadAsignado: ["compacta"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PK1-E-WB": {
+                        tamanoPropiedadAsignado: ["familiar"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PS403I-WB": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PDMCX-E-WB": {
+                        tamanoPropiedadAsignado: ["amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PDP18-HM-WB": {
+                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: false,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PK1-LT-WB": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PDPC12P-EG2-WB(B)": {
+                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+
+                    "DS-PD452SMK-WB": {
+                        tamanoPropiedadAsignado: ["compacta"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: false,
+                        categoriasDestino: ["11", "12"]
+                    },
+
                     "DS-PD201P10-WB": {
-                        tamanoPropiedadAsignado: ["pequeño"],
+                        tamanoPropiedadAsignado: ["compacta"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: false,
                         categoriasDestino: ["11"]
                     },
+
                     "DS-PD201MC-WB": {
-                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        tamanoPropiedadAsignado: ["compacta", "familiar"],
                         isControlledByPhone: false,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11"]
                     },
+
                     "DS-PKF201-WB": {
-                        tamanoPropiedadAsignado: ["pequeño"],
+                        tamanoPropiedadAsignado: ["compacta"],
                         isControlledByPhone: true,
                         isViableConMascotas: false,
                         hayMonitoreoDisponible: false,
                         categoriasDestino: ["11"]
                     },
+
                     "DS-PS201-WB": {
-                        tamanoPropiedadAsignado: ["mediano"],
+                        tamanoPropiedadAsignado: ["familiar"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11"]
                     },
+
                     "DS-PK201B-WB": {
-                        tamanoPropiedadAsignado: ["pequeño", "mediano"],
+                        tamanoPropiedadAsignado: ["compacta", "familiar"],
                         isControlledByPhone: false,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: false,
                         categoriasDestino: ["11"]
                     },
+
                     "DS-PD201PC10-WB": {
-                        tamanoPropiedadAsignado: ["mediano", "grande"],
+                        tamanoPropiedadAsignado: ["familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11"]
                     },
+
                     "DS-PC201N": {
-                        tamanoPropiedadAsignado: ["pequeño"],
+                        tamanoPropiedadAsignado: ["compacta"],
                         isControlledByPhone: true,
                         isViableConMascotas: false,
                         hayMonitoreoDisponible: false,
@@ -194,10 +540,172 @@
                     }
                 };
 
+                const PRODUCTOS_RECOMENDADOS = [
+                    "DS-PS1-I-WB(B)",
+                    "DS-PK1-E-WB",
+                    "DS-PDHT-E-WB",
+                    "DS-PDSMK-E-WB"
+                ];
+
+                function renderProductosRecomendados(productos) {
+
+                    const carousel = document.getElementById(
+                        'carouselRecomendaciones'
+                    );
+
+                    if (!carousel) {
+                        return;
+                    }
+
+                    const productosRecomendados = productos.filter(producto =&gt;
+                        PRODUCTOS_RECOMENDADOS.includes(producto.default_code)
+                    );
+
+                    if (productosRecomendados.length === 0) {
+                        carousel.innerHTML = '';
+                        return;
+                    }
+
+                    let html = '';
+
+                    productosRecomendados.forEach(producto =&gt; {
+
+                        const precio = Number(producto.list_price || 0) * 1.08;
+
+                        const imagen =
+                            `https://maplealarmsystems.odoo.com/web/image/product.template/${producto.id}/image_512`;
+
+                        const marca =
+                            producto.description_purchase || 'HIKVISION';
+
+                        const modelo =
+                            producto.default_code || '';
+
+                        const nombre =
+                            producto.name || '';
+
+                        const descripcion =
+                            producto.description_sale || '';
+
+                        const url =
+                            producto.website_url || '#';
+
+                        html += `
+                            <div class="recomendacion-item">
+
+                                <img srcset="${imagen}" class="recomendacion-imagen" alt="${nombre}" loading="lazy"/>
+
+                                <div class="recomendacion-body">
+
+                                    <span class="recomendacion-marca">
+                                        ${marca}
+                                    </span>
+
+                                    <span class="recomendacion-modelo">
+                                        ${modelo}
+                                    </span>
+
+                                    <div class="recomendacion-nombre">
+                                        ${nombre}
+                                    </div>
+
+                                    <p class="recomendacion-descripcion">
+                                        ${descripcion}
+                                    </p>
+
+                                    <div class="recomendacion-precio">
+                                        $${precio.toLocaleString('es-MX', {
+                                            minimumFractionDigits: 2,
+                                            maximumFractionDigits: 2
+                                        })} MXN
+                                    </div>
+
+                                    <a href="${url}" class="see_product d-block mt-3">
+                                        Ver Producto
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        `;
+                    });
+
+                    carousel.innerHTML = html;
+                }
+
+                function inicializarCarruselRecomendaciones() {
+
+                    const carousel = document.getElementById(
+                        'carouselRecomendaciones'
+                    );
+
+                    const btnAnterior = document.getElementById(
+                        'btnRecomendacionesAnterior'
+                    );
+
+                    const btnSiguiente = document.getElementById(
+                        'btnRecomendacionesSiguiente'
+                    );
+
+                    if (!carousel || !btnAnterior || !btnSiguiente) {
+                        return;
+                    }
+
+                    btnAnterior.addEventListener('click', () =&gt; {
+
+                        carousel.scrollBy({
+                            left: -300,
+                            behavior: 'smooth'
+                        });
+
+                    });
+
+                    btnSiguiente.addEventListener('click', () =&gt; {
+
+                        carousel.scrollBy({
+                            left: 300,
+                            behavior: 'smooth'
+                        });
+
+                    });
+                }
+
+                function mostrarMonitoreo24() {
+
+                    const seccion =
+                        document.getElementById('seccionMonitoreo24');
+
+                    if (!seccion) {
+                        return;
+                    }
+
+                    seccion.classList.remove('d-none');
+                }
+
+                function inicializarMonitoreo() {
+
+                    const boton =
+                        document.getElementById('btnAgregarMonitoreo');
+
+                    if (!boton) {
+                        return;
+                    }
+
+                    boton.addEventListener('click', () =&gt; {
+
+                        console.log('Agregar monitoreo 24/7');
+
+                    });
+                }
+
                 document.addEventListener('DOMContentLoaded', async () =&gt; {
                     const gridContainer = document.getElementById('gridProductosHagaloUsted');
+                    const kitContainer = document.getElementById('kitPrincipalContainer');
                     const subtitulo = document.getElementById('subtituloFiltros');
+                    
                     const respuestasGuardadas = sessionStorage.getItem('hagalo_usted_respuestas');
+                    const paqueteSeleccionado = sessionStorage.getItem('paquete_seleccionado'); 
+                    
                     const params = new URLSearchParams(window.location.search);
                     const categoryId = params.get('category');
 
@@ -220,58 +728,108 @@
 
                         const productosEnriquecidos = productosOdoo.map(producto =&gt; {
                             const reglas = CATALOGO_REGLAS[producto.default_code] || {
-                                tamanoPropiedadAsignado: ["pequeño", "mediano", "grande"],
+                                tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                                 isControlledByPhone: true,
                                 isViableConMascotas: true,
                                 hayMonitoreoDisponible: true,
                                 categoriasDestino: ["11", "12"]
                             };
+                            const urlImagenFija = `https://maplealarmsystems.odoo.com/web/image/product.template/${producto.id}/image_512`;
 
                             return {
                                 id: producto.id,
                                 modelo: producto.default_code,
-                                marca: producto.description_purchase,
+                                marca: producto.description_purchase || 'HIKVISION',
                                 productName: producto.name,
                                 descripcion: producto.description_sale || '',
                                 price: producto.list_price,
-                                imgURL: producto.image_url,
+                                imgURL: urlImagenFija,
                                 websiteUrl: producto.website_url,
                                 ...reglas
                             };
                         });
 
-                        const productosFiltrados = productosEnriquecidos.filter(producto =&gt; {
-                            const coincideTamano = producto.tamanoPropiedadAsignado.includes(respuestas.tamano_propiedad);
-                            const coincideCelular = !respuestas.control_celular || producto.isControlledByPhone;
-                            const coincideMascotas = !respuestas.tiene_mascotas || producto.isViableConMascotas;
-                            const coincideCategoria = !categoryId || (producto.categoriasDestino &amp;&amp; producto.categoriasDestino.includes(categoryId));
+                        renderProductosRecomendados(productosOdoo);
+                        mostrarMonitoreo24();
+                        inicializarCarruselRecomendaciones();
+                        inicializarMonitoreo();
 
-                            return coincideTamano &amp;&amp; coincideCelular &amp;&amp; coincideMascotas &amp;&amp; coincideCategoria;
-                        });
+                        let productosFiltrados = [];
+
+                        if (paqueteSeleccionado &amp;&amp; PERFILES_PAQUETES[paqueteSeleccionado]) {
+                            const configPaquete = PERFILES_PAQUETES[paqueteSeleccionado];
+                            const kitData = productosEnriquecidos.find(p =&gt; p.modelo === configPaquete.kitPrincipal);
+
+                            if (kitData) {
+                                let kitPrice = kitData.price * 1.08;
+                                kitContainer.innerHTML = `
+                                    <div class="card shadow-sm border-0 rounded-4" style="border-top: 4px solid #0D2E67 !important; background: #f8f9fa;">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 p-4 d-flex align-items-center justify-content-center bg-white rounded-start" style="border-right: 1px solid #dee2e6;">
+                                                <img src="${kitData.imgURL}" class="img-fluid" alt="${kitData.productName}" style="max-height: 250px; object-fit: contain;"/>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body p-4 d-flex flex-column h-100">
+                                                    <span class="badge mb-2" style="background-color: #0D2E67; width: fit-content;">Sistema Base Recomendado</span>
+                                                    <h3 class="card-title fw-bold">${kitData.productName}</h3>
+                                                    <div class="mb-3">
+                                                        <small class="text-muted fw-bold">${kitData.marca} | ${kitData.modelo}</small>
+                                                    </div>
+                                                    <p class="card-text text-muted flex-grow-1" style="font-size: 1.05rem; text-align: justify;">
+                                                        ${kitData.descripcion}
+                                                    </p>
+                                                    <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                                        <span class="fw-bold fs-3 text-primary">$${kitPrice.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MXN</span>
+                                                        <a onclick="window.location.href='${kitData.websiteUrl}'" class="see_product px-4 py-2">Seleccionar Sistema Base</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+
+                                document.getElementById('tituloComplementos').classList.remove('d-none');
+                                if (kitData.hayMonitoreoDisponible) {
+                                    document.getElementById('bannerMonitoreo').classList.remove('d-none');
+                                }
+                            }
+
+                            productosFiltrados = productosEnriquecidos.filter(p =&gt; configPaquete.sugerencias.includes(p.modelo));
+
+                        } else {
+                            productosFiltrados = productosEnriquecidos.filter(producto =&gt; {
+                                const coincideTamano = producto.tamanoPropiedadAsignado.includes(respuestas.tamano_propiedad);
+                                const coincideCelular = !respuestas.control_celular || producto.isControlledByPhone;
+                                const coincideMascotas = !respuestas.tiene_mascotas || producto.isViableConMascotas;
+                                const coincideCategoria = !categoryId || (producto.categoriasDestino &amp;&amp; producto.categoriasDestino.includes(categoryId));
+                                return coincideTamano &amp;&amp; coincideCelular &amp;&amp; coincideMascotas &amp;&amp; coincideCategoria;
+                            });
+                        }
 
                         if (productosFiltrados.length === 0) {
-                            gridContainer.innerHTML = '<p class="text-center col-12">No se encontraron productos exactos para esta configuración.</p>';
+                            gridContainer.innerHTML = '<p class="text-center col-12">No se encontraron complementos adicionales.</p>';
                             return;
                         }
 
                         let html = '';
                         productosFiltrados.forEach(producto =&gt; {
+                            let price_plus_iva = producto.price * 1.08;
                             html += `
                                 <div class="col-md-6 col-lg-4 mb-4">
                                     <div class="card h-100 shadow-sm border-0">
-                                        <img src="${producto.imgURL}" class="card-img-top p-3" alt="${producto.productName}" style="max-height: 220px; object-fit: contain;"/>
+                                        <img srcset="${producto.imgURL} 1x" class="card-img-top p-3" alt="${producto.productName}" style="max-height: 220px; object-fit: contain; loading: lazy;"/>
                                         <div class="card-body d-flex flex-column">
                                             <div class="diy_model_brand_container">
-                                                <small class="text-muted">${producto.modelo}</small>
-                                                <small class="text-muted">${producto.marca}</small>
+                                                <small class="diy_brand_text">${producto.marca}</small>
+                                                <small class="diy_model_text">${producto.modelo}</small>
                                             </div>
                                             <h5 class="card-title mt-1">${producto.productName}</h5>
-                                            <p class="card-text text-muted flex-grow-1" style="font-size: 0.9rem;">
+                                            <p class="card-text text-muted flex-grow-1 diy_product_description" style="font-size: 0.9rem;">
                                                 ${producto.descripcion}
                                             </p>
                                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                                <span class="fs-5 fw-bold text-primary">$${producto.price.toLocaleString('es-MX')} MXN</span>
-                                                <a href="${producto.websiteUrl}" class="btn btn-primary btn-sm">Ver Producto</a>
+                                                <span class="diy_price_cards fw-bold text-primary">$${price_plus_iva.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MXN</span>
+                                                <a onclick="window.location.href='${producto.websiteUrl}'" class="see_product">Ver Producto</a>
                                             </div>
                                         </div>
                                     </div>
@@ -286,6 +844,26 @@
                         gridContainer.innerHTML = '<p class="text-center text-danger col-12">Ocurrió un error al cargar las recomendaciones.</p>';
                     }
                 });
+
+                const grid = document.getElementById("gridProductosHagaloUsted");
+
+                if (grid) {
+                    const observerProductosHagaloUsted = new MutationObserver((mutations, obs) =&gt; {
+                        const productos = grid.querySelectorAll(":scope &gt; .col-md-6");
+                        console.log(productos);
+                        if (productos.length &gt; 0) {
+                            productos.forEach((producto, index) =&gt; {
+                                if (index &gt;=6) {
+                                    producto.style.display = "none";
+                                }
+                            });
+                            obs.disconnect();
+                        }
+                    });
+                    observerProductosHagaloUsted.observe(grid, {
+                        childList: true, subtree: true
+                    });
+                }
             </script>
         </xpath>
     </t>
