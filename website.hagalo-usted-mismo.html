@@ -25,9 +25,39 @@
                     gap: 2rem;
                 }
 
-                @media (max-width: 650px) {
+                .hagalo_usted_card {
+                    cursor: pointer;
+                }
+
+                .card-body.d-flex.align-items-center.justify-content-between {
+                    margin: 0 1rem 0 2rem;
+                }
+
+                i.fa-solid.fa-chevron-right.text-muted {
+                    margin: 0 0 0 2rem;
+                }
+
+                h5.card-title.m-0 {
+                    text-align: center;
+                }
+
+                @media (max-width: 850px) {
                     .hagalo_usted_cards {
                         flex-direction: column;
+                    }
+                }
+
+                @media (max-width: 500px) {
+                    .hagalo_usted_card {
+                        width: 16rem;
+                    }
+
+                    .card-body.d-flex.align-items-center.justify-content-between {
+                        margin: 0 0rem 0 0rem;
+                    }
+
+                    i.fa-solid.fa-chevron-right.text-muted {
+                        margin: 0 0 0 0rem;
                     }
                 }
             </style>

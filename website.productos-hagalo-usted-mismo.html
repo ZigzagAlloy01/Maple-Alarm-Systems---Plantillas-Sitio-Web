@@ -27,21 +27,7 @@
                                 relevante, nuestro personal verifica la situación y aplica
                                 el protocolo correspondiente para ayudarte a responder con rapidez.
                             </p>
-                            <div class="monitoreo-card">
-                                <div class="monitoreo-card-header">
-                                    <span>VÍA INTERNET</span>
-                                    <strong id="precioMonitoreo">$330.00</strong>
-                                    <small>/ mes</small>
-                                </div>
-                                <div class="monitoreo-card-body">
-                                    <p id="descripcionMonitoreo">
-                                        Rápido y confiable a través de tu conexión de banda
-                                        ancha residencial.
-                                    </p>
-                                    <button id="btnAgregarMonitoreo" type="button" class="btn btn-success w-100">
-                                        AGREGAR
-                                    </button>
-                                </div>
+                            <div class="monitoreo-card" id="tarjetaSuscripcionMonitoreo">
                             </div>
                         </div>
                         <div class="col-lg-6 text-center">
@@ -51,7 +37,7 @@
                 </section>
                 <section id="seccionRecomendaciones" class="mt-5 pt-5 border-top">
                     <h5 class="fw-bold mb-4">
-                        Otros sensores y dispositivos compatibles con tu sistema de alarma que puedes incluir
+                        Otros dispositivos que pueden interesarte
                     </h5>
                     <div class="recomendaciones-carousel">
                         <button type="button" id="btnRecomendacionesAnterior" class="carousel-btn carousel-btn-left" aria-label="Productos anteriores">
@@ -329,7 +315,20 @@
                         margin-left: auto;
                         margin-right: auto;
                     }
-                }
+
+                    div#toast-carrito-container {
+                        width: 16.5rem;
+                    }
+
+                    div#toast-resumen-carrito {
+                        width: 12rem !important;
+                    }
+
+                    .resumen_suscripcion_hagalo_usted {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }   
             </style>
         </xpath>
 
@@ -337,214 +336,298 @@
             <script type="text/javascript">
                 const PERFILES_PAQUETES = {
                     "hik_axhome_1": {
-                        kitPrincipal: "DS-PWA48-Kit-WB",
-                        sugerencias: ["DS-PD201P10-WB", "DS-PD201MC-WB", "DS-PKF201-WB", "DS-PS201-WB", "DS-PD201PC10-WB"]
+                        kitPrincipal: "AXHOME",
+                        sugerencias: ["DS-PD201PC10-WB",
+                        "DS-PK201B-WB",
+                        "DS-PC201N"],
+                        servicioDeSuscripcion: "Via Internet"
                     },
                     "hik_axpro_1": {
-                        kitPrincipal: "DS-PWA96-Kit-WB",
-                        sugerencias: ["DS-PDP15P-EG2-WB(B)", "DS-PDMC-EG2-WB(B)", "DS-PKF1-WB(B)", "DS-PS1-E-WB/B", "DS-PDP18-HM-WB"]
+                        kitPrincipal: "AXPRO",
+                        sugerencias: ["DS-PDMC-EG2-WB(B)",
+                        "DS-PDCM15PF-IR",
+                        "DS-PK1-E-WB",
+                        "DS-PS403I-WB",
+                        "DS-PDMCX-E-WB",
+                        "DS-PDP18-HM-WB",
+                        "DS-PK1-LT-WB",
+                        "DS-PDPC12P-EG2-WB(B)",
+                        "DS-PD452SMK-WB"],
+                        servicioDeSuscripcion: "Via Internet"
+                    },
+                    "dsc_neo_1": {
+                        kitPrincipal: "SERIENEO",
+                        sugerencias: ["PG9939",
+                        "PG9920",
+                        "PG9922",
+                        "PG9901 BATT",
+                        "PG9938",
+                        "PG9935",
+                        "PG9936",
+                        "PG9911B BATT",
+                        "PG9312",
+                        "PG9303BR"],
+                        servicioDeSuscripcion: "Monitoreo M2M"
+                    },
+                    "qolsys_iq4_1": {
+                        kitPrincipal: "QOLSYS",
+                        sugerencias: ["PG9939",
+                        "PG9920",
+                        "PG9922",
+                        "PG9901 BATT",
+                        "PG9938",
+                        "PG9935",
+                        "PG9936",
+                        "PG9911B BATT",
+                        "PG9312",
+                        "PG9303BR"],
+                        servicioDeSuscripcion: "Alarmdotcom"
+                    },
+                    "hik_axhome_2": {
+                        kitPrincipal: "AXHOME",
+                        sugerencias: ["DS-PD201PC10-WB",
+                        "DS-PK201B-WB",
+                        "DS-PC201N"],
+                        servicioDeSuscripcion: "Via Internet"
+                    },
+                    "hik_axpro_2": {
+                        kitPrincipal: "AXPRO",
+                        sugerencias: ["DS-PDMC-EG2-WB(B)",
+                        "DS-PDCM15PF-IR",
+                        "DS-PK1-E-WB",
+                        "DS-PS403I-WB",
+                        "DS-PDMCX-E-WB",
+                        "DS-PDP18-HM-WB",
+                        "DS-PK1-LT-WB",
+                        "DS-PDPC12P-EG2-WB(B)",
+                        "DS-PD452SMK-WB"],
+                        servicioDeSuscripcion: "Via Internet"
+                    },
+                    "dsc_neo_2": {
+                        kitPrincipal: "SERIENEO",
+                        sugerencias: ["PG9939",
+                        "PG9920",
+                        "PG9922",
+                        "PG9901 BATT",
+                        "PG9938",
+                        "PG9935",
+                        "PG9936",
+                        "PG9911B BATT",
+                        "PG9312",
+                        "PG9303BR"],
+                        servicioDeSuscripcion: "Monitoreo M2M"
+                    },
+                    "qolsys_iq4_2": {
+                        kitPrincipal: "QOLSYS",
+                        sugerencias: ["PG9939",
+                        "PG9920",
+                        "PG9922",
+                        "PG9901 BATT",
+                        "PG9938",
+                        "PG9935",
+                        "PG9936",
+                        "PG9911B BATT",
+                        "PG9312",
+                        "PG9303BR"],
+                        servicioDeSuscripcion: "Alarmdotcom"
+                    }
+                };
+
+                const INFO_SUSCRIPCIONES = {
+                    "Via Internet": {
+                        titulo: "VÍA INTERNET",
+                        precio: "$330.00",
+                        descripcion: "Rápido y confiable a través de tu conexión de banda ancha residencial.",
+                        productId: 388
+                    },
+                    "Monitoreo M2M": {
+                        titulo: "MONITOREO M2M",
+                        precio: "$450.00",
+                        descripcion: "Conexión dedicada máquina a máquina de alta seguridad.",
+                        productId: 4162
+                    },
+                    "Monitoreo GSM": {
+                        titulo: "MONITOREO GSM",
+                        precio: "$550.00",
+                        descripcion: "Respaldo celular que te protege incluso ante cortes de energía o internet.",
+                        productId: 4163
+                    },
+                    "Alarmdotcom": {
+                        titulo: "ALARM.COM",
+                        precio: "$650.00",
+                        descripcion: "Plataforma inteligente interactiva con control total y automatización.",
+                        productId: 4164
                     }
                 };
 
                 const CATALOGO_REGLAS = {
-                    "DS-7604NI-Q1/W": {
-                        tamanoPropiedadAsignado: ["compacta", "familiar"],
+                    "DS-PD201PC10-WB": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
-                    "DS-2CD2346G2P-ISU/SL(C)": {
-                        tamanoPropiedadAsignado: ["familiar", "amplia"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-
-                    "IPC-B460HAD-LUF/SL": {
-                        tamanoPropiedadAsignado: ["compacta"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-
-                    "DS-PDP15P-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                    "DS-PK201B-WB": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
+                    "DS-PC201N": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
                     "DS-PDMC-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["compacta"],
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-
-                    "DS-PDMCS-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["compacta", "familiar"],
-                        isControlledByPhone: false,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
-                    "DS-PS1-E-WB/B": {
-                        tamanoPropiedadAsignado: ["familiar", "amplia"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11", "12"]
-                    },
-
-                    "DS-PS1-E-WB/R": {
-                        tamanoPropiedadAsignado: ["amplia"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-
                     "DS-PDCM15PF-IR": {
-                        tamanoPropiedadAsignado: ["familiar", "amplia"],
-                        isControlledByPhone: false,
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
-                    "DS-PKF1-WB(B)": {
-                        tamanoPropiedadAsignado: ["compacta"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-
                     "DS-PK1-E-WB": {
-                        tamanoPropiedadAsignado: ["familiar"],
-                        isControlledByPhone: false,
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
                     "DS-PS403I-WB": {
-                        tamanoPropiedadAsignado: ["compacta", "familiar"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11", "12"]
-                    },
-
-                    "DS-PDMCX-E-WB": {
-                        tamanoPropiedadAsignado: ["amplia"],
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
-                    "DS-PDP18-HM-WB": {
-                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                    "DS-PDMCX-E-WB": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: false,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
+                    "DS-PDP18-HM-WB": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
                     "DS-PK1-LT-WB": {
                         tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
-                        isControlledByPhone: false,
+                        isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
                     "DS-PDPC12P-EG2-WB(B)": {
-                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
                     "DS-PD452SMK-WB": {
-                        tamanoPropiedadAsignado: ["compacta"],
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
+                        hayMonitoreoDisponible: true,
                         categoriasDestino: ["11", "12"]
                     },
-
-                    "DS-PD201P10-WB": {
-                        tamanoPropiedadAsignado: ["compacta"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11"]
-                    },
-
-                    "DS-PD201MC-WB": {
-                        tamanoPropiedadAsignado: ["compacta", "familiar"],
-                        isControlledByPhone: false,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11"]
-                    },
-
-                    "DS-PKF201-WB": {
-                        tamanoPropiedadAsignado: ["compacta"],
-                        isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11"]
-                    },
-
-                    "DS-PS201-WB": {
-                        tamanoPropiedadAsignado: ["familiar"],
+                    "PG9939": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11"]
+                        categoriasDestino: ["11", "12"]
                     },
-
-                    "DS-PK201B-WB": {
-                        tamanoPropiedadAsignado: ["compacta", "familiar"],
-                        isControlledByPhone: false,
-                        isViableConMascotas: true,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11"]
-                    },
-
-                    "DS-PD201PC10-WB": {
-                        tamanoPropiedadAsignado: ["familiar", "amplia"],
+                    "PG9920": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
                         isViableConMascotas: true,
                         hayMonitoreoDisponible: true,
-                        categoriasDestino: ["11"]
+                        categoriasDestino: ["11", "12"]
                     },
-
-                    "DS-PC201N": {
-                        tamanoPropiedadAsignado: ["compacta"],
+                    "PG9922": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
                         isControlledByPhone: true,
-                        isViableConMascotas: false,
-                        hayMonitoreoDisponible: false,
-                        categoriasDestino: ["11"]
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "PG9901 BATT": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "PG9938": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "PG9935": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "PG9936": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "PG9911B BATT": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "PG9312": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
+                    },
+                    "PG9303BR": {
+                        tamanoPropiedadAsignado: ["compacta", "familiar", "amplia"],
+                        isControlledByPhone: true,
+                        isViableConMascotas: true,
+                        hayMonitoreoDisponible: true,
+                        categoriasDestino: ["11", "12"]
                     }
                 };
-
                 const PRODUCTOS_RECOMENDADOS = [
-                    "DS-PS1-I-WB(B)",
-                    "DS-PK1-E-WB",
-                    "DS-PDHT-E-WB",
-                    "DS-PDSMK-E-WB"
+                    "DS-PD201PC10-WB",
+                    "DS-PC201N",
+                    "DS-PDCM15PF-IR",
+                    "DS-PS403I-WB",
+                    "DS-PDP18-HM-WB",
+                    "DS-PDPC12P-EG2-WB(B)",
+                    "PG9939",
+                    "PG9922",
+                    "PG9938",
+                    "PG9936",
+                    "PG9312",
                 ];
 
                 function renderProductosRecomendados(productos) {
@@ -682,7 +765,38 @@
                     seccion.classList.remove('d-none');
                 }
 
-                function inicializarMonitoreo() {
+                function renderizarTarjetaSuscripcion(tipoServicio) {
+                    const contenedor = document.getElementById('tarjetaSuscripcionMonitoreo');
+
+                    if (!contenedor || !tipoServicio || !INFO_SUSCRIPCIONES[tipoServicio]) {
+                        if (contenedor) contenedor.style.display = 'none';
+                        return;
+                    }
+
+                    const dataSuscripcion = INFO_SUSCRIPCIONES[tipoServicio];
+
+                    contenedor.innerHTML = `
+                        <div class="monitoreo-card-header">
+                            <span>${dataSuscripcion.titulo}</span>
+                            <strong id="precioMonitoreo">${dataSuscripcion.precio}</strong>
+                            <small>/ mes</small>
+                        </div>
+                        <div class="monitoreo-card-body">
+                            <p id="descripcionMonitoreo">
+                                ${dataSuscripcion.descripcion}
+                            </p>
+                            <button id="btnAgregarMonitoreo" type="button" class="btn btn-success w-100" 
+                                    data-product-id="${dataSuscripcion.productId}"
+                                    data-product-template-id="${dataSuscripcion.productTemplateId || dataSuscripcion.productId}">
+                                AGREGAR
+                            </button>
+                        </div>
+                    `;
+
+                    inicializarMonitoreo(dataSuscripcion);
+                }
+
+                function inicializarMonitoreo(dataSuscripcion) {
 
                     const boton =
                         document.getElementById('btnAgregarMonitoreo');
@@ -691,11 +805,221 @@
                         return;
                     }
 
-                    boton.addEventListener('click', () =&gt; {
+                    const nuevoBoton = boton.cloneNode(true);
+                    boton.parentNode.replaceChild(nuevoBoton, boton);
 
-                        console.log('Agregar monitoreo 24/7');
+                    nuevoBoton.addEventListener('click', async (e) =&gt; {
+                        e.preventDefault();
+                        
+                        const productId = parseInt(nuevoBoton.getAttribute('data-product-id'), 10);
+                        const productTemplateId = parseInt(nuevoBoton.getAttribute('data-product-template-id') || productId, 10);
+                        const tokenOdoo = odoo.csrf_token || document.querySelector('input[name="csrf_token"]')?.value || '';
+                        nuevoBoton.disabled = true;
+                        const textoOriginal = nuevoBoton.innerText;
+                        nuevoBoton.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"/> Agregando...';
 
+                        const params = {
+                            product_template_id: productTemplateId,
+                            product_id: productId,
+                            quantity: 1,
+                            csrf_token: tokenOdoo
+                        };
+
+                        const ejecutarPeticion = async (bodyPayload) =&gt; {
+                            const res = await fetch('/shop/cart/add', {
+                                method: 'POST',
+                                credentials: 'same-origin',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-Requested-With': 'XMLHttpRequest'
+                                },
+                                body: JSON.stringify(bodyPayload)
+                            });
+
+                            if (!res.ok) {
+                                throw new Error('Error en la respuesta HTTP');
+                            }
+
+                            const data = await res.json();
+
+                            if (data.error) {
+                                throw new Error(data.error.message || 'Error de Odoo Server');
+                            }
+
+                            return data;
+                        }
+
+                        try {
+                            try {
+                                await ejecutarPeticion( { params: params } );
+                            }
+
+                            catch (primeraFalla) {
+                                await ejecutarPeticion({
+                                    jsonrpc: '2.0',
+                                    method: 'call',
+                                    params: params,
+                                    id: Date.now()
+                                });
+                            }
+                            
+                            await actualizarBadgeCarrito();
+                            mostrarResumenCompra(dataSuscripcion);
+
+                            mostrarNotificacionFlotante('¡Servicio de suscripción agregado al carrito exitosamente!', 'success');
+
+                        } catch (error) {
+                            console.error('Error al agregar al carrito:', error);
+                            mostrarNotificacionFlotante('Error de conexión. Intenta de nuevo.', 'error');
+                        } finally {
+                            nuevoBoton.disabled = false;
+                            nuevoBoton.innerText = textoOriginal;
+                        }
                     });
+                }
+
+                async function actualizarBadgeCarrito() {
+                    try {
+                        const response = await fetch('/shop/cart/quantity', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-Requested-With': 'XMLHttpRequest'
+                            },
+                            body: JSON.stringify({})
+                        });
+
+                        if (response.ok) {
+                            const contentType = response.headers.get("content-type");
+                            let qty = "0";
+                            
+                            if (contentType &amp;&amp; contentType.indexOf("application/json") !== -1) {
+                                const data = await response.json();
+                                qty = data.result || data; 
+                            }   else {
+                                qty = await response.text();
+                            }
+
+                            const badges = document.querySelectorAll('.my_cart_quantity');
+                            badges.forEach(badge =&gt; {
+                                badge.textContent = String(qty).trim();
+                                badge.classList.remove('d-none');
+                            });
+                        }
+                    }   catch (error) {
+                            console.error('Error al sincronizar el contador del carrito', error);
+                    }
+                }
+
+                function mostrarResumenCompra(dataSuscripcion) {
+                    const previo = document.getElementById('toast-resumen-carrito');
+                    if (previo) previo.remove();
+
+                    const toast = document.createElement('div');
+                    toast.id = 'toast-resumen-carrito';
+
+                    toast.style.cssText =  `
+                        position: fixed;
+                        top: 80px; 
+                        right: 20px;
+                        z-index: 1050;
+                        background-color: white;
+                        width: 320px;
+                        border-radius: 4px;
+                        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+                        display: flex;
+                        flex-direction: column;
+                        border: 1px solid #e9ecef;
+                        opacity: 0;
+                        transform: translateY(-20px);
+                        transition: all 0.3s ease;
+                    `;
+
+                    const idImagen = dataSuscripcion.productTemplateId || dataSuscripcion.productId;
+                    const urlImagen = `https://maplealarmsystems.odoo.com/web/image/product.template/${idImagen}/image_128`;
+
+                    toast.innerHTML = `
+                        <div class="resumen_suscripcion_hagalo_usted" style="padding: 16px; display: flex; gap: 15px; align-items: start;">
+                            <div style="position: relative; width: 64px; height: 64px; flex-shrink: 0;">
+                                <img srcset="${urlImagen}" alt="${dataSuscripcion.titulo}" style="width: 100%; height: 100%; object-fit: contain; border: 1px solid #f0f0f0; border-radius: 4px; padding: 4px;" loading="lazy"/>
+                                <span style="position: absolute; top: -6px; right: -6px; background-color: #dc3545; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</span>
+                            </div>
+                            <div style="flex-grow: 1; min-width: 0;">
+                                <div style="font-size: 0.85rem; color: #333; line-height: 1.3; margin-bottom: 4px;">${dataSuscripcion.titulo} - Suscripción</div>
+                            </div>
+                            <div style="font-size: 0.9rem; color: #333; white-space: nowrap; font-weight: 500;">
+                                ${dataSuscripcion.precio}
+                            </div>
+                        </div>
+                        <a href="/shop/cart" style="background-color: #2b2f36; color: white; text-align: center; padding: 12px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: background-color 0.2s;">
+                            Ver carrito
+                        </a>
+                    `;
+
+                    document.body.appendChild(toast);
+
+                    setTimeout(() =&gt; {
+                        toast.style.opacity = '1';
+                        toast.style.transform = 'translateY(0)';
+                    }, 10);
+
+                    setTimeout(() =&gt; {
+                        toast.style.opacity = '0';
+                        toast.style.transform = 'translateY(-20px)';
+                        setTimeout(() =&gt; toast.remove(), 300);
+                    }, 6000);
+                }
+
+                function mostrarNotificacionFlotante(mensaje, tipo = 'success') {
+                    let toastContainer = document.getElementById('toast-carrito-container');
+
+                    if (!toastContainer) {
+                        toastContainer = document.createElement('div');
+                        toastContainer.id = 'toast-carrito-container';
+                        toastContainer.style.cssText = `
+                            position: fixed;
+                            bottom: 20px;
+                            right: 20px;
+                            z-index: 1050;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                        `;
+                        document.body.appendChild(toastContainer);
+                    }
+
+                    const toast = document.createElement('div');
+                    const colorBg = tipo === 'success' ? '#198754' : '#dc3545';
+                    const icono = tipo === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+                    
+                    toast.style.cssText = `
+                        background-color: ${colorBg};
+                        color: white;
+                        padding: 15px 25px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        font-weight: 500;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: all 0.3s ease;
+                    `;
+                    
+                    toast.innerHTML = `<i class="fa-solid ${icono} fs-5"/> <span>${mensaje}</span>`;
+                    toastContainer.appendChild(toast);
+
+                    setTimeout(() =&gt; {
+                        toast.style.opacity = '1';
+                        toast.style.transform = 'translateY(0)';
+                    }, 10);
+
+                    setTimeout(() =&gt; {
+                        toast.style.opacity = '0';
+                        toast.style.transform = 'translateY(20px)';
+                        setTimeout(() =&gt; toast.remove(), 300);
+                    }, 3500);
                 }
 
                 document.addEventListener('DOMContentLoaded', async () =&gt; {
@@ -723,7 +1047,7 @@
                     subtitulo.innerText = `Mostrando opciones para ${tipoPropiedad} de tamaño ${respuestas.tamano_propiedad}`;
 
                     try {
-                        const respuestaAPI = await fetch('https://maple-carousel-api.vercel.app/api/productos');
+                        const respuestaAPI = await fetch('https://maple-carousel-api.vercel.app/api/productoshagaloustedmismo');
                         const productosOdoo = await respuestaAPI.json();
 
                         const productosEnriquecidos = productosOdoo.map(producto =&gt; {
@@ -752,12 +1076,12 @@
                         renderProductosRecomendados(productosOdoo);
                         mostrarMonitoreo24();
                         inicializarCarruselRecomendaciones();
-                        inicializarMonitoreo();
 
                         let productosFiltrados = [];
 
                         if (paqueteSeleccionado &amp;&amp; PERFILES_PAQUETES[paqueteSeleccionado]) {
                             const configPaquete = PERFILES_PAQUETES[paqueteSeleccionado];
+                            renderizarTarjetaSuscripcion(configPaquete.servicioDeSuscripcion);
                             const kitData = productosEnriquecidos.find(p =&gt; p.modelo === configPaquete.kitPrincipal);
 
                             if (kitData) {
@@ -845,25 +1169,25 @@
                     }
                 });
 
-                const grid = document.getElementById("gridProductosHagaloUsted");
+                // const grid = document.getElementById("gridProductosHagaloUsted");
 
-                if (grid) {
-                    const observerProductosHagaloUsted = new MutationObserver((mutations, obs) =&gt; {
-                        const productos = grid.querySelectorAll(":scope &gt; .col-md-6");
-                        console.log(productos);
-                        if (productos.length &gt; 0) {
-                            productos.forEach((producto, index) =&gt; {
-                                if (index &gt;=6) {
-                                    producto.style.display = "none";
-                                }
-                            });
-                            obs.disconnect();
-                        }
-                    });
-                    observerProductosHagaloUsted.observe(grid, {
-                        childList: true, subtree: true
-                    });
-                }
+                // if (grid) {
+                //     const observerProductosHagaloUsted = new MutationObserver((mutations, obs) =&gt; {
+                //         const productos = grid.querySelectorAll(":scope &gt; .col-md-6");
+                //         console.log(productos);
+                //         if (productos.length &gt; 0) {
+                //             productos.forEach((producto, index) =&gt; {
+                //                 if (index &gt;=6) {
+                //                     producto.style.display = "none";
+                //                 }
+                //             });
+                //             obs.disconnect();
+                //         }
+                //     });
+                //     observerProductosHagaloUsted.observe(grid, {
+                //         childList: true, subtree: true
+                //     });
+                // }
             </script>
         </xpath>
     </t>
