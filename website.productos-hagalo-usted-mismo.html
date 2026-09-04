@@ -2,60 +2,191 @@
     <t t-call="website.layout">
         <section class="py-5">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h2>Tu Sistema Ideal</h2>
-                    <p class="text-muted" id="subtituloFiltros">Cargando recomendaciones personalizadas...</p>
-                </div>
-                <div id="kitPrincipalContainer" class="mb-5"/>
-                <div class="alert alert-success text-center mb-5 d-none shadow-sm border-0" id="bannerMonitoreo" style="background-color: #e8f5e9; color: #1b5e20;">
-                    <h5 class="alert-heading fw-bold mb-1"><i class="fa-solid fa-shield-halved"/> Compatible con Monitoreo 24/7</h5>
-                    <p class="mb-0 small">Este sistema principal puede enlazarse a nuestra central de monitoreo profesional.</p>
-                </div>
-                <div class="text-center mb-4">
-                    <h3 id="tituloComplementos" class="fw-bold d-none">Complementos Sugeridos</h3>
-                </div>
-                <div id="gridProductosHagaloUsted" class="row"/>
-                <section id="seccionMonitoreo24" class="d-none mt-5 pt-5 border-top">
-                    <div class="row align-items-center g-4">
-                        <div class="col-lg-6">
-                            <h4 class="fw-bold mb-4">
-                                ¿Quieres agregar monitoreo de alarma 24/7?
-                            </h4>
-                            <p class="monitoreo-descripcion">
-                                Tu sistema permanece conectado a nuestra central de monitoreo
-                                las 24 horas. Ante una señal de alarma, emergencia o evento
-                                relevante, nuestro personal verifica la situación y aplica
-                                el protocolo correspondiente para ayudarte a responder con rapidez.
-                            </p>
-                            <div class="monitoreo-card" id="tarjetaSuscripcionMonitoreo">
+                <h1 class="main-title-diy">Tu Sistema Ideal</h1>
+                
+                <section id="seccionComposicionPaquete" class="mt-5 pt-5 border-top d-none">
+
+                    <h4 class="fw-bold mb-4">
+                        Productos incluidos en tu paquete
+                    </h4>
+
+                    <h6 class="fw-bold mb-4">
+                        Cómpralos todos, o elige los que necesites
+                    </h6>
+
+                    <div id="gridComposicionPaquete" class="composicion-paquete-grid">
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button id="btnAnadirPaquete" type="button" class="see_product px-5 py-3 fs-5" style="border-radius: 1rem;">
+                            <i class="fa-solid fa-cart-plus me-2"/>
+                            Añadir paquete al carrito
+                        </button>
+                    </div>
+
+                </section>
+                
+                <div id="upsellOverlay" class="upsell-overlay"/>
+
+                    <aside id="upsellDrawer" class="upsell-drawer" aria-hidden="true">
+
+                        <div class="upsell-drawer-header">
+                            <div>
+                                <span class="upsell-eyebrow">
+                                    TU SISTEMA IDEAL
+                                </span>
+                                <h3 id="upsellDrawerTitle">
+                                    Completa tu sistema
+                                </h3>
+                            </div>
+                            <button type="button" id="btnCerrarUpsell" class="upsell-close" aria-label="Cerrar">
+                                <i class="fa-solid fa-xmark"/>
+                            </button>
+                        </div>
+
+                        <div class="upsell-steps">
+                            <div id="upsellStep1" class="upsell-step active">
+                                <span>1</span>
+                                <small>Monitoreo</small>
+                            </div>
+                            <div class="upsell-step-line"/>
+                            <div id="upsellStep2" class="upsell-step">
+                                <span>2</span>
+                                <small>Complementos</small>
                             </div>
                         </div>
-                        <div class="col-lg-6 text-center">
-                            <img id="imagenMonitoreo" src="https://plus.unsplash.com/premium_photo-1748853983673-6e48199324fe?q=80&amp;w=774&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Monitoreo de alarma 24/7" class="img-fluid monitoreo-imagen"/>
+
+                        <div class="upsell-drawer-content">
+                            <section id="seccionSeleccionCiudad" class="upsell-panel">
+                                <div class="upsell-panel-intro">
+                                    <div class="upsell-icon">
+                                        <i class="fa-solid fa-location-dot"/>
+                                    </div>
+                                    <div>
+                                        <span class="upsell-kicker">
+                                            UBICACIÓN DEL SERVICIO
+                                        </span>
+                                        <h4>
+                                            ¿En qué ciudad se instalará el sistema?
+                                        </h4>
+                                        <p>
+                                            Selecciona tu ciudad para calcular el precio
+                                            del servicio de monitoreo.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="ciudad-selector">
+                                    <label for="inputCiudadMonitoreo" class="ciudad-label">
+                                        Ciudad
+                                    </label>
+                                    <div class="ciudad-combobox">
+                                        <input
+                                            id="inputCiudadMonitoreo"
+                                            type="text"
+                                            class="ciudad-input"
+                                            placeholder="Escribe tu ciudad..."
+                                            autocomplete="off"
+                                        />
+                                        <i class="fa-solid fa-magnifying-glass ciudad-search-icon"/>
+                                        <div
+                                            id="listaCiudadesMonitoreo"
+                                            class="ciudad-resultados d-none">
+                                        </div>
+                                    </div>
+                                    <p
+                                        id="ciudadSeleccionadaTexto"
+                                        class="ciudad-seleccionada d-none">
+                                    </p>
+                                    <button
+                                        id="btnConfirmarCiudad"
+                                        type="button"
+                                        class="upsell-btn-primary mt-4"
+                                        disabled="disabled">
+                                            Continuar
+                                        <i class="fa-solid fa-arrow-right"/>
+                                    </button>
+                                </div>
+                            </section>
+                            <section id="seccionMonitoreo24" class="upsell-panel">
+                                <div class="upsell-panel-intro">
+                                    <div class="upsell-icon">
+                                        <i class="fa-solid fa-shield-halved"/>
+                                    </div>
+                                    <div>
+                                        <span class="upsell-kicker">
+                                            PROTECCIÓN ADICIONAL
+                                        </span>
+                                        <h4>
+                                            ¿Quieres agregar monitoreo 24/7?
+                                        </h4>
+                                        <p>
+                                            Mantén tu sistema conectado a nuestra
+                                            central de monitoreo las 24 horas.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div id="tarjetaSuscripcionMonitoreo" class="upsell-subscription-card">
+                                </div>
+                                <div class="upsell-actions">
+                                    <button id="btnRechazarMonitoreo" type="button" class="upsell-btn-secondary">
+                                        No, gracias
+                                    </button>
+                                </div>
+                            </section>
+                            <section id="seccionRecomendaciones" class="upsell-panel d-none">
+                                <div class="upsell-panel-intro">
+                                    <div class="upsell-icon">
+                                        <i class="fa-solid fa-plus"/>
+                                    </div>
+                                    <div>
+                                        <span class="upsell-kicker">
+                                            COMPATIBLES CON TU SISTEMA
+                                        </span>
+                                        <h4>
+                                            Completa tu instalación
+                                        </h4>
+                                        <p>
+                                            Estos productos son compatibles con
+                                            el paquete que acabas de seleccionar.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="upsell-carousel">
+                                    <button type="button" id="btnRecomendacionesAnterior" class="upsell-carousel-btn" aria-label="Productos anteriores">
+                                        <i class="fa-solid fa-chevron-left"/>
+                                    </button>
+                                    <div id="carouselRecomendaciones" class="recomendaciones-track upsell-carousel-track">
+                                    </div>
+                                    <button type="button" id="btnRecomendacionesSiguiente" class="upsell-carousel-btn" aria-label="Productos siguientes">
+                                        <i class="fa-solid fa-chevron-right"/>
+                                    </button>
+                                </div>
+
+                                <div class="upsell-selection-footer">
+                                    <button id="btnAnadirSeleccionados" type="button" class="upsell-btn-primary">
+                                        <i class="fa-solid fa-cart-plus"/>
+                                        Agregar seleccionados
+                                    </button>
+                                    <button id="btnContinuarCarrito" type="button" class="upsell-btn-secondary">
+                                        Continuar al carrito
+                                        <i class="fa-solid fa-arrow-right"/>
+                                    </button>
+                                </div>
+                            </section>
                         </div>
-                    </div>
-                </section>
-                <section id="seccionRecomendaciones" class="mt-5 pt-5 border-top">
-                    <h5 class="fw-bold mb-4">
-                        Otros dispositivos que pueden interesarte
-                    </h5>
-                    <div class="recomendaciones-carousel">
-                        <button type="button" id="btnRecomendacionesAnterior" class="carousel-btn carousel-btn-left" aria-label="Productos anteriores">
-                            <i class="fa-solid fa-chevron-left"/>
-                        </button>
-                        <div id="carouselRecomendaciones" class="recomendaciones-track">
-                        </div>
-                        <button type="button" id="btnRecomendacionesSiguiente" class="carousel-btn carousel-btn-right" aria-label="Productos siguientes">
-                            <i class="fa-solid fa-chevron-right"/>
-                        </button>
-                    </div>
-                </section>
+                    </aside>
             </div>
         </section>
 
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
             <style type="text/css">
+                .main-title-diy {
+                    text-align: center;
+                }
+
                 .see_product {
                     border: none;
                     border-radius: 0.8rem;
@@ -102,69 +233,71 @@
                     text-align: center;
                 }
 
-                #seccionMonitoreo24 {
-                    margin-bottom: 4rem;
+                .composicion-paquete-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                    gap: 16px;
+                    width: 100%;
                 }
 
-                .monitoreo-descripcion {
-                    font-size: 1rem;
-                    line-height: 1.6;
-                    max-width: 750px;
-                }
-
-                .monitoreo-card {
-                    width: 180px;
-                    margin: 2rem auto 0;
-                    border: 1px solid #aaa;
-                    border-radius: 10px;
-                    overflow: hidden;
+                .composicion-paquete-item {
+                    position: relative;
+                    border: 1px solid #e1e5ea;
+                    border-radius: 7px;
                     background: #fff;
-                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+                    overflow: hidden;
+                    transition: transform 0.2s ease,
+                    box-shadow 0.2s ease;
                 }
 
-                .monitoreo-card-header {
-                    padding: 12px 14px 8px;
-                    border-bottom: 1px solid #c00;
+                .composicion-paquete-item:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
                 }
 
-                .monitoreo-card-header span {
+                .composicion-paquete-imagen {
+                    width: 100%;
+                    height: 240px;
+                    object-fit: contain;
+                    padding: 10px;
+                    background: #fafafa;
+                }
+
+                .composicion-paquete-body {
+                    padding: 14px;
+                }
+
+                .composicion-paquete-marca {
                     display: block;
                     font-size: 0.85rem;
-                    letter-spacing: 0.05em;
+                    font-weight: 700;
+                    margin-bottom: 3px;
                 }
 
-                .monitoreo-card-header strong {
-                    font-size: 1.25rem;
-                    display: inline-block;
-                    margin-top: 5px;
-                }
-
-                .monitoreo-card-header small {
+                .composicion-paquete-modelo {
+                    display: block;
                     font-size: 0.8rem;
+                    font-weight: 700;
+                    margin-bottom: 8px;
                 }
 
-                .monitoreo-card-body {
-                    padding: 10px 14px 14px;
+                .composicion-paquete-nombre {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    min-height: 45px;
                 }
 
-                .monitoreo-card-body p {
-                    font-size: 0.8rem;
-                    line-height: 1.25;
-                    min-height: 55px;
-                    margin-bottom: 12px;
+                .composicion-paquete-descripcion {
+                    color: #777;
+                    font-size: 0.85rem;
+                    line-height: 1.35;
+                    min-height: 65px;
                 }
 
-                .monitoreo-imagen {
-                    width: 100%;
-                    max-width: 500px;
-                    height: 310px;
-                    object-fit: cover;
-                }
-
-                .recomendaciones-carousel {
-                    position: relative;
-                    width: 100%;
-                    padding: 0 45px;
+                .composicion-paquete-precio {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin-top: 10px;
                 }
 
                 .recomendaciones-track {
@@ -182,6 +315,7 @@
                 }
 
                 .recomendacion-item {
+                    position: relative;
                     flex: 0 0 calc(25% - 9px);
                     min-width: 250px;
 
@@ -248,44 +382,501 @@
                     margin-top: 10px;
                 }
 
-                .carousel-btn {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
+                #imagenMonitoreo {
+                    border-radius: 1rem;
+                }
 
+                .qty-control {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background: #f8f9fa;
+                    border: 1px solid #dee2e6;
+                    border-radius: 6px;
+                    padding: 2px;
+                }
+
+                .qty-btn {
+                    background: none;
+                    border: none;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    color: #0D2E67;
+                    width: 30px;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                    border-radius: 4px;
+                }
+
+                .qty-btn:hover { background: #e2e6ea; }
+                .qty-input {
+                    width: 40px;
+                    text-align: center;
+                    border: none;
+                    background: transparent;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+
+                .custom-checkbox-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 10px;
+                    cursor: pointer;
+                }
+
+                .custom-checkbox {
+                    width: 18px;
+                    height: 18px;
+                    cursor: pointer;
+                    accent-color: #0D2E67;
+                }
+
+                .custom-checkbox-label {
+                    margin-left: 8px;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: #333;
+                    cursor: pointer;
+                }
+
+                .monitoreo-descripcion, .fw-bold.mb-4 {
+                    text-align: justify;
+                }
+
+                .fw-bold.mb-4 {
+                    text-align: center;
+                }
+
+                .upsell-overlay {
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.42);
+                    z-index: 1090;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition:
+                        opacity 0.25s ease,
+                        visibility 0.25s ease;
+                }
+
+                .upsell-overlay.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+
+                .upsell-drawer {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    width: min(560px, 100vw);
+                    height: 100vh;
+
+                    background: #ffffff;
+
+                    z-index: 1100;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    transform: translateX(100%);
+                    transition: transform 0.32s cubic-bezier(.4,0,.2,1);
+
+                    box-shadow: -12px 0 40px rgba(0,0,0,.16);
+                }
+
+                .upsell-drawer.active {
+                    transform: translateX(0);
+                }
+
+                .upsell-drawer-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    padding: 24px 26px 18px;
+
+                    border-bottom: 1px solid #edf0f4;
+                }
+
+                .upsell-eyebrow {
+                    display: block;
+
+                    font-size: .68rem;
+                    font-weight: 800;
+                    letter-spacing: .12em;
+
+                    color: #0D2E67;
+
+                    margin-bottom: 4px;
+                }
+
+                .upsell-drawer-header h3 {
+                    margin: 0;
+
+                    font-size: 1.35rem;
+                    font-weight: 750;
+
+                    color: #101828;
+                }
+
+                .upsell-close {
                     width: 38px;
                     height: 38px;
 
                     border: none;
                     border-radius: 50%;
 
-                    background: #fff;
-                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                    background: #f4f6f8;
+                    color: #344054;
 
-                    z-index: 5;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
                     cursor: pointer;
 
-                    transition: all 0.2s ease;
+                    transition: all .2s ease;
                 }
 
-                .carousel-btn:hover {
-                    transform: translateY(-50%) scale(1.08);
+                .upsell-close:hover {
+                    background: #e9edf2;
                 }
 
-                .carousel-btn-left {
+                .upsell-steps {
+                    display: flex;
+                    align-items: center;
+
+                    padding: 16px 26px;
+
+                    border-bottom: 1px solid #edf0f4;
+                }
+
+                .upsell-step {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    color: #98a2b3;
+
+                    transition: color .2s ease;
+                }
+
+                .upsell-step span {
+                    width: 27px;
+                    height: 27px;
+
+                    border-radius: 50%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    font-size: .75rem;
+                    font-weight: 700;
+
+                    background: #eef1f5;
+                    color: #667085;
+                }
+
+                .upsell-step small {
+                    font-size: .75rem;
+                    font-weight: 700;
+                }
+
+                .upsell-step.active {
+                    color: #0D2E67;
+                }
+
+                .upsell-step.active span {
+                    background: #0D2E67;
+                    color: white;
+                }
+
+                .upsell-step.completed span {
+                    background: #198754;
+                    color: white;
+                }
+
+                .upsell-step-line {
+                    flex: 1;
+                    height: 1px;
+
+                    background: #dfe3e8;
+
+                    margin: 0 12px;
+                }
+
+                .upsell-drawer-content {
+                    flex: 1;
+                    overflow-y: auto;
+
+                    padding: 26px;
+                }
+
+                .upsell-panel {
+                    width: 100%;
+                }
+
+                .upsell-panel-intro {
+                    display: flex;
+                    gap: 14px;
+
+                    margin-bottom: 24px;
+                }
+
+                .upsell-icon {
+                    width: 44px;
+                    height: 44px;
+
+                    flex: 0 0 44px;
+
+                    border-radius: 12px;
+
+                    background: #eef4ff;
+                    color: #0D2E67;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    font-size: 1.15rem;
+                }
+
+                .upsell-kicker {
+                    display: block;
+
+                    color: #667085;
+
+                    font-size: .68rem;
+                    font-weight: 800;
+                    letter-spacing: .08em;
+
+                    margin-bottom: 3px;
+                }
+
+                .upsell-panel-intro h4 {
+                    margin: 0 0 7px;
+
+                    color: #101828;
+
+                    font-size: 1.18rem;
+                    font-weight: 750;
+                }
+
+                .upsell-panel-intro p {
+                    margin: 0;
+
+                    color: #667085;
+
+                    font-size: .88rem;
+                    line-height: 1.5;
+                }
+
+
+                .upsell-subscription-card {
+                    width: 100%;
+                }
+
+                .upsell-subscription-card .monitoreo-card {
+                    width: 100%;
+                    margin: 0;
+
+                    border: 1px solid #dfe4ea;
+                    border-radius: 14px;
+
+                    box-shadow: none;
+
+                    overflow: hidden;
+                }
+
+                .upsell-subscription-card .monitoreo-card-header {
+                    padding: 18px 20px;
+
+                    border-bottom: 1px solid #edf0f4;
+                }
+
+                .upsell-subscription-card .monitoreo-card-header span {
+                    font-size: .85rem;
+                    font-weight: 700;
+                    color: #667085;
+                }
+
+                .upsell-subscription-card .monitoreo-card-header strong {
+                    font-size: 1.45rem;
+                    color: #101828;
+                }
+
+                .upsell-subscription-card .monitoreo-card-body {
+                    padding: 18px 20px 20px;
+                }
+
+                .upsell-subscription-card .monitoreo-card-body p {
+                    min-height: auto;
+
+                    font-size: .88rem;
+                    line-height: 1.5;
+
+                    color: #667085;
+                }
+
+                .upsell-actions {
+                    margin-top: 18px;
+                }
+
+                .upsell-btn-primary,
+                .upsell-btn-secondary {
+                    width: 100%;
+
+                    min-height: 48px;
+
+                    border-radius: 10px;
+
+                    font-size: .9rem;
+                    font-weight: 700;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 9px;
+
+                    cursor: pointer;
+
+                    transition: all .2s ease;
+                }
+
+                .upsell-btn-primary {
+                    border: 1px solid #0D2E67;
+
+                    background: #0D2E67;
+                    color: white;
+                }
+
+                .upsell-btn-primary:hover {
+                    background: #08214b;
+                    transform: translateY(-1px);
+                }
+
+                .upsell-btn-secondary {
+                    border: 1px solid #d0d5dd;
+
+                    background: white;
+                    color: #344054;
+                }
+
+                .upsell-btn-secondary:hover {
+                    background: #f8fafc;
+                }
+
+                .upsell-carousel {
+                    position: relative;
+
+                    width: 100%;
+
+                    padding: 0 34px;
+                }
+
+                .upsell-carousel-track {
+                    gap: 12px;
+
+                    overflow-x: auto;
+                }
+
+                .upsell-carousel-track .recomendacion-item {
+                    flex: 0 0 78%;
+                    min-width: 0;
+
+                    box-shadow: none;
+                }
+
+                .upsell-carousel-track .recomendacion-imagen {
+                    height: 180px;
+                }
+
+                .upsell-carousel-track .recomendacion-body {
+                    padding: 12px;
+                }
+
+                .upsell-carousel-track .recomendacion-nombre {
+                    font-size: .9rem;
+                }
+
+                .upsell-carousel-track .recomendacion-descripcion {
+                    font-size: .78rem;
+                }
+
+                .upsell-carousel-track .recomendacion-precio {
+                    font-size: 1rem;
+                }
+
+                .upsell-carousel-btn {
+                    position: absolute;
+
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    width: 32px;
+                    height: 32px;
+
+                    border-radius: 50%;
+
+                    border: 1px solid #d0d5dd;
+
+                    background: white;
+                    color: #0D2E67;
+
+                    z-index: 5;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    cursor: pointer;
+
+                    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+                }
+
+                .upsell-carousel-btn:first-child {
                     left: 0;
                 }
 
-                .carousel-btn-right {
+                .upsell-carousel-btn:last-child {
                     right: 0;
                 }
 
-                #imagenMonitoreo {
-                    border-radius: 1rem;
+                .upsell-selection-footer {
+                    margin-top: 24px;
+
+                    padding-top: 20px;
+
+                    border-top: 1px solid #edf0f4;
+                }
+
+                #btnContinuarCarrito {
+                    margin-top: 10px;
+                }
+
+                body.upsell-open {
+                    overflow: hidden;
+                }
+
+                .composicion-paquete-item:first-child .qty-control, .composicion-paquete-item:first-child .custom-checkbox-container {
+                    pointer-events: none;
+                    opacity: 0.6;
+                    filter: grayscale(100%);
+                    user-select: none;
+                }
+
+                .composicion-paquete-item:first-child .qty-control:hover, .composicion-paquete-item:first-child .custom-checkbox-container:hover {
+                    cursor: not-allowed;
                 }
 
                 @media (max-width: 991px) {
+                    .composicion-paquete-grid {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                    }
 
                     .recomendacion-item {
                         flex: 0 0 calc(50% - 6px);
@@ -296,15 +887,19 @@
                     }
                 }
 
-
                 @media (max-width: 575px) {
+
+                    .composicion-paquete-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .composicion-paquete-imagen {
+                        height: 220px;
+                    }
+                    
 
                     .recomendaciones-carousel {
                         padding: 0 35px;
-                    }
-
-                    .recomendacion-item {
-                        flex: 0 0 85%;
                     }
 
                     .monitoreo-imagen {
@@ -328,12 +923,68 @@
                         display: flex;
                         flex-direction: column;
                     }
-                }   
+
+                    .upsell-drawer {
+                        width: 100%;
+                    }
+
+                    .upsell-drawer-header {
+                        padding: 18px 18px 15px;
+                    }
+
+                    .upsell-drawer-content {
+                        padding: 20px 18px;
+                    }
+
+                    .upsell-steps {
+                        padding: 14px 18px;
+                    }
+
+                    .upsell-carousel-track .recomendacion-item {
+                        flex: 0 0 94%;
+                    }
+                }
+
+                @media (max-width: 370px) {
+                    .recomendaciones-carousel {
+                        padding: 0 0.4rem;
+                    }
+                }
             </style>
         </xpath>
 
         <xpath expr="//head" position="inside">
             <script type="text/javascript">
+                const COMPOSICION_PAQUETES_DIY = {
+                    "AXHOME": [
+                        { modelo: "DS-PA201P-16WB", cantidad: 1 },
+                        { modelo: "DS-PD201P10-WB", cantidad: 1 },
+                        { modelo: "DS-PD201MC-WB", cantidad: 2 },
+                        { modelo: "DS-PKF201-WB", cantidad: 1 },
+                        { modelo: "DS-PS201-WB", cantidad: 1 }
+                    ],
+                    "AXPRO": [
+                        { modelo: "DS-PWA48-E-WB", cantidad: 1 },
+                        { modelo: "DS-PDP15P-EG2-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PDMCS-EG2-WB(B)", cantidad: 2 },
+                        { modelo: "DS-PKF1-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PS1-E-WB/R", cantidad: 1 }
+                    ],
+                    "SERIE NEO": [
+                        { modelo: "NEO-ALFA-RF", cantidad: 1 },
+                        { modelo: "SD-30W", cantidad: 1 },
+                        { modelo: "CBAT45AH", cantidad: 2 },
+                        { modelo: "PG9303", cantidad: 1 },
+                        { modelo: "PGP9914", cantidad: 1 }
+                    ],
+                    "QOLSYS": [
+                        { modelo: "IQP4005", cantidad: 1 },
+                        { modelo: "PG9901 BATT", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 2 },
+                        { modelo: "PGP9914", cantidad: 1 }
+                    ]
+                };
+
                 const PERFILES_PAQUETES = {
                     "hik_axhome_1": {
                         kitPrincipal: "AXHOME",
@@ -356,7 +1007,7 @@
                         servicioDeSuscripcion: "Via Internet"
                     },
                     "dsc_neo_1": {
-                        kitPrincipal: "SERIENEO",
+                        kitPrincipal: "SERIE NEO",
                         sugerencias: ["PG9939",
                         "PG9920",
                         "PG9922",
@@ -404,7 +1055,7 @@
                         servicioDeSuscripcion: "Via Internet"
                     },
                     "dsc_neo_2": {
-                        kitPrincipal: "SERIENEO",
+                        kitPrincipal: "SERIE NEO",
                         sugerencias: ["PG9939",
                         "PG9920",
                         "PG9922",
@@ -616,21 +1267,425 @@
                         categoriasDestino: ["11", "12"]
                     }
                 };
-                const PRODUCTOS_RECOMENDADOS = [
-                    "DS-PD201PC10-WB",
-                    "DS-PC201N",
-                    "DS-PDCM15PF-IR",
-                    "DS-PS403I-WB",
-                    "DS-PDP18-HM-WB",
-                    "DS-PDPC12P-EG2-WB(B)",
-                    "PG9939",
-                    "PG9922",
-                    "PG9938",
-                    "PG9936",
-                    "PG9312",
+
+                const CIUDADES_MONITOREO = [
+                    {
+                        id: 'cdmx',
+                        nombre: 'Ciudad de México',
+                        estado: 'Ciudad de México',
+                        multiplicador: 1.10
+                    },
+                    {
+                        id: 'chihuahua',
+                        nombre: 'Chihuahua',
+                        estado: 'Chihuahua',
+                        multiplicador: 1.05
+                    },
+                    {
+                        id: 'juarez',
+                        nombre: 'Ciudad Juárez',
+                        estado: 'Chihuahua',
+                        multiplicador: 1.08
+                    },
+                    {
+                        id: 'monterrey',
+                        nombre: 'Monterrey',
+                        estado: 'Nuevo León',
+                        multiplicador: 1.15
+                    },
+                    {
+                        id: 'guadalajara',
+                        nombre: 'Guadalajara',
+                        estado: 'Jalisco',
+                        multiplicador: 1.12
+                    }
                 ];
 
-                function renderProductosRecomendados(productos) {
+                let ciudadMonitoreoSeleccionada = null;
+                let tipoServicioMonitoreoActual = null;
+                let productosOdooActuales = [];
+
+                async function agregarProductoAlCarrito(productId, cantidad = 1, actualizarBadge = true) {
+                    const id = parseInt(productId, 10);
+                    const qty = parseInt(cantidad, 10);
+
+                    if (!Number.isInteger(id) || id &lt;= 0) {
+                        throw new Error(`ID de producto inválido: ${productId}`);
+                    }
+
+                    if (!Number.isInteger(qty) || qty &lt;= 0) {
+                        throw new Error(`Cantidad inválida: ${cantidad}`);
+                    }
+
+                    const tokenOdoo = window.odoo?.csrf_token || document.querySelector('input[name="csrf_token"]')?.value || '';
+
+                    const params = {
+                        product_template_id: id,
+                        product_id: id,
+                        quantity: qty,
+                        csrf_token: tokenOdoo
+                    };
+
+                    console.log('Agregando producto:', params);
+
+                    const response = await fetch('/shop/cart/add', {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        body: JSON.stringify({
+                            params: params
+                        })
+                    });
+
+                    let data = null;
+
+                    try {
+                        data = await response.json();
+                    } catch (jsonError) {
+                        throw new Error(
+                            `Odoo devolvió una respuesta que no es JSON. HTTP ${response.status}`
+                        );
+                    }
+
+                    console.log('Respuesta de Odoo:', data);
+
+                    if (!response.ok) {
+                        throw new Error(
+                            data?.error?.message ||
+                            data?.message ||
+                            `HTTP ${response.status}`
+                        );
+                    }
+
+                    if (data?.error) {
+                        throw new Error(
+                            data.error.message ||
+                            data.error.data?.message ||
+                            'Odoo rechazó la operación'
+                        );
+                    }
+
+                    if (data?.result?.error) {
+                        throw new Error(
+                            data.result.error.message ||
+                            'Odoo rechazó la operación'
+                        );
+                    }
+
+                    if (actualizarBadge) {
+                        await actualizarBadgeCarrito();
+                    }
+
+                    return data;
+                }
+
+                function renderComposicionPaquete(nombrePaquete, productosEnriquecidos) {
+
+                    const seccion =
+                        document.getElementById('seccionComposicionPaquete');
+
+                    const grid =
+                        document.getElementById('gridComposicionPaquete');
+
+                    if (!seccion || !grid) {
+                        return;
+                    }
+
+                    const composicion =
+                        COMPOSICION_PAQUETES_DIY[nombrePaquete];
+
+                    if (!composicion || composicion.length === 0) {
+
+                        seccion.classList.add('d-none');
+
+                        return;
+                    }
+
+                    const productosPaquete = [];
+
+                    composicion.forEach(item =&gt; {
+
+                        const producto =
+                            productosEnriquecidos.find(
+                                p =&gt; p.modelo === item.modelo
+                            );
+
+                        if (!producto) {
+
+                            console.warn(
+                                `El modelo ${item.modelo} de ${nombrePaquete} no fue encontrado en la API.`
+                            );
+
+                            return;
+                        }
+
+                        productosPaquete.push({
+                            ...producto,
+                            cantidadInicial: item.cantidad
+                        });
+                    });
+
+                    if (productosPaquete.length === 0) {
+
+                        seccion.classList.add('d-none');
+
+                        return;
+                    }
+
+                    seccion.classList.remove('d-none');
+
+                    let html = '';
+
+                    productosPaquete.forEach(producto =&gt; {
+
+                        const precio =
+                            Number(producto.price || 0) * 1.08;
+
+                        const urlSitioWeb = producto.websiteUrl;
+
+                        let urlReal = formatearURLProducto(urlSitioWeb, producto.id);
+
+                        const cantidadInicial =
+                            Number(producto.cantidadInicial) || 1;
+
+                        html += `
+                            <div class="composicion-paquete-item">
+
+                                <a href="${urlReal}" style="                                         position:absolute;                                         top:0;                                         right:0;                                         bottom:0;                                         left:0;                                         z-index:1;                                     " aria-label="Ver ${producto.productName}">
+                                </a>
+
+                                <img srcset="${producto.imgURL}" class="composicion-paquete-imagen" alt="${producto.productName}" loading="lazy"/>
+
+                                <div class="composicion-paquete-body">
+
+                                    <span class="composicion-paquete-marca">
+                                        ${producto.marca}
+                                    </span>
+
+                                    <span class="composicion-paquete-modelo">
+                                        ${producto.modelo}
+                                    </span>
+
+                                    <div class="composicion-paquete-nombre">
+                                        ${producto.productName}
+                                    </div>
+
+                                    <p class="composicion-paquete-descripcion">
+                                        ${producto.descripcion}
+                                    </p>
+
+                                    <div class="composicion-paquete-precio">
+                                        $${precio.toLocaleString(
+                                            'es-MX',
+                                            {
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2
+                                            }
+                                        )} MXN
+                                    </div>
+
+                                    <div class="qty-control mb-2" style="                                             position:relative;                                             z-index:2;                                         ">
+
+                                        <button type="button" class="qty-btn btn-minus-composicion" data-id="${producto.id}">
+                                            -
+                                        </button>
+
+                                        <input type="number" id="qty-composicion-${producto.id}" class="qty-input" value="${cantidadInicial}" min="1" readonly="readonly"/>
+
+                                        <button type="button" class="qty-btn btn-plus-composicion" data-id="${producto.id}">
+                                            +
+                                        </button>
+
+                                    </div>
+
+                                    <button type="button" class="see_product d-block mt-3 w-100 btn-agregar-composicion" style="                                             position:relative;                                             z-index:2;                                         " data-product-id="${producto.id}">
+                                        Añadir al carrito
+                                    </button>
+
+                                    <label class="custom-checkbox-container" style="                                             position:relative;                                             z-index:2;                                         ">
+
+                                        <input type="checkbox" class="custom-checkbox select-composicion-cb" value="${producto.id}" checked="checked"/>
+
+                                        <span class="custom-checkbox-label">
+                                            Seleccionado
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+                        `;
+                    });
+
+                    grid.innerHTML = html;
+
+                    inicializarContadoresComposicion();
+
+                    inicializarBotonesComposicion();
+
+                    inicializarBotonAnadirPaquete();
+
+                }
+
+                function inicializarContadoresComposicion() {
+                    document
+                        .querySelectorAll('.btn-minus-composicion')
+                        .forEach(btn =&gt; {
+                            btn.addEventListener('click', e =&gt; {
+                                e.preventDefault();
+                                e.stopPropagation();
+
+                                const id = btn.getAttribute('data-id');
+
+                                const input = document.getElementById(`qty-composicion-${id}`);
+
+                                if (input &amp;&amp; parseInt(input.value, 10) &gt; 1) {
+                                    input.value = parseInt(input.value, 10) - 1;
+                                }
+                            });
+                        });
+                    
+                    document
+                        .querySelectorAll('.btn-plus-composicion')
+                        .forEach(btn =&gt; {
+                            btn.addEventListener('click', e =&gt; {
+                                e.preventDefault();
+                                e.stopPropagation();
+
+                                const id = btn.getAttribute('data-id');
+
+                                const input = document.getElementById(`qty-composicion-${id}`);
+
+                                if (input) {
+                                    input.value = parseInt(input.value, 10) + 1;
+                                }
+                            });
+                        });
+                }
+
+                function inicializarBotonesComposicion() {
+                    document
+                        .querySelectorAll('.btn-agregar-composicion')
+                        .forEach(boton =&gt; {
+                            boton.addEventListener('click', async e =&gt; {
+                                e.preventDefault();
+                                e.stopPropagation();
+
+                                const productId = parseInt(boton.getAttribute('data-product-id'), 10);
+
+                                const inputQty = document.getElementById(`qty-composicion-${productId}`);
+
+                                const cantidad = 
+                                    inputQty
+                                        ? parseInt(inputQty.value, 10)
+                                        : 1;
+                                
+                                boton.disabled = true;
+
+                                const textoOriginal =
+                                    boton.innerText;
+                                
+                                boton.innerHTML =
+                                    '<i class="fa-solid fa-circle-notch fa-spin"/> Agregando...';
+                                
+                                try {
+                                    await agregarProductoAlCarrito(
+                                        productId,
+                                        cantidad
+                                    );
+
+                                    mostrarNotificacionFlotante(
+                                        '¡Producto agregado al carrito!', 'success'
+                                    )
+                                }   catch (error) {
+                                        console.error('Error al agregar producto de composición:', error ); 
+                                        mostrarNotificacionFlotante( 'Error al agregar el producto.', 'error' );
+                                }   finally {
+                                        boton.disabled = false;
+                                        boton.innerText = textoOriginal;
+                                }
+                            
+                            });
+                        });
+                }
+
+                function inicializarBotonAnadirPaquete() {
+                    const boton = document.getElementById('btnAnadirPaquete');
+
+                    if(!boton)  {
+                        return;
+                    }
+
+                    const nuevoBoton = boton.cloneNode(true);
+
+                    boton.parentNode.replaceChild(nuevoBoton, boton);
+
+                    nuevoBoton.addEventListener('click', async e =&gt; {
+                        e.preventDefault();
+
+                        const checkboxes = document.querySelectorAll('.select-composicion-cb:checked');
+
+                        if (checkboxes.length === 0) {
+                            mostrarNotificacionFlotante(
+                                'Selecciona al menos un producto.',
+                                'error'
+                            );
+
+                            return;
+                        }
+
+                        nuevoBoton.disabled = true;
+
+                        const textoOriginal = nuevoBoton.innerText;
+
+                        nuevoBoton.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"/> Agregando...';
+
+                        try {
+                            for (const checkbox of checkboxes) {
+                                const productId = parseInt( checkbox.value, 10 ); 
+                                const inputQty = document.getElementById( `qty-composicion-${productId}` ); 
+                                const cantidad = inputQty ? parseInt( inputQty.value, 10 ) : 1; 
+                                await agregarProductoAlCarrito(productId, cantidad, false);
+                            }
+
+                            await actualizarBadgeCarrito();
+                            mostrarNotificacionFlotante('¡Productos del paquete añadidos al carrito exitosamente!', 'success');
+
+                            abrirUpsellDrawer();
+                        }   catch (error) {
+                                console.error(
+                                    'Error al agregar paquete:', error
+                                )
+
+                                mostrarNotificacionFlotante( 'Error al agregar los productos del paquete.', 'error' );
+                        }   finally {
+                                nuevoBoton.disabled = false;
+
+                                nuevoBoton.innerText = textoOriginal;
+                        }
+                    });
+                }
+
+                function normalizarTexto(texto) {
+                    return String(texto || '')
+                        .normalize('NFD')
+                        .replace(/[\u0300-\u036f]/g, '')
+                        .toLowerCase()
+                        .trim();
+                }
+
+                function inicializarSelectorCiudad() {
+                    const input = document.getElementById('inputCiudadMonitoreo');
+                    const lista = document.getElementById('listaCiudadesMonitoreo');
+                    const boton = document.getElementById('btnConfirmarCiudad');
+                    const textoSeleccion = document.getElementById('ciudadSeleccionadaTexto');
+                }
+
+                function renderProductosRecomendados(productosAVisualizar) {
 
                     const carousel = document.getElementById(
                         'carouselRecomendaciones'
@@ -640,80 +1695,79 @@
                         return;
                     }
 
-                    const productosRecomendados = productos.filter(producto =&gt;
-                        PRODUCTOS_RECOMENDADOS.includes(producto.default_code)
-                    );
-
-                    if (productosRecomendados.length === 0) {
-                        carousel.innerHTML = '';
+                    if (!productosAVisualizar || productosAVisualizar.length === 0) {
+                        carousel.innerHTML = '<p class="text-center w-100 p-4">No se encontraron recomendaciones.</p>';
                         return;
                     }
 
                     let html = '';
-
-                    productosRecomendados.forEach(producto =&gt; {
-
-                        const precio = Number(producto.list_price || 0) * 1.08;
-
-                        const imagen =
-                            `https://maplealarmsystems.odoo.com/web/image/product.template/${producto.id}/image_512`;
-
-                        const marca =
-                            producto.description_purchase || 'HIKVISION';
-
-                        const modelo =
-                            producto.default_code || '';
-
-                        const nombre =
-                            producto.name || '';
-
-                        const descripcion =
-                            producto.description_sale || '';
-
-                        const url =
-                            producto.website_url || '#';
-
+                    productosAVisualizar.forEach(producto =&gt; {
+                        const precio = Number(producto.price || 0) * 1.08;
+                        const urlSitioWeb = producto.websiteUrl;
+                        let urlReal = formatearURLProducto(urlSitioWeb, producto.id);
                         html += `
                             <div class="recomendacion-item">
-
-                                <img srcset="${imagen}" class="recomendacion-imagen" alt="${nombre}" loading="lazy"/>
-
+                                <a href="${urlReal}" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1;" aria-label="Ver ${producto.productName}"/>
+                                <img srcset="${producto.imgURL}" class="recomendacion-imagen" alt="${producto.productName}" loading="lazy"/>
                                 <div class="recomendacion-body">
-
-                                    <span class="recomendacion-marca">
-                                        ${marca}
-                                    </span>
-
-                                    <span class="recomendacion-modelo">
-                                        ${modelo}
-                                    </span>
-
-                                    <div class="recomendacion-nombre">
-                                        ${nombre}
-                                    </div>
-
-                                    <p class="recomendacion-descripcion">
-                                        ${descripcion}
-                                    </p>
-
+                                    <span class="recomendacion-marca">${producto.marca}</span>
+                                    <span class="recomendacion-modelo">${producto.modelo}</span>
+                                    <div class="recomendacion-nombre">${producto.productName}</div>
+                                    <p class="recomendacion-descripcion">${producto.descripcion}</p>
                                     <div class="recomendacion-precio">
-                                        $${precio.toLocaleString('es-MX', {
-                                            minimumFractionDigits: 2,
-                                            maximumFractionDigits: 2
-                                        })} MXN
+                                        $${precio.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MXN
                                     </div>
-
-                                    <a href="${url}" class="see_product d-block mt-3">
-                                        Ver Producto
-                                    </a>
-
+                                    <div class="qty-control mb-2" style="position: relative; z-index: 2;">
+                                        <button type="button" class="qty-btn btn-minus" data-id="${producto.id}">-</button>
+                                        <input type="number" id="qty-${producto.id}" class="qty-input" value="1" min="1" readonly="readonly"/>
+                                        <button type="button" class="qty-btn btn-plus" data-id="${producto.id}">+</button>
+                                    </div>
+                                    <button type="button" class="see_product d-block mt-3 w-100 btn-agregar-carrusel" style="position: relative; z-index: 2;" data-product-id="${producto.id}">
+                                        Añadir al carrito
+                                    </button>
+                                    <label class="custom-checkbox-container" style="position: relative; z-index: 2;">
+                                        <input type="checkbox" class="custom-checkbox select-product-cb" value="${producto.id}"/>
+                                        <span class="custom-checkbox-label">Seleccionado</span>
+                                    </label>
                                 </div>
-
                             </div>
                         `;
                     });
 
                     carousel.innerHTML = html;
+                    inicializarContadores();
+                    inicializarBotonesCarrusel();
+                }
+
+                function inicializarBotonesCarrusel() {
+                    const botones = document.querySelectorAll('.btn-agregar-carrusel');
+
+                    botones.forEach(boton =&gt; {
+                        boton.addEventListener('click', async (e) =&gt; {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            
+                            const productId = parseInt(boton.getAttribute('data-product-id'), 10);
+
+                            const inputQty = document.getElementById(`qty-${productId}`);
+                            const cantidadSeleccionada = inputQty ? parseInt(inputQty.value, 10) : 1;
+
+                            boton.disabled = true;
+                            const textoOriginal = boton.innerText;
+                            boton.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"/> Agregando...';
+
+                            try {
+                                await agregarProductoAlCarrito(productId, cantidadSeleccionada);
+                                mostrarNotificacionFlotante('¡Producto agregado al carrito!', 'success');
+                            }   catch (error) {
+                                console.error('Error al agregar producto del carrusel:', error);
+                                mostrarNotificacionFlotante('Error al agregar el producto.', 'error');
+                            }   finally {
+                                boton.disabled = false;
+                                boton.innerText = textoOriginal;
+                            }
+                        });
+                    });
                 }
 
                 function inicializarCarruselRecomendaciones() {
@@ -754,25 +1808,20 @@
                 }
 
                 function mostrarMonitoreo24() {
-
                     const seccion =
                         document.getElementById('seccionMonitoreo24');
-
                     if (!seccion) {
                         return;
                     }
-
                     seccion.classList.remove('d-none');
                 }
 
                 function renderizarTarjetaSuscripcion(tipoServicio) {
                     const contenedor = document.getElementById('tarjetaSuscripcionMonitoreo');
-
                     if (!contenedor || !tipoServicio || !INFO_SUSCRIPCIONES[tipoServicio]) {
                         if (contenedor) contenedor.style.display = 'none';
                         return;
                     }
-
                     const dataSuscripcion = INFO_SUSCRIPCIONES[tipoServicio];
 
                     contenedor.innerHTML = `
@@ -785,9 +1834,7 @@
                             <p id="descripcionMonitoreo">
                                 ${dataSuscripcion.descripcion}
                             </p>
-                            <button id="btnAgregarMonitoreo" type="button" class="btn btn-success w-100" 
-                                    data-product-id="${dataSuscripcion.productId}"
-                                    data-product-template-id="${dataSuscripcion.productTemplateId || dataSuscripcion.productId}">
+                            <button id="btnAgregarMonitoreo" type="button" class="btn btn-success w-100" data-product-id="${dataSuscripcion.productId}" data-product-template-id="${dataSuscripcion.productTemplateId || dataSuscripcion.productId}">
                                 AGREGAR
                             </button>
                         </div>
@@ -809,69 +1856,66 @@
                     boton.parentNode.replaceChild(nuevoBoton, boton);
 
                     nuevoBoton.addEventListener('click', async (e) =&gt; {
+
                         e.preventDefault();
-                        
-                        const productId = parseInt(nuevoBoton.getAttribute('data-product-id'), 10);
-                        const productTemplateId = parseInt(nuevoBoton.getAttribute('data-product-template-id') || productId, 10);
-                        const tokenOdoo = odoo.csrf_token || document.querySelector('input[name="csrf_token"]')?.value || '';
-                        nuevoBoton.disabled = true;
-                        const textoOriginal = nuevoBoton.innerText;
-                        nuevoBoton.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"/> Agregando...';
+                        e.stopPropagation();
 
-                        const params = {
-                            product_template_id: productTemplateId,
-                            product_id: productId,
-                            quantity: 1,
-                            csrf_token: tokenOdoo
-                        };
+                        const productId = parseInt(
+                            nuevoBoton.getAttribute('data-product-id'),
+                            10
+                        );
 
-                        const ejecutarPeticion = async (bodyPayload) =&gt; {
-                            const res = await fetch('/shop/cart/add', {
-                                method: 'POST',
-                                credentials: 'same-origin',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'X-Requested-With': 'XMLHttpRequest'
-                                },
-                                body: JSON.stringify(bodyPayload)
-                            });
+                        if (!productId) {
+                            console.error(
+                                'ID de monitoreo inválido:',
+                                nuevoBoton.getAttribute('data-product-id')
+                            );
 
-                            if (!res.ok) {
-                                throw new Error('Error en la respuesta HTTP');
-                            }
+                            mostrarNotificacionFlotante(
+                                'No se pudo identificar el servicio de monitoreo.',
+                                'error'
+                            );
 
-                            const data = await res.json();
-
-                            if (data.error) {
-                                throw new Error(data.error.message || 'Error de Odoo Server');
-                            }
-
-                            return data;
+                            return;
                         }
 
+                        nuevoBoton.disabled = true;
+
+                        const textoOriginal =
+                            nuevoBoton.innerText;
+
+                        nuevoBoton.innerHTML =
+                            '<i class="fa-solid fa-circle-notch fa-spin"/> Agregando...';
+
                         try {
-                            try {
-                                await ejecutarPeticion( { params: params } );
-                            }
 
-                            catch (primeraFalla) {
-                                await ejecutarPeticion({
-                                    jsonrpc: '2.0',
-                                    method: 'call',
-                                    params: params,
-                                    id: Date.now()
-                                });
-                            }
-                            
-                            await actualizarBadgeCarrito();
-                            mostrarResumenCompra(dataSuscripcion);
+                            await agregarProductoAlCarrito(
+                                productId,
+                                1
+                            );
 
-                            mostrarNotificacionFlotante('¡Servicio de suscripción agregado al carrito exitosamente!', 'success');
+                            mostrarNotificacionFlotante(
+                                '¡Servicio de monitoreo agregado al carrito!',
+                                'success'
+                            );
+
+                            mostrarPasoUpsell(2);
 
                         } catch (error) {
-                            console.error('Error al agregar al carrito:', error);
-                            mostrarNotificacionFlotante('Error de conexión. Intenta de nuevo.', 'error');
+
+                            console.error(
+                                'Error al agregar monitoreo:',
+                                error
+                            );
+
+                            mostrarNotificacionFlotante(
+                                error.message ||
+                                'No se pudo agregar el monitoreo al carrito.',
+                                'error'
+                            );
+
                         } finally {
+
                             nuevoBoton.disabled = false;
                             nuevoBoton.innerText = textoOriginal;
                         }
@@ -895,7 +1939,7 @@
                             
                             if (contentType &amp;&amp; contentType.indexOf("application/json") !== -1) {
                                 const data = await response.json();
-                                qty = data.result || data; 
+                                qty = data.result ?? data; 
                             }   else {
                                 qty = await response.text();
                             }
@@ -978,7 +2022,7 @@
                         toastContainer.id = 'toast-carrito-container';
                         toastContainer.style.cssText = `
                             position: fixed;
-                            bottom: 20px;
+                            bottom: 7rem;
                             right: 20px;
                             z-index: 1050;
                             display: flex;
@@ -1022,29 +2066,211 @@
                     }, 3500);
                 }
 
+                function formatearURLProducto(website_url, productId) {
+                    if (!website_url || typeof website_url !== 'string') {
+                        return `/shop/product/${productId}`;
+                    }
+
+                    const urlLimpia = website_url.trim();
+
+                    if (urlLimpia.startsWith('http://') || urlLimpia.startsWith('https://')) {
+                        return urlLimpia;
+                    }
+
+                    return urlLimpia.replace(/^\/+/, '');
+                }
+
+                function inicializarContadores() {
+                    document.querySelectorAll('.btn-minus').forEach(btn =&gt; {
+                        btn.addEventListener('click', (e) =&gt; {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const id = btn.getAttribute('data-id');
+                            const input = document.getElementById(`qty-${id}`);
+                            if (input &amp;&amp; input.value &gt; 1) input.value = parseInt(input.value) - 1;
+                        });
+                    });
+
+                    document.querySelectorAll('.btn-plus').forEach(btn =&gt; {
+                        btn.addEventListener('click', (e) =&gt; {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const id = btn.getAttribute('data-id');
+                            const input = document.getElementById(`qty-${id}`);
+                            if (input) input.value = parseInt(input.value) + 1;
+                        });
+                    });
+                }
+
+                function inicializarBotonAnadirSeleccionados() {
+                    const btnMaestro = document.getElementById('btnAnadirSeleccionados');
+                    if (!btnMaestro) return;
+
+                    btnMaestro.addEventListener('click', async (e) =&gt; {
+                        e.preventDefault();
+                        const checkboxes = document.querySelectorAll('.select-product-cb:checked');
+                        if (checkboxes.length === 0) {
+                            mostrarNotificacionFlotante('Selecciona al menos un producto.', 'error');
+                            return;
+                        }
+
+                        btnMaestro.disabled = true;
+                        const textoOriginal = btnMaestro.innerText;
+                        btnMaestro.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"/> Agregando...';
+                        const tokenOdoo = window.odoo?.csrf_token || document.querySelector('input[name="csrf_token"]')?.value || '';
+
+                        try {
+                            for (const cb of checkboxes) {
+                                const productId = parseInt(cb.value, 10);
+                                const inputQty = document.getElementById(`qty-${productId}`);
+                                const cantidad = inputQty ? parseInt(inputQty.value, 10) : 1;
+
+                                await agregarProductoAlCarrito(
+                                    productId,
+                                    cantidad,
+                                    false
+                                );
+                            }
+
+                            await actualizarBadgeCarrito();
+                            mostrarNotificacionFlotante('¡Productos añadidos al carrito exitosamente!', 'success');
+                        } catch (error) {
+                            console.error('Error al agregar productos seleccionados:', error);
+                            mostrarNotificacionFlotante('Error al agregar productos seleccionados.', 'error');
+                        }   finally {
+                            btnMaestro.disabled = false;
+                            btnMaestro.innerText = textoOriginal;
+                        }
+                    });
+                }
+
+                function abrirUpsellDrawer() {
+                    const drawer = document.getElementById('upsellDrawer');
+                    const overlay = document.getElementById('upsellOverlay');
+
+                    if (!drawer || !overlay) {
+                        return;
+                    }
+
+                    drawer.classList.add('active');
+                    overlay.classList.add('active');
+
+                    drawer.setAttribute('aria-hidden', 'false');
+
+                    document.body.classList.add('upsell-open');
+
+                    mostrarPasoUpsell(1);
+                }
+
+                function cerrarUpsellDrawer() {
+                    const drawer = document.getElementById('upsellDrawer');
+                    const overlay = document.getElementById('upsellOverlay');
+
+                    if (!drawer || !overlay) {
+                        return;
+                    }
+
+                    drawer.classList.remove('active');
+                    overlay.classList.remove('active');
+
+                    drawer.setAttribute('aria-hidden', 'true');
+
+                    document.body.classList.remove('upsell-open');
+                }
+
+                function mostrarPasoUpsell(paso) {
+                    const monitoreo = document.getElementById('seccionMonitoreo24');
+                    const recomendaciones = document.getElementById('seccionRecomendaciones');
+                    const step1 = document.getElementById('upsellStep1');
+                    const step2 = document.getElementById('upsellStep2');
+                    const title = document.getElementById('upsellDrawerTitle');
+
+                    if (!monitoreo || !recomendaciones) {
+                        return;
+                    }
+
+                    if (paso === 1) {
+                        monitoreo.classList.remove('d-none');
+                        recomendaciones.classList.add('d-none');
+                        step1?.classList.add('active');
+                        step1?.classList.remove('completed');
+                        step2?.classList.remove('active');
+
+                        if (title) {
+                            title.innerText = 'Protege aún más tu sistema';
+                        }
+                    }
+
+                    if (paso === 2) {
+                        monitoreo.classList.add('d-none');
+                        recomendaciones.classList.remove('d-none');
+                        step1?.classList.remove('active');
+                        step1?.classList.add('completed');
+                        step2?.classList.add('active');
+
+                        if (title) {
+                            title.innerText = 'Productos sugeridos';
+                        }
+                    }
+                }
+
+                function inicializarUpsellDrawer() {
+                    const overlay = document.getElementById('upsellOverlay');
+                    const btnCerrar = document.getElementById('btnCerrarUpsell');
+                    const btnRechazar = document.getElementById('btnRechazarMonitoreo');
+                    const btnContinuar = document.getElementById('btnContinuarCarrito');
+
+                    overlay?.addEventListener('click', () =&gt; {
+                        cerrarUpsellDrawer();
+                    });
+
+                    btnCerrar?.addEventListener('click', () =&gt; {
+                        cerrarUpsellDrawer();
+                    });
+
+                    document.addEventListener('keydown', e =&gt; {
+                        if (e.key === 'Escape') {
+                            cerrarUpsellDrawer();
+                        }
+                    });
+
+                    btnRechazar?.addEventListener('click', () =&gt; {
+                        mostrarPasoUpsell(2);
+                    })
+
+                    btnContinuar?.addEventListener('click', (e) =&gt; {
+                        e.preventDefault();
+                        window.location.href = '/shop/cart';
+                    });
+                }
+
                 document.addEventListener('DOMContentLoaded', async () =&gt; {
-                    const gridContainer = document.getElementById('gridProductosHagaloUsted');
-                    const kitContainer = document.getElementById('kitPrincipalContainer');
                     const subtitulo = document.getElementById('subtituloFiltros');
+                    const carouselTrack = document.getElementById('carouselRecomendaciones');
                     
                     const respuestasGuardadas = sessionStorage.getItem('hagalo_usted_respuestas');
                     const paqueteSeleccionado = sessionStorage.getItem('paquete_seleccionado'); 
                     
                     const params = new URLSearchParams(window.location.search);
                     const categoryId = params.get('category');
+                    inicializarUpsellDrawer();
 
                     if (!respuestasGuardadas) {
-                        gridContainer.innerHTML = `
-                            <div class="col-12 text-center py-5">
-                                <p class="text-warning fw-bold">No se encontraron respuestas previas.</p>
-                                <a href="/hagalo-usted-mismo" class="btn btn-outline-primary">Volver a iniciar</a>
-                            </div>`;
+                        if (carouselTrack) {
+                            carouselTrack.innerHTML = `
+                                <div class="text-center w-100 py-5">
+                                    <p class="text-warning fw-bold">No se encontraron respuestas previas.</p>
+                                    <a href="/hagalo-usted-mismo" class="btn btn-outline-primary">Volver a iniciar</a>
+                                </div>`;
+                        }
                         return;
                     }
 
                     const respuestas = JSON.parse(respuestasGuardadas);
                     let tipoPropiedad = categoryId === "11" ? "Hogar" : categoryId === "12" ? "Negocio" : "Propiedad";
-                    subtitulo.innerText = `Mostrando opciones para ${tipoPropiedad} de tamaño ${respuestas.tamano_propiedad}`;
+                    if (subtitulo) {
+                        subtitulo.innerText = `Mostrando opciones para ${tipoPropiedad} de tamaño ${respuestas.tamano_propiedad}`;
+                    }
 
                     try {
                         const respuestaAPI = await fetch('https://maple-carousel-api.vercel.app/api/productoshagaloustedmismo');
@@ -1073,55 +2299,24 @@
                             };
                         });
 
-                        renderProductosRecomendados(productosOdoo);
-                        mostrarMonitoreo24();
-                        inicializarCarruselRecomendaciones();
-
-                        let productosFiltrados = [];
+                        let productosParaMostrar = [];
 
                         if (paqueteSeleccionado &amp;&amp; PERFILES_PAQUETES[paqueteSeleccionado]) {
                             const configPaquete = PERFILES_PAQUETES[paqueteSeleccionado];
                             renderizarTarjetaSuscripcion(configPaquete.servicioDeSuscripcion);
+                            renderComposicionPaquete( configPaquete.kitPrincipal, productosEnriquecidos );
                             const kitData = productosEnriquecidos.find(p =&gt; p.modelo === configPaquete.kitPrincipal);
 
                             if (kitData) {
-                                let kitPrice = kitData.price * 1.08;
-                                kitContainer.innerHTML = `
-                                    <div class="card shadow-sm border-0 rounded-4" style="border-top: 4px solid #0D2E67 !important; background: #f8f9fa;">
-                                        <div class="row g-0">
-                                            <div class="col-md-4 p-4 d-flex align-items-center justify-content-center bg-white rounded-start" style="border-right: 1px solid #dee2e6;">
-                                                <img src="${kitData.imgURL}" class="img-fluid" alt="${kitData.productName}" style="max-height: 250px; object-fit: contain;"/>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body p-4 d-flex flex-column h-100">
-                                                    <span class="badge mb-2" style="background-color: #0D2E67; width: fit-content;">Sistema Base Recomendado</span>
-                                                    <h3 class="card-title fw-bold">${kitData.productName}</h3>
-                                                    <div class="mb-3">
-                                                        <small class="text-muted fw-bold">${kitData.marca} | ${kitData.modelo}</small>
-                                                    </div>
-                                                    <p class="card-text text-muted flex-grow-1" style="font-size: 1.05rem; text-align: justify;">
-                                                        ${kitData.descripcion}
-                                                    </p>
-                                                    <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
-                                                        <span class="fw-bold fs-3 text-primary">$${kitPrice.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MXN</span>
-                                                        <a onclick="window.location.href='${kitData.websiteUrl}'" class="see_product px-4 py-2">Seleccionar Sistema Base</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                `;
-
-                                document.getElementById('tituloComplementos').classList.remove('d-none');
-                                if (kitData.hayMonitoreoDisponible) {
-                                    document.getElementById('bannerMonitoreo').classList.remove('d-none');
-                                }
+                                kitData.marca = "Sistema recomendado"; 
+                                productosParaMostrar.push(kitData);                                
                             }
 
-                            productosFiltrados = productosEnriquecidos.filter(p =&gt; configPaquete.sugerencias.includes(p.modelo));
+                            const complementos = productosEnriquecidos.filter(p =&gt; configPaquete.sugerencias.includes(p.modelo));
+                            productosParaMostrar = [...productosParaMostrar, ...complementos];
 
                         } else {
-                            productosFiltrados = productosEnriquecidos.filter(producto =&gt; {
+                            productosParaMostrar = productosEnriquecidos.filter(producto =&gt; {
                                 const coincideTamano = producto.tamanoPropiedadAsignado.includes(respuestas.tamano_propiedad);
                                 const coincideCelular = !respuestas.control_celular || producto.isControlledByPhone;
                                 const coincideMascotas = !respuestas.tiene_mascotas || producto.isViableConMascotas;
@@ -1130,64 +2325,19 @@
                             });
                         }
 
-                        if (productosFiltrados.length === 0) {
-                            gridContainer.innerHTML = '<p class="text-center col-12">No se encontraron complementos adicionales.</p>';
-                            return;
-                        }
-
-                        let html = '';
-                        productosFiltrados.forEach(producto =&gt; {
-                            let price_plus_iva = producto.price * 1.08;
-                            html += `
-                                <div class="col-md-6 col-lg-4 mb-4">
-                                    <div class="card h-100 shadow-sm border-0">
-                                        <img srcset="${producto.imgURL} 1x" class="card-img-top p-3" alt="${producto.productName}" style="max-height: 220px; object-fit: contain; loading: lazy;"/>
-                                        <div class="card-body d-flex flex-column">
-                                            <div class="diy_model_brand_container">
-                                                <small class="diy_brand_text">${producto.marca}</small>
-                                                <small class="diy_model_text">${producto.modelo}</small>
-                                            </div>
-                                            <h5 class="card-title mt-1">${producto.productName}</h5>
-                                            <p class="card-text text-muted flex-grow-1 diy_product_description" style="font-size: 0.9rem;">
-                                                ${producto.descripcion}
-                                            </p>
-                                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                                <span class="diy_price_cards fw-bold text-primary">$${price_plus_iva.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MXN</span>
-                                                <a onclick="window.location.href='${producto.websiteUrl}'" class="see_product">Ver Producto</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                        });
-
-                        gridContainer.innerHTML = html;
+                        mostrarMonitoreo24();
+                        inicializarCarruselRecomendaciones();
+                        inicializarBotonAnadirSeleccionados();
+                        renderProductosRecomendados(productosParaMostrar);
 
                     } catch (err) {
                         console.error('Error al consultar productos:', err);
-                        gridContainer.innerHTML = '<p class="text-center text-danger col-12">Ocurrió un error al cargar las recomendaciones.</p>';
+                        if (carouselTrack) {
+                            carouselTrack.innerHTML = '<p class="text-center text-danger w-100 py-4">Ocurrió un error al cargar las recomendaciones.</p>';
+                        }
                     }
+
                 });
-
-                // const grid = document.getElementById("gridProductosHagaloUsted");
-
-                // if (grid) {
-                //     const observerProductosHagaloUsted = new MutationObserver((mutations, obs) =&gt; {
-                //         const productos = grid.querySelectorAll(":scope &gt; .col-md-6");
-                //         console.log(productos);
-                //         if (productos.length &gt; 0) {
-                //             productos.forEach((producto, index) =&gt; {
-                //                 if (index &gt;=6) {
-                //                     producto.style.display = "none";
-                //                 }
-                //             });
-                //             obs.disconnect();
-                //         }
-                //     });
-                //     observerProductosHagaloUsted.observe(grid, {
-                //         childList: true, subtree: true
-                //     });
-                // }
             </script>
         </xpath>
     </t>

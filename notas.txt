@@ -1,0 +1,435 @@
+.upsell-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 1090;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.upsell-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.upsell-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(560px, 100vw);
+    height: 100vh;
+
+    background: #ffffff;
+
+    z-index: 1100;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(.4,0,.2,1);
+
+    box-shadow: -12px 0 40px rgba(0,0,0,.16);
+}
+
+.upsell-drawer.active {
+    transform: translateX(0);
+}
+
+.upsell-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 24px 26px 18px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.upsell-eyebrow {
+    display: block;
+
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+
+    color: #0D2E67;
+
+    margin-bottom: 4px;
+}
+
+.upsell-drawer-header h3 {
+    margin: 0;
+
+    font-size: 1.35rem;
+    font-weight: 750;
+
+    color: #101828;
+}
+
+.upsell-close {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f4f6f8;
+    color: #344054;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all .2s ease;
+}
+
+.upsell-close:hover {
+    background: #e9edf2;
+}
+
+.upsell-steps {
+    display: flex;
+    align-items: center;
+
+    padding: 16px 26px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.upsell-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #98a2b3;
+
+    transition: color .2s ease;
+}
+
+.upsell-step span {
+    width: 27px;
+    height: 27px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: .75rem;
+    font-weight: 700;
+
+    background: #eef1f5;
+    color: #667085;
+}
+
+.upsell-step small {
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.upsell-step.active {
+    color: #0D2E67;
+}
+
+.upsell-step.active span {
+    background: #0D2E67;
+    color: white;
+}
+
+.upsell-step.completed span {
+    background: #198754;
+    color: white;
+}
+
+.upsell-step-line {
+    flex: 1;
+    height: 1px;
+
+    background: #dfe3e8;
+
+    margin: 0 12px;
+}
+
+.upsell-drawer-content {
+    flex: 1;
+    overflow-y: auto;
+
+    padding: 26px;
+}
+
+.upsell-panel {
+    width: 100%;
+}
+
+.upsell-panel-intro {
+    display: flex;
+    gap: 14px;
+
+    margin-bottom: 24px;
+}
+
+.upsell-icon {
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    border-radius: 12px;
+
+    background: #eef4ff;
+    color: #0D2E67;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.15rem;
+}
+
+.upsell-kicker {
+    display: block;
+
+    color: #667085;
+
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+
+    margin-bottom: 3px;
+}
+
+.upsell-panel-intro h4 {
+    margin: 0 0 7px;
+
+    color: #101828;
+
+    font-size: 1.18rem;
+    font-weight: 750;
+}
+
+.upsell-panel-intro p {
+    margin: 0;
+
+    color: #667085;
+
+    font-size: .88rem;
+    line-height: 1.5;
+}
+
+
+.upsell-subscription-card {
+    width: 100%;
+}
+
+.upsell-subscription-card .monitoreo-card {
+    width: 100%;
+    margin: 0;
+
+    border: 1px solid #dfe4ea;
+    border-radius: 14px;
+
+    box-shadow: none;
+
+    overflow: hidden;
+}
+
+.upsell-subscription-card .monitoreo-card-header {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.upsell-subscription-card .monitoreo-card-header span {
+    font-size: .85rem;
+    font-weight: 700;
+    color: #667085;
+}
+
+.upsell-subscription-card .monitoreo-card-header strong {
+    font-size: 1.45rem;
+    color: #101828;
+}
+
+.upsell-subscription-card .monitoreo-card-body {
+    padding: 18px 20px 20px;
+}
+
+.upsell-subscription-card .monitoreo-card-body p {
+    min-height: auto;
+
+    font-size: .88rem;
+    line-height: 1.5;
+
+    color: #667085;
+}
+
+.upsell-actions {
+    margin-top: 18px;
+}
+
+.upsell-btn-primary,
+.upsell-btn-secondary {
+    width: 100%;
+
+    min-height: 48px;
+
+    border-radius: 10px;
+
+    font-size: .9rem;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    cursor: pointer;
+
+    transition: all .2s ease;
+}
+
+.upsell-btn-primary {
+    border: 1px solid #0D2E67;
+
+    background: #0D2E67;
+    color: white;
+}
+
+.upsell-btn-primary:hover {
+    background: #08214b;
+    transform: translateY(-1px);
+}
+
+.upsell-btn-secondary {
+    border: 1px solid #d0d5dd;
+
+    background: white;
+    color: #344054;
+}
+
+.upsell-btn-secondary:hover {
+    background: #f8fafc;
+}
+
+.upsell-carousel {
+    position: relative;
+
+    width: 100%;
+
+    padding: 0 34px;
+}
+
+.upsell-carousel-track {
+    gap: 12px;
+
+    overflow-x: auto;
+}
+
+.upsell-carousel-track .recomendacion-item {
+    flex: 0 0 78%;
+    min-width: 0;
+
+    box-shadow: none;
+}
+
+.upsell-carousel-track .recomendacion-imagen {
+    height: 180px;
+}
+
+.upsell-carousel-track .recomendacion-body {
+    padding: 12px;
+}
+
+.upsell-carousel-track .recomendacion-nombre {
+    font-size: .9rem;
+}
+
+.upsell-carousel-track .recomendacion-descripcion {
+    font-size: .78rem;
+}
+
+.upsell-carousel-track .recomendacion-precio {
+    font-size: 1rem;
+}
+
+.upsell-carousel-btn {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d0d5dd;
+
+    background: white;
+    color: #0D2E67;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.upsell-carousel-btn:first-child {
+    left: 0;
+}
+
+.upsell-carousel-btn:last-child {
+    right: 0;
+}
+
+.upsell-selection-footer {
+    margin-top: 24px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+#btnContinuarCarrito {
+    margin-top: 10px;
+}
+
+body.upsell-open {
+    overflow: hidden;
+}
+
+@media (max-width: 575px) {
+
+    .upsell-drawer {
+        width: 100%;
+    }
+
+    .upsell-drawer-header {
+        padding: 18px 18px 15px;
+    }
+
+    .upsell-drawer-content {
+        padding: 20px 18px;
+    }
+
+    .upsell-steps {
+        padding: 14px 18px;
+    }
+
+    .upsell-carousel-track .recomendacion-item {
+        flex: 0 0 82%;
+    }
+}
