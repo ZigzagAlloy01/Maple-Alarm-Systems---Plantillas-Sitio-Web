@@ -50,8 +50,7 @@
                                                     <small class="custom-muted-text">al mes<br/>Brinda a tu alarma un servicio multicompañía datos móviles</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
-                                                    Señales inalámbricas. Para un monitoreo más seguro y con app móvil para armar y desarmar los equipos.
-                                                </p>
+                                                    Comunicación celular dedicada para transmitir eventos de alarma sin depender de la conexión a internet del inmueble</p>
                                                 
                                                 <t t-set="m2m_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via M2M modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
                                                 <form class="oe_website_sale js_product js_main_product mb-4" t-if="m2m_monitoring_product">
@@ -67,16 +66,15 @@
                                                 <a class="btn custom-btn-subscribe w-100 mb-4" href="/contactus" t-if="not m2m_monitoring_product">Suscribirse</a>
                                                 
                                                 <ul class="list-group list-group-flush text-start custom-list-group">
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Asistencia telefónica</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Reportes (negocios)</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Test periódico cada 1 h</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>App móvil activar/desactivar</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Botón de emergencia</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Comunicación inalámbrica</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Conexión celular LTE</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Independiente del internet</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>App para control remoto compatible</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Comunicación dedicada M2M</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Amplia cobertura móvil</li>
                                                 </ul>
                                             </div>
                                             <div class="card-footer custom-card-footer">
-                                                <small>Configuración instantánea.</small>
+                                                <small>Configuración instantánea</small>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +90,7 @@
                                                     <small class="custom-muted-text">al mes<br/>Sistema de alarma + Automatizaciones desde tu app</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
-                                                    Una solución avanzada que combina seguridad con comodidad. Convierte tu casa en un Hogar Inteligente.
+                                                    Solución inteligente que integra alarma, aplicación móvil, notificaciones y automatización mediante paneles Qolsys IQ Panel
                                                 </p>
                                                 
                                                 <t t-set="alarmcom_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via Alarm.com modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
@@ -110,16 +108,15 @@
                                                 <a class="btn custom-btn-subscribe-highlight w-100 mb-4" href="/contactus" t-if="not alarmcom_product">Suscribirse</a>
                                                 
                                                 <ul class="list-group list-group-flush text-start custom-list-group">
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Automatización del hogar</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Reportes avanzados</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Test periódico cada 1 h</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>App móvil premium</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Botón de emergencia</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Comunicación cifrada</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Aplicación móvil Alarm.com</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Alertas en tiempo real</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Armado y desarmado remoto</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Automatización compatible para chapas, luces y clima</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Historial de actividad</li>
                                                 </ul>
                                             </div>
                                             <div class="card-footer custom-card-footer">
-                                                <small>Control total desde tu smartphone.</small>
+                                                <small>Control total desde tu smartphone</small>
                                             </div>
                                         </div>
                                     </div>
@@ -131,10 +128,10 @@
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Monitoreo GSM</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
                                                     <strong class="h2-fs d-block">$420.00</strong>
-                                                    <small class="custom-muted-text">al mes<br/>Señales inalámbricas con datos móviles para más seguridad.</small>
+                                                    <small class="custom-muted-text">al mes<br/>Señales inalámbricas con datos móviles para más seguridad</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
-                                                    Datos móviles. Tu alarma utiliza la red de Telcel para enviar sus señales. Las activaciones siempre se recibirán.
+                                                    Utiliza la red móvil para mantener el sistema enlazado con la central de monitoreo, como comunicación principal o de respaldo
                                                 </p>
                                                 
                                                 <t t-set="gsm_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via GSM mensual'), ('sale_ok', '=', True)], limit=1)"/>
@@ -151,16 +148,15 @@
                                                 <a class="btn custom-btn-subscribe w-100 mb-4" href="/contactus" t-if="not gsm_monitoring_product">Suscribirse</a>
                                                 
                                                 <ul class="list-group list-group-flush text-start custom-list-group">
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Asistencia telefónica</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Reportes (negocios)</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Test periódico cada 1 h</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>App móvil</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Botón de emergencia</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Comunicación inalámbrica</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Transmisión por red móvil Telcel</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Respaldo ante fallas de internet</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Cobertura según operador</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>App para control remoto compatible</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Mayor continuidad operativa</li>
                                                 </ul>
                                             </div>
                                             <div class="card-footer custom-card-footer">
-                                                <small>Garantía de activación de señales.</small>
+                                                <small>Garantía de activación de señales</small>
                                             </div>
                                         </div>
                                     </div>
@@ -175,7 +171,7 @@
                                                     <small class="custom-muted-text">al mes<br/>Utiliza tu servicio de internet para monitorear tu alarma</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
-                                                    Rápido y confiable. Haz que tu alarma envíe las señales a la central de monitoreo de forma rápida y sin problemas.
+                                                    Conecta el sistema de alarma a la central de monitoreo utilizando el servicio de internet del inmueble
                                                 </p>
                                                 
                                                 <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via internet mensual'), ('sale_ok', '=', True)], limit=1)"/>
@@ -193,10 +189,11 @@
                                                 <a class="btn custom-btn-subscribe w-100 mb-4" href="/contactus" t-if="not internet_monitoring_product">Suscribirse</a>
                                                 
                                                 <ul class="list-group list-group-flush text-start custom-list-group">
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Asistencia telefónica</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Reportes (negocios)</li>
-                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Test periódico cada 24 h</li>
-                                                    <li class="list-group-item"><i class="fa fa-minus me-2"/>Sin app móvil</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Transmisión rápida de eventos</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>Utiliza la red de internet</li>
+                                                    <li class="list-group-item"><i class="fa fa-check text-info me-2"/>App para control remoto compatible</li>
+                                                    <li class="list-group-item"><i class="fa fa-minus me-2"/>Sin línea telefónica tradicional</li>
+                                                    <li class="list-group-item"><i class="fa fa-minus me-2"/>Ideal para conexiones estables</li>
                                                 </ul>
                                             </div>
                                             <div class="card-footer custom-card-footer">

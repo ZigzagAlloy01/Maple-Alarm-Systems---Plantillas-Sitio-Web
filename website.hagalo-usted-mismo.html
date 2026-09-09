@@ -26,6 +26,7 @@
                 }
 
                 .hagalo_usted_card {
+                    width: 36rem;
                     cursor: pointer;
                 }
 
@@ -41,9 +42,21 @@
                     text-align: center;
                 }
 
-                @media (max-width: 850px) {
+                @media (max-width: 1240px) {
                     .hagalo_usted_cards {
                         flex-direction: column;
+                    }
+                }
+
+                @media (max-width: 800px) {
+                    .hagalo_usted_card {
+                        width: 32rem;
+                    }
+                }
+
+                @media (max-width: 620px) {
+                    .hagalo_usted_card {
+                        width: 26rem;
                     }
                 }
 
@@ -68,16 +81,19 @@
                     {
                         "categoryId": "10",
                         "title": "Alarmas",
+                        "img_url": "",
                         "url": "/hagalo-usted-mismo",
                         "children":[
                             {
                                 "categoryId": "11",
                                 "title": "Alarmas para el hogar",
+                                "img_url": "https://images.unsplash.com/photo-1584738766473-61c083514bf4?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                                 "url": "/11"
                             },
                             {
                                 "categoryId": "12",
                                 "title": "Alarmas para negocios",
+                                "img_url": "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                                 "url": "/12"
                             }
                         ]
@@ -115,6 +131,7 @@
                             cardsHTML += `
                                 <div class="hagalo_usted_card">
                                     <a onclick="window.location.href='${urlDestino}'" class="card h-100 text-decoration-none text-dark shadow-sm">
+                                        <img class="hagalo_usted_card_img" srcset="${child.img_url}" alt="${child.title}"/>
                                         <div class="card-body d-flex align-items-center justify-content-between">
                                             <h5 class="card-title m-0">${child.title}</h5>
                                             <i class="fa-solid fa-chevron-right text-muted"/>

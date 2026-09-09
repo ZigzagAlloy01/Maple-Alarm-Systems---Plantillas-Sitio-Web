@@ -70,8 +70,7 @@
                                             ¿En qué ciudad se instalará el sistema?
                                         </h4>
                                         <p>
-                                            Selecciona tu ciudad para calcular el precio
-                                            del servicio de monitoreo.
+                                            Selecciona la ciudad en la que utilizarás el servicio de monitoreo. Importante: De no seleccionar la ciudad real en la que se recibirá el servicio, el monitoreo no podrá ser realizado
                                         </p>
                                     </div>
                                 </div>
@@ -80,28 +79,14 @@
                                         Ciudad
                                     </label>
                                     <div class="ciudad-combobox">
-                                        <input
-                                            id="inputCiudadMonitoreo"
-                                            type="text"
-                                            class="ciudad-input"
-                                            placeholder="Escribe tu ciudad..."
-                                            autocomplete="off"
-                                        />
+                                        <input id="inputCiudadMonitoreo" type="text" class="ciudad-input" placeholder="Escribe tu ciudad..." autocomplete="off"/>
                                         <i class="fa-solid fa-magnifying-glass ciudad-search-icon"/>
-                                        <div
-                                            id="listaCiudadesMonitoreo"
-                                            class="ciudad-resultados d-none">
+                                        <div id="listaCiudadesMonitoreo" class="ciudad-resultados d-none">
                                         </div>
                                     </div>
-                                    <p
-                                        id="ciudadSeleccionadaTexto"
-                                        class="ciudad-seleccionada d-none">
+                                    <p id="ciudadSeleccionadaTexto" class="ciudad-seleccionada d-none">
                                     </p>
-                                    <button
-                                        id="btnConfirmarCiudad"
-                                        type="button"
-                                        class="upsell-btn-primary mt-4"
-                                        disabled="disabled">
+                                    <button id="btnConfirmarCiudad" type="button" class="upsell-btn-primary mt-4" disabled="disabled">
                                             Continuar
                                         <i class="fa-solid fa-arrow-right"/>
                                     </button>
@@ -419,11 +404,16 @@
                 }
 
                 .custom-checkbox-container {
-                    display: flex;
+                    display: none;
+                    /* display: flex;
                     align-items: center;
                     justify-content: center;
                     margin-top: 10px;
-                    cursor: pointer;
+                    cursor: pointer; */
+                }
+
+                #btnAnadirSeleccionados {
+                    display: none;
                 }
 
                 .custom-checkbox {
@@ -447,6 +437,147 @@
 
                 .fw-bold.mb-4 {
                     text-align: center;
+                }
+
+                .ciudad-selector {
+                    width: 100%;
+                }
+
+                .ciudad-label {
+                    display: block;
+                    margin-bottom: 8px;
+                    font-size: .82rem;
+                    font-weight: 700;
+                    color: #344054;
+                }
+
+                .ciudad-combobox {
+                    position: relative;
+                }
+
+                .ciudad-input {
+                    width: 100%;
+                    height: 50px;
+
+                    padding: 0 44px 0 14px;
+
+                    border: 1px solid #d0d5dd;
+                    border-radius: 10px;
+
+                    background: #fff;
+                    color: #101828;
+
+                    font-size: .9rem;
+
+                    outline: none;
+
+                    transition:
+                        border-color .2s ease,
+                        box-shadow .2s ease;
+                }
+
+                .ciudad-input:focus {
+                    border-color: #0D2E67;
+                    box-shadow:
+                        0 0 0 3px rgba(13, 46, 103, .10);
+                }
+
+                .ciudad-search-icon {
+                    position: absolute;
+
+                    right: 15px;
+                    top: 17px;
+
+                    color: #667085;
+
+                    pointer-events: none;
+                }
+
+                .ciudad-resultados {
+                    position: absolute;
+
+                    top: calc(100% + 6px);
+                    left: 0;
+                    right: 0;
+
+                    z-index: 20;
+
+                    max-height: 260px;
+
+                    overflow-y: auto;
+
+                    background: white;
+
+                    border: 1px solid #d0d5dd;
+                    border-radius: 10px;
+
+                    box-shadow:
+                        0 8px 24px rgba(16, 24, 40, .12);
+                }
+
+                .ciudad-opcion {
+                    width: 100%;
+
+                    padding: 12px 14px;
+
+                    border: none;
+                    border-bottom: 1px solid #f0f2f5;
+
+                    background: white;
+
+                    text-align: left;
+
+                    cursor: pointer;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    transition: background .15s ease;
+                }
+
+                .ciudad-opcion:last-child {
+                    border-bottom: none;
+                }
+
+                .ciudad-opcion:hover {
+                    background: #f5f8fc;
+                }
+
+                .ciudad-opcion span {
+                    color: #101828;
+
+                    font-size: .9rem;
+                    font-weight: 700;
+                }
+
+                .ciudad-opcion small {
+                    margin-top: 2px;
+
+                    color: #667085;
+
+                    font-size: .75rem;
+                }
+
+                .ciudad-sin-resultados {
+                    padding: 16px;
+
+                    color: #667085;
+
+                    font-size: .85rem;
+                    text-align: center;
+                }
+
+                .ciudad-seleccionada {
+                    margin: 10px 0 0;
+
+                    color: #198754;
+
+                    font-size: .82rem;
+                }
+
+                #btnConfirmarCiudad:disabled {
+                    opacity: .5;
+                    cursor: not-allowed;
                 }
 
                 .upsell-overlay {
@@ -671,7 +802,8 @@
 
                     color: #667085;
 
-                    font-size: .88rem;
+                    font-size: 1rem;
+                    font-weight: 800;
                     line-height: 1.5;
                 }
 
@@ -693,8 +825,10 @@
                 }
 
                 .upsell-subscription-card .monitoreo-card-header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     padding: 18px 20px;
-
                     border-bottom: 1px solid #edf0f4;
                 }
 
@@ -955,7 +1089,7 @@
 
         <xpath expr="//head" position="inside">
             <script type="text/javascript">
-                const COMPOSICION_PAQUETES_DIY = {
+                const COMPOSICION_PAQUETES_COMPACTO_DIY = {
                     "AXHOME": [
                         { modelo: "DS-PA201P-16WB", cantidad: 1 },
                         { modelo: "DS-PD201P10-WB", cantidad: 1 },
@@ -973,8 +1107,8 @@
                     "SERIE NEO": [
                         { modelo: "NEO-ALFA-RF", cantidad: 1 },
                         { modelo: "SD-30W", cantidad: 1 },
-                        { modelo: "CBAT45AH", cantidad: 2 },
-                        { modelo: "PG9303", cantidad: 1 },
+                        { modelo: "CBAT45AH", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 2 },
                         { modelo: "PGP9914", cantidad: 1 }
                     ],
                     "QOLSYS": [
@@ -982,6 +1116,66 @@
                         { modelo: "PG9901 BATT", cantidad: 1 },
                         { modelo: "PG9303", cantidad: 2 },
                         { modelo: "PGP9914", cantidad: 1 }
+                    ]
+                };
+
+                const COMPOSICION_PAQUETES_FAMILIAR_DIY = {
+                    "AXHOME": [
+                        { modelo: "DS-PA201P-16WB", cantidad: 1 },
+                        { modelo: "DS-PD201P10-WB", cantidad: 2 },
+                        { modelo: "DS-PD201MC-WB", cantidad: 3 },
+                        { modelo: "DS-PKF201-WB", cantidad: 1 },
+                        { modelo: "DS-PS201-WB", cantidad: 1 }
+                    ],
+                    "AXPRO": [
+                        { modelo: "DS-PWA48-E-WB", cantidad: 1 },
+                        { modelo: "DS-PDP15P-EG2-WB(B)", cantidad: 2 },
+                        { modelo: "DS-PDMCS-EG2-WB(B)", cantidad: 3 },
+                        { modelo: "DS-PKF1-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PS1-E-WB/R", cantidad: 1 }
+                    ],
+                    "SERIE NEO": [
+                        { modelo: "NEO-ALFA-RF", cantidad: 1 },
+                        { modelo: "SD-30W", cantidad: 1 },
+                        { modelo: "CBAT45AH", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 3 },
+                        { modelo: "PGP9914", cantidad: 2 }
+                    ],
+                    "QOLSYS": [
+                        { modelo: "IQP4005", cantidad: 1 },
+                        { modelo: "PG9901 BATT", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 3 },
+                        { modelo: "PGP9914", cantidad: 2 }
+                    ]
+                };
+
+                const COMPOSICION_PAQUETES_AMPLIO_DIY = {
+                    "AXHOME": [
+                        { modelo: "DS-PA201P-16WB", cantidad: 1 },
+                        { modelo: "DS-PD201P10-WB", cantidad: 3 },
+                        { modelo: "DS-PD201MC-WB", cantidad: 4 },
+                        { modelo: "DS-PKF201-WB", cantidad: 1 },
+                        { modelo: "DS-PS201-WB", cantidad: 1 }
+                    ],
+                    "AXPRO": [
+                        { modelo: "DS-PWA48-E-WB", cantidad: 1 },
+                        { modelo: "DS-PDP15P-EG2-WB(B)", cantidad: 3 },
+                        { modelo: "DS-PDMCS-EG2-WB(B)", cantidad: 4 },
+                        { modelo: "DS-PKF1-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PS1-E-WB/R", cantidad: 1 }
+                    ],
+                    "SERIE NEO": [
+                        { modelo: "NEO-ALFA-RF", cantidad: 1 },
+                        { modelo: "SD-30W", cantidad: 1 },
+                        { modelo: "CBAT45AH", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 4 },
+                        { modelo: "PGP9914", cantidad: 3 }
+                    ],
+                    "QOLSYS": [
+                        { modelo: "IQP4005", cantidad: 1 },
+                        { modelo: "PG9901 BATT", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 4 },
+                        { modelo: "PGP9914", cantidad: 3 }
                     ]
                 };
 
@@ -1087,27 +1281,19 @@
                 const INFO_SUSCRIPCIONES = {
                     "Via Internet": {
                         titulo: "VÍA INTERNET",
-                        precio: "$330.00",
-                        descripcion: "Rápido y confiable a través de tu conexión de banda ancha residencial.",
-                        productId: 388
+                        descripcion: "Rápido y confiable a través de tu conexión de banda ancha residencial."
                     },
                     "Monitoreo M2M": {
                         titulo: "MONITOREO M2M",
-                        precio: "$450.00",
-                        descripcion: "Conexión dedicada máquina a máquina de alta seguridad.",
-                        productId: 4162
+                        descripcion: "Conexión dedicada máquina a máquina de alta seguridad."
                     },
                     "Monitoreo GSM": {
                         titulo: "MONITOREO GSM",
-                        precio: "$550.00",
-                        descripcion: "Respaldo celular que te protege incluso ante cortes de energía o internet.",
-                        productId: 4163
+                        descripcion: "Respaldo celular que te protege incluso ante cortes de energía o internet."
                     },
                     "Alarmdotcom": {
                         titulo: "ALARM.COM",
-                        precio: "$650.00",
-                        descripcion: "Plataforma inteligente interactiva con control total y automatización.",
-                        productId: 4164
+                        descripcion: "Plataforma inteligente interactiva con control total y automatización."
                     }
                 };
 
@@ -1270,40 +1456,56 @@
 
                 const CIUDADES_MONITOREO = [
                     {
+                        id: 'juarez',
+                        nombre: 'Ciudad Juárez',
+                        estado: 'Chihuahua',
+                        viainternetId: 388,
+                        monitoreom2mId: 4162,
+                        monitoreogsmId: 4163,
+                        alarmdotcomId: 4164
+                    },
+                    {
                         id: 'cdmx',
                         nombre: 'Ciudad de México',
                         estado: 'Ciudad de México',
-                        multiplicador: 1.10
+                        viainternetId: 4283,
+                        monitoreom2mId: 4287,
+                        monitoreogsmId: 4291,
+                        alarmdotcomId: 4295
                     },
                     {
                         id: 'chihuahua',
                         nombre: 'Chihuahua',
                         estado: 'Chihuahua',
-                        multiplicador: 1.05
-                    },
-                    {
-                        id: 'juarez',
-                        nombre: 'Ciudad Juárez',
-                        estado: 'Chihuahua',
-                        multiplicador: 1.08
+                        viainternetId: 4284,
+                        monitoreom2mId: 4288,
+                        monitoreogsmId: 4292,
+                        alarmdotcomId: 4296
                     },
                     {
                         id: 'monterrey',
                         nombre: 'Monterrey',
                         estado: 'Nuevo León',
-                        multiplicador: 1.15
+                        viainternetId: 4285,
+                        monitoreom2mId: 4289,
+                        monitoreogsmId: 4293,
+                        alarmdotcomId: 4297
                     },
                     {
                         id: 'guadalajara',
                         nombre: 'Guadalajara',
                         estado: 'Jalisco',
-                        multiplicador: 1.12
+                        viainternetId: 4286,
+                        monitoreom2mId: 4290,
+                        monitoreogsmId: 4294,
+                        alarmdotcomId: 4298
                     }
                 ];
 
                 let ciudadMonitoreoSeleccionada = null;
                 let tipoServicioMonitoreoActual = null;
                 let productosOdooActuales = [];
+                let serviciosSuscripcionActuales = [];
 
                 async function agregarProductoAlCarrito(productId, cantidad = 1, actualizarBadge = true) {
                     const id = parseInt(productId, 10);
@@ -1352,26 +1554,9 @@
 
                     console.log('Respuesta de Odoo:', data);
 
-                    if (!response.ok) {
+                    if (!response.ok || data?.error || data?.result?.error) {
                         throw new Error(
-                            data?.error?.message ||
-                            data?.message ||
-                            `HTTP ${response.status}`
-                        );
-                    }
-
-                    if (data?.error) {
-                        throw new Error(
-                            data.error.message ||
-                            data.error.data?.message ||
-                            'Odoo rechazó la operación'
-                        );
-                    }
-
-                    if (data?.result?.error) {
-                        throw new Error(
-                            data.result.error.message ||
-                            'Odoo rechazó la operación'
+                            data?.error?.message || data?.result?.error?.message || 'Odoo rechazó la operación'
                         );
                     }
 
@@ -1382,7 +1567,24 @@
                     return data;
                 }
 
-                function renderComposicionPaquete(nombrePaquete, productosEnriquecidos) {
+                function obtenerComposicionPaquete(tamanoPropiedadAsignado) {
+                    switch (tamanoPropiedadAsignado) {
+                        case 'compacta':
+                            return COMPOSICION_PAQUETES_COMPACTO_DIY;
+                        
+                        case 'familiar':
+                            return COMPOSICION_PAQUETES_FAMILIAR_DIY;
+                        
+                        case 'amplia':
+                            return COMPOSICION_PAQUETES_AMPLIO_DIY;
+                        
+                        default:
+                            console.warn(`Tamaño de propiedad no reconocido: ${tamanoPropiedadAsignado}`);
+                            return null;
+                    }
+                }
+
+                function renderComposicionPaquete(nombrePaquete, productosEnriquecidos, tamanoPropiedadAsignado) {
 
                     const seccion =
                         document.getElementById('seccionComposicionPaquete');
@@ -1394,8 +1596,9 @@
                         return;
                     }
 
-                    const composicion =
-                        COMPOSICION_PAQUETES_DIY[nombrePaquete];
+                    const composiciones = obtenerComposicionPaquete(tamanoPropiedadAsignado);
+
+                    const composicion = composiciones?.[nombrePaquete];
 
                     if (!composicion || composicion.length === 0) {
 
@@ -1679,10 +1882,148 @@
                 }
 
                 function inicializarSelectorCiudad() {
-                    const input = document.getElementById('inputCiudadMonitoreo');
-                    const lista = document.getElementById('listaCiudadesMonitoreo');
-                    const boton = document.getElementById('btnConfirmarCiudad');
-                    const textoSeleccion = document.getElementById('ciudadSeleccionadaTexto');
+
+                    const input =
+                        document.getElementById('inputCiudadMonitoreo');
+
+                    const lista =
+                        document.getElementById('listaCiudadesMonitoreo');
+
+                    const boton =
+                        document.getElementById('btnConfirmarCiudad');
+
+                    const textoSeleccion =
+                        document.getElementById('ciudadSeleccionadaTexto');
+
+                    if (!input || !lista || !boton) {
+                        return;
+                    }
+
+                    function mostrarResultados(busqueda = '') {
+
+                        const termino = normalizarTexto(busqueda);
+
+                        const resultados = CIUDADES_MONITOREO
+                            .filter(ciudad =&gt; {
+
+                                const textoCiudad = normalizarTexto(
+                                    `${ciudad.nombre} ${ciudad.estado}`
+                                );
+
+                                return textoCiudad.includes(termino);
+
+                            })
+                            .slice(0, 8);
+
+                        if (resultados.length === 0) {
+
+                            lista.innerHTML = `
+                                <div class="ciudad-sin-resultados">
+                                    No encontramos esa ciudad.
+                                </div>
+                            `;
+
+                            lista.classList.remove('d-none');
+
+                            return;
+                        }
+
+                        lista.innerHTML = resultados
+                            .map(ciudad =&gt; `
+                                <button type="button" class="ciudad-opcion" data-ciudad-id="${ciudad.id}">
+
+                                    <span>
+                                        ${ciudad.nombre}
+                                    </span>
+
+                                    <small>
+                                        ${ciudad.estado}
+                                    </small>
+
+                                </button>
+                            `)
+                            .join('');
+
+                        lista.classList.remove('d-none');
+
+                        lista
+                            .querySelectorAll('.ciudad-opcion')
+                            .forEach(opcion =&gt; {
+
+                                opcion.addEventListener('click', () =&gt; {
+
+                                    const ciudadId =
+                                        opcion.dataset.ciudadId;
+
+                                    seleccionarCiudad(ciudadId);
+
+                                });
+
+                            });
+                    }
+
+                    function seleccionarCiudad(ciudadId) {
+
+                        const ciudad =
+                            CIUDADES_MONITOREO.find(
+                                item =&gt; item.id === ciudadId
+                            );
+
+                        if (!ciudad) {
+                            return;
+                        }
+
+                        ciudadMonitoreoSeleccionada = ciudad;
+
+                        input.value =
+                            `${ciudad.nombre}, ${ciudad.estado}`;
+
+                        lista.classList.add('d-none');
+
+                        boton.disabled = false;
+
+                        if (textoSeleccion) {
+
+                            textoSeleccion.innerHTML = `
+                                <i class="fa-solid fa-circle-check"/>
+                                Servicio para
+                                <strong>${ciudad.nombre}</strong>
+                            `;
+
+                            textoSeleccion.classList.remove('d-none');
+
+                        }
+                    }
+
+                    input.addEventListener('focus', () =&gt; {
+                        mostrarResultados(input.value);
+                    });
+
+                    input.addEventListener('input', () =&gt; {
+
+                        ciudadMonitoreoSeleccionada = null;
+
+                        boton.disabled = true;
+
+                        textoSeleccion?.classList.add('d-none');
+
+                        mostrarResultados(input.value);
+
+                    });
+
+                    boton.addEventListener('click', () =&gt; {
+
+                        if (!ciudadMonitoreoSeleccionada) {
+                            return;
+                        }
+
+                        renderizarTarjetaSuscripcion(
+                            tipoServicioMonitoreoActual
+                        );
+
+                        mostrarPasoUpsell('monitoreo');
+
+                    });
                 }
 
                 function renderProductosRecomendados(productosAVisualizar) {
@@ -1822,28 +2163,70 @@
                         if (contenedor) contenedor.style.display = 'none';
                         return;
                     }
-                    const dataSuscripcion = INFO_SUSCRIPCIONES[tipoServicio];
+
+                    const info = INFO_SUSCRIPCIONES[tipoServicio];
+
+                    const servicio = obtenerServicioSuscripcion(tipoServicio);
+
+                    if (!servicio) {
+
+                        contenedor.style.display = 'block';
+
+                        contenedor.innerHTML = `
+                            <div class="monitoreo-card-body">
+                                <p class="text-danger">
+                                    No se pudo cargar el servicio de monitoreo
+                                    seleccionado.
+                                </p>
+                            </div>
+                        `;
+
+                        return;
+                    }
+
+                    const precio = Number(servicio.list_price * 1.08 || 0);
+
+                    contenedor.style.display = 'block';
 
                     contenedor.innerHTML = `
                         <div class="monitoreo-card-header">
-                            <span>${dataSuscripcion.titulo}</span>
-                            <strong id="precioMonitoreo">${dataSuscripcion.precio}</strong>
+
+                            <span>
+                                ${info.titulo}
+                            </span>
+
+                            <strong id="precioMonitoreo">
+                                ${precio.toLocaleString(
+                                    'es-MX',
+                                    {
+                                        style: 'currency',
+                                        currency: 'MXN',
+                                        minimumFractionDigits: 2
+                                    }
+                                )}
+                            </strong>
+
                             <small>/ mes</small>
+
                         </div>
+
                         <div class="monitoreo-card-body">
+
                             <p id="descripcionMonitoreo">
-                                ${dataSuscripcion.descripcion}
+                                ${info.descripcion}
                             </p>
-                            <button id="btnAgregarMonitoreo" type="button" class="btn btn-success w-100" data-product-id="${dataSuscripcion.productId}" data-product-template-id="${dataSuscripcion.productTemplateId || dataSuscripcion.productId}">
+
+                            <button id="btnAgregarMonitoreo" type="button" class="btn btn-success w-100" data-product-id="${servicio.id}">
                                 AGREGAR
                             </button>
+
                         </div>
                     `;
 
-                    inicializarMonitoreo(dataSuscripcion);
+                    inicializarMonitoreo();
                 }
 
-                function inicializarMonitoreo(dataSuscripcion) {
+                function inicializarMonitoreo() {
 
                     const boton =
                         document.getElementById('btnAgregarMonitoreo');
@@ -1866,11 +2249,6 @@
                         );
 
                         if (!productId) {
-                            console.error(
-                                'ID de monitoreo inválido:',
-                                nuevoBoton.getAttribute('data-product-id')
-                            );
-
                             mostrarNotificacionFlotante(
                                 'No se pudo identificar el servicio de monitoreo.',
                                 'error'
@@ -1891,15 +2269,15 @@
 
                             await agregarProductoAlCarrito(
                                 productId,
-                                1
+                                1,
+                                true
                             );
 
                             mostrarNotificacionFlotante(
                                 '¡Servicio de monitoreo agregado al carrito!',
                                 'success'
                             );
-
-                            mostrarPasoUpsell(2);
+                            mostrarPasoUpsell('complementos');
 
                         } catch (error) {
 
@@ -2145,8 +2523,11 @@
                 }
 
                 function abrirUpsellDrawer() {
-                    const drawer = document.getElementById('upsellDrawer');
-                    const overlay = document.getElementById('upsellOverlay');
+                    const drawer =
+                        document.getElementById('upsellDrawer');
+
+                    const overlay =
+                        document.getElementById('upsellOverlay');
 
                     if (!drawer || !overlay) {
                         return;
@@ -2155,11 +2536,14 @@
                     drawer.classList.add('active');
                     overlay.classList.add('active');
 
-                    drawer.setAttribute('aria-hidden', 'false');
+                    drawer.setAttribute(
+                        'aria-hidden',
+                        'false'
+                    );
 
                     document.body.classList.add('upsell-open');
 
-                    mostrarPasoUpsell(1);
+                    mostrarPasoUpsell('ciudad');
                 }
 
                 function cerrarUpsellDrawer() {
@@ -2179,38 +2563,60 @@
                 }
 
                 function mostrarPasoUpsell(paso) {
+                    const ciudad = document.getElementById('seccionSeleccionCiudad');
                     const monitoreo = document.getElementById('seccionMonitoreo24');
                     const recomendaciones = document.getElementById('seccionRecomendaciones');
                     const step1 = document.getElementById('upsellStep1');
                     const step2 = document.getElementById('upsellStep2');
                     const title = document.getElementById('upsellDrawerTitle');
 
-                    if (!monitoreo || !recomendaciones) {
+                    ciudad?.classList.add('d-none');
+                    monitoreo?.classList.add('d-none');
+                    recomendaciones?.classList.add('d-none');
+
+                    step1?.classList.remove('active', 'completed');
+                    step2?.classList.remove('active', 'completed');
+
+
+                    if (paso === 'ciudad') {
+
+                        ciudad?.classList.remove('d-none');
+
+                        step1?.classList.add('active');
+
+                        if (title) {
+                            title.innerText = 'Ubicación del servicio';
+                        }
+
                         return;
                     }
 
-                    if (paso === 1) {
-                        monitoreo.classList.remove('d-none');
-                        recomendaciones.classList.add('d-none');
+
+                    if (paso === 'monitoreo') {
+
+                        monitoreo?.classList.remove('d-none');
+
                         step1?.classList.add('active');
-                        step1?.classList.remove('completed');
-                        step2?.classList.remove('active');
 
                         if (title) {
                             title.innerText = 'Protege aún más tu sistema';
                         }
+
+                        return;
                     }
 
-                    if (paso === 2) {
-                        monitoreo.classList.add('d-none');
-                        recomendaciones.classList.remove('d-none');
-                        step1?.classList.remove('active');
+
+                    if (paso === 'complementos') {
+
+                        recomendaciones?.classList.remove('d-none');
+
                         step1?.classList.add('completed');
                         step2?.classList.add('active');
 
                         if (title) {
                             title.innerText = 'Productos sugeridos';
                         }
+
                     }
                 }
 
@@ -2235,13 +2641,72 @@
                     });
 
                     btnRechazar?.addEventListener('click', () =&gt; {
-                        mostrarPasoUpsell(2);
+                        mostrarPasoUpsell('complementos');
                     })
 
                     btnContinuar?.addEventListener('click', (e) =&gt; {
                         e.preventDefault();
                         window.location.href = '/shop/cart';
                     });
+                }
+
+                function obtenerProductIdMonitoreo(tipoServicio) {
+                    if (!ciudadMonitoreoSeleccionada) {
+                        return null;
+                    }
+
+                    const camposPorServicio = {
+                        "Via Internet": "viainternetId",
+                        "Monitoreo M2M": "monitoreom2mId",
+                        "Monitoreo GSM": "monitoreogsmId",
+                        "Alarmdotcom": "alarmdotcomId"
+                    }; 
+
+                    const campoId = camposPorServicio[tipoServicio];
+
+                    if (!campoId) {
+                        console.error(`Tipo de servicio de monitoreo desconocido: ${tipoServicio}`);
+
+                        return null;
+                    }
+
+                    const productId = ciudadMonitoreoSeleccionada[campoId];
+
+                    if (!productId) {
+                        console.error(
+                            `No existe producto para ${tipoServicio} en ${ciudadMonitoreoSeleccionada.nombre}`
+                        );
+
+                        return null;
+                    }
+
+                    return Number(productId);
+                }
+
+                function obtenerServicioSuscripcion(tipoServicio) {
+
+                    const productId =
+                        obtenerProductIdMonitoreo(tipoServicio);
+
+                    if (!productId) {
+                        return null;
+                    }
+
+                    const servicio =
+                        serviciosSuscripcionActuales.find(
+                            servicio =&gt; Number(servicio.id) === productId
+                        );
+
+                    if (!servicio) {
+
+                        console.error(
+                            `El servicio de suscripción con ID ${productId} no fue encontrado en la API.`
+                        );
+
+                        return null;
+                    }
+
+                    return servicio;
                 }
 
                 document.addEventListener('DOMContentLoaded', async () =&gt; {
@@ -2254,6 +2719,7 @@
                     const params = new URLSearchParams(window.location.search);
                     const categoryId = params.get('category');
                     inicializarUpsellDrawer();
+                    inicializarSelectorCiudad();
 
                     if (!respuestasGuardadas) {
                         if (carouselTrack) {
@@ -2275,6 +2741,16 @@
                     try {
                         const respuestaAPI = await fetch('https://maple-carousel-api.vercel.app/api/productoshagaloustedmismo');
                         const productosOdoo = await respuestaAPI.json();
+
+                        const respuestaServicios = await fetch('https://maple-carousel-api.vercel.app/api/serviciosdesuscripcion');
+
+                        if (!respuestaServicios.ok) {
+                            throw new Error(
+                                `Error al cargar servicios de suscripción: HTTP ${respuestaServicios.status}`
+                            );
+                        }
+
+                        serviciosSuscripcionActuales = await respuestaServicios.json();
 
                         const productosEnriquecidos = productosOdoo.map(producto =&gt; {
                             const reglas = CATALOGO_REGLAS[producto.default_code] || {
@@ -2299,12 +2775,14 @@
                             };
                         });
 
+                        productosOdooActuales = productosEnriquecidos; 
                         let productosParaMostrar = [];
 
                         if (paqueteSeleccionado &amp;&amp; PERFILES_PAQUETES[paqueteSeleccionado]) {
                             const configPaquete = PERFILES_PAQUETES[paqueteSeleccionado];
+                            tipoServicioMonitoreoActual = configPaquete.servicioDeSuscripcion;
                             renderizarTarjetaSuscripcion(configPaquete.servicioDeSuscripcion);
-                            renderComposicionPaquete( configPaquete.kitPrincipal, productosEnriquecidos );
+                            renderComposicionPaquete( configPaquete.kitPrincipal, productosEnriquecidos, respuestas.tamano_propiedad);
                             const kitData = productosEnriquecidos.find(p =&gt; p.modelo === configPaquete.kitPrincipal);
 
                             if (kitData) {

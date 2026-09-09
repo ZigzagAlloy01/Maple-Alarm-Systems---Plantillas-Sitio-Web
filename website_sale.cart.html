@@ -49,7 +49,7 @@
                 <div id="cart_compact_services" class="mt-5 pt-4 border-top">
                     <div class="titulos_servicios_suscripcion">
                         <h4 class="mb-4">Complementa tu equipo con nuestros servicios</h4>
-                        <h6 class="mb-4">Válido solo para las categorías de Sistemas de Alarma "Kits listos para Instalar", "Comprar por Familia de Productos" y "Paneles y Tablillas de Alarma"</h6>
+                        <h6 class="mb-4">Válido solo para las categorías de Sistemas de Alarma "Kits listos para Instalar", "Comprar por Familia de Productos" y "Paneles y Tablillas de Alarma". Los precios son para Ciudad Juárez.</h6>
                     </div>
                         <div class="row g-3 justify-content-center" id="suscriptions_container_cards">
                             
@@ -65,7 +65,7 @@
                                             Señales inalámbricas multicompañía con app móvil para armado/desarmado.
                                         </p>
                                         
-                                        <t t-set="m2m_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via M2M modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <t t-set="m2m_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via M2M modalidad mensual - Juárez'), ('sale_ok', '=', True)], limit=1)"/>
                                         <form class="oe_website_sale js_product js_main_product mt-auto" t-if="m2m_monitoring_product">
                                             <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
                                             <input class="o_not_editable product_id" name="product_id" t-att-value="m2m_monitoring_product.product_variant_id.id" type="hidden"/>
@@ -93,7 +93,7 @@
                                             Seguridad y comodidad. Convierte tu casa en un Hogar Inteligente desde la app.
                                         </p>
                                         
-                                        <t t-set="alarmcom_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via Alarm.com modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <t t-set="alarmcom_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via Alarm.com modalidad mensual - Juárez'), ('sale_ok', '=', True)], limit=1)"/>
                                         <form class="oe_website_sale js_product js_main_product mt-auto" t-if="alarmcom_product">
                                             <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
                                             <input class="o_not_editable product_id" name="product_id" t-att-value="alarmcom_product.product_variant_id.id" type="hidden"/>
@@ -120,7 +120,7 @@
                                             Datos móviles mediante red Telcel. Activaciones 100% garantizadas.
                                         </p>
                                         
-                                        <t t-set="gsm_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via GSM mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <t t-set="gsm_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via GSM mensual - Juárez'), ('sale_ok', '=', True)], limit=1)"/>
                                         <form class="oe_website_sale js_product js_main_product mt-auto" t-if="gsm_monitoring_product">
                                             <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
                                             <input class="o_not_editable product_id" name="product_id" t-att-value="gsm_monitoring_product.product_variant_id.id" type="hidden"/>
@@ -147,7 +147,7 @@
                                             Rápido y confiable a través de tu conexión de banda ancha residencial.
                                         </p>
                                         
-                                        <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via internet mensual'), ('sale_ok', '=', True)], limit=1)"/>
+                                        <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via internet mensual - Juárez'), ('sale_ok', '=', True)], limit=1)"/>
                                         <form class="oe_website_sale js_product js_main_product mt-auto" t-if="internet_monitoring_product">
                                             <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
                                             <input class="o_not_editable product_id" name="product_id" t-att-value="internet_monitoring_product.product_variant_id.id" type="hidden"/>
@@ -361,6 +361,19 @@
                         max-width: 15rem;
                     }
 
+                    .d-none.d-md-block h6 span, td.text-end.border-0.pb-2.pe-0.pt-0 span.monetary_field, td.text-end.border-0.pb-2.pe-0.pt-0 span.monetary_field span.oe_currency_value, td.text-end.border-0.p-0.ps-3.pb-2 span.monetary_field, td.text-end.border-0.p-0.ps-3.pb-2 span.monetary_field span.oe_currency_value {
+                        font-size: 1.2rem;
+                    }
+ 
+                    .flex-grow-1.text-wrap.w-100 .text-muted.small .d-block {
+                        display: none !important;
+                    }
+
+                    .d-md-flex.flex-md-wrap.column-gap-md-1.align-items-md-center .text-muted.small {
+                        font-size: 0.001rem;
+                        color: white;
+                    }
+
                     /* .card-body.p-0.p-lg-4 .o_cart_total.o_checkout_cart_total.pt-2.pt-lg-0 table.table.mb-0 tbody tr td.text-end.border-0.pb-2.pe-0.pt-0 {
                         color: white;
                     } */
@@ -473,6 +486,7 @@
                         ];
 
                         let mostrarServicios = false;
+                        let existeServicioMonitoreo = false;
 
                         categorias.forEach(span =&gt; {
                             const categoria = span.textContent.trim();
@@ -483,12 +497,16 @@
 
                             console.log("Spans encontrados:", categorias.length);
 
-                        console.log("Categoría:", categoria);
+                            console.log("Categoría:", categoria);
 
-                        console.log("¿Coincide?", categoria.includes("Alarmas cableadas"));
+                            console.log("¿Coincide?", categoria.includes("Alarmas cableadas"));
+
+                            if (categoria.includes('Monitoreo de alarmas')) {
+                                existeServicioMonitoreo = true;
+                            }
                         });
 
-                        contenedorServicios.style.display = mostrarServicios ? '' : 'none';
+                        contenedorServicios.style.display = mostrarServicios &amp;&amp; !existeServicioMonitoreo ? '' : 'none';
 
                         
                     }
