@@ -47,14 +47,65 @@
                         <div class="upsell-steps">
                             <div id="upsellStep1" class="upsell-step active">
                                 <span>1</span>
-                                <small>Monitoreo</small>
+                                <small>Complementos</small>
                             </div>
                             <div class="upsell-step-line"/>
                             <div id="upsellStep2" class="upsell-step">
                                 <span>2</span>
-                                <small>Complementos</small>
+                                <small>Monitoreo</small>
                             </div>
                         </div>
+
+                        <section id="seccionPreguntaMonitoreo" class="upsell-panel d-none">
+
+                            <div class="upsell-panel-intro">
+
+                                <div class="upsell-icon">
+                                    <i class="fa-solid fa-shield-halved"/>
+                                </div>
+
+                                <div>
+                                    <span class="upsell-kicker">
+                                        SERVICIO DE MONITOREO
+                                    </span>
+
+                                    <h4>
+                                        ¿Quieres contratar el servicio de monitoreo?
+                                    </h4>
+
+                                    <p>
+                                        Protege tu sistema con nuestro servicio de monitoreo 24/7.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="upsell-actions">
+
+                                <button id="btnAceptarMonitoreo" type="button" class="upsell-btn-primary">
+                                    Sí
+                                </button>
+
+                                <button id="btnRechazarMonitoreo" type="button" class="upsell-btn-secondary mt-2">
+                                    No
+                                </button>
+
+                            </div>
+
+                        </section>
+
+                        <section id="seccionSinMonitoreo" class="upsell-panel d-none">
+
+                            <div class="upsell-actions">
+
+                                <button id="btnContinuarCarritoSinMonitoreo" type="button" class="upsell-btn-secondary">
+                                    Continuar al carrito
+                                    <i class="fa-solid fa-arrow-right"/>
+                                </button>
+
+                            </div>
+
+                        </section>
 
                         <div class="upsell-drawer-content">
                             <section id="seccionSeleccionCiudad" class="upsell-panel">
@@ -70,7 +121,7 @@
                                             ¿En qué ciudad se instalará el sistema?
                                         </h4>
                                         <p>
-                                            Selecciona la ciudad en la que utilizarás el servicio de monitoreo. Importante: De no seleccionar la ciudad real en la que se recibirá el servicio, el monitoreo no podrá ser realizado
+                                            Selecciona la ciudad en la que utilizarás el servicio de monitoreo.
                                         </p>
                                     </div>
                                 </div>
@@ -114,8 +165,9 @@
                                 <div id="tarjetaSuscripcionMonitoreo" class="upsell-subscription-card">
                                 </div>
                                 <div class="upsell-actions">
-                                    <button id="btnRechazarMonitoreo" type="button" class="upsell-btn-secondary">
-                                        No, gracias
+                                    <button id="btnContinuarCarrito" type="button" class="upsell-btn-secondary">
+                                        Continuar al carrito
+                                        <i class="fa-solid fa-arrow-right"/>
                                     </button>
                                 </div>
                             </section>
@@ -154,9 +206,8 @@
                                         <i class="fa-solid fa-cart-plus"/>
                                         Agregar seleccionados
                                     </button>
-                                    <button id="btnContinuarCarrito" type="button" class="upsell-btn-secondary">
-                                        Continuar al carrito
-                                        <i class="fa-solid fa-arrow-right"/>
+                                    <button id="btnRechazarComplementos" type="button" class="upsell-btn-secondary">
+                                        Continuar
                                     </button>
                                 </div>
                             </section>
@@ -403,13 +454,16 @@
                     font-size: 1rem;
                 }
 
-                .custom-checkbox-container {
+                .recomendacion-body .custom-checkbox-container {
                     display: none;
-                    /* display: flex;
+                }
+
+                .custom-checkbox-container {
+                    display: flex;
                     align-items: center;
                     justify-content: center;
                     margin-top: 10px;
-                    cursor: pointer; */
+                    cursor: pointer;
                 }
 
                 #btnAnadirSeleccionados {
@@ -988,10 +1042,6 @@
                     border-top: 1px solid #edf0f4;
                 }
 
-                #btnContinuarCarrito {
-                    margin-top: 10px;
-                }
-
                 body.upsell-open {
                     overflow: hidden;
                 }
@@ -1005,6 +1055,18 @@
 
                 .composicion-paquete-item:first-child .qty-control:hover, .composicion-paquete-item:first-child .custom-checkbox-container:hover {
                     cursor: not-allowed;
+                }
+
+                button#btnRechazarComplementos, #btnContinuarCarrito{
+                    margin: 0 0 4rem 0;
+                }
+
+                section#seccionMonitoreo24 {
+                    margin: 2rem 0 0 0;
+                }
+
+                section#seccionPreguntaMonitoreo, section#seccionSinMonitoreo {
+                    padding: 2rem 4rem 0 4rem;
                 }
 
                 @media (max-width: 991px) {
@@ -2277,7 +2339,6 @@
                                 '¡Servicio de monitoreo agregado al carrito!',
                                 'success'
                             );
-                            mostrarPasoUpsell('complementos');
 
                         } catch (error) {
 
@@ -2543,7 +2604,7 @@
 
                     document.body.classList.add('upsell-open');
 
-                    mostrarPasoUpsell('ciudad');
+                    mostrarPasoUpsell('complementos');
                 }
 
                 function cerrarUpsellDrawer() {
@@ -2563,6 +2624,8 @@
                 }
 
                 function mostrarPasoUpsell(paso) {
+                    const preguntaMonitoreo = document.getElementById('seccionPreguntaMonitoreo');
+                    const sinMonitoreo = document.getElementById('seccionSinMonitoreo');
                     const ciudad = document.getElementById('seccionSeleccionCiudad');
                     const monitoreo = document.getElementById('seccionMonitoreo24');
                     const recomendaciones = document.getElementById('seccionRecomendaciones');
@@ -2570,6 +2633,8 @@
                     const step2 = document.getElementById('upsellStep2');
                     const title = document.getElementById('upsellDrawerTitle');
 
+                    preguntaMonitoreo?.classList.add('d-none');
+                    sinMonitoreo?.classList.add('d-none');
                     ciudad?.classList.add('d-none');
                     monitoreo?.classList.add('d-none');
                     recomendaciones?.classList.add('d-none');
@@ -2577,12 +2642,54 @@
                     step1?.classList.remove('active', 'completed');
                     step2?.classList.remove('active', 'completed');
 
+                    if (paso === 'complementos') {
+
+                        recomendaciones?.classList.remove('d-none');
+
+                        step1?.classList.add('active');
+
+                        if (title) {
+                            title.innerText = 'Productos sugeridos';
+                        }
+
+                        return;
+                    }
+
+                    if (paso === 'preguntaMonitoreo') {
+
+                        preguntaMonitoreo?.classList.remove('d-none');
+
+                        step1?.classList.add('completed');
+                        step2?.classList.add('active');
+
+                        if (title) {
+                            title.innerText = 'Servicio de monitoreo';
+                        }
+
+                        return;
+                    }
+
+                    if (paso === 'sinMonitoreo') {
+
+                        preguntaMonitoreo?.classList.remove('d-none');
+                        sinMonitoreo?.classList.remove('d-none');
+
+                        step1?.classList.add('completed');
+                        step2?.classList.add('active');
+
+                        if (title) {
+                            title.innerText = 'Servicio de monitoreo';
+                        }
+
+                        return;
+                    }
 
                     if (paso === 'ciudad') {
 
                         ciudad?.classList.remove('d-none');
 
-                        step1?.classList.add('active');
+                        step1?.classList.add('completed');
+                        step2?.classList.add('active');
 
                         if (title) {
                             title.innerText = 'Ubicación del servicio';
@@ -2594,36 +2701,27 @@
 
                     if (paso === 'monitoreo') {
 
+                        ciudad?.classList.remove('d-none');
                         monitoreo?.classList.remove('d-none');
 
-                        step1?.classList.add('active');
+                        step1?.classList.add('completed');
+                        step2?.classList.add('active');
 
                         if (title) {
                             title.innerText = 'Protege aún más tu sistema';
                         }
 
                         return;
-                    }
-
-
-                    if (paso === 'complementos') {
-
-                        recomendaciones?.classList.remove('d-none');
-
-                        step1?.classList.add('completed');
-                        step2?.classList.add('active');
-
-                        if (title) {
-                            title.innerText = 'Productos sugeridos';
-                        }
-
-                    }
+                    }                    
                 }
 
                 function inicializarUpsellDrawer() {
                     const overlay = document.getElementById('upsellOverlay');
                     const btnCerrar = document.getElementById('btnCerrarUpsell');
-                    const btnRechazar = document.getElementById('btnRechazarMonitoreo');
+                    const btnRechazar = document.getElementById('btnRechazarComplementos');
+                    const btnAceptarMonitoreo = document.getElementById('btnAceptarMonitoreo');
+                    const btnRechazarMonitoreo = document.getElementById('btnRechazarMonitoreo');
+                    const btnContinuarSinMonitoreo = document.getElementById('btnContinuarCarritoSinMonitoreo');
                     const btnContinuar = document.getElementById('btnContinuarCarrito');
 
                     overlay?.addEventListener('click', () =&gt; {
@@ -2641,8 +2739,21 @@
                     });
 
                     btnRechazar?.addEventListener('click', () =&gt; {
-                        mostrarPasoUpsell('complementos');
-                    })
+                        mostrarPasoUpsell('preguntaMonitoreo');
+                    });
+
+                    btnAceptarMonitoreo?.addEventListener('click', () =&gt; {
+                        mostrarPasoUpsell('ciudad');
+                    });
+
+                    btnRechazarMonitoreo?.addEventListener('click', () =&gt; {
+                        mostrarPasoUpsell('sinMonitoreo');
+                    });
+
+                    btnContinuarSinMonitoreo?.addEventListener('click', (e) =&gt; {
+                        e.preventDefault();
+                        window.location.href = '/shop/cart';
+                    });
 
                     btnContinuar?.addEventListener('click', (e) =&gt; {
                         e.preventDefault();

@@ -427,35 +427,95 @@
                 }
             ];
 
-            const COMPOSICION_PAQUETES = {
-                "AXHOME": [
-                    { modelo: "DS-PA201P-16WB", cantidad: 1 },
-                    { modelo: "DS-PD201P10-WB", cantidad: 1 },
-                    { modelo: "DS-PD201MC-WB", cantidad: 2 },
-                    { modelo: "DS-PKF201-WB", cantidad: 1 },
-                    { modelo: "DS-PS201-WB", cantidad: 1 }
-                ],
-                "AXPRO": [
-                    { modelo: "DS-PWA48-E-WB", cantidad: 1 },
-                    { modelo: "DS-PDP15P-EG2-WB(B)", cantidad: 1 },
-                    { modelo: "DS-PDMCS-EG2-WB(B)", cantidad: 2 },
-                    { modelo: "DS-PKF1-WB(B)", cantidad: 1 },
-                    { modelo: "DS-PS1-E-WB/R", cantidad: 1 }
-                ],
-                "SERIE NEO": [
-                    { modelo: "NEO-ALFA-RF", cantidad: 1 },
-                    { modelo: "SD-30W", cantidad: 1 },
-                    { modelo: "CBAT45AH", cantidad: 2 },
-                    { modelo: "PG9303", cantidad: 1 },
-                    { modelo: "PGP9914", cantidad: 1 }
-                ],
-                "IQ PANEL": [
-                    { modelo: "IQP4005", cantidad: 1 },
-                    { modelo: "PG9901 BATT", cantidad: 1 },
-                    { modelo: "PG9303", cantidad: 2 },
-                    { modelo: "PGP9914", cantidad: 1 }
-                ]
-            };
+            const COMPOSICION_PAQUETES_COMPACTO = {
+                    "AXHOME": [
+                        { modelo: "DS-PA201P-16WB", cantidad: 1 },
+                        { modelo: "DS-PD201P10-WB", cantidad: 1 },
+                        { modelo: "DS-PD201MC-WB", cantidad: 2 },
+                        { modelo: "DS-PKF201-WB", cantidad: 1 },
+                        { modelo: "DS-PS201-WB", cantidad: 1 }
+                    ],
+                    "AXPRO": [
+                        { modelo: "DS-PWA48-E-WB", cantidad: 1 },
+                        { modelo: "DS-PDP15P-EG2-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PDMCS-EG2-WB(B)", cantidad: 2 },
+                        { modelo: "DS-PKF1-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PS1-E-WB/R", cantidad: 1 }
+                    ],
+                    "SERIE NEO": [
+                        { modelo: "NEO-ALFA-RF", cantidad: 1 },
+                        { modelo: "SD-30W", cantidad: 1 },
+                        { modelo: "CBAT45AH", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 2 },
+                        { modelo: "PGP9914", cantidad: 1 }
+                    ],
+                    "IQ PANEL": [
+                        { modelo: "IQP4005", cantidad: 1 },
+                        { modelo: "PG9901 BATT", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 2 },
+                        { modelo: "PGP9914", cantidad: 1 }
+                    ]
+                };
+
+                const COMPOSICION_PAQUETES_FAMILIAR = {
+                    "AXHOME": [
+                        { modelo: "DS-PA201P-16WB", cantidad: 1 },
+                        { modelo: "DS-PD201P10-WB", cantidad: 2 },
+                        { modelo: "DS-PD201MC-WB", cantidad: 3 },
+                        { modelo: "DS-PKF201-WB", cantidad: 1 },
+                        { modelo: "DS-PS201-WB", cantidad: 1 }
+                    ],
+                    "AXPRO": [
+                        { modelo: "DS-PWA48-E-WB", cantidad: 1 },
+                        { modelo: "DS-PDP15P-EG2-WB(B)", cantidad: 2 },
+                        { modelo: "DS-PDMCS-EG2-WB(B)", cantidad: 3 },
+                        { modelo: "DS-PKF1-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PS1-E-WB/R", cantidad: 1 }
+                    ],
+                    "SERIE NEO": [
+                        { modelo: "NEO-ALFA-RF", cantidad: 1 },
+                        { modelo: "SD-30W", cantidad: 1 },
+                        { modelo: "CBAT45AH", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 3 },
+                        { modelo: "PGP9914", cantidad: 2 }
+                    ],
+                    "IQ PANEL": [
+                        { modelo: "IQP4005", cantidad: 1 },
+                        { modelo: "PG9901 BATT", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 3 },
+                        { modelo: "PGP9914", cantidad: 2 }
+                    ]
+                };
+
+                const COMPOSICION_PAQUETES_AMPLIO = {
+                    "AXHOME": [
+                        { modelo: "DS-PA201P-16WB", cantidad: 1 },
+                        { modelo: "DS-PD201P10-WB", cantidad: 3 },
+                        { modelo: "DS-PD201MC-WB", cantidad: 4 },
+                        { modelo: "DS-PKF201-WB", cantidad: 1 },
+                        { modelo: "DS-PS201-WB", cantidad: 1 }
+                    ],
+                    "AXPRO": [
+                        { modelo: "DS-PWA48-E-WB", cantidad: 1 },
+                        { modelo: "DS-PDP15P-EG2-WB(B)", cantidad: 3 },
+                        { modelo: "DS-PDMCS-EG2-WB(B)", cantidad: 4 },
+                        { modelo: "DS-PKF1-WB(B)", cantidad: 1 },
+                        { modelo: "DS-PS1-E-WB/R", cantidad: 1 }
+                    ],
+                    "SERIE NEO": [
+                        { modelo: "NEO-ALFA-RF", cantidad: 1 },
+                        { modelo: "SD-30W", cantidad: 1 },
+                        { modelo: "CBAT45AH", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 4 },
+                        { modelo: "PGP9914", cantidad: 3 }
+                    ],
+                    "IQ PANEL": [
+                        { modelo: "IQP4005", cantidad: 1 },
+                        { modelo: "PG9901 BATT", cantidad: 1 },
+                        { modelo: "PG9303", cantidad: 4 },
+                        { modelo: "PGP9914", cantidad: 3 }
+                    ]
+                };
 
                 const CONFIGURACION_TAMANOS = {
                     "11": [
@@ -474,6 +534,8 @@
                     categoriaId: "11",
                     tamanoSeleccionado: null
                 };
+
+                let MAPA_PRECIOS_ODOO = {};
 
                 function renderTarjetasTamano() {
                     const grid = document.getElementById('grid-tamanos-propiedad');
@@ -501,7 +563,12 @@
                 }
 
                 function seleccionarTamano(tamanoId) {
+
                     ESTADO.tamanoSeleccionado = tamanoId;
+
+                    if (Object.keys(MAPA_PRECIOS_ODOO).length &gt; 0) {
+                        calcularPreciosPaquetes(MAPA_PRECIOS_ODOO);
+                    }
 
                     document.querySelectorAll('.tarjeta-tamano').forEach(card =&gt; {
                         card.classList.remove('seleccionada');
@@ -597,7 +664,7 @@
                                         <small class="fw-bold text-dark">${prod.marca}</small>
                                         <h6 class="fw-bold">${prod.familia}</h6>
                                         <p class="text-muted small mb-3 flex-grow-1">${prod.descripcion}</p>
-                                        <p class="price_around_per_family">Precio alrededor de</p>
+                                        <p class="price_around_per_family">Precio base</p>
                                         <h4 class="fw-bold mb-3">$ ${precioFormateado}</h4>
                                         
                                         <ul class="lista-caracteristicas mb-4 flex-grow-1">
@@ -628,6 +695,60 @@
                     window.location.href = `/productos-hagalo-usted-mismo?category=${encodeURIComponent(ESTADO.categoriaId)}`;
                 }
 
+                function obtenerComposicionPaquete(tamanoPropiedadAsignado) {
+                    switch (tamanoPropiedadAsignado) {
+                        case 'compacta':
+                            return COMPOSICION_PAQUETES_COMPACTO;
+                        
+                        case 'familiar':
+                            return COMPOSICION_PAQUETES_FAMILIAR;
+                        
+                        case 'amplia':
+                            return COMPOSICION_PAQUETES_AMPLIO;
+                        
+                        default:
+                            console.warn(`Tamaño de propiedad no reconocido: ${tamanoPropiedadAsignado}`);
+                            return null;
+                    }
+                }
+
+                function calcularPreciosPaquetes(mapaPrecios) {
+                    const listaComponentes = obtenerComposicionPaquete(ESTADO.tamanoSeleccionado);
+
+                    if (!listaComponentes) {
+                        console.warn("No se pudo obtener la composición de paquetes para el tamaño seleccionado.");
+                        return;
+                    }
+
+                    BASE_DATOS_PRODUCTOS.forEach(producto =&gt; {
+                        const componentes = listaComponentes?.[producto.familia];
+
+                        if (!componentes) {
+                            console.warn(`No se encontraron componentes para la familia ${producto.familia} en el tamaño ${ESTADO.tamanoSeleccionado}.`);
+                            return;
+                        }
+
+                        if (componentes) {
+                            let sumaTotal = 0;
+                            componentes.forEach(componente =&gt; {
+                                const precioUnitarioLista = Number(mapaPrecios[componente.modelo]);
+
+                                if (!Number.isFinite(precioUnitarioLista)) {
+                                    console.warn(`Precio no válido para el modelo ${componente.modelo}: ${precioUnitarioLista}`);
+                                    return;
+                                }
+
+                                sumaTotal += (precioUnitarioLista * 1.08) * componente.cantidad;
+                            });
+                            producto.precioDesde = sumaTotal.toFixed(2);
+                        }
+                    });
+
+                    console.log(
+                        `Precios calculados para tamaño: ${ESTADO.tamanoSeleccionado}`
+                    );
+                }
+
                 document.addEventListener('DOMContentLoaded', async () =&gt; {
                     const params = new URLSearchParams(window.location.search);
                     if(params.get('category')) {
@@ -639,22 +760,16 @@
 
                         const productosOdoo = await respuestaAPI.json();
 
-                        const mapaPrecios = {};
+                        MAPA_PRECIOS_ODOO = {};
                         productosOdoo.forEach(producto =&gt; {
-                            mapaPrecios[producto.default_code] = producto.list_price || 0;
-                        });
-
-                        BASE_DATOS_PRODUCTOS.forEach(producto =&gt; {
-                            const componentes = COMPOSICION_PAQUETES[producto.familia];
-                            if (componentes) {
-                                let sumaTotal = 0;
-                                componentes.forEach(componente =&gt; {
-                                    const precioUnitarioLista = mapaPrecios[componente.modelo] || 0;
-                                    sumaTotal += (precioUnitarioLista * 1.08) * componente.cantidad;
-                                });
-                                producto.precioDesde = sumaTotal.toFixed(2);
+                            if (producto.default_code) {
+                                MAPA_PRECIOS_ODOO[producto.default_code] = Number(producto.list_price) || 0;
                             }
                         });
+                        
+                        if (ESTADO.tamanoSeleccionado) {
+                            calcularPreciosPaquetes(MAPA_PRECIOS_ODOO);
+                        }
 
                     } catch (error) {
                         console.error("No se pudieron calcular los precios dinámicos.", error);
