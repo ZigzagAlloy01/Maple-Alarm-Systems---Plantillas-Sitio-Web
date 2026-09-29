@@ -32,8 +32,15 @@
                                             Si tu alarma transmite sus señales por medio de la línea telefónica, te recomendamos visitar nuestra sección de comunicadores de alarma.
                                         </p>
                                         <p class="lead mt-4" style="color: #f9f9f9;">
-                                            Llama a nuestra <strong style="color: var(--technologic-cian);">línea de soporte al 800 123 23 5484</strong> o agenda la visita de un técnico para que revise tu sistema de alarma <strong>Sin costo.</strong>
+                                            <strong style="color: var(--technologic-cian);">Chatea con nuestros agentes</strong> o <strong style="color: var(--technologic-cian);">agenda la visita</strong> de un técnico para que revise tu sistema de alarma <strong>Sin costo.</strong>
                                         </p>
+                                        <p class="lead mt-4" style="color: #f9f9f9;">
+                                            El precio <strong style="color: var(--technologic-cian);">depende de la ciudad</strong> donde se encuentre el sistema a monitorear.
+                                        </p>
+                                        <div class="container_for_chat_and_appointment_services_template">
+                                            <a href="#" class="chat_and_appointment_services_template abrir-chat-custom">Abrir chat</a>
+                                            <a href="/appointment" class="chat_and_appointment_services_template">Agendar visita</a>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -46,12 +53,12 @@
                                             <div class="card-body">
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Monitoreo M2M</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block">$350.00</strong>
+                                                    <strong class="h2-fs d-block">Desde $350.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Brinda a tu alarma un servicio multicompañía datos móviles</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
                                                     Comunicación celular dedicada para transmitir eventos de alarma sin depender de la conexión a internet del inmueble</p>
-                                                
+                                                <!-- Servicio de monitoreo de alarmas via M2M modalidad mensual - Juárez -->
                                                 <t t-set="m2m_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via M2M modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
                                                 <form class="oe_website_sale js_product js_main_product mb-4" t-if="m2m_monitoring_product">
                                                     <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
@@ -86,13 +93,13 @@
                                             <div class="card-body">
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Alarm.com</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block">$520.00</strong>
+                                                    <strong class="h2-fs d-block">Desde $350.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Sistema de alarma + Automatizaciones desde tu app</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
                                                     Solución inteligente que integra alarma, aplicación móvil, notificaciones y automatización mediante paneles Qolsys IQ Panel
                                                 </p>
-                                                
+                                                <!-- Servicio de monitoreo de alarmas via Alarm.com modalidad mensual - Juárez -->
                                                 <t t-set="alarmcom_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via Alarm.com modalidad mensual'), ('sale_ok', '=', True)], limit=1)"/>
                                                 <form class="oe_website_sale js_product js_main_product mb-4" t-if="alarmcom_product">
                                                     <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
@@ -127,13 +134,13 @@
                                             <div class="card-body">
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Monitoreo GSM</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block">$420.00</strong>
+                                                    <strong class="h2-fs d-block">Desde $350.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Señales inalámbricas con datos móviles para más seguridad</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
                                                     Utiliza la red móvil para mantener el sistema enlazado con la central de monitoreo, como comunicación principal o de respaldo
                                                 </p>
-                                                
+                                                <!-- Servicio de monitoreo de alarmas via GSM mensual - Juárez -->
                                                 <t t-set="gsm_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via GSM mensual'), ('sale_ok', '=', True)], limit=1)"/>
                                                 <form class="oe_website_sale js_product js_main_product mb-4" t-if="gsm_monitoring_product">
                                                     <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
@@ -167,13 +174,13 @@
                                             <div class="card-body">
                                                 <h3 class="card-title h5-fs text-uppercase tracking-wide">Monitoreo Vía Internet</h3>
                                                 <div class="my-3 border-bottom border-secondary pb-3">
-                                                    <strong class="h2-fs d-block">$330.00</strong>
+                                                    <strong class="h2-fs d-block">Desde $350.00</strong>
                                                     <small class="custom-muted-text">al mes<br/>Utiliza tu servicio de internet para monitorear tu alarma</small>
                                                 </div>
                                                 <p class="card-text small mb-4 text-light">
                                                     Conecta el sistema de alarma a la central de monitoreo utilizando el servicio de internet del inmueble
                                                 </p>
-                                                
+                                                <!-- Servicio de monitoreo de alarmas via internet mensual - Juárez -->
                                                 <t t-set="internet_monitoring_product" t-value="request.env['product.template'].sudo().search([('name', '=', 'Servicio de monitoreo de alarmas via internet mensual'), ('sale_ok', '=', True)], limit=1)"/>
                                                 <form class="oe_website_sale js_product js_main_product mb-4" t-if="internet_monitoring_product">
                                                     <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
@@ -252,7 +259,7 @@
                         box-shadow: 0 0 20px rgba(2, 214, 232, 0.15) !important;
                     }
                     
-                    .custom-btn-subscribe {
+                    .custom-btn-subscribe, .chat_and_appointment_services_template {
                         display: inline-flex !important;
                         align-items: center !important;
                         justify-content: center !important;
@@ -280,13 +287,23 @@
                     }
                     
 
-                    .custom-btn-subscribe, .custom-btn-subscribe-highlight {
+                    .custom-btn-subscribe, .custom-btn-subscribe-highlight, .chat_and_appointment_services_template {
                         background: #16A34A !important;
                         border: 1px solid #16A34A !important;
                     }
 
-                    .custom-btn-subscribe:hover, .custom-btn-subscribe-highlight:hover {
+                    .custom-btn-subscribe:hover, .custom-btn-subscribe-highlight:hover, .chat_and_appointment_services_template:hover {
                         background: #0f6e32 !important;
+                    }
+
+                    a.chat_and_appointment_services_template {
+                        text-decoration: none;
+                    }
+
+                    .container_for_chat_and_appointment_services_template {
+                        display: flex;
+                        gap: 4rem;
+                        justify-self: center;
                     }
                     
                     .custom-list-group .list-group-item {
@@ -298,7 +315,6 @@
                     
                     .custom-muted-text {
                         /* color: var(--maple-white) !important; */
-
                         line-height: 1.4;
                     }
 
@@ -316,7 +332,7 @@
                     }
                     
                     .h2-fs {
-                        font-size: 2.5rem;
+                        font-size: 2.2rem;
                         font-weight: 700;
                     }
                     
@@ -351,6 +367,25 @@
                         left: 50% !important;
                         transform: translateX(-50%) !important;
                         z-index: 9999 !important;
+                    }
+
+                    h3.card-title.h5-fs.text-uppercase.tracking-wide {
+                        margin: 1rem 0 0 0;
+                    }
+
+                    h3.card-title.h5-fs.text-uppercase.tracking-wide, strong.h2-fs.d-block, div.my-3.border-bottom.border-secondary.pb-3 small.custom-muted-text, p.card-text.small.mb-4.text-light {
+                        text-align: center;
+                    }
+
+                    div.my-3.border-bottom.border-secondary.pb-3 small.custom-muted-text {
+                        display: flex;
+                    }
+
+                    @media (max-width: 530px) {
+                        .container_for_chat_and_appointment_services_template {
+                            flex-direction: column;
+                            gap: 2rem;
+                        }
                     }
                 </style>
             </xpath>
@@ -421,6 +456,36 @@
                             button.classList.remove('disabled');
                             button.removeAttribute('aria-disabled');
                             window.alert('No se pudo agregar el servicio al carrito. Por favor intenta desde la ficha del producto o contáctanos.');
+                        });
+                    });
+
+                    document.addEventListener('DOMContentLoaded', () =&gt; {
+                        const botonesAbrirChat = document.querySelectorAll('.abrir-chat-custom');
+                        if (!botonesAbrirChat) return;
+
+                        botonesAbrirChat.forEach(boton =&gt; {
+                            boton.addEventListener('click', (e) =&gt; {
+                                e.preventDefault();
+
+                                const livechatHost = document.querySelector('.o-livechat-root');
+
+                                if (!livechatHost) {
+                                    console.error('No se encontró el contenedor del chat.');
+                                    return;
+                                }
+
+                                const shadowRoot = livechatHost.shadowRoot;
+
+                                if (shadowRoot) {
+                                    const chatBtn = shadowRoot.querySelector('button[part="openChatButton"], .o-livechat-LivechatButton');
+
+                                    if (chatBtn) {
+                                        chatBtn.click();
+                                    } else {
+                                        console.error('No se encontró el botón para abrir el chat dentro del Shadow DOM.');
+                                    }
+                                }
+                            });
                         });
                     });
                 </script>

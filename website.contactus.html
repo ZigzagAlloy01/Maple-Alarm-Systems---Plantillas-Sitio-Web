@@ -1,0 +1,178 @@
+<t name="Contact Us" t-name="website.contactus">
+    
+        <t t-call="website.layout">
+            <t t-set="logged_partner" t-value="request.env['website.visitor']._get_visitor_from_request().partner_id"/>
+            <t t-set="contactus_form_values" t-value="{                 'email_to': res_company.email,                 'name': request.params.get('name', ''),                 'phone': request.params.get('phone', ''),                 'email_from': request.params.get('email_from', ''),                 'company': request.params.get('company', ''),                 'subject': request.params.get('subject', ''),             }"/>
+            <span class="hidden" data-for="contactus_form" t-att-data-values="contactus_form_values"/>
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24 o_colored_level" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1">
+                    <span class="s_parallax_bg oe_img_bg" style="background-image: url('/web/image/website.s_parallax_default_image'); background-position: 50% 0;"/>
+                    <div class="o_we_bg_filter bg-black-50"/>
+                    <div class="container">
+                        <h1>Contáctanos</h1>
+                    </div>
+                </section>
+                <section class="s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block">
+                    <div class="s_allow_columns container">
+                        <div class="row o_grid_mode" data-row-count="14">
+                            <div class="mt-4 mt-lg-0 o_colored_level o_grid_item g-col-lg-7 g-height-13 col-lg-7" style="grid-area: 1 / 1 / 14 / 8; z-index: 1;">
+                                <p class="lead">
+                                    Contáctenos sobre cualquier cosa relacionada con nuestra empresa o servicios. Haremos todo lo posible por responderle a la brevedad.
+                                </p>
+                                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                                    <div class="container">
+                                        <form id="contactus_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true">
+                                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                                <div class="mb-3 col-lg-6 s_website_form_field s_website_form_custom s_website_form_required" data-type="char" data-name="Field">
+                                                    <label class="s_website_form_label" style="width: 200px" for="contact1">
+                                                        <span class="s_website_form_label_content">Nombre</span>
+                                                        
+                                                    <span class="s_website_form_mark"> *</span></label>
+                                                    <input id="contact1" type="text" class="form-control s_website_form_input" name="name" required="" data-fill-with="name"/>
+                                                </div>
+                                                <div data-name="Field" class="s_website_form_field mb-3 col-lg-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                    <label class="s_website_form_label" style="width: 200px" for="contact2">
+                                                        <span class="s_website_form_label_content">Número de teléfono</span>
+                                                    <span class="s_website_form_mark"> *</span></label>
+                                                    <input id="contact2" type="tel" class="form-control s_website_form_input" name="phone" data-fill-with="phone" required=""/>
+                                                </div>
+                                                <div class="mb-3 col-lg-6 s_website_form_field s_website_form_required s_website_form_model_required" data-type="email" data-name="Field">
+                                                    <label class="s_website_form_label" style="width: 200px" for="contact3">
+                                                        <span class="s_website_form_label_content">Correo electrónico</span>
+                                                        
+                                                    <span class="s_website_form_mark"> *</span></label>
+                                                    <input id="contact3" type="email" class="form-control s_website_form_input" name="email_from" required="" data-fill-with="email"/>
+                                                </div>
+                                                <div class="mb-3 col-lg-6 s_website_form_field s_website_form_custom" data-type="char" data-name="Field">
+                                                    <label class="s_website_form_label" style="width: 200px" for="contact4">
+                                                        <span class="s_website_form_label_content">Empresa</span>
+                                                    </label>
+                                                    <input id="contact4" type="text" class="form-control s_website_form_input" name="company" data-fill-with="commercial_company_name"/>
+                                                </div>
+                                                <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_required s_website_form_model_required" data-type="char">
+                                                    <label class="s_website_form_label" style="width: 200px" for="contact5">
+                                                        <span class="s_website_form_label_content">Asunto</span>
+                                                        
+                                                    <span class="s_website_form_mark"> *</span></label>
+                                                    <input id="contact5" type="text" class="form-control s_website_form_input" name="subject" required=""/>
+                                                </div>
+                                                <div class="mb-3 col-12 s_website_form_field s_website_form_custom s_website_form_required" data-type="text" data-name="Field">
+                                                    <label class="s_website_form_label" style="width: 200px" for="contact6">
+                                                        <span class="s_website_form_label_content">Pregunta</span>
+                                                        
+                                                    <span class="s_website_form_mark"> *</span></label>
+                                                    <textarea id="contact6" class="form-control s_website_form_input" name="description" required="" rows="8"/>
+                                                </div>
+                                                <div class="mb-3 col-12 s_website_form_field s_website_form_dnone">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="contact7">
+                                                            <span class="s_website_form_label_content">Correo electrónico a</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <input id="contact7" type="hidden" class="form-control s_website_form_input" name="email_to"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-0 py-2 col-12 s_website_form_submit s_website_form_no_submit_label text-end" data-name="Submit Button">
+                                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                                    <a href="mailto:sistemas@storemaple.com" role="button" class="btn btn-primary s_website_form_send">Enviar</a>
+                                                    <span id="s_website_form_result"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="mt-4 mt-lg-0 o_colored_level o_grid_item g-col-lg-4 g-height-13 col-lg-4" style="grid-area: 1 / 9 / 14 / 13; z-index: 2;">
+                                <h5><strong>Sucursal Ciudad Juárez</strong></h5>
+                                <ul class="list-unstyled mb-0 ps-2">
+                                    <li><i class="fa fa-map-marker fa-fw me-2"/><span class="o_force_ltr">Art. 3 #424, 2da. Burocrata, 32340, Ciudad Juárez, Chihuahua, México.</span></li>
+                                    <li><i class="fa fa-phone fa-fw me-2"/><span class="o_force_ltr">+52 656 648 8800</span></li>
+                                    <li><i class="fa fa-1x fa-fw fa-envelope me-2"/>contacto@maplealarm.mx</li>
+                                </ul><section class="s_map pb56 pt120" data-map-zoom="12" data-snippet="s_map" data-map-address="Art. 3 #424 Juárez Chihuahua (MX) México" data-name="Mapa" data-map-type="m">
+        <div class="map_container o_not_editable">
+            <div class="css_non_editable_mode_hidden">
+                <div class="missing_option_warning alert alert-info rounded-0 fade show d-none d-print-none">
+                    Es necesario especificar una dirección para poder insertar un mapa
+                </div>
+            </div>
+            <iframe class="s_map_embedded o_not_editable" src="https://maps.google.com/maps?q=Art.%203%20%23424%20Ju%C3%A1rez%20Chihuahua%20(MX)%20M%C3%A9xico&amp;t=m&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" aria-label="Mapa"/>
+            <div class="s_map_color_filter"/>
+        </div>
+    </section>
+                            </div>
+                        <div class="mt-4 mt-lg-0 o_colored_level o_grid_item g-col-lg-4 g-height-7 col-lg-4" style="z-index: 3; grid-area: 8 / 9 / 15 / 13;">
+                                <h5><strong>Sucursal Chihuahua</strong></h5>
+                                <ul class="list-unstyled mb-0 ps-2">
+                                    <li><i class="fa fa-map-marker fa-fw me-2"/><span class="o_force_ltr">Haciendas del Valle #7104-18, Haciendas del Valle, 31217, Chihuahua,&amp;nbsp;Chihuahua, México.</span></li>
+                                    <li><i class="fa fa-phone fa-fw me-2"/><span class="o_force_ltr">+52 614 590 93 93</span></li>
+                                    <li><i class="fa fa-1x fa-fw fa-envelope me-2"/>contacto@maplealarm.mx</li>
+                                </ul><section class="s_map pb56 pt120" data-map-zoom="12" data-snippet="s_map" data-map-address="Haciendas del Valle #7104-18, Haciendas del Valle, 31217, Chihuahua, Chihuahua, México." data-name="Mapa" data-map-type="m">
+        <div class="map_container o_not_editable">
+            <div class="css_non_editable_mode_hidden">
+                <div class="missing_option_warning alert alert-info rounded-0 fade show d-none d-print-none">
+                    Es necesario especificar una dirección para poder insertar un mapa
+                </div>
+            </div>
+            <iframe class="s_map_embedded o_not_editable" src="https://maps.google.com/maps?q=Haciendas%20del%20Valle%20%237104-18%2C%20Haciendas%20del%20Valle%2C%2031217%2C%20Chihuahua%2C%C2%A0Chihuahua%2C%20M%C3%A9xico.&amp;t=m&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" aria-label="Mapa"/>
+            <div class="s_map_color_filter"/>
+        </div>
+    </section>
+                            </div></div>
+                    </div>
+                </section>
+            </div>
+            <xpath expr="//head" position="inside">
+                <style>
+                    .mt-4.mt-lg-0.o_colored_level.o_grid_item.g-col-lg-7.g-height-13.col-lg-7 .lead {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        text-align: center;
+                        margin: 0 0 4.4rem 0;
+                    }
+
+                    .mt-4.mt-lg-0.o_colored_level.o_grid_item.g-col-lg-4.g-height-7.col-lg-4 {
+                        margin: 2rem 0 0 0 !important;
+                    }
+
+                    input {
+                        font-size: 1.2rem !important;
+                        font-weight: 500 !important;
+                    }
+
+                    label.s_website_form_label {
+                        font-weight: 900;
+                        font-size: 1.2rem;
+                    }
+
+                    label.s_website_form_label {
+                        width: 17rem !important;
+                    }
+
+                    ul.list-unstyled.mb-0.ps-2 {
+                        margin: 0 0 2rem 0 !important;
+                        text-align: center;
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                    }
+
+                    .mt-4.mt-lg-0.o_colored_level.o_grid_item.g-col-lg-4.g-height-13.col-lg-4 h5, .mt-4.mt-lg-0.o_colored_level.o_grid_item.g-col-lg-4.g-height-7.col-lg-4 h5 {
+                        text-align: center !important;
+                    }
+
+                    .s_text_block.pt40.pb40.o_colored_level {
+                        margin: 0 0 10rem 0;
+                    }
+
+                    .mb-3 {
+                        margin-bottom: 3rem !important;
+                    }
+                </style>
+            </xpath>
+            <xpath expr="//head" position="inside">
+                <script>
+
+                </script>
+            </xpath>
+        </t>
+    </t>

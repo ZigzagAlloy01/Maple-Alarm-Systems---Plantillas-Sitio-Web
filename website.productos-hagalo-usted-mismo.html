@@ -153,12 +153,15 @@
                                             PROTECCIÓN ADICIONAL
                                         </span>
                                         <h4>
-                                            ¿Quieres agregar monitoreo 24/7?
+                                            Monitoreo 24/7
                                         </h4>
                                         <p>
-                                            Mantén tu sistema conectado a nuestra
-                                            central de monitoreo las 24 horas.
+                                            Con tu contratación recibirás monitoreo de tu sistema de alarma las 24 horas, los 7 días de la semana. Ante una alerta:
                                         </p>
+                                        <ul>
+                                            <li>Mantenemos contacto contigo.</li>
+                                            <li>Coordinamos la solicitud de apoyo de policía, ambulancia o bomberos.</li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -808,7 +811,6 @@
                 .upsell-panel-intro {
                     display: flex;
                     gap: 14px;
-
                     margin-bottom: 24px;
                 }
 
@@ -851,16 +853,14 @@
                     font-weight: 750;
                 }
 
-                .upsell-panel-intro p {
+                .upsell-panel-intro p, .upsell-panel-intro ul li {
+                    text-align: justify;
                     margin: 0;
-
                     color: #667085;
-
                     font-size: 1rem;
                     font-weight: 800;
                     line-height: 1.5;
                 }
-
 
                 .upsell-subscription-card {
                     width: 100%;
@@ -902,11 +902,11 @@
                 }
 
                 .upsell-subscription-card .monitoreo-card-body p {
+                    text-align: justify;
                     min-height: auto;
-
-                    font-size: .88rem;
-                    line-height: 1.5;
-
+                    font-size: 1rem;
+                    font-weight: 700;
+                    line-height: 1.4;
                     color: #667085;
                 }
 
@@ -1138,6 +1138,22 @@
 
                     .upsell-carousel-track .recomendacion-item {
                         flex: 0 0 94%;
+                    }
+
+                    .upsell-panel-intro {
+                        flex-direction: column;
+                    }
+
+                    .upsell-panel-intro .upsell-icon {
+                        align-self: center;
+                    }
+
+                    .upsell-panel-intro div span, .upsell-panel-intro div h4 {
+                        text-align: center;
+                    }   
+                    
+                    .upsell-panel-intro p, .upsell-panel-intro ul {
+                        margin: 1rem 1rem;
                     }
                 }
 
