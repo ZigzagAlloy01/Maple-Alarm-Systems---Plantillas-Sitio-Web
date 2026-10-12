@@ -83,6 +83,10 @@
                 }
 
                 ul.list-unstyled.text-start.mb-4 {
+                    display: none !important;
+                }
+
+                ul.list-unstyled.text-start.mb-4 {
                     align-self: center;
                     max-width: 19rem;
                     margin: 1rem 1rem;
@@ -91,6 +95,10 @@
                 ul.list-unstyled.text-start.mb-4 li {
                     text-align: justify;
                     line-height: 1.8;
+                }
+
+                #Alarmasparaelhogar, #Alarmasparanegocios {
+                    margin: 0 0 2rem 0;
                 }
 
                 @media (max-width: 1200px) {
@@ -234,10 +242,11 @@
                                         <ul class="list-unstyled text-start mb-4">
                                             ${specsHtml}
                                         </ul>
-                                        <button class="btn btn-primary w-100 btn-seleccionar-tamano mt-auto" id="${titlecut}">Seleccionar</button>
                                         <div class="mt-4 text-muted personalizedicon" style="font-size: 4rem;">
                                             <i class="fa-solid ${child.icon_class}"/>
                                         </div>
+                                        <button class="btn btn-primary w-100 btn-seleccionar-tamano mt-auto" id="${titlecut}">Seleccionar</button>
+                                        
                                     </a>
                                 </div>
                             `;
