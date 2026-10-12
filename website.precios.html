@@ -543,6 +543,11 @@
                     //     flex-direction: row;
                     //     justify-content: center;
                     // }
+
+                    .alarm-carousel-wrapper, .gps-program-section, .awards-strip {
+                        display: none !important;
+                    }
+
                     main p {
                         font-size: 1rem !important;
                         font-weight: 600;
@@ -787,8 +792,11 @@
                     }
 
                     .alarm-header {
+                        justify-self: center;
                         text-align: center;
-                        margin: 0 0 2.5rem 0;
+                        margin: -3rem 0 -0.5rem 0;
+                        padding: 40px 20px 20px;
+                        max-width: 64rem;
                     }
 
                     .alarm-header h2 {
@@ -882,11 +890,6 @@
                         background: #ffffff;
                         border-radius: 12px;
                         overflow: hidden;
-                    }
-
-                    .alarm-header {
-                        text-align: center;
-                        padding: 40px 20px 20px;
                     }
 
                     .alarm-header p {
@@ -2773,7 +2776,7 @@
                                             );
 
                                             mostrarNotificacionFlotante(
-                                                'Error al agregar el producto.',
+                                                'Debes iniciar sesión para agregar el producto.',
                                                 'error'
                                             );
 

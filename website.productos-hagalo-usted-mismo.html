@@ -1884,7 +1884,7 @@
                                     )
                                 }   catch (error) {
                                         console.error('Error al agregar producto de composición:', error ); 
-                                        mostrarNotificacionFlotante( 'Error al agregar el producto.', 'error' );
+                                        mostrarNotificacionFlotante( 'Debes iniciar sesión para agregar el producto.', 'error' );
                                 }   finally {
                                         boton.disabled = false;
                                         boton.innerText = textoOriginal;
@@ -1942,7 +1942,7 @@
                                     'Error al agregar paquete:', error
                                 )
 
-                                mostrarNotificacionFlotante( 'Error al agregar los productos del paquete.', 'error' );
+                                mostrarNotificacionFlotante( 'Debes iniciar sesión para agregar los productos del paquete.', 'error' );
                         }   finally {
                                 nuevoBoton.disabled = false;
 
