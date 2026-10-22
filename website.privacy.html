@@ -1,0 +1,555 @@
+<t t-name="website.privacy">
+    <t t-call="website.layout">
+        <div class="privacy-notice-absolute-container">
+            <div class="privacy-notice-header">
+                <div>
+                    <a class="cs-help-title" href="/contactus">Información para el cliente</a>
+                </div>
+            </div>
+            <div class="privacy-notice-container">
+                <div class="privacy-notice-sidebar">
+                    <div class="cs-help-sidebar-module topic-sidebar">
+                        <div class="lista-de-apartados">
+                            <h3>Apartados</h3>
+                            <h4>Selecciona un apartado</h4>
+                            <ul>
+                                <li>
+                                    <a id="avisodeprivacidad" href="/privacy?section=avisodeprivacidad" data-privacy-section="avisodeprivacidad">
+                                        Aviso de privacidad
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="politicadegarantia" href="/privacy?section=politicadegarantia" data-privacy-section="politicadegarantia">
+                                        Política de garantía
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="terminosycondiciones" href="/privacy?section=terminosycondiciones" data-privacy-section="terminosycondiciones">
+                                        Términos y condiciones
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="privacy-notice-content">
+                    <div>
+                        <h1 class="h1_titulo_de_apartado">
+                        </h1>
+                        <h2>
+                            Última actualización: 21 de octubre de 2026.
+                        </h2>
+                        <section class="section-resolver-dudas">
+                            <p>
+                                Sabemos que es importante para usted conocer cómo utilizamos sus datos personales, y le agradecemos que confíe en nosotros. Los apartados de aviso de privacidad, política de garantía y términos y condiciones describen la forma en la que se recopilan y tratan sus datos personales a través de este sitio web, así como las garantías y condiciones de Maple Security. Al utilizar nuestros servicios, usted está dando su consentimiento a las prácticas descritas en este Aviso de Privacidad. Si tiene preguntas sobre como recabamos y usamos sus datos personales, por favor, póngase en contacto con nosotros.
+                            </p>
+                            <a href="/contactus" class="boton-resolver-dudas">Contactar</a>
+                        </section>
+                        
+                    </div>
+                </div>
+            </div>
+            <h1 class="h1_privacy_info_container">
+            </h1>
+            <div id="privacy-info-container"/>
+        </div>
+        <xpath expr="//head" position="inside">
+            <style type="text/css">
+                * {
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .privacy-notice-absolute-container {
+                    min-height: 100%;
+                    zoom: 1;
+                    color: #292d33;
+                    background: white;
+                }
+
+                .privacy-notice-header {
+                    min-width: 16rem;
+                    min-height: auto;
+                    padding: 2rem 1.5rem;
+                }
+
+                .cs-help-title {
+                    text-decoration: none !important;
+                    color: #252932 !important;
+                    font-size: 3rem;
+                    font-weight: 700;
+                    text-align: center;
+                    display: block;
+                    height: auto;
+                    margin-right: 0;
+                }
+
+                .privacy-notice-container {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 2rem;
+                    max-width: 1320px;
+                    margin: 0 auto;
+                    padding: 1rem 2rem 3rem;
+                    align-items: flex-start;
+                }
+
+                .privacy-notice-sidebar {
+                    flex: 0 0 260px;
+                    width: auto;
+                    padding: 0 0 0 1rem;
+                }
+
+                .privacy-notice-content {
+                    flex: 1;
+                    padding: 1rem 2rem;
+                    min-width: 0;
+                }
+
+                .privacy-notice-content h1 {
+                    margin-bottom: 0.75rem;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    text-align: left;
+                }
+                
+                .privacy-notice-content h2 {
+                    margin: 1.8rem 0 0.8rem;
+                    font-size: 1.35rem;
+                    text-align: left;
+                }
+
+                .privacy-notice-content p,
+                #privacy-info-container p {
+                    margin-bottom: 1rem;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    line-height: 1.8;
+                    text-align: justify;
+                }
+
+                .boton-resolver-dudas {
+                    background-color: #c8102e;
+                    border-radius: 6px;
+                    z-index: 900;
+                }
+
+                .boton-resolver-dudas:hover {
+                    background-color: #860c20;
+                }
+
+                .cs-help-sidebar-module.topic-sidebar {
+                    margin: 0;
+                    word-break: break-word;
+                    background: #f7f7f8;
+                    color: #292d33 !important;
+                    border: 1px solid #e5e5e7;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+
+                .lista-de-apartados {
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    margin-bottom: 4px;
+                    list-style: none;
+                    text-align: left;
+                    text-indent: 0;
+                    padding: 2rem 1rem;
+                }
+
+                .lista-de-apartados h3 {
+                    margin: 0 0 4rem 0;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                }
+
+                .lista-de-apartados h4 {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+
+                .lista-de-apartados ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .lista-de-apartados ul li:not(:last-child) {
+                    margin: 0 0 1.6rem 0;
+                }
+
+                .lista-de-apartados ul li a {
+                    display: block;
+                    padding: 0.8rem;
+                    border-radius: 6px;
+                    color: #42464e !important;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    text-decoration: none !important;
+                    transition: background-color 0.2s, color 0.2s;
+                }
+
+                .lista-de-apartados ul li a:hover {
+                    background: #fff;
+                    color: #c8102e !important;
+                }
+
+                section.section-resolver-dudas {
+                    justify-items: center;
+                    padding: 1rem 3rem;
+                }
+
+                .section-resolver-dudas p {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    text-align: justify;
+                }
+
+                section.section-resolver-dudas a {
+                    display: flex;
+                    color: white;
+                    text-decoration: none;
+                    padding: 1rem 1rem;
+                    border-radius: 1rem;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    justify-content: center;
+                    width: 9rem;
+                    margin: 3rem;
+                }
+
+                h1.h1_privacy_info_container {
+                    margin: 2rem 1rem 2rem 1rem;
+                    text-align: center;
+                }
+
+                div#privacy-info-container {
+                    margin: 3rem 5rem 7rem 5rem;
+                    text-align: justify;
+                }
+
+                @media (max-width: 991px) {
+                    .privacy-notice-header {
+                        min-height: 10rem;
+                    }
+                    
+                    .privacy-notice-container {
+                        flex-direction: column;
+                        padding: 1rem;
+                        gap: 1rem;
+                    }
+
+                    .privacy-notice-content {
+                        width: 100%;
+                        padding: 1rem 0;
+                    }
+
+                    .privacy-notice-content h1, .privacy-notice-content h2 {
+                        text-align: center;
+                    }
+
+                    .privacy-notice-sidebar {
+                        align-self: center;
+                        width: 20rem;
+                        margin: 2rem 1rem;
+                        padding: 0;
+                    }
+
+                    .privacy-notice-header {
+                        padding: 1.5rem 1rem;
+                    }
+
+                    section.section-resolver-dudas {
+                        padding: 1rem 1rem;
+                    }
+
+                    .lista-de-apartados {
+                        text-align: center;
+                    }
+
+                    div#privacy-info-container {
+                        margin: 3rem 2rem 7rem 2rem;
+                    }
+
+                    .privacy-notice-content p,
+                    #privacy-info-container p {
+                        font-size: 1rem;
+                    }
+
+                    #privacy-info-container h2 {
+                        text-align: center;
+                    }
+                }
+
+                @media (max-width: 450px) {
+                    .cs-help-title {
+                        font-size: 1.8rem;
+                    }
+
+                    .privacy-notice-header {
+                        min-height: 8rem;
+                    }
+
+                    .privacy-notice-sidebar {
+                        width: 15rem;
+                    }
+                }
+            </style>
+            <script>
+                const contents = {
+                    "avisodeprivacidad": `
+                        <h2>1. Responsable de los datos personales</h2>
+                        <p><strong>Maple Alarm Systems</strong>, que opera bajo el nombre comercial <strong>Maple Security</strong>, es responsable del tratamiento de tus datos personales.</p>
+                        <p>Este aviso explica cómo utilizamos la información que nos proporcionas al visitar <a href="https://www.storemaple.com" target="_blank">https://www.storemaple.com</a>, realizar una compra o comunicarte con nosotros por correo electrónico, teléfono o chat.</p>
+                        <p>Para asuntos relacionados con tu privacidad, puedes escribir a <a href="mailto:contacto@storemaple.com">contacto@storemaple.com</a>.</p>
+
+                        <h2>2. Datos personales que recabamos</h2>
+                        <p>Dependiendo de tu interacción con Maple Security, podremos solicitar los siguientes datos:</p>
+                        <ul>
+                            <li><strong>Identificación y contacto:</strong> nombre, correo electrónico y teléfono.</li>
+                            <li><strong>Entrega:</strong> nombre del destinatario, domicilio y referencias necesarias para localizarlo.</li>
+                            <li><strong>Facturación:</strong> nombre o razón social, RFC, domicilio fiscal, régimen fiscal, uso del CFDI y correo para recibir la factura.</li>
+                            <li><strong>Compra y atención:</strong> productos adquiridos, número de pedido, historial de compras y comunicaciones relacionadas con consultas, devoluciones o garantías.</li>
+                            <li><strong>Pagos:</strong> referencias de operación, estado del pago y comprobantes de depósito o transferencia. Para reembolsos por transferencia, los datos bancarios necesarios.</li>
+                            <li><strong>Navegación:</strong> Recabamos de forma automática y técnica su dirección IP, tipo de navegador y sistema operativo, así como datos almacenados en cookies generados por la plataforma Odoo. Entre estos, se encuentra el <code>session_id</code> (destinado a la gestión y mantenimiento de la sesión activa, autenticación de usuario y conservación de productos en el carrito de compras), <code>frontend_lang</code> (para almacenar la preferencia de idioma del usuario) y <code>tz</code> (para registrar la zona horaria local y ajustar horarios de entrega o atención), haciendo constar que el portal no utiliza herramientas de analítica web de comportamiento ni cookies de seguimiento o perfilamiento publicitario de terceros. Los datos personales recabados serán utilizados para las siguientes finalidades primarias y necesarias para el servicio solicitado: gestionar su registro como cliente, autenticar su identidad, procesar cotizaciones, levantar y surtir pedidos de compra, coordinar el envío y entrega física de mercancías, emitir comprobantes fiscales digitales por Internet (CFDI/facturación), brindar soporte técnico y atención a clientes mediante nuestra sección de contacto, administrar el historial de compras y dar cumplimiento a las obligaciones legales derivadas de la relación contractual.</li>
+                        </ul>
+
+                        <h3>Datos personales sensibles</h3>
+                        <p>Para las finalidades descritas en este aviso de privacidad, no solicitamos datos personales sensibles, tales como:</p>
+                        <ul>
+                            <li>Estado de salud presente o futuro, diagnósticos e historial médico.</li>
+                            <li>Información genética.</li>
+                            <li>Origen racial o étnico.</li>
+                            <li>Creencias religiosas, filosóficas o morales.</li>
+                            <li>Opiniones políticas.</li>
+                            <li>Preferencia u orientación sexual.</li>
+                        </ul>
+                        <p><em>Te recomendamos evitar incluir información personal innecesaria en mensajes, imágenes o comprobantes que nos envíes.</em></p>
+
+                        <h2>3. Uso de tus datos</h2>
+                        <p>Utilizaremos los datos necesarios para:</p>
+                        <ul>
+                            <li>Recibir, verificar y procesar tus pedidos.</li>
+                            <li>Confirmar pagos y gestionar reembolsos.</li>
+                            <li>Preparar y entregar tus productos.</li>
+                            <li>Emitir facturas.</li>
+                            <li>Informarte sobre el estado de tus compras o incidencias de entrega.</li>
+                            <li>Atender consultas, aclaraciones, cancelaciones y devoluciones.</li>
+                            <li>Gestionar garantías ante nuestros proveedores, el fabricante o el centro de servicio correspondiente.</li>
+                            <li>Administrar tu cuenta, cuando esta función esté disponible.</li>
+                            <li>Detectar operaciones posiblemente fraudulentas y proteger el funcionamiento del portal.</li>
+                            <li>Cumplir obligaciones legales relacionadas con nuestras operaciones.</li>
+                        </ul>
+
+                        <h2>4. Publicidad y comunicaciones opcionales</h2>
+                        <p>Con tu autorización, utilizaremos tu nombre y correo electrónico para enviarte promociones, novedades y recomendaciones de productos.</p>
+                        <p>Esta autorización será opcional y se solicitará por separado. Rechazarla no impedirá que realices compras ni afectará la atención de tus pedidos.</p>
+                        <p>Puedes solicitar dejar de recibir estas comunicaciones escribiendo a <a href="mailto:contacto@storemaple.com">contacto@storemaple.com</a> con el asunto “Baja de publicidad” o utilizando el enlace de cancelación incluido en los mensajes, cuando esté disponible.</p>
+
+                        <h2>5. Pagos y datos bancarios</h2>
+                        <p>Los pagos con tarjeta realizados en el portal se procesan mediante Mercado Pago. Consulta su Declaración de Privacidad y el Anexo para México.</p>
+                        <p>Para depósitos o transferencias, podremos utilizar los datos contenidos en el comprobante para identificar y conciliar el pago. No es necesario enviarnos estados de cuenta completos ni información sobre operaciones ajenas a tu compra.</p>
+                        <p><strong>No envíes contraseñas bancarias, códigos de autenticación ni códigos de seguridad de tarjetas por correo, teléfono o chat.</strong></p>
+
+                        <h2>6. Proveedores y comunicación de datos</h2>
+                        <p>Para operar la tienda utilizamos servicios de proveedores de alojamiento, plataforma de comercio electrónico, correo, chat y otros servicios que acceden a datos.</p>
+                        <p>Cuando estos proveedores traten información por cuenta de Maple Security, deberán hacerlo conforme a nuestras instrucciones y a las obligaciones de confidencialidad y protección correspondientes.</p>
+                        <p>Cuando sea necesario para atender tu compra, podrán comunicarse datos a:</p>
+                        <ul>
+                            <li><strong>Empresas de paquetería:</strong> información de contacto y entrega.</li>
+                            <li><strong>Mercado Pago:</strong> información necesaria para procesar o aclarar operaciones.</li>
+                            <li><strong>Nuestros proveedores, fabricante o centro de servicio aplicable:</strong> información necesaria para tramitar una garantía, identificar la compra y atender la falla.</li>
+                            <li><strong>Autoridades competentes:</strong> cuando exista una obligación o requerimiento legal aplicable.</li>
+                        </ul>
+
+                        <h2>7. Cookies y tecnologías similares</h2>
+                        <p>Puedes modificar la configuración de tu navegador; desactivar ciertas cookies puede afectar funciones como el carrito o el inicio de sesión.</p>
+
+                        <h2>8. Derechos ARCO</h2>
+                        <p>Puedes solicitar acceso a tus datos, su rectificación, cancelación u oposición al tratamiento escribiendo a <a href="mailto:contacto@storemaple.com">contacto@storemaple.com</a>.</p>
+                        <p>Incluye tu nombre, un medio para recibir respuesta, el derecho que deseas ejercer y la información que permita localizar tus datos. Deberás acreditar tu identidad y, en su caso, la representación legal. Para rectificaciones, indica la corrección y acompaña su respaldo.</p>
+                        <p>Responderemos en un máximo de 30 días hábiles; si procede, atenderemos la solicitud dentro de los 15 días hábiles siguientes. Las ampliaciones permitidas por la ley serán justificadas. El acceso se facilitará mediante documentos electrónicos, previa verificación de identidad.</p>
+
+                        <h2>9. Revocación y limitación de uso</h2>
+                        <p>Puedes solicitar la revocación de tu consentimiento o limitar el uso o divulgación de tus datos mediante <a href="mailto:contacto@storemaple.com">contacto@storemaple.com</a>, siguiendo el procedimiento de identificación anterior e indicando el tratamiento que deseas detener. Atenderemos estas solicitudes en menos de 30 días hábiles.</p>
+                    `,
+
+                    "politicadegarantia": `
+                        <h2>Cobertura y vigencia</h2>
+                        <p>Los productos comercializados por Maple Security y adquiridos a través de nuestros proveedores cuentan con la garantía que corresponda a cada marca y modelo, conforme a la póliza aplicable de nuestros proveedores o del fabricante y a la legislación vigente.</p>
+                        <p>Maple Security no ofrece una garantía comercial adicional a dicha cobertura. Sin embargo, atenderá las solicitudes de sus clientes y gestionará el trámite correspondiente ante nuestros proveedores o el centro de servicio autorizado, sin limitar las obligaciones legales que le correspondan como vendedor.</p>
+                        <p>La duración, cobertura y condiciones de la garantía se informarán en la página del producto o en la póliza entregada con la compra. No existe un plazo único para todos los productos. Las condiciones aplicables serán las ofrecidas al momento de la compra, respetando los mínimos y derechos establecidos por la ley.</p>
+
+                        <h2>Solicitud de garantía</h2>
+                        <p>Si tu producto presenta una falla, comunícate con Maple Security a través de <a href="mailto:garantias@storemaple.com">garantias@storemaple.com</a> o mediante nuestro chat.</p>
+                        <p>Para identificar tu compra y facilitar la revisión, proporciona:</p>
+                        <ul>
+                            <li>Número de pedido, comprobante de compra u otro dato que permita localizar la operación.</li>
+                            <li>Marca, modelo y número de serie, cuando corresponda.</li>
+                            <li>Descripción de la falla y de las condiciones en que se presenta.</li>
+                            <li>Fotografías o videos, cuando sean útiles para el diagnóstico.</li>
+                        </ul>
+                        <p>Te indicaremos los pasos para la revisión y, si es necesario enviar el equipo, el domicilio de recepción y las instrucciones de embalaje. Contactarnos antes de realizar el envío permitirá canalizar correctamente tu solicitud.</p>
+
+                        <h2>Evaluación y solución</h2>
+                        <p>La evaluación técnica será realizada por nuestros proveedores, el fabricante o el centro de servicio autorizado, según corresponda.</p>
+                        <p>Con base en el diagnóstico, la póliza aplicable y la legislación vigente, se determinará la solución procedente, que podrá consistir en reparación, sustitución, reembolso u otra medida legalmente aplicable.</p>
+                        <p>Maple Security dará seguimiento al trámite y te comunicará el resultado. Si se determina que la falla no está cubierta, te informaremos el motivo y las opciones disponibles. Cualquier reparación con costo requerirá tu autorización previa.</p>
+
+                        <h2>Condiciones y exclusiones</h2>
+                        <p>Las exclusiones serán únicamente las previstas en la póliza del producto que resulten válidas conforme a la legislación aplicable.</p>
+                        <p>Los daños por uso indebido, instalación contraria a las instrucciones, modificaciones o intervenciones no autorizadas podrán quedar fuera de cobertura cuando la póliza así lo establezca y el diagnóstico sustente su aplicación al caso.</p>
+                        <p>No se aplicarán exclusiones generales que desconozcan las características o condiciones de uso para las que fue diseñado el producto.</p>
+
+                        <h2>Plazos y gastos de envío</h2>
+                        <p>Al registrar tu solicitud, Maple Security te informará el plazo estimado de atención y cualquier actualización relevante, respetando los plazos legalmente exigibles.</p>
+                        <p>Antes de enviar el producto, te explicaremos cómo se realizará el traslado y quién cubrirá los gastos conforme a la póliza y a la legislación aplicable. No se trasladarán al cliente costos que legalmente correspondan al proveedor.</p>
+
+                        <h2>Derechos del cliente</h2>
+                        <p>Esta política no limita los derechos del cliente frente a productos defectuosos, incumplimientos u otros supuestos previstos por la legislación aplicable. La gestión ante nuestros proveedores o el fabricante no elimina las obligaciones legales que correspondan a Maple Security como vendedor.</p>
+                    `,
+
+                    "terminosycondiciones": `
+                        <h2>1. Identificación y alcance</h2>
+                        <p>El sitio web <a href="https://www.storemaple.com" target="_blank">https://www.storemaple.com</a>, bajo el nombre comercial Maple Security es operado por Maple Alarm Systems.</p>
+                        <p>Estos términos regulan el uso del sitio y las compras realizadas a través de él. Antes de confirmar una compra, el cliente podrá consultar las condiciones aplicables a su pedido.</p>
+                        <p>Para consultas sobre el portal, aclaraciones de pedidos o solicitudes de atención, puedes escribirnos a <a href="mailto:contacto@storemaple.com">contacto@storemaple.com</a> las 24 horas del día, los 7 días de la semana.</p>
+
+                        <h2>2. Uso del sitio</h2>
+                        <p>El usuario se compromete a proporcionar información correcta y actualizada para procesar sus compras y entregas, así como a utilizar medios de pago que esté autorizado a emplear.</p>
+                        <p>No está permitido utilizar el sitio para realizar operaciones fraudulentas, suplantar identidades o afectar su funcionamiento.</p>
+                        <p>Si el usuario crea una cuenta, deberá proteger sus credenciales y comunicar cualquier uso no autorizado a <a href="mailto:sistemas@storemaple.com">sistemas@storemaple.com</a>.</p>
+
+                        <h2>3. Productos y disponibilidad</h2>
+                        <p>Las características, especificaciones, variantes y disponibilidad de los productos se indicarán en sus respectivas páginas.</p>
+                        <p>Las imágenes son ilustrativas y pueden presentar diferencias de visualización según el dispositivo. Esto no modifica las características ofrecidas ni los derechos del cliente si recibe un producto distinto al solicitado.</p>
+                        <p>Si un producto deja de estar disponible después de una compra, Maple Security contactará al cliente para ofrecer una solución. No se realizarán sustituciones sin su consentimiento.</p>
+
+                        <h2>4. Precios, promociones y pagos</h2>
+                        <p>Los precios se muestran en pesos mexicanos. Antes de confirmar el pago, el cliente podrá revisar el importe total, incluidos los impuestos y los cargos de envío u otros conceptos aplicables.</p>
+                        <p><strong>Métodos de pago disponibles:</strong></p>
+                        <ul>
+                            <li><strong>Tarjeta de crédito:</strong> Pago directamente en el portal, con opción a meses sin intereses cuando esté disponible.</li>
+                            <li><strong>Tarjeta de débito:</strong> Pago directamente en el portal.</li>
+                            <li><strong>Depósito bancario o transferencia electrónica:</strong> Selecciona la opción correspondiente en el carrito de compras o comunícate mediante nuestro chat para recibir los datos bancarios y las instrucciones.</li>
+                        </ul>
+
+                        <h2>5. Pedidos y confirmación</h2>
+                        <p>Antes de finalizar la compra, el cliente podrá revisar los productos, cantidades, dirección de entrega y monto total. Maple Security enviará una confirmación al correo electrónico del comprador.</p>
+                        <p>La aceptación del pedido se comunicará una vez que verifiquemos la disponibilidad de los productos y la autorización o recepción del pago.</p>
+
+                        <h2>6. Envíos y entregas</h2>
+                        <p>Realizamos entregas en todo el territorio mexicano mediante las diversas paqueterías disponibles en el momento de la compra. Los costos y plazos de entrega se informarán antes de completar la compra.</p>
+                        <p>Las entregas podrán sufrir retrasos por incidencias operativas de la empresa de paquetería, desastres naturales, condiciones climáticas severas o casos fortuitos de fuerza mayor ajenos a nuestro control.</p>
+
+                        <h2>7. Cancelaciones, cambios y devoluciones</h2>
+                        <p>Para solicitar una cancelación, cambio o devolución, el cliente deberá contactar a <a href="mailto:contacto@storemaple.com">contacto@storemaple.com</a> indicando su número de pedido y el motivo.</p>
+                        <ul>
+                            <li><strong>Cancelaciones:</strong> Podrás solicitarla únicamente si aún no se ha generado la guía de envío ni se ha entregado el pedido a la paquetería.</li>
+                            <li><strong>Cambios y devoluciones:</strong> Aceptamos cambios cuando el producto recibido no coincida con la descripción, modelo o especificaciones publicados o presente defectos de origen.</li>
+                        </ul>
+
+                        <h2>8. Reembolsos</h2>
+                        <p>Cuando proceda un reembolso, Maple Security comunicará al cliente el importe, el medio de devolución y la fecha de procesamiento en un plazo máximo de 30 días naturales.</p>
+
+                        <h2>9. Garantías y productos con problemas</h2>
+                        <p>Si el cliente recibe un producto defectuoso, dañado, incompleto o diferente al solicitado, podrá comunicarse a <a href="mailto:soporte@storemaple.com">soporte@storemaple.com</a>.</p>
+
+                        <h2>10. Datos personales</h2>
+                        <p>El tratamiento de los datos personales se describe en nuestro Aviso de Privacidad.</p>
+
+                        <h2>11. Propiedad intelectual</h2>
+                        <p>Los contenidos del sitio pertenecen a Maple Security o se utilizan con autorización. No se permite su explotación comercial sin autorización previa.</p>
+
+                        <h2>12. Modificaciones</h2>
+                        <p>Maple Security podrá actualizar estos términos y publicará la fecha de la versión vigente para operaciones futuras.</p>
+                    `
+                };
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    let sectionDudas = document.querySelector(".section-resolver-dudas");
+                    let container = document.getElementById("privacy-info-container");
+                    let tituloApartado = document.querySelector(".h1_titulo_de_apartado");
+                    let tituloInfoContainer = document.querySelector(".h1_privacy_info_container");
+
+                    const ids = ["avisodeprivacidad", "politicadegarantia", "terminosycondiciones"];
+
+                    const params = new URLSearchParams(window.location.search);
+                    const requestedSection = params.get("section");
+
+                    if (
+                        requestedSection &amp;&amp;
+                        ids.includes(requestedSection) &amp;&amp;
+                        contents[requestedSection] &amp;&amp;
+                        container
+                    ) {
+                        container.innerHTML = contents[requestedSection];
+                        if (requestedSection == "avisodeprivacidad") {
+                            tituloApartado.innerHTML = "Aviso de Privacidad";
+                            tituloInfoContainer.innerHTML = "Aviso de Privacidad";
+                        }
+
+                        if (requestedSection == "politicadegarantia") {
+                            tituloApartado.innerHTML = "Política de Garantía";
+                            tituloInfoContainer.innerHTML = "Política de Garantía";
+                        }
+
+                        if (requestedSection == "terminosycondiciones") {
+                            tituloApartado.innerHTML = "Términos y Condiciones";
+                            tituloInfoContainer.innerHTML = "Términos y Condiciones";
+                        }
+
+                        if (requestedSection == "") {
+                            tituloApartado.innerHTML = "Maple Security";
+                        }
+                    }
+
+                    ids.forEach(function (id) {
+                        const element = document.getElementById(id);
+                        if (element) {
+                            element.addEventListener("click", function (event) {
+                                event.preventDefault();
+
+                                if (contents[id] &amp;&amp; container) {
+                                    container.innerHTML = contents[id];
+                                    if (id == "avisodeprivacidad") {
+                                        tituloApartado.innerHTML = "Aviso de Privacidad";
+                                        tituloInfoContainer.innerHTML = "Aviso de Privacidad";
+                                    }
+
+                                    if (id == "politicadegarantia") {
+                                        tituloApartado.innerHTML = "Política de Garantía";
+                                        tituloInfoContainer.innerHTML = "Política de Garantía";
+                                    }
+
+                                    if (id == "terminosycondiciones") {
+                                        tituloApartado.innerHTML = "Términos y Condiciones";
+                                        tituloInfoContainer.innerHTML = "Términos y Condiciones";
+                                    }
+
+                                    if (id == "") {
+                                        tituloApartado.innerHTML = "Maple Security";
+                                    }
+
+                                    requestAnimationFrame(function () {
+                                        const absoluteElementTop = container.getBoundingClientRect().top + window.scrollY;
+
+                                        window.scrollTo({
+                                            top: Math.max(0, absoluteElementTop - 300),
+                                            behavior: "smooth"
+                                        });
+                                    });
+                                }
+                            });
+
+                            element.style.cursor = "pointer";
+                        }
+                    });
+                });
+            </script>
+        </xpath>
+    </t>
+</t>
