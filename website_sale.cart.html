@@ -166,7 +166,89 @@
                         </div>
                     </div>
                 </div>
+                <div id="ms-privacy-checkout-modal"
+                    class="ms-privacy-modal"
+                    aria-hidden="true">
 
+                    <div class="ms-privacy-modal__backdrop"
+                        data-ms-privacy-close="1">
+                    </div>
+
+                    <section class="ms-privacy-modal__panel"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledby="ms-privacy-title"
+                            tabindex="-1">
+
+                        <header class="ms-privacy-modal__header">
+                            <span class="ms-privacy-modal__eyebrow">
+                                ANTES DE CONTINUAR
+                            </span>
+
+                            <h2 id="ms-privacy-title">
+                                Aviso de privacidad
+                            </h2>
+
+                            <p>
+                                En Maple Security cuidamos tus datos personales.
+                                Revisa nuestro aviso antes de continuar con tu compra.
+                            </p>
+
+                            <a class="ms-privacy-modal__link"
+                            href="/privacy?section=avisodeprivacidad"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                Abrir aviso en otra pestaña
+                            </a>
+
+                            <button type="button"
+                                    class="ms-privacy-modal__close"
+                                    data-ms-privacy-close="1"
+                                    aria-label="Cerrar aviso">
+                                ×
+                            </button>
+                        </header>
+
+                        <div class="ms-privacy-modal__body">
+                            <iframe
+                                title="Aviso de privacidad de Maple Security"
+                                data-src="/privacy?section=avisodeprivacidad&amp;modal=1"
+                                referrerpolicy="same-origin">
+                            </iframe>
+                        </div>
+
+                        <footer class="ms-privacy-modal__footer">
+
+                            <label class="ms-privacy-modal__accept-label">
+                                <input type="checkbox" id="ms-privacy-accepted"/>
+
+                                <span>
+                                    He leído y acepto el Aviso de Privacidad
+                                    de Maple Security.
+                                </span>
+                            </label>
+
+                            <div class="ms-privacy-modal__actions">
+
+                                <button type="button"
+                                        class="ms-privacy-modal__cancel"
+                                        data-ms-privacy-close="1">
+                                    Cancelar
+                                </button>
+
+                                <button type="button"
+                                        id="ms-privacy-accept-button"
+                                        class="ms-privacy-modal__accept"
+                                        disabled="disabled">
+                                    Aceptar y continuar
+                                    <span aria-hidden="true">›</span>
+                                </button>
+
+                            </div>
+                        </footer>
+
+                    </section>
+                </div>
             <xpath expr="//head" position="inside">
                 <style>
                     .titulos_servicios_suscripcion {
@@ -378,6 +460,208 @@
                         display: none;
                     }
 
+                    #ms-privacy-checkout-modal {
+                        display: none;
+                        position: fixed;
+                        inset: 0;
+                        z-index: 20000;
+                        align-items: center;
+                        justify-content: center;
+                        padding: clamp(8px, 2vw, 24px);
+                        font-family: inherit;
+                    }
+
+                    #ms-privacy-checkout-modal.is-open {
+                        display: flex;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__backdrop {
+                        position: absolute;
+                        inset: 0;
+                        background: rgba(18, 24, 38, 0.64);
+                        backdrop-filter: blur(4px);
+                        -webkit-backdrop-filter: blur(4px);
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__panel {
+                        position: relative;
+                        z-index: 1;
+                        display: flex;
+                        flex-direction: column;
+                        width: min(100%, 940px);
+                        height: min(88dvh, 850px);
+                        max-height: calc(100dvh - 16px);
+                        min-height: 0;
+                        overflow: hidden;
+                        color: #252932;
+                        background: #ffffff;
+                        border: 1px solid #e5e7eb;
+                        border-radius: 18px;
+                        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__header {
+                        position: relative;
+                        flex: 0 0 auto;
+                        padding: clamp(16px, 2.5vw, 28px);
+                        padding-right: 64px;
+                        border-bottom: 1px solid #edf0f3;
+                        background: #ffffff;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__eyebrow {
+                        display: block;
+                        margin-bottom: 6px;
+                        color: #b51225;
+                        font-size: 0.72rem;
+                        font-weight: 700;
+                        letter-spacing: 0.12em;
+                    }
+
+                    #ms-privacy-checkout-modal #ms-privacy-title {
+                        margin: 0 0 8px;
+                        color: #252932;
+                        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+                        font-weight: 700;
+                        line-height: 1.25;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__header p {
+                        margin: 0 0 8px;
+                        color: #5e6470;
+                        font-size: 0.92rem;
+                        line-height: 1.5;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__link {
+                        color: #a60c20;
+                        font-size: 0.88rem;
+                        font-weight: 600;
+                        text-decoration: underline;
+                        text-underline-offset: 3px;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__close {
+                        position: absolute;
+                        top: 16px;
+                        right: 16px;
+                        display: grid;
+                        place-items: center;
+                        width: 38px;
+                        height: 38px;
+                        padding: 0;
+                        border: 1px solid #e5e7eb;
+                        border-radius: 50%;
+                        background: #f8f9fb;
+                        color: #42464e;
+                        font-size: 1.5rem;
+                        line-height: 1;
+                        cursor: pointer;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__close:hover {
+                        background: #eef0f3;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__body {
+                        flex: 1 1 auto;
+                        min-height: 0;
+                        overflow: hidden;
+                        background: #ffffff;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__body iframe {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        min-height: 0;
+                        border: 0;
+                        background: #ffffff;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__footer {
+                        flex: 0 0 auto;
+                        padding: clamp(14px, 2vw, 22px);
+                        border-top: 1px solid #edf0f3;
+                        background: #ffffff;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__accept-label {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+                        margin: 0;
+                        color: #333944;
+                        font-size: 0.92rem;
+                        line-height: 1.5;
+                        cursor: pointer;
+                    }
+
+                    #ms-privacy-checkout-modal #ms-privacy-accepted {
+                        flex: 0 0 auto;
+                        width: 18px;
+                        height: 18px;
+                        margin-top: 2px;
+                        accent-color: #b51225;
+                        cursor: pointer;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__actions {
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-wrap: wrap;
+                        gap: 12px;
+                        margin-top: 18px;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__actions button {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        min-height: 44px;
+                        padding: 10px 20px;
+                        border-radius: 9px;
+                        font-family: inherit;
+                        font-size: 0.92rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: background-color 0.2s ease,
+                                    border-color 0.2s ease;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__cancel {
+                        color: #343a40;
+                        background: #ffffff;
+                        border: 1px solid #d7dce3;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__cancel:hover {
+                        background: #f5f6f8;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__accept {
+                        color: #ffffff;
+                        background: #b51225;
+                        border: 1px solid #b51225;
+                        box-shadow: 0 5px 14px rgba(181, 18, 37, 0.18);
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__accept:hover:not(:disabled) {
+                        background: #8f0e20;
+                        border-color: #8f0e20;
+                    }
+
+                    #ms-privacy-checkout-modal .ms-privacy-modal__accept:disabled {
+                        background: #aeb3bb;
+                        border-color: #aeb3bb;
+                        box-shadow: none;
+                        cursor: not-allowed;
+                    }
+
+                    body.ms-privacy-modal-open {
+                        overflow: hidden !important;
+                    }
                     /* .card-body.p-0.p-lg-4 .o_cart_total.o_checkout_cart_total.pt-2.pt-lg-0 table.table.mb-0 tbody tr td.text-end.border-0.pb-2.pe-0.pt-0 {
                         color: white;
                     } */
@@ -396,6 +680,49 @@
                         .o_cart_product.d-flex.gap-3.pb-4 {
                             display: flex;
                             flex-direction: column;
+                        }
+                    }
+
+                    @media (max-width: 480px) {
+                        #ms-privacy-checkout-modal {
+                            padding: 8px;
+                        }
+
+                        #ms-privacy-checkout-modal .ms-privacy-modal__panel {
+                            width: 100%;
+                            height: calc(100dvh - 16px);
+                            max-height: calc(100dvh - 16px);
+                            border-radius: 12px;
+                        }
+
+                        #ms-privacy-checkout-modal .ms-privacy-modal__header {
+                            padding: 16px;
+                            padding-right: 54px;
+                        }
+
+                        #ms-privacy-checkout-modal .ms-privacy-modal__close {
+                            top: 12px;
+                            right: 12px;
+                            width: 34px;
+                            height: 34px;
+                        }
+
+                        #ms-privacy-checkout-modal .ms-privacy-modal__footer {
+                            padding: 14px;
+                        }
+
+                        #ms-privacy-checkout-modal .ms-privacy-modal__actions {
+                            flex-direction: column-reverse;
+                            gap: 8px;
+                            margin-top: 14px;
+                        }
+
+                        #ms-privacy-checkout-modal .ms-privacy-modal__actions button {
+                            width: 100%;
+                        }
+
+                        #ms-privacy-checkout-modal .ms-privacy-modal__accept-label {
+                            font-size: 0.86rem;
                         }
                     }
                 </style>
@@ -525,6 +852,164 @@
                         childList: true,
                         subtree: true
                     });
+
+                    (function () {
+                        const modal = document.getElementById(
+                            'ms-privacy-checkout-modal'
+                        );
+
+                        if (!modal || modal.dataset.initialized === '1') {
+                            return;
+                        }
+
+                        modal.dataset.initialized = '1';
+
+                        const panel = modal.querySelector(
+                            '.ms-privacy-modal__panel'
+                        );
+
+                        const checkbox = document.getElementById(
+                            'ms-privacy-accepted'
+                        );
+
+                        const acceptButton = document.getElementById(
+                            'ms-privacy-accept-button'
+                        );
+
+                        const iframe = modal.querySelector('iframe');
+
+                        const consentKey = 'maple_privacy_accepted_2026-10-21';
+
+                        let pendingCheckoutUrl = null;
+                        let previousFocus = null;
+
+                        function hasAcceptedPrivacy() {
+                            try {
+                                return localStorage.getItem(consentKey) === 'accepted';
+                            } catch (error) {
+                                return false;
+                            }
+                        }
+
+                        function openModal(destination) {
+                            pendingCheckoutUrl = destination;
+                            previousFocus = document.activeElement;
+
+                            checkbox.checked = false;
+                            acceptButton.disabled = true;
+
+                            modal.classList.add('is-open');
+                            modal.setAttribute('aria-hidden', 'false');
+                            document.body.classList.add('ms-privacy-modal-open');
+
+                            if (iframe) {
+                                iframe.src = iframe.dataset.src;
+                            }
+
+                            panel.focus();
+                        }
+
+                        function closeModal() {
+                            modal.classList.remove('is-open');
+                            modal.setAttribute('aria-hidden', 'true');
+                            document.body.classList.remove('ms-privacy-modal-open');
+
+                            if (iframe) {
+                                iframe.src = 'about:blank';
+                            }
+
+                            pendingCheckoutUrl = null;
+
+                            if (previousFocus) {
+                                previousFocus.focus();
+                            }
+                        }
+
+                        document.addEventListener('click', function (event) {
+                            const target = event.target instanceof Element
+                                ? event.target
+                                : null;
+
+                            const checkoutButton = target
+                                ? target.closest(
+                                    'a[name="website_sale_main_button"], ' +
+                                    'button[name="website_sale_main_button"]'
+                                )
+                                : null;
+
+                            if (!checkoutButton) {
+                                return;
+                            }
+
+                            if (
+                                checkoutButton.classList.contains('disabled') ||
+                                checkoutButton.getAttribute('aria-disabled') === 'true'
+                            ) {
+                                return;
+                            }
+
+                            if (hasAcceptedPrivacy()) {
+                                return;
+                            }
+
+                            const destination = checkoutButton.href ||
+                                checkoutButton.getAttribute('href');
+
+                            if (!destination) {
+                                return;
+                            }
+
+                            event.preventDefault();
+                            event.stopPropagation();
+
+                            openModal(destination);
+
+                        }, true);
+
+                        checkbox.addEventListener('change', function () {
+                            acceptButton.disabled = !checkbox.checked;
+                        });
+
+                        acceptButton.addEventListener('click', function () {
+                            if (!checkbox.checked || !pendingCheckoutUrl) {
+                                return;
+                            }
+
+                            const destination = pendingCheckoutUrl;
+
+                            try {
+                                localStorage.setItem(consentKey, 'accepted');
+                            } catch (error) {
+
+                            }
+
+                            closeModal();
+
+                            window.location.assign(destination);
+                        });
+
+                        modal.addEventListener('click', function (event) {
+                            const target = event.target instanceof Element
+                                ? event.target
+                                : null;
+
+                            if (
+                                target &amp;&amp;
+                                target.closest('[data-ms-privacy-close]')
+                            ) {
+                                closeModal();
+                            }
+                        });
+
+                        document.addEventListener('keydown', function (event) {
+                            if (
+                                event.key === 'Escape' &amp;&amp;
+                                modal.classList.contains('is-open')
+                            ) {
+                                closeModal();
+                            }
+                        });
+                    })();
                 </script>
             </xpath>
         </t>

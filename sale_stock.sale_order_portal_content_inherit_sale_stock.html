@@ -1,0 +1,321 @@
+<data name="Orders Shipping Followup" inherit_id="sale.sale_order_portal_content">
+        <tbody id="sale_info_table" position="inside">
+            <tr t-if="sale_order.incoterm">
+                <th class="pb-0">Incoterm:</th>
+                <td class="w-100 pb-0 text-wrap">
+                    <p t-if="sale_order.incoterm_location">
+                        <span t-field="sale_order.incoterm.code"/> <br/>
+                        <span t-field="sale_order.incoterm_location"/>
+                    </p>
+                    <p t-else="" t-field="sale_order.incoterm.code" class="m-0"/>
+                </td>
+            </tr>
+        </tbody>
+
+        <div id="sale_invoices" position="after">
+            <t t-set="delivery_orders" t-value="sale_order.picking_ids.filtered(lambda picking: picking.picking_type_id.code == 'outgoing')"/>
+            <t t-set="latest_delivery_orders" t-value="delivery_orders.sorted('create_date', reverse=True)[:3]"/>
+            <div t-if="delivery_orders" class="col-12 col-lg-6 mb-4">
+                <h5 class="mb-1">Last Delivery Orders</h5>
+                <hr class="mt-1 mb-2"/>
+                <div class="d-flex flex-column gap-2">
+                    <t t-foreach="latest_delivery_orders" t-as="picking">
+                        <t t-set="delivery_report_url" t-value="'/my/picking/pdf/%s?%s' % (picking.id, keep_query())"/>
+                        <div name="delivery_order" class="d-flex flex-column">
+                            <div name="delivery_details" class="d-flex align-items-center justify-content-between">
+                                <a t-att-href="delivery_report_url">
+                                    <span t-esc="picking.name"/>
+                                </a>
+                                <div t-if="picking.state == 'done'">
+                                    <span class="small badge rounded-pill text-bg-success orders_label_text_align">
+                                        <i class="fa fa-fw fa-truck"/> Shipped
+                                    </span>
+                                    <a class="badge rounded-pill text-bg-secondary orders_label_text_align" target="_blank" t-att-href="'/my/picking/return/pdf/%s?%s' % (picking.id, keep_query())">
+                                        RETURN
+                                    </a>
+                                </div>
+                                <span t-elif="picking.state == 'cancel'" class="small badge rounded-pill text-bg-danger orders_label_text_align">
+                                    <i class="fa fa-fw fa-times"/>Cancelled
+                                </span>
+                                <span t-elif="picking.state in ['draft', 'waiting', 'confirmed', 'assigned']" class="small badge rounded-pill text-bg-info orders_label_text_align">
+                                    <i class="fa fa-fw fa-clock-o"/>Preparation
+                                </span>
+                            </div>
+                            <div class="small d-lg-inline-block" t-if="picking.date_done or picking.scheduled_date">
+                                Date:
+                                <span class="text-muted" t-field="picking.date_done" t-options="{'date_only': True}"/>
+                                <span t-if="picking.state in ['draft', 'waiting', 'confirmed', 'assigned']" class="text-muted" t-field="picking.scheduled_date" t-options="{'date_only': True}"/>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+            <t t-set="returns" t-value="delivery_orders.return_ids.sorted('date', reverse=True)"/>
+            <div t-if="returns" class="col-12 col-lg-6 mb-4">
+                <h4 class="mb-1">Returns</h4>
+                <hr class="mt-1 mb-2"/>
+                <t t-foreach="returns" t-as="picking">
+                    <t t-set="delivery_report_url" t-value="'/my/picking/pdf/%s?%s' % (picking.id, keep_query())"/>
+                    <div name="return">
+                        <div name="return_details" class="d-flex justify-content-between align-items-center">
+                            <a t-att-href="delivery_report_url">
+                                <span t-esc="picking.name"/>
+                            </a>
+                            <span t-if="picking.state == 'done'" class="small badge rounded-pill text-bg-success orders_label_text_align">
+                                <i class="fa fa-fw fa-truck"/> Received
+                            </span>
+                            <span t-elif="picking.state == 'cancel'" class="small badge rounded-pill text-bg-danger orders_label_text_align">
+                                <i class="fa fa-fw fa-times"/> Cancelled
+                            </span>
+                            <span t-elif="picking.state in ['draft', 'waiting', 'confirmed', 'assigned']" class="small badge rounded-pill text-bg-info orders_label_text_align">
+                                <i class="fa fa-fw fa-clock-o"/> Awaiting arrival
+                            </span>
+                        </div>
+                        <div class="small d-lg-inline-block">
+                            Date:
+                            <span class="text-muted" t-field="picking.date_done" t-options="{'date_only': True}"/>
+                            <span t-if="picking.state in ['draft', 'waiting', 'confirmed', 'assigned']" class="text-muted" t-field="picking.scheduled_date" t-options="{'date_only': True}"/>
+                        </div>
+                    </div>
+                </t>
+            </div>
+            <t t-set="tracking_picking"
+            t-value="delivery_orders.filtered(
+                lambda picking: picking.carrier_tracking_ref
+            ).sorted('create_date', reverse=True)[:1]"/>
+
+            <div id="rastreo_de_paquete_para_cliente"
+                class="col-12 mb-4"
+                t-att-data-tracking-id="tracking_picking.carrier_tracking_ref if tracking_picking else ''"
+                t-att-data-carrier-id="tracking_picking.carrier_id.id if tracking_picking and tracking_picking.carrier_id else ''"
+                t-att-data-carrier-name="tracking_picking.carrier_id.name if tracking_picking and tracking_picking.carrier_id else ''">>
+
+                <section class="o_dhl_tracking_panel">
+
+                    <div class="o_dhl_tracking_header">
+                        <div>
+                            <h5 class="mb-1">Rastreo de tu paquete</h5>
+                            <p class="mb-0 text-muted">
+                                Consulta el estado y el seguimiento de tu envío.
+                            </p>
+                        </div>
+
+                        <a id="dhl-tracking-open"
+                        class="o_dhl_tracking_open"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden="hidden">
+                            Ver desde el sitio web ↗
+                        </a>
+                    </div>
+
+                    <div class="o_dhl_tracking_frame_container">
+
+                        <iframe id="dhl-tracking-frame"
+                                src="about:blank"
+                                title="Rastreo del paquete en DHL"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                hidden="hidden">
+                        </iframe>
+
+                        <p id="dhl-tracking-status"
+                        class="o_dhl_tracking_status"
+                        role="status"
+                        aria-live="polite">
+                            Buscando el número de rastreo...
+                        </p>
+
+                    </div>
+                </section>
+                <script>
+                    (function () {
+                        "use strict";
+
+                        const ROOT_ID = "rastreo_de_paquete_para_cliente";
+                        const ENVIA_TRACKING_URL = "https://envia.com/es-MX/tracking";
+                        const DHL_TRACKING_URL = "https://www.dhl.com/mx-es/home/rastreo.html";
+
+                        const TRACKING_LINK_SELECTOR =
+                            'a[href*="envia.com/tracking"]';
+
+                        function normalizeTrackingId(value) {
+                            return String(value || "")
+                                .trim()
+                                .replace(/\s+/g, "");
+                        }
+
+                        function getTrackingIdFromSpan() {
+                            const trackingLinks = document.querySelectorAll(
+                                TRACKING_LINK_SELECTOR
+                            );
+
+                            for (const link of trackingLinks) {
+                                const span = link.querySelector("span");
+                                const trackingId = normalizeTrackingId(
+                                    span?.textContent
+                                );
+
+                                if (trackingId) {
+                                    return trackingId;
+                                }
+
+                                try {
+                                    const url = new URL(link.href);
+                                    const label = normalizeTrackingId(
+                                        url.searchParams.get("label")
+                                    );
+
+                                    if (label) {
+                                        return label;
+                                    }
+                                } catch {
+                                }
+                            }
+
+                            return "";
+                        }
+
+                        function buildEnviaUrl(trackingId) {
+                            const url = new URL(ENVIA_TRACKING_URL);
+                            url.searchParams.set("label", trackingId);
+                            return url.toString();
+                        }
+
+                        function buildDhlUrl(trackingId) {
+                            const url = new URL(DHL_TRACKING_URL);
+
+                            url.searchParams.set("tracking-id", trackingId);
+                            url.searchParams.set("submit", "1");
+                            url.searchParams.set("inputsource", "marketingstage");
+
+                            return url.toString();
+                        }
+
+                        function initializeDhlTracking() {
+                            const root = document.getElementById(ROOT_ID);
+
+                            if (!root) {
+                                return false;
+                            }
+
+                            const iframe = root.querySelector(
+                                "#dhl-tracking-frame"
+                            );
+
+                            const openLink = root.querySelector(
+                                "#dhl-tracking-open"
+                            );
+
+                            const status = root.querySelector(
+                                "#dhl-tracking-status"
+                            );
+
+                            if (!iframe || !openLink || !status) {
+                                return false;
+                            }
+
+                            const spanTrackingId = getTrackingIdFromSpan();
+
+                            const orderTrackingId = normalizeTrackingId(
+                                root.dataset.trackingId
+                            );
+
+                            const carrierId = root.dataset.carrierId;
+                            console.log(carrierId);
+                            const carrierName = root.dataset.carrierName;
+                            console.log(carrierName);
+                            let trackingId;
+
+                            if (
+                                spanTrackingId &amp;&amp;
+                                orderTrackingId &amp;&amp;
+                                spanTrackingId.toLowerCase() ===
+                                    orderTrackingId.toLowerCase()
+                            ) {
+                                trackingId = spanTrackingId;
+                            } else {
+                                trackingId = orderTrackingId || spanTrackingId;
+                            }
+
+                            if (!trackingId) {
+                                return false;
+                            }
+
+                            const trackingUrl = buildEnviaUrl(trackingId);
+                            const dhlUrl = buildDhlUrl(trackingId);
+
+                            if (root.dataset.loadedTrackingId !== trackingId) {
+                                iframe.src = trackingUrl;
+                                root.dataset.loadedTrackingId = trackingId;
+                            }
+
+                            iframe.hidden = false;
+
+                            if (carrierName == "DHL") {
+                                openLink.href = dhlUrl;
+                            }
+
+                            if (carrierName !== "DHL") {
+                                openLink.href = trackingUrl;
+                            }
+                            
+                            openLink.hidden = false;
+
+                            status.textContent =
+                                `Número de rastreo: ${trackingId}. ` +
+                                "Si el rastreo no se muestra en esta ventana, " +
+                                "consulta el envío mediante el enlace directo.";
+
+                            return true;
+                        }
+
+                        function startDhlTracking() {
+                            if (initializeDhlTracking()) {
+                                return;
+                            }
+
+                            const status = document.querySelector(
+                                `#${ROOT_ID} #dhl-tracking-status`
+                            );
+
+                            const observer = new MutationObserver(() =&gt; {
+                                if (initializeDhlTracking()) {
+                                    observer.disconnect();
+                                }
+                            });
+
+                            observer.observe(document.documentElement, {
+                                childList: true,
+                                subtree: true,
+                            });
+
+                            window.setTimeout(() =&gt; {
+                                observer.disconnect();
+
+                                const root = document.getElementById(ROOT_ID);
+
+                                if (root &amp;&amp; !root.dataset.loadedTrackingId &amp;&amp; status) {
+                                    status.textContent =
+                                        "No se encontró un número de rastreo " +
+                                        "para esta orden de venta.";
+                                }
+                            }, 8000);
+                        }
+
+                        if (document.readyState === "loading") {
+                            document.addEventListener(
+                                "DOMContentLoaded",
+                                startDhlTracking,
+                                { once: true }
+                            );
+                        } else {
+                            startDhlTracking();
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+    </data>
+    

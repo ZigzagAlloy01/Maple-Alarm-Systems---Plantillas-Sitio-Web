@@ -231,6 +231,83 @@
                     text-align: justify;
                 }
 
+                html.privacy-embed-mode #wrapwrap &gt; header,
+                html.privacy-embed-mode #wrapwrap &gt; footer,
+                html.privacy-embed-mode header#top,
+                html.privacy-embed-mode footer#bottom,
+                html.privacy-embed-mode .o_header_affixed,
+                html.privacy-embed-mode .privacy-notice-header,
+                html.privacy-embed-mode .privacy-notice-sidebar,
+                html.privacy-embed-mode section.section-resolver-dudas,
+                html.privacy-embed-mode h1.h1_privacy_info_container {
+                    display: none !important;
+                }
+
+                html.privacy-embed-mode,
+                html.privacy-embed-mode body,
+                html.privacy-embed-mode #wrapwrap,
+                html.privacy-embed-mode #wrap {
+                    height: auto !important;
+                    min-height: 0 !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    background: #ffffff !important;
+                }
+
+                html.privacy-embed-mode .privacy-notice-absolute-container {
+                    min-height: 0 !important;
+                }
+
+                html.privacy-embed-mode .privacy-notice-container {
+                    display: block !important;
+                    width: 100% !important;
+                    max-width: none !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
+
+                html.privacy-embed-mode .privacy-notice-content {
+                    width: 100% !important;
+                    max-width: none !important;
+                    min-width: 0 !important;
+                    padding: 12px !important;
+                }
+
+                html.privacy-embed-mode .privacy-notice-content h1 {
+                    margin: 0 0 12px !important;
+                    font-size: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+                    text-align: left !important;
+                }
+
+                html.privacy-embed-mode div#privacy-info-container {
+                    margin: 0 !important;
+                    padding: 0 2px 16px !important;
+                    text-align: left !important;
+                    overflow-wrap: anywhere;
+                }
+
+                html.privacy-embed-mode #privacy-info-container p,
+                html.privacy-embed-mode #privacy-info-container li {
+                    font-size: clamp(0.9rem, 1.2vw, 1rem) !important;
+                    line-height: 1.65 !important;
+                    text-align: left !important;
+                    overflow-wrap: anywhere;
+                }
+
+                html.privacy-embed-mode #privacy-info-container h2,
+                html.privacy-embed-mode #privacy-info-container h3 {
+                    margin: 1.25rem 0 0.6rem !important;
+                    font-size: clamp(1rem, 1.4vw, 1.15rem) !important;
+                    line-height: 1.4 !important;
+                    text-align: left !important;
+                }
+
+                html.privacy-embed-mode #privacy-info-container ul {
+                    margin: 0.5rem 0 1rem !important;
+                    padding-left: 1.25rem !important;
+                    list-style: disc !important;
+                }
+
                 @media (max-width: 991px) {
                     .privacy-notice-header {
                         min-height: 10rem;
@@ -478,6 +555,11 @@
                     const ids = ["avisodeprivacidad", "politicadegarantia", "terminosycondiciones"];
 
                     const params = new URLSearchParams(window.location.search);
+
+                    if (params.get("modal") === "1") {
+                        document.documentElement.classList.add("privacy-embed-mode");
+                    }
+
                     const requestedSection = params.get("section");
 
                     if (

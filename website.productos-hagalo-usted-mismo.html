@@ -137,10 +137,6 @@
                                     </div>
                                     <p id="ciudadSeleccionadaTexto" class="ciudad-seleccionada d-none">
                                     </p>
-                                    <button id="btnConfirmarCiudad" type="button" class="upsell-btn-primary mt-4" disabled="disabled">
-                                            Continuar
-                                        <i class="fa-solid fa-arrow-right"/>
-                                    </button>
                                 </div>
                             </section>
                             <section id="seccionMonitoreo24" class="upsell-panel">
@@ -630,11 +626,6 @@
                     color: #198754;
 
                     font-size: .82rem;
-                }
-
-                #btnConfirmarCiudad:disabled {
-                    opacity: .5;
-                    cursor: not-allowed;
                 }
 
                 .upsell-overlay {
@@ -1985,13 +1976,10 @@
                     const lista =
                         document.getElementById('listaCiudadesMonitoreo');
 
-                    const boton =
-                        document.getElementById('btnConfirmarCiudad');
-
                     const textoSeleccion =
                         document.getElementById('ciudadSeleccionadaTexto');
 
-                    if (!input || !lista || !boton) {
+                    if (!input || !lista) {
                         return;
                     }
 
@@ -2076,8 +2064,6 @@
 
                         lista.classList.add('d-none');
 
-                        boton.disabled = false;
-
                         if (textoSeleccion) {
 
                             textoSeleccion.innerHTML = `
@@ -2087,8 +2073,10 @@
                             `;
 
                             textoSeleccion.classList.remove('d-none');
-
                         }
+
+                        renderizarTarjetaSuscripcion(tipoServicioMonitoreoActual);
+                        mostrarPasoUpsell('monitoreo');
                     }
 
                     input.addEventListener('focus', () =&gt; {
@@ -2096,29 +2084,9 @@
                     });
 
                     input.addEventListener('input', () =&gt; {
-
                         ciudadMonitoreoSeleccionada = null;
-
-                        boton.disabled = true;
-
                         textoSeleccion?.classList.add('d-none');
-
                         mostrarResultados(input.value);
-
-                    });
-
-                    boton.addEventListener('click', () =&gt; {
-
-                        if (!ciudadMonitoreoSeleccionada) {
-                            return;
-                        }
-
-                        renderizarTarjetaSuscripcion(
-                            tipoServicioMonitoreoActual
-                        );
-
-                        mostrarPasoUpsell('monitoreo');
-
                     });
                 }
 
