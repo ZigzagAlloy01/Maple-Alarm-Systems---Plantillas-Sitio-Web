@@ -1,0 +1,27 @@
+function hideFakeChihuahuaOption(root = document) {
+  const select = root.querySelector('select[name="state_id"]');
+  const fakeOption = root.querySelector('select[name="state_id"] option[value="1897"], option[value="1897"]');
+
+  if (!fakeOption) return;
+
+  if (select && select.value === "1897") {
+    select.value = "";
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+
+  fakeOption.remove();
+}
+
+document.addEventListener("DOMContentLoaded", () => hideFakeChihuahuaOption());
+
+const observer = new MutationObserver((mutations) => {
+  for (const mutation of mutations) {
+    for (const node of mutation.addedNodes) {
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        hideFakeChihuahuaOption(node);
+      }
+    }
+  }
+});
+
+observer.observe(document.documentElement, { childList: true, subtree: true });
